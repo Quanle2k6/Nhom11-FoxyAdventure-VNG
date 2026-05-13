@@ -1,0 +1,73 @@
+# =========================================================
+# GODOT
+# =========================================================
+
+# Godot import cache
+.import/
+
+# Exported builds
+export.cfg
+export_presets.cfg
+
+# Mono/.NET build files (nếu dùng Godot .NET)
+.mono/
+data_*/
+mono_crash.*
+
+# Temp/editor files
+*.tmp
+*.temp
+
+# =========================================================
+# VISUAL STUDIO / C#
+# =========================================================
+
+# Build folders
+[Bb]in/
+[Oo]bj/
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+*.csproj.user
+
+# Visual Studio cache
+.vs/
+
+# Rider / JetBrains
+.idea/
+
+# =========================================================
+# VS CODE
+# =========================================================
+
+.vscode/
+
+# Nhưng vẫn giữ shared settings nếu muốn:
+#!.vscode/settings.json
+#!.vscode/extensions.json
+#!.vscode/tasks.json
+#!.vscode/launch.json
+
+# =========================================================
+# OS FILES
+# =========================================================
+
+.DS_Store
+Thumbs.db
+
+# =========================================================
+# LOGS
+# =========================================================
+
+*.log
+
+# =========================================================
+# NETWORK / MULTIPLAYER CONFIG
+# (tránh conflict config local)
+# =========================================================
+
+local_config.*
+server_config_local.*
+*.override.cfg
