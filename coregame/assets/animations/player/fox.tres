@@ -1,0 +1,168 @@
+[gd_resource type="SpriteFrames" load_steps=24 format=3 uid="uid://b60quk85o8rvs"]
+
+[ext_resource type="Texture2D" uid="uid://dkv1jgifrkt8q" path="res://assets/sprites/characters/foxy/fox/fox_defeat_1.png" id="1_75fk6"]
+[ext_resource type="Texture2D" uid="uid://dc2m3jf8uguyu" path="res://assets/sprites/characters/foxy/fox/fox_defeat_2.png" id="2_gjgms"]
+[ext_resource type="Texture2D" uid="uid://cm35jxqst3tye" path="res://assets/sprites/characters/foxy/fox/fox_defeat_3.png" id="3_je773"]
+[ext_resource type="Texture2D" uid="uid://biwl35p86jdwq" path="res://assets/sprites/characters/foxy/fox/fox_fall_1.png" id="4_xqul2"]
+[ext_resource type="Texture2D" uid="uid://bcpoenc50cm6f" path="res://assets/sprites/characters/foxy/fox/fox_hit_1.png" id="5_cmeg1"]
+[ext_resource type="Texture2D" uid="uid://cpnrjocfgv50m" path="res://assets/sprites/characters/foxy/fox/fox_hit_2.png" id="6_cqvgj"]
+[ext_resource type="Texture2D" uid="uid://bij01i1v7nb15" path="res://assets/sprites/characters/foxy/fox/fox_hit_3.png" id="7_tenjw"]
+[ext_resource type="Texture2D" uid="uid://cwgjo8l0lmemi" path="res://assets/sprites/characters/foxy/fox/fox_idle_1.png" id="8_ool80"]
+[ext_resource type="Texture2D" uid="uid://cdiupfoo5xr6u" path="res://assets/sprites/characters/foxy/fox/fox_idle_2.png" id="9_dh5bj"]
+[ext_resource type="Texture2D" uid="uid://bunb4hruykt3x" path="res://assets/sprites/characters/foxy/fox/fox_jump_1.png" id="10_ekw31"]
+[ext_resource type="Texture2D" uid="uid://ddf11anrulx6e" path="res://assets/sprites/characters/foxy/fox/fox_walk_1.png" id="12_n3k3q"]
+[ext_resource type="Texture2D" uid="uid://bsfb723jv8ohi" path="res://assets/sprites/characters/foxy/fox/fox_walk_2.png" id="13_g806c"]
+[ext_resource type="Texture2D" uid="uid://bj3ls24dmb1u0" path="res://assets/sprites/characters/foxy/fox/fox_walk_3.png" id="14_fb7hi"]
+[ext_resource type="Texture2D" uid="uid://c7b68c2t2m054" path="res://assets/sprites/characters/foxy/fox/fox_walk_4.png" id="15_vyylu"]
+[ext_resource type="Texture2D" uid="uid://c8yirdyo8mxlh" path="res://assets/sprites/characters/foxy/foxxy.png" id="16_gjgms"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75fk6"]
+atlas = ExtResource("16_gjgms")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjgms"]
+atlas = ExtResource("16_gjgms")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tenjw"]
+atlas = ExtResource("16_gjgms")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ool80"]
+atlas = ExtResource("16_gjgms")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmeg1"]
+atlas = ExtResource("16_gjgms")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqvgj"]
+atlas = ExtResource("16_gjgms")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je773"]
+atlas = ExtResource("16_gjgms")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqul2"]
+atlas = ExtResource("16_gjgms")
+region = Rect2(64, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75fk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjgms")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_75fk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gjgms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_je773")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xqul2")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tenjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ool80")
+}],
+"loop": true,
+"name": &"freeze_shot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_cmeg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cqvgj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tenjw")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ool80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dh5bj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ekw31")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_n3k3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_g806c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fb7hi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vyylu")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmeg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqvgj")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je773")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqul2")
+}],
+"loop": true,
+"name": &"water_dash",
+"speed": 10.0
+}]
