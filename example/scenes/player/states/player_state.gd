@@ -63,4 +63,10 @@ func control_dash() -> bool:
 		change_state(fsm.states.dash)
 		dash_cd = obj.dash_cooldown
 		return true
+	return false	
+
+func control_water() -> bool:
+	if obj.is_in_water and not obj.is_on_floor() and fsm.current_state != fsm.states.swim:
+		change_state(fsm.states.swim)
+		return true
 	return false

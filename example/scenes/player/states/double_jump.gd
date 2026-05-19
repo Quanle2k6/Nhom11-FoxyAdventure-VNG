@@ -8,6 +8,7 @@ func _enter() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _update(delta: float) -> void:
+	control_water()
 	control_dash()
 	control_moving()
 	control_climb()

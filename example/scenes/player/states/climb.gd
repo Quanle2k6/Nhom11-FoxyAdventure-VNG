@@ -7,6 +7,7 @@ func _enter() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _update(delta: float) -> void:
+	control_water()
 	control_jump()
 	control_dash()
 	if not obj.is_on_wall_only() or Input.is_action_just_released("right") or Input.is_action_just_released("left"):

@@ -6,6 +6,8 @@ func _enter() -> void:
 	pass
 
 func _update(delta: float):
+	#Control swim
+	control_water()
 	#Control jump
 	control_jump()
 	#Control moving and if not moving change to idle

@@ -6,6 +6,7 @@ func _enter() -> void:
 
 func _update(_delta: float):
 	#Control moving
+	control_water()
 	control_dash()
 	control_moving()
 	control_double_jump()
