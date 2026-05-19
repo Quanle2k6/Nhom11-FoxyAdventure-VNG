@@ -1,0 +1,111 @@
+[gd_scene load_steps=14 format=3 uid="uid://busgwcl68mt08"]
+
+[ext_resource type="Script" uid="uid://bowjew4scfjx8" path="res://scenes/enemies/crab/crab.gd" id="1_8tk55"]
+[ext_resource type="Texture2D" uid="uid://dcltras75v2f6" path="res://assets/sprites/enemies/crab/crab_hit_01.png" id="1_t3xj7"]
+[ext_resource type="Texture2D" uid="uid://cyl1bck74ifrs" path="res://assets/sprites/enemies/crab/crab_hit_02.png" id="2_8tk55"]
+[ext_resource type="Texture2D" uid="uid://cmfv7cckpol45" path="res://assets/sprites/enemies/crab/crab_01.png" id="3_b6mll"]
+[ext_resource type="Texture2D" uid="uid://cajgq308d87bm" path="res://assets/sprites/enemies/crab/crab_02.png" id="4_kodca"]
+[ext_resource type="Texture2D" uid="uid://b1w5istugn7x6" path="res://assets/sprites/enemies/crab/crab_03.png" id="5_vf5cm"]
+[ext_resource type="Script" uid="uid://bqocda8qvvoqm" path="res://scenes/enemies/states/run.gd" id="7_b6mll"]
+[ext_resource type="Script" uid="uid://vj34xpkodm6l" path="res://script/hurt_area_2d.gd" id="7_vf5cm"]
+[ext_resource type="Script" uid="uid://5bjaanlcsrbg" path="res://script/hit_area_2d.gd" id="8_ybsp4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vf5cm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t3xj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8tk55")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_b6mll")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_b6mll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kodca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vf5cm")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ybsp4"]
+a = Vector2(-9.53674e-07, -11)
+b = Vector2(4.76837e-07, 11)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tt04p"]
+radius = 11.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2wbus"]
+radius = 11.9959
+height = 38.0917
+
+[node name="Crab" type="CharacterBody2D"]
+collision_layer = 8
+script = ExtResource("1_8tk55")
+movement_speed = 60.0
+metadata/_custom_type_script = "uid://dk884dyulupv6"
+
+[node name="Direction" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
+sprite_frames = SubResource("SpriteFrames_vf5cm")
+animation = &"run"
+frame_progress = 0.313045
+
+[node name="FrontRayCast2D" type="RayCast2D" parent="Direction"]
+position = Vector2(19, 5)
+rotation = -1.5708
+scale = Vector2(1, 0.119999)
+target_position = Vector2(-4.33922e-05, 100.001)
+
+[node name="DownRayCast2D" type="RayCast2D" parent="Direction"]
+position = Vector2(19, 5)
+scale = Vector2(1, 0.119999)
+target_position = Vector2(0, 75.0006)
+
+[node name="HurtArea2D" type="Area2D" parent="Direction"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("7_vf5cm")
+metadata/_custom_type_script = "uid://vj34xpkodm6l"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
+position = Vector2(0, -8)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_ybsp4")
+
+[node name="HitArea2D" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("8_ybsp4")
+metadata/_custom_type_script = "uid://5bjaanlcsrbg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
+shape = SubResource("CircleShape2D_tt04p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_2wbus")
+
+[node name="States" type="Node" parent="."]
+
+[node name="Run" type="Node" parent="States"]
+script = ExtResource("7_b6mll")
