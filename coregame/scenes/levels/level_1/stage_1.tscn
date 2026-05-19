@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=4 uid="uid://d6b48bj21cnr"]
+[gd_scene load_steps=5 format=4 uid="uid://d6b48bj21cnr"]
 
 [ext_resource type="TileSet" uid="uid://b8cj8642y4bv2" path="res://assets/sprites/enviroment/terrain/terrain_32x32.tres" id="1_33rtp"]
 [ext_resource type="PackedScene" uid="uid://41hkdfkdvk6d" path="res://scenes/player/player.tscn" id="2_dwsf3"]
+[ext_resource type="PackedScene" uid="uid://busgwcl68mt08" path="res://scenes/enemies/crab/crab.tscn" id="3_dwsf3"]
+[ext_resource type="PackedScene" uid="uid://dx6i2u7nrq7ud" path="res://scenes/enemies/bird/bird.tscn" id="4_i388g"]
 
 [node name="Stage" type="Node2D"]
 
@@ -12,3 +14,11 @@ tile_set = ExtResource("1_33rtp")
 
 [node name="Player" parent="." instance=ExtResource("2_dwsf3")]
 position = Vector2(67, 220)
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="Crab" parent="Enemy" instance=ExtResource("3_dwsf3")]
+position = Vector2(258, 244)
+
+[node name="Bird" parent="Enemy" instance=ExtResource("4_i388g")]
+position = Vector2(558, 111)

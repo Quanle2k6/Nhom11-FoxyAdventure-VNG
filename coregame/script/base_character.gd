@@ -6,13 +6,13 @@ extends CharacterBody2D
 @export var movement_speed: float = 200.0
 @export var gravity: float = 700.0
 @export var direction: int = 1
-@export var dash_speed:float = 700.0
-@export var dash_cooldown:float = 2.0
-@export var dash_duration:float = 2.0
+
+@export var attack_damage: int = 1
+@export var max_health: int = 3
+var health: int = max_health
+
 
 var jump_speed: float = 320.0
-var fall_when_climb_speed: float = 1.0
-var accelerate: float = 160.0
 var fsm: FSM = null
 var current_animation = null
 var animated_sprite: AnimatedSprite2D = null
@@ -23,7 +23,6 @@ var _next_animated_sprite: AnimatedSprite2D = null
 
 func _ready() -> void:
 	set_animated_sprite($Direction/AnimatedSprite2D)
-
 
 func _physics_process(delta: float) -> void:
 	# Animation
@@ -38,10 +37,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _update_movement(delta: float) -> void:
-	if not is_on_floor():
-		velocity.y += delta * gravity
+	velocity.y += gravity * delta
 	move_and_slide()
-		
+	pass
 
 func turn_around() -> void:
 	if _next_direction != direction:
@@ -66,6 +64,9 @@ func jump() -> void:
 func stop_move() -> void:
 	velocity.x = 0
 	velocity.y = 0
+
+func take_damage(damage: int) -> void:
+	health -= damage
 
 # Change the animation of the character on the next frame
 func change_animation(new_animation: String) -> void:
