@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxj0wnh28ag2j"]
+
+[ext_resource type="Texture2D" uid="uid://getm5kr68qwe" path="res://assets/sprites/enviroment/front_palm_trees/front_palm_tree_top_01.png" id="1_o80x1"]
+[ext_resource type="Texture2D" uid="uid://07ilhsckqwm6" path="res://assets/sprites/enviroment/front_palm_trees/front_palm_tree_top_02.png" id="2_knsjj"]
+[ext_resource type="Texture2D" uid="uid://dwpeqvei7c2tc" path="res://assets/sprites/enviroment/front_palm_trees/front_palm_tree_top_03.png" id="3_disor"]
+[ext_resource type="Texture2D" uid="uid://beay0xcyyoar6" path="res://assets/sprites/enviroment/front_palm_trees/front_palm_tree_top_04.png" id="4_l00ag"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ivf86"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o80x1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_knsjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_disor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l00ag")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ivf86")
+frame = 3
+frame_progress = 1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-22, -13, -13, -19, -3, -19, 1, -17, 2, -19, 12, -19, 18, -16, 21, -12)
+one_way_collision = true
