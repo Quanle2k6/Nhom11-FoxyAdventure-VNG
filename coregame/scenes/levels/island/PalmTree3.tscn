@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bxj0wnh28ag2j" path="res://scenes/levels/island/tree.tscn" id="2_e3yxu"]
 
 [node name="PalmTree1" type="Node2D"]
+position = Vector2(0, -102)
 
 [node name="FrontPalmTreeRight" type="Sprite2D" parent="."]
 position = Vector2(-16, 54)

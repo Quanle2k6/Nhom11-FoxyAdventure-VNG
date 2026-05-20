@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d1jboc5q1i0tj" path="res://assets/sprites/enviroment/front_palm_trees/front_palm_tree_right.png" id="2_hv31q"]
 
 [node name="PalmTree1" type="Node2D"]
+position = Vector2(1, -164)
 
 [node name="FrontPalmTreeLeft" type="Sprite2D" parent="."]
 position = Vector2(34, 64)
