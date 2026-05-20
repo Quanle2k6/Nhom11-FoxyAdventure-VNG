@@ -21,7 +21,7 @@ func control_moving() -> bool:
 		obj.change_direction(dir)
 		obj.velocity.x = obj.movement_speed * dir
 		if obj.is_on_floor():
-			change_state(fsm.states.run)
+			change_state(fsm.states.run)	
 		return true
 	else:
 		if not obj.is_on_floor():

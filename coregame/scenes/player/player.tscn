@@ -77,7 +77,6 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_myrg7"]
-radius = 6.0
 height = 24.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_myrg7"]
@@ -86,9 +85,10 @@ size = Vector2(13, 3)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5gtgg"]
 
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 34
+collision_layer = 98
 platform_wall_layers = 65535
 script = ExtResource("1_ugbui")
+max_health = 2
 metadata/_custom_type_script = "uid://w7xdmsdvf5vd"
 
 [node name="Direction" type="Node2D" parent="."]
@@ -142,3 +142,13 @@ script = ExtResource("17_kvlxm")
 [node name="Camera2D" type="Camera2D" parent="."]
 rotation = -0.136819
 zoom = Vector2(3, 3)
+
+[node name="Water" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
+position = Vector2(-0.5, 13)
+shape = SubResource("RectangleShape2D_myrg7")
+
+[connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

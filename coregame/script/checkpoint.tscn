@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://1rsx5850h8ui"]
+
+[ext_resource type="Texture2D" uid="uid://drecwj6ashren" path="res://assets/sprites/items/chest_key/key_1.png" id="1_b7vqu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i388g"]
+height = 28.0
+
+[node name="Checkpoint" type="Area2D"]
+collision_mask = 65
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("CapsuleShape2D_i388g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b7vqu")
