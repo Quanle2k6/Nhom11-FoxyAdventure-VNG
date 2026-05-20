@@ -22,9 +22,9 @@ func _on_hurt_area_2d_hurt(_direction: Variant, _damage: Variant) -> void:
 	fsm.current_state.take_damage(_damage)
 
 func _update_movement(delta: float) -> void:
-		# Bỏ qua trọng lực nếu đang ở trạng thái climb, dash HOẶC swim
+	# Bỏ qua trọng lực nếu đang ở trạng thái swim
 	if not is_on_floor() and fsm.current_state != fsm.states.swim:
-		velocity.y += delta * gravity	
+		velocity.y += delta * gravity
 	move_and_slide()
 
 	# Hai hàm này sẽ được gọi bởi Signal body_entered/exited của Area2D (Vùng nước)
