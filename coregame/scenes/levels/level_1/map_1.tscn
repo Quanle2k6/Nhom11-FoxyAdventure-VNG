@@ -97,6 +97,7 @@ tile_set = ExtResource("1_fbgxr")
 
 [node name="Player" parent="." instance=ExtResource("5_3gjbw")]
 position = Vector2(165, 371)
+collision_layer = 2
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
