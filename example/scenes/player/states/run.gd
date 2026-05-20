@@ -7,6 +7,7 @@ func _enter() -> void:
 
 func _update(delta: float):
 	#Control jump
+	control_water()
 	control_dash()
 	control_jump()
 	#Control moving and if not moving change to idle

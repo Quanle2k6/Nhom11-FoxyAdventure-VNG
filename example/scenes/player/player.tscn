@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://41hkdfkdvk6d"]
+[gd_scene load_steps=22 format=3 uid="uid://41hkdfkdvk6d"]
 
 [ext_resource type="Script" uid="uid://dt2tsu385v1a5" path="res://scenes/player/player.gd" id="1_ugbui"]
 [ext_resource type="Texture2D" uid="uid://6gko14qsmmw4" path="res://assets/foxy/fox_hat/fox_fall_1.png" id="2_5gtgg"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://r7lohgfwp0gt" path="res://scenes/player/states/double_jump.gd" id="14_ugbui"]
 [ext_resource type="Script" uid="uid://bycaxyg4cmy04" path="res://scenes/player/states/climb.gd" id="15_fcs02"]
 [ext_resource type="Script" uid="uid://bxcfsgr8qbxpv" path="res://scenes/player/dash.gd" id="16_myrg7"]
+[ext_resource type="Script" uid="uid://l2q66vfc7n5a" path="res://scenes/player/swim.gd" id="18_uf5tr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvlxm"]
 animations = [{
@@ -63,11 +64,26 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_h17s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_je7p5")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgqa7"]
+size = Vector2(16, 4.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5gtgg"]
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_ugbui")
 dash_duration = 0.2
 metadata/_custom_type_script = "uid://w7xdmsdvf5vd"
@@ -76,9 +92,18 @@ metadata/_custom_type_script = "uid://w7xdmsdvf5vd"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_kvlxm")
-animation = &"idle"
+animation = &"swim"
+
+[node name="Area2D" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/Area2D"]
+position = Vector2(-1, 12.25)
+shape = SubResource("RectangleShape2D_lgqa7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_5gtgg")
 
 [node name="States" type="Node" parent="."]
@@ -104,5 +129,8 @@ script = ExtResource("15_fcs02")
 
 [node name="Dash" type="Node" parent="States"]
 script = ExtResource("16_myrg7")
+
+[node name="Swim" type="Node" parent="States"]
+script = ExtResource("18_uf5tr")
 
 [node name="Camera2D" type="Camera2D" parent="."]

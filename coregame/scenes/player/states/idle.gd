@@ -5,6 +5,8 @@ func _enter() -> void:
 	obj.change_animation("idle")
 
 func _update(delta: float) -> void:
+	#Control swim
+	control_water()
 	#Control jump
 	control_jump()
 	#Control moving
