@@ -13,6 +13,7 @@ func _ready() -> void:
 	fsm = FSM.new(self, $States, $States/Idle)
 	if has_blade:
 		collected_blade()
+	$Direction/HitArea2D.hitted.connect(_on_hit_area_hitted)
 
 func can_attack() -> bool:
 	return has_blade
@@ -71,3 +72,7 @@ func take_damage(damage: int) -> void:
 	if health <= 0:
 		print("Player chết, respawn!")
 		respawn()
+
+func _on_hit_area_hitted(area: Area2D) -> void:
+	if area is Checkpoint:
+		area.activate(self)
