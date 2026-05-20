@@ -10,9 +10,11 @@ size = Vector2(28, 8)
 [node name="Spikes" type="Sprite2D" parent="."]
 texture = ExtResource("1_ge5kc")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="HitArea2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D"]
 light_mask = 4
 position = Vector2(1, -12)
 shape = SubResource("RectangleShape2D_7k7bx")
