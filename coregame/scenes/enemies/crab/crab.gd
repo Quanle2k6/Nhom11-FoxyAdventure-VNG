@@ -2,5 +2,6 @@ extends EnemyCharacter
 
 
 func _update_movement(delat:float) -> void:
-	velocity.y = gravity
+	if (fsm.current_state != fsm.states.dead):
+		velocity.y = gravity
 	move_and_slide()

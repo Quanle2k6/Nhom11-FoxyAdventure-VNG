@@ -5,11 +5,11 @@ var checkpoint_position: Vector2 = Vector2.ZERO
 var spawn_position: Vector2 = Vector2.ZERO
 ## Player character class that handles movement, combat, and state management
 var is_invulnerable: bool = false
-@export var has_blade: bool = false		
+@export var has_blade: bool = false
 
 func _ready() -> void:
 	super._ready()
-	spawn_position = global_position  # thêm dòng này		
+	spawn_position = global_position  	
 	fsm = FSM.new(self, $States, $States/Idle)
 	if has_blade:
 		collected_blade()
