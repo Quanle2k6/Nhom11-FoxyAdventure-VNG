@@ -9,14 +9,14 @@ var idle_water_time: float = 0.0
 var time_to_float: float = 3.0 
 
 # Thêm biến đếm thời gian giữ phím cho trục Y
-var y_input_timer: float = 0.0
-var time_to_move_y: float = 1.0 # Thời gian kích hoạt (1 giây)
+var y_input_timer: float = 0.
+var time_to_move_y: float = 0.05 # Thời gian kích hoạt (0.3 giây)
 
 func _enter() -> void:
 	obj.change_animation("swim")
 	timer = 0.0 
 	idle_water_time = 0.0  
-	y_input_timer = 0.0 # Reset bộ đếm khi vào nước
+	y_input_timer = 0.4 # Reset bộ đếm khi vào nước
 
 func _update(delta: float) -> void:
 	var dir_x: float = Input.get_axis('ui_left', 'ui_right')
@@ -68,7 +68,8 @@ func _update(delta: float) -> void:
 
 # HÀM PHỤ ĐỂ TÌM MẶT NƯỚC 
 func get_water_surface_y() -> float:
-	var water_node = obj.get_parent().get_node_or_null("Water")
+	var water_node = obj.get_parent().get_nodes_in_group("WaterGroup").get_node_or_null("Water")
+	
 	if water_node and water_node.has_node("CollisionShape2D"):
 		var shape_node = water_node.get_node("CollisionShape2D")
 		var extents_y = shape_node.shape.get_rect().size.y / 2
