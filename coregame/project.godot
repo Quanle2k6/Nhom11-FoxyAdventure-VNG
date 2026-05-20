@@ -45,3 +45,4 @@ right={
 2d_physics/layer_4="enemy"
 2d_physics/layer_5="enemy_hurt"
 2d_physics/layer_6="water"
+2d_physics/layer_7="checkpoint"

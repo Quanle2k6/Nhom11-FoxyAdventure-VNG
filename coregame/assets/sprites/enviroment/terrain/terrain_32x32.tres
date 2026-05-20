@@ -1,7 +1,6 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://b8cj8642y4bv2"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b8cj8642y4bv2"]
 
 [ext_resource type="Texture2D" uid="uid://v2dtejovry7r" path="res://assets/sprites/enviroment/terrain/terrain_32x32.png" id="1_cl6n3"]
-[ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/sprites/enviroment/background/additional_water.png" id="2_7y4ta"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7y4ta"]
 texture = ExtResource("1_cl6n3")
@@ -385,11 +384,6 @@ texture_region_size = Vector2i(32, 32)
 16:4/0/terrains_peering_bit/left_side = 0
 16:4/0/terrains_peering_bit/top_side = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3f71"]
-texture = ExtResource("2_7y4ta")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-
 [resource]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
@@ -397,4 +391,3 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "land "
 terrain_set_0/terrain_0/color = Color(0.503357, 0.891335, 0.195564, 1)
 sources/0 = SubResource("TileSetAtlasSource_7y4ta")
-sources/1 = SubResource("TileSetAtlasSource_n3f71")
