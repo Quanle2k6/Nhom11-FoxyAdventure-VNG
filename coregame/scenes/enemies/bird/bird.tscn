@@ -13,11 +13,12 @@
 [ext_resource type="Script" uid="uid://dn7r8ruvnm38r" path="res://scenes/enemies/states/vertical_move.gd" id="10_oniw0"]
 [ext_resource type="Script" uid="uid://b6seo7a0fgslj" path="res://scenes/enemies/states/dead.gd" id="11_8bhty"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_8bhty"]
-a = Vector2(-9.53674e-07, -11)
-b = Vector2(4.76837e-07, 11)
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_oniw0"]
+a = Vector2(-5.81741e-05, -16)
+b = Vector2(9.05991e-05, 25)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oniw0"]
+height = 42.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uutas"]
 atlas = ExtResource("4_oniw0")
@@ -68,12 +69,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a72mo"]
-radius = 11.9959
-height = 38.0917
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oniw0"]
 
 [node name="Bird" type="CharacterBody2D"]
 collision_layer = 8
+collision_mask = 3
 script = ExtResource("1_stf8a")
 movement_speed = 60.0
 metadata/_custom_type_script = "uid://dk884dyulupv6"
@@ -97,9 +97,9 @@ script = ExtResource("2_r0j5n")
 metadata/_custom_type_script = "uid://vj34xpkodm6l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
-position = Vector2(0, -11)
+position = Vector2(5, -12)
 rotation = 1.5708
-shape = SubResource("SegmentShape2D_8bhty")
+shape = SubResource("SegmentShape2D_oniw0")
 
 [node name="HitArea2D" type="Area2D" parent="Direction"]
 collision_layer = 0
@@ -115,9 +115,16 @@ shape = SubResource("CapsuleShape2D_oniw0")
 sprite_frames = SubResource("SpriteFrames_uutas")
 animation = &"idle"
 
+[node name="DetectPlayerArea2D" type="Area2D" parent="Direction"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/DetectPlayerArea2D"]
+scale = Vector2(5.20787, 3.39117)
+shape = SubResource("RectangleShape2D_oniw0")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -11)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_a72mo")
+shape = SubResource("SegmentShape2D_oniw0")
 
 [node name="States" type="Node" parent="."]
 
