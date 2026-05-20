@@ -12,3 +12,4 @@ scale = Vector2(1, 2.03125)
 texture = ExtResource("2_euxch")
 
 [node name="TopPalmTree" parent="." instance=ExtResource("3_rshqs")]
+position = Vector2(3, 7)
