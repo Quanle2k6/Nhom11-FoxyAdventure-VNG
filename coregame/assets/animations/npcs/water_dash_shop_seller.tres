@@ -1,0 +1,61 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://bsg7wvylhvakv"]
+
+[ext_resource type="Texture2D" uid="uid://8ujj6k8congh" path="res://assets/sprites/other_characters/farm_sheet.png" id="1_xlgrw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4n3u"]
+atlas = ExtResource("1_xlgrw")
+region = Rect2(48, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6815t"]
+atlas = ExtResource("1_xlgrw")
+region = Rect2(64, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bb6of"]
+atlas = ExtResource("1_xlgrw")
+region = Rect2(80, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tltbw"]
+atlas = ExtResource("1_xlgrw")
+region = Rect2(192, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dhxj"]
+atlas = ExtResource("1_xlgrw")
+region = Rect2(144, 17, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj2so"]
+atlas = ExtResource("1_xlgrw")
+region = Rect2(160, 17, 16, 15)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4n3u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6815t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bb6of")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tltbw")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"close_shop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dhxj")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_fj2so")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

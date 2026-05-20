@@ -1,0 +1,157 @@
+[gd_scene load_steps=21 format=4 uid="uid://d6b48bj21cnr"]
+
+[ext_resource type="TileSet" uid="uid://b6h422xbmxtp6" path="res://assets/island/tileset.tres" id="1_33rtp"]
+[ext_resource type="PackedScene" uid="uid://41hkdfkdvk6d" path="res://scenes/player/player.tscn" id="2_dwsf3"]
+[ext_resource type="PackedScene" uid="uid://byl85su4vaq7a" path="res://scenes/levels/island/object/palm_tree_1.tscn" id="2_i388g"]
+[ext_resource type="PackedScene" uid="uid://v3m4mlskmvg0" path="res://scenes/levels/island/object/font_palm_tree_left.tscn" id="3_j4ikx"]
+[ext_resource type="Texture2D" uid="uid://dcrnqve71d36p" path="res://assets/island/background/additional_sky.png" id="4_bfafv"]
+[ext_resource type="PackedScene" uid="uid://chudv20pvqu84" path="res://scenes/levels/island/object/font_palm_tree_right.tscn" id="4_t1ot5"]
+[ext_resource type="Texture2D" uid="uid://bqde0l4at7gv8" path="res://assets/island/background/bg_image.png" id="5_rltkt"]
+[ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/island/background/additional_water.png" id="6_wuvcj"]
+[ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://assets/island/background/big_clouds.png" id="7_rltkt"]
+[ext_resource type="Texture2D" uid="uid://dekyi7oa4n0sg" path="res://assets/island/background/water_reflect_big_01.png" id="9_gi8ev"]
+[ext_resource type="Texture2D" uid="uid://c5ur36rqix0vh" path="res://assets/island/background/water_reflect_big_04.png" id="10_ki2mu"]
+[ext_resource type="Texture2D" uid="uid://ci5tpl05cnmra" path="res://assets/island/background/small_cloud_1.png" id="10_mvtk4"]
+[ext_resource type="Texture2D" uid="uid://1t3pkyls8wyt" path="res://assets/island/background/small_cloud_2.png" id="11_1vm6v"]
+[ext_resource type="Texture2D" uid="uid://b6dilwf04d4be" path="res://assets/island/background/water_reflect_big_02.png" id="11_eajpt"]
+[ext_resource type="Texture2D" uid="uid://drl3x1wfs0vai" path="res://assets/island/background/water_reflect_big_03.png" id="12_2ck71"]
+[ext_resource type="Texture2D" uid="uid://dcvs45slp2tv3" path="res://assets/island/background/small_cloud_3.png" id="12_wxig3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oogn1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_gi8ev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ki2mu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_eajpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2ck71")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_rltkt"]
+script/source = "extends ParallaxLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	motion_offset.x -= delta*20
+"
+
+[sub_resource type="GDScript" id="GDScript_mvtk4"]
+script/source = "extends ParallaxLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	motion_offset.x -= delta*100
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi8ev"]
+size = Vector2(159, 95)
+
+[node name="Stage" type="Node2D"]
+position = Vector2(0, -1)
+
+[node name="World" type="TileMapLayer" parent="."]
+position = Vector2(-316, -5)
+tile_map_data = PackedByteArray("AAALAAYAAAAAAAQAAAAMAAYAAAAMAAQAAAANAAYAAAACAAQAAAAOAAMAAAAEAAAAAAAAAAkAAAAAAAQAAAABAAkAAAABAAQAAAACAAkAAAABAAQAAAADAAkAAAABAAQAAAAEAAkAAAABAAQAAAAFAAkAAAABAAQAAAAGAAgAAAAAAAAAAAAGAAkAAAAKAAQAAAAHAAgAAAABAAAAAAAHAAkAAAABAAIAAAAIAAgAAAABAAAAAAAIAAkAAAABAAIAAAAJAAgAAAACAAAAAAAJAAkAAAAJAAQAAAAKAAkAAAABAAQAAAALAAkAAAABAAQAAAAMAAUAAAAEAAAAAAAMAAkAAAABAAQAAAANAAkAAAABAAQAAAAOAAkAAAABAAQAAAAPAAkAAAABAAQAAAAQAAkAAAABAAQAAAARAAkAAAABAAQAAAAHAAYAAQAAAAAAAgAOAAcAAQAAAAAAAgASAAkAAAABAAQAAAATAAkAAAABAAAAAAAUAAkAAAABAAAAAAAVAAkAAAABAAAAAAAZAAkAAAABAAAAAAAXAAMAAAAEAAEAAAAXAAQAAAAEAAEAAAAXAAUAAAAEAAEAAAAXAAYAAAAEAAEAAAAUAAMAAAAEAAEAAAAUAAQAAAAEAAEAAAAUAAUAAAAEAAEAAAAYAAUAAgAAAAAAAQATAAMAAwAAAAAAAQAaAAkAAAABAAAAAAAkAAkAAAABAAAAAAAlAAkAAAABAAAAAAAmAAkAAAAJAAMAAAAnAAkAAAABAAQAAAAoAAgAAAAAAAQAAAApAAgAAAABAAQAAAAqAAgAAAANAAQAAAAoAAkAAAAQAAMAAAAqAAcAAAANAAQAAAArAAYAAAAEAAEAAAArAAUAAAAPAAMAAAAsAAUAAAAQAAMAAAAqAAYAAAAQAAMAAAAWAAkAAAABAAAAAAAXAAkAAAABAAAAAAAYAAkAAAABAAAAAAAbAAoAAAAGAAAAAAAbAAsAAAACAAEAAAAbAAwAAAABAAEAAAAcAAwAAAABAAEAAAAdAAwAAAABAAEAAAAeAAwAAAABAAEAAAAfAAwAAAABAAEAAAAgAAwAAAABAAEAAAAhAAwAAAABAAEAAAAhAAsAAAAAAAEAAAAhAAoAAAAHAAAAAAAaAAoAAAABAAEAAAAaAAsAAAABAAEAAAAZAAsAAAABAAEAAAAZAAwAAAABAAEAAAAaAAwAAAABAAEAAAAZAAoAAAABAAEAAAAYAAoAAAABAAEAAAAYAAsAAAABAAEAAAAYAAwAAAABAAEAAAAXAAwAAAABAAEAAAAWAAsAAAABAAEAAAAXAAsAAAABAAEAAAAXAAoAAAABAAEAAAAWAAwAAAABAAEAAAAVAAsAAAABAAEAAAAVAAoAAAABAAEAAAAWAAoAAAABAAEAAAAfAA0AAAABAAIAAAAeAA0AAAABAAIAAAAhAA0AAAABAAEAAAAgAA0AAAAHAAAAAAAiAA0AAAABAAEAAAAjAA0AAAABAAIAAAAjAAwAAAABAAEAAAAiAAwAAAABAAEAAAAdAA0AAAABAAIAAAAcAA0AAAABAAIAAAAbAA0AAAABAAIAAAAaAA0AAAABAAIAAAAZAA0AAAABAAIAAAAYAA0AAAABAAIAAAAXAA0AAAABAAIAAAAWAA0AAAABAAIAAAAVAA0AAAABAAIAAAAVAAwAAAABAAEAAAAUAAwAAAABAAEAAAAUAA0AAAABAAIAAAATAA0AAAABAAIAAAATAAwAAAAAAAEAAAATAAsAAAAGAAMAAAATAAoAAAABAAEAAAAUAAoAAAABAAEAAAAUAAsAAAABAAEAAAAkAAwAAAABAAEAAAAkAA0AAAABAAIAAAAjAAsAAAABAAEAAAAiAAsAAAABAAEAAAAiAAoAAAABAAEAAAAkAAsAAAABAAEAAAAlAA0AAAABAAIAAAAlAAwAAAABAAEAAAAlAAsAAAABAAEAAAAlAAoAAAABAAEAAAAkAAoAAAABAAEAAAAjAAoAAAABAAEAAAAmAAoAAAABAAEAAAAmAAsAAAAGAAAAAAAmAA0AAAAGAAAAAAAmAAwAAAAGAAAAAAAhAAkAAAAEAAAAAAAiAAkAAAAEAAAAAAAjAAkAAAAAAAAAAAAbAAkAAAACAAAAAAAcAAkABwAAAAAAAAAdAAkABwAAAAAAAAAeAAkABwAAAAAAAAAfAAkABwAAAAAAAAAfAAoABwAAAAAAAAAfAAsABwAAAAAAAAAgAAsABwAAAAAAAAAgAAoABwAAAAAAAAAgAAkABwAAAAAAAAAeAAsABwAAAAAAAAAdAAsABwAAAAAAAAAcAAsABwAAAAAAAAAcAAoABwAAAAAAAAAdAAoABwAAAAAAAAAeAAoABwAAAAAAAAA=")
+tile_set = ExtResource("1_33rtp")
+
+[node name="PalmTree1" parent="World" instance=ExtResource("2_i388g")]
+position = Vector2(154, 242)
+
+[node name="FontPalmTreeLeft" parent="World" instance=ExtResource("3_j4ikx")]
+position = Vector2(497, 110)
+
+[node name="FontPalmTreeRight" parent="World" instance=ExtResource("4_t1ot5")]
+position = Vector2(332, 200)
+
+[node name="Player" parent="." instance=ExtResource("2_dwsf3")]
+position = Vector2(209, 269)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.001, 0.8)
+motion_mirroring = Vector2(767, 0)
+
+[node name="SkySprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(418, -10)
+scale = Vector2(26.125, 20.531)
+texture = ExtResource("4_bfafv")
+
+[node name="SeaSprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(55, 59)
+scale = Vector2(2, 2)
+texture = ExtResource("5_rltkt")
+centered = false
+
+[node name="WaterSprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(384.5, 404.5)
+scale = Vector2(23.969, 5.969)
+texture = ExtResource("6_wuvcj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(395, 243.875)
+scale = Vector2(4.62353, 2.625)
+sprite_frames = SubResource("SpriteFrames_oogn1")
+frame_progress = 0.215172
+
+[node name="ParallaxLayerCloud" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(510, 0)
+script = SubResource("GDScript_rltkt")
+
+[node name="BigCloud" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerCloud"]
+position = Vector2(6, 118)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_rltkt")
+centered = false
+
+[node name="ParallaxLayerCloud2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(510, 0)
+script = SubResource("GDScript_mvtk4")
+
+[node name="SmallCloud1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerCloud2"]
+position = Vector2(91, -8)
+texture = ExtResource("10_mvtk4")
+
+[node name="SmallCloud2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerCloud2"]
+position = Vector2(344, -45)
+texture = ExtResource("11_1vm6v")
+
+[node name="SmallCloud3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayerCloud2"]
+position = Vector2(200, -68)
+texture = ExtResource("12_wxig3")
+
+[node name="WaterDetection2D" type="Area2D" parent="."]
+position = Vector2(659, 330)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterDetection2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_gi8ev")
+
+[connection signal="body_entered" from="WaterDetection2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="WaterDetection2D" to="Player" method="_on_area_2d_body_exited"]
