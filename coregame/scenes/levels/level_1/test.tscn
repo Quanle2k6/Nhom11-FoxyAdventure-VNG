@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=4 uid="uid://d6b48bj21cnr"]
+
+[ext_resource type="TileSet" uid="uid://b8cj8642y4bv2" path="res://assets/sprites/enviroment/terrain/terrain_32x32.tres" id="1_fr5f5"]
+[ext_resource type="PackedScene" uid="uid://41hkdfkdvk6d" path="res://scenes/player/player.tscn" id="2_grklg"]
+[ext_resource type="PackedScene" uid="uid://busgwcl68mt08" path="res://scenes/enemies/crab/crab.tscn" id="3_ml0mk"]
+[ext_resource type="PackedScene" uid="uid://dx6i2u7nrq7ud" path="res://scenes/enemies/bird/bird.tscn" id="4_mkjk8"]
+[ext_resource type="PackedScene" uid="uid://csx5rypnfdxtf" path="res://scenes/enemies/turtle/turtle.tscn" id="5_r546t"]
+[ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/sprites/enviroment/background/additional_water.png" id="5_bfafv"]
+[ext_resource type="Script" uid="uid://jlgcl3pyvby2" path="res://script/checkpoint.gd" id="7_rltkt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i388g"]
+size = Vector2(114.999, 96.001)
+
+[node name="Stage" type="Node2D"]
+
+[node name="World" type="TileMapLayer" parent="."]
+position = Vector2(1, 0)
+tile_map_data = PackedByteArray("AAALAAYAAAAAAAQAAAAMAAYAAAAMAAQAAAANAAYAAAACAAQAAAAOAAMAAAAEAAAAAAAAAAkAAAAAAAQAAAABAAkAAAABAAIAAAACAAkAAAABAAIAAAADAAkAAAABAAIAAAAEAAkAAAAJAAQAAAAFAAkAAAABAAQAAAAGAAgAAAAAAAAAAAAGAAkAAAAKAAQAAAAHAAgAAAABAAAAAAAHAAkAAAABAAIAAAAIAAgAAAABAAAAAAAJAAgAAAACAAAAAAAJAAkAAAAJAAQAAAAKAAkAAAABAAQAAAALAAkAAAABAAQAAAAMAAUAAAAEAAAAAAAMAAkAAAABAAQAAAANAAkAAAABAAQAAAAOAAkAAAABAAQAAAAPAAkAAAABAAQAAAARAAkAAAACAAQAAAASAAkAAAAAAAQAAAATAAkAAAAKAAMAAAAUAAkAAAACAAAAAAAYAAkAAAAAAAAAAAAZAAkAAAAJAAMAAAAXAAMAAAAEAAEAAAAXAAQAAAAEAAEAAAAXAAUAAAAEAAEAAAAXAAYAAAAEAAEAAAAUAAMAAAAEAAEAAAAUAAQAAAAEAAEAAAAUAAUAAAAEAAEAAAAaAAkAAAABAAQAAAAbAAkAAAABAAQAAAAcAAkAAAABAAQAAAAdAAkAAAABAAQAAAAeAAkAAAABAAQAAAAfAAkAAAABAAQAAAAgAAkAAAABAAQAAAAhAAkAAAABAAQAAAAiAAkAAAABAAQAAAAjAAkAAAABAAQAAAAkAAkAAAABAAQAAAAlAAkAAAABAAQAAAAmAAkAAAABAAQAAAAnAAkAAAABAAQAAAAoAAgAAAAAAAQAAAApAAgAAAABAAQAAAAqAAgAAAANAAQAAAAoAAkAAAAQAAMAAAAqAAcAAAANAAQAAAArAAYAAAAEAAEAAAArAAUAAAAPAAMAAAAsAAUAAAAQAAMAAAAqAAYAAAAQAAMAAAAIAAkAAAABAAIAAAADAAcAAAAEAAAAAAADAAgAAAABAAEAAAACAAgAAAABAAEAAAABAAgAAAABAAEAAAAEAAgAAAABAAEAAAAQAAkAAAABAAQAAAAUAAoAAAAGAAAAAAAUAAsAAAACAAEAAAAYAAsAAAAAAAEAAAAYAAoAAAAAAAEAAAAUAAwAAAACAAEAAAAUAA0AAAABAAIAAAAVAA0AAAABAAIAAAAWAA0AAAABAAIAAAAXAA0AAAABAAIAAAAYAA0AAAABAAIAAAAYAAwAAAAAAAEAAAATAAoAAAAAAAEAAAATAAsAAAAAAAEAAAATAAwAAAAAAAEAAAATAA0AAAABAAIAAAAZAA0AAAACAAEAAAAZAAwAAAACAAEAAAAZAAsAAAACAAEAAAAZAAoAAAAGAAAAAAAVAAkAAQAAAAAAAAAWAAkAAQAAAAAAAAAXAAkAAQAAAAAAAAAXAAoAAQAAAAAAAAAXAAsAAQAAAAAAAAAXAAwAAQAAAAAAAAAWAAwAAQAAAAAAAAAWAAsAAQAAAAAAAAAWAAoAAQAAAAAAAAAVAAoAAQAAAAAAAAAVAAsAAQAAAAAAAAAVAAwAAQAAAAAAAAAEAAIAAAAJAAMAAAA=")
+tile_set = ExtResource("1_fr5f5")
+
+[node name="Player" parent="." instance=ExtResource("2_grklg")]
+position = Vector2(67, 220)
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="Crab" parent="Enemy" instance=ExtResource("3_ml0mk")]
+position = Vector2(224, 237)
+
+[node name="Bird" parent="Enemy" node_paths=PackedStringArray("start_state") instance=ExtResource("4_mkjk8")]
+position = Vector2(157, 137)
+start_state = NodePath("States/VerticalMove")
+
+[node name="Turtle" parent="Enemy" node_paths=PackedStringArray("start_state") instance=ExtResource("5_r546t")]
+position = Vector2(354, 265)
+start_state = NodePath("States/VerticalMove")
+movement_speed = 100.0
+
+[node name="Crab2" parent="Enemy" node_paths=PackedStringArray("start_state") instance=ExtResource("3_ml0mk")]
+position = Vector2(499, 273)
+start_state = NodePath("States/Idle")
+
+[node name="Bird2" parent="Enemy" node_paths=PackedStringArray("start_state") instance=ExtResource("4_mkjk8")]
+position = Vector2(32, 196)
+start_state = NodePath("States/Idle")
+
+[node name="Water" type="Area2D" parent="."]
+rotation = -1.5708
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
+position = Vector2(-342.502, 747.999)
+shape = SubResource("RectangleShape2D_i388g")
+
+[node name="Sprite2D" type="Sprite2D" parent="Water"]
+z_index = -300
+position = Vector2(-340.286, 747.356)
+scale = Vector2(3.8938, 3.06284)
+texture = ExtResource("5_bfafv")
+
+[node name="Checkpoint" parent="." instance=ExtResource("5_5usqu")]
+position = Vector2(542, 236)
+script = ExtResource("7_rltkt")
+
+[connection signal="body_entered" from="Water" to="Player" method="_on_water_detection_2d_body_entered"]
+[connection signal="body_exited" from="Water" to="Player" method="_on_water_detection_2d_body_exited"]
+
+[editable path="Enemy/Crab"]
+[editable path="Enemy/Bird"]
+[editable path="Enemy/Turtle"]
+[editable path="Enemy/Crab2"]
+[editable path="Enemy/Bird2"]
