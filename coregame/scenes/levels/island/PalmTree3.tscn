@@ -8,15 +8,16 @@
 position = Vector2(0, -102)
 
 [node name="FrontPalmTreeRight" type="Sprite2D" parent="."]
-position = Vector2(-16, 54)
+position = Vector2(-11, 67)
 texture = ExtResource("1_e3yxu")
 
 [node name="FrontPalmTreeRegular" type="Sprite2D" parent="."]
-position = Vector2(0, 61)
-scale = Vector2(1, 2.03125)
+position = Vector2(5, 74.5)
+scale = Vector2(1.65968, 1.57813)
 texture = ExtResource("1_of3tn")
 
 [node name="TopPalmTree" parent="." instance=ExtResource("2_e3yxu")]
+position = Vector2(10, 34)
 
 [node name="TopPalmTree2" parent="." instance=ExtResource("2_e3yxu")]
-position = Vector2(-35, 37)
+position = Vector2(-28, 52)
