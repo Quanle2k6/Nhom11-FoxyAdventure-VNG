@@ -8,7 +8,7 @@
 position = Vector2(1, -99)
 
 [node name="FrontPalmTreeLeft" type="Sprite2D" parent="."]
-position = Vector2(16, 62)
+position = Vector2(22, 61)
 texture = ExtResource("1_lq4q8")
 
 [node name="FrontPalmTreeRegular" type="Sprite2D" parent="."]
