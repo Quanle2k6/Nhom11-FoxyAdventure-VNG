@@ -12,7 +12,7 @@ var is_invulnerable: bool = false
 
 func _ready() -> void:
 	super._ready()
-	spawn_position = global_position  # thêm dòng này
+	spawn_position = global_position  	
 	fsm = FSM.new(self, $States, $States/Idle)
 	if has_blade:
 		collected_blade()

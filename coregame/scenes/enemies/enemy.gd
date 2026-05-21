@@ -12,10 +12,16 @@ var vertical_ray_cast: RayCast2D;
 var detect_player_area: Area2D;
 var found_player: Player = null
 
+var hurt_area: Area2D
+var hit_area: Area2D
+var main_collision: CollisionShape2D
+
 func _ready() -> void:
+	main_collision = $CollisionShape2D
 	_init_ray_cast()
 	_init_detect_player_area()
 	_init_hurt_area()
+	_init_hit_area()
 	_init_start_state()
 	super._ready()
 
@@ -46,8 +52,12 @@ func _init_detect_player_area():
 # init hurt area
 func _init_hurt_area():
 	if has_node("Direction/HurtArea2D"):
-		var hurt_area = $Direction/HurtArea2D
+		hurt_area = $Direction/HurtArea2D
 		hurt_area.hurt.connect(_on_hurt_area_2d_hurt)
+
+func _init_hit_area():
+	if has_node("Direction/HitArea2D"):
+		hit_area = $Direction/HitArea2D
 
 func _init_start_state():
 	if start_state != null:
@@ -84,6 +94,7 @@ func _on_body_exited(_body: CharacterBody2D) -> void:
 	_on_player_not_in_sight()
 
 func _on_hurt_area_2d_hurt(_direction: Vector2, _damage: float) -> void:
+	found_player.jump()
 	_take_damage_from_dir(_direction, _damage)
 
 # called when player is in sight

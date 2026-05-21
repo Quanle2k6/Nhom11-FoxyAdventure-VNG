@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://busgwcl68mt08"]
+[gd_scene load_steps=18 format=3 uid="uid://busgwcl68mt08"]
 
 [ext_resource type="Script" uid="uid://bowjew4scfjx8" path="res://scenes/enemies/crab/crab.gd" id="1_8tk55"]
 [ext_resource type="Texture2D" uid="uid://dcltras75v2f6" path="res://assets/sprites/enemies/crab/crab_hit_01.png" id="1_t3xj7"]
@@ -61,18 +61,20 @@ animations = [{
 }]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ybsp4"]
-a = Vector2(-9.53674e-07, -11)
-b = Vector2(4.76837e-07, 11)
+a = Vector2(-5.72205e-05, -16)
+b = Vector2(8.01086e-05, 22)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tgm84"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgm84"]
+size = Vector2(22, 41)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2wbus"]
-radius = 11.9959
-height = 38.0917
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_novun"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ud0h"]
+size = Vector2(22, 35)
 
 [node name="Crab" type="CharacterBody2D" node_paths=PackedStringArray("start_state")]
 collision_layer = 8
+collision_mask = 3
 script = ExtResource("1_8tk55")
 start_state = NodePath("States/Run")
 movement_speed = 60.0
@@ -93,7 +95,7 @@ target_position = Vector2(-4.33922e-05, 100.001)
 [node name="VerticalRayCast2D" type="RayCast2D" parent="Direction"]
 position = Vector2(19, 5)
 scale = Vector2(1, 0.119999)
-target_position = Vector2(0, 75.0006)
+target_position = Vector2(0, 91.6674)
 
 [node name="HurtArea2D" type="Area2D" parent="Direction"]
 collision_layer = 16
@@ -102,7 +104,7 @@ script = ExtResource("7_vf5cm")
 metadata/_custom_type_script = "uid://vj34xpkodm6l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
-position = Vector2(0, -8)
+position = Vector2(4, -9)
 rotation = 1.5708
 shape = SubResource("SegmentShape2D_ybsp4")
 
@@ -113,13 +115,22 @@ script = ExtResource("8_ybsp4")
 metadata/_custom_type_script = "uid://5bjaanlcsrbg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
-position = Vector2(0, 2)
+position = Vector2(-0.5, 3)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_tgm84")
+shape = SubResource("RectangleShape2D_tgm84")
+
+[node name="DetectPlayerArea2D" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/DetectPlayerArea2D"]
+scale = Vector2(5.20787, 3.39117)
+shape = SubResource("RectangleShape2D_novun")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_2wbus")
+shape = SubResource("RectangleShape2D_0ud0h")
 
 [node name="States" type="Node" parent="."]
 
