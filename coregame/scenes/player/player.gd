@@ -17,8 +17,8 @@ func _ready() -> void:
 	if has_blade:
 		collected_blade()
 	$Direction/HitArea2D.hitted.connect(_on_hit_area_hitted)
-	$Direction/WaterDetectionArea2D.area_entered.connect(_on_water_ditection_are_2d_area_entered)
-	$Direction/WaterDetectionArea2D.area_exited.connect(_on_water_ditection_are_2d_area_exitted)
+	$Direction/WaterDetectionArea2D.area_entered.connect(_on_water_ditection_area_2d_area_entered)
+	$Direction/WaterDetectionArea2D.area_exited.connect(_on_water_ditection_area_2d_area_exitted)
 
 
 func can_attack() -> bool:
@@ -35,12 +35,13 @@ func _update_movement(delta: float) -> void:
 		velocity.y += delta * gravity
 	move_and_slide()
 
-func _on_water_ditection_are_2d_area_entered(area: Area2D):
+func _on_water_ditection_area_2d_area_entered(area: Area2D):
 	enter_water(area)
 	
-func _on_water_ditection_are_2d_area_exitted(area: Area2D):
-	is_in_water -=1
-	if is_in_water <= 0:
+func _on_water_ditection_area_2d_area_exitted(area: Area2D):
+	if is_in_water > 0:
+		is_in_water -= 1
+	if is_in_water == 0:
 		exit_water()
 
 func enter_water(area: Area2D) -> void:
@@ -61,7 +62,7 @@ func set_checkpoint(pos: Vector2) -> void:
 func respawn() -> void:
 	health = max_health
 	is_invulnerable = false
-	is_in_water = false
+	is_in_water = 0
 	velocity = Vector2.ZERO
 	if checkpoint_position != Vector2.ZERO:
 		global_position = checkpoint_position
@@ -70,16 +71,13 @@ func respawn() -> void:
 	fsm.change_state(fsm.states.idle)
 
 func _on_hurt_area_2d_hurt(_direction: Variant, damage: Variant) -> void:
-	print("Player nhận damage: ", damage)
 	take_damage(damage)
 
 func take_damage(damage: int) -> void:
 	if is_invulnerable:
 		return
 	super.take_damage(damage)
-	print("Health còn: ", health)
 	if health <= 0:
-		print("Player chết, respawn!")
 		respawn()
 
 func _on_hit_area_hitted(area: Area2D) -> void:

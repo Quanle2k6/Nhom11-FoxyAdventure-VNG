@@ -13,5 +13,5 @@ func _update(delta:float)->void:
 	control_moving_in_water()
 	if  update_timer(delta):
 		obj.velocity.y = - merge_speed
-	print ( obj.global_position.y ,' ' ,obj.water_surface_y)
+
 	

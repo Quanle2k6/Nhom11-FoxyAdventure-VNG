@@ -79,20 +79,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvlxm"]
-size = Vector2(23, 24)
+size = Vector2(17, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_myrg7"]
-size = Vector2(13, 3)
+size = Vector2(27, 4.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lgqa7"]
+radius = 8.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uf5tr"]
 size = Vector2(19, 24)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 collision_layer = 2
-collision_mask = 17
 platform_wall_layers = 65535
 script = ExtResource("1_ugbui")
-max_health = 2
 metadata/_custom_type_script = "uid://w7xdmsdvf5vd"
 
 [node name="Direction" type="Node2D" parent="."]
@@ -108,7 +110,7 @@ script = ExtResource("10_myrg7")
 metadata/_custom_type_script = "uid://vj34xpkodm6l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
-position = Vector2(-0.5, -2)
+position = Vector2(-0.5, -2.5)
 shape = SubResource("RectangleShape2D_kvlxm")
 
 [node name="HitArea2D" type="Area2D" parent="Direction"]
@@ -118,7 +120,7 @@ script = ExtResource("11_kvlxm")
 metadata/_custom_type_script = "uid://5bjaanlcsrbg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
-position = Vector2(-0.5, 13)
+position = Vector2(0, 12.25)
 shape = SubResource("RectangleShape2D_myrg7")
 
 [node name="WaterDetectionArea2D" type="Area2D" parent="Direction"]
@@ -129,7 +131,6 @@ collision_mask = 32
 shape = SubResource("CircleShape2D_lgqa7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 2)
 shape = SubResource("RectangleShape2D_uf5tr")
 
 [node name="States" type="Node" parent="."]
@@ -159,11 +160,8 @@ script = ExtResource("18_uf5tr")
 script = ExtResource("19_lgqa7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, -50)
 rotation = -0.136819
-zoom = Vector2(3, 3)
-
-[node name="Water" type="Area2D" parent="."]
-collision_layer = 32
-collision_mask = 0
+zoom = Vector2(2.5, 2.5)
 
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]
