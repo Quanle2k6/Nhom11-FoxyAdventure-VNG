@@ -48,8 +48,32 @@ func control_double_jump() -> bool:
 		obj.velocity.y = -obj.jump_speed
 		return true
 	return false
+
+func control_moving_in_water() -> bool:
+	var move_dir = Vector2(
+		Input.get_axis("left", "right"),
+		Input.get_axis("jump", "down")).normalized()
+	if move_dir == Vector2.ZERO:
+		if fsm.current_state != fsm.states.wateridle:
+			fsm.change_state(fsm.states.wateridle)
+		return false
+	else:
+		obj.velocity = move_dir * obj.movement_speed
+		obj.change_direction(move_dir.x)
+		if fsm.current_state != fsm.states.swim:
+			fsm.change_state(fsm.states.swim)
+		return true
+
 func control_water() -> bool:
-	if obj.is_in_water and not obj.is_on_floor() and fsm.current_state != fsm.states.swim:
-		change_state(fsm.states.swim)
+	if obj.is_in_water >= 1:
+		change_state(fsm.states.float)
 		return true
 	return false
+	
+func control_jump_on_water() -> bool:
+	if Input.is_action_just_pressed('jump'):
+		change_state(fsm.states.jump)
+		obj.velocity.y = -obj.jump_speed
+		return true
+	return false
+	

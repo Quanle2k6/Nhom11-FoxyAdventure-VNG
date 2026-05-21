@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://41hkdfkdvk6d"]
+[gd_scene load_steps=25 format=3 uid="uid://41hkdfkdvk6d"]
 
 [ext_resource type="Script" uid="uid://dt2tsu385v1a5" path="res://scenes/player/player.gd" id="1_ugbui"]
 [ext_resource type="Texture2D" uid="uid://ctcp2srlsos4m" path="res://assets/sprites/characters/foxy/fox/fox_fall_1.png" id="2_fcs02"]
@@ -16,7 +16,9 @@
 [ext_resource type="Script" uid="uid://di3w8xw7t025o" path="res://scenes/player/states/jump.gd" id="12_fcs02"]
 [ext_resource type="Script" uid="uid://caxtbpdyga1ay" path="res://scenes/player/states/fall.gd" id="13_myrg7"]
 [ext_resource type="Script" uid="uid://r7lohgfwp0gt" path="res://scenes/player/states/double_jump.gd" id="14_ugbui"]
-[ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/swim.gd" id="17_kvlxm"]
+[ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="17_kvlxm"]
+[ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="18_uf5tr"]
+[ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="19_lgqa7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvlxm"]
 animations = [{
@@ -76,16 +78,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_myrg7"]
-height = 24.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvlxm"]
+size = Vector2(23, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_myrg7"]
 size = Vector2(13, 3)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5gtgg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uf5tr"]
+size = Vector2(19, 24)
 
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 98
+collision_layer = 2
+collision_mask = 17
 platform_wall_layers = 65535
 script = ExtResource("1_ugbui")
 max_health = 2
@@ -104,20 +108,29 @@ script = ExtResource("10_myrg7")
 metadata/_custom_type_script = "uid://vj34xpkodm6l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
-shape = SubResource("CapsuleShape2D_myrg7")
+position = Vector2(-0.5, -2)
+shape = SubResource("RectangleShape2D_kvlxm")
 
 [node name="HitArea2D" type="Area2D" parent="Direction"]
 collision_layer = 0
-collision_mask = 112
+collision_mask = 80
 script = ExtResource("11_kvlxm")
 metadata/_custom_type_script = "uid://5bjaanlcsrbg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
-position = Vector2(0, 13)
+position = Vector2(-0.5, 13)
 shape = SubResource("RectangleShape2D_myrg7")
 
+[node name="WaterDetectionArea2D" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/WaterDetectionArea2D"]
+shape = SubResource("CircleShape2D_lgqa7")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_5gtgg")
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_uf5tr")
 
 [node name="States" type="Node" parent="."]
 
@@ -139,6 +152,12 @@ script = ExtResource("14_ugbui")
 [node name="Swim" type="Node" parent="States"]
 script = ExtResource("17_kvlxm")
 
+[node name="Float" type="Node" parent="States"]
+script = ExtResource("18_uf5tr")
+
+[node name="WaterIdle" type="Node" parent="States"]
+script = ExtResource("19_lgqa7")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 rotation = -0.136819
 zoom = Vector2(3, 3)
@@ -146,9 +165,5 @@ zoom = Vector2(3, 3)
 [node name="Water" type="Area2D" parent="."]
 collision_layer = 32
 collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
-position = Vector2(-0.5, 13)
-shape = SubResource("RectangleShape2D_myrg7")
 
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]
