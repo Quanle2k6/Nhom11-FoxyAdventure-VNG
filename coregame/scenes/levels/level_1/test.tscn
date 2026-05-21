@@ -44,18 +44,18 @@ start_state = NodePath("States/Idle")
 position = Vector2(196, 197)
 start_state = NodePath("States/HorizontalMove")
 
-[node name="Water" type="Area2D" parent="."]
+[node name="Water" type="Area2D" parent="." groups=["Water"]]
 rotation = -1.5708
 collision_layer = 0
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
-position = Vector2(-342.502, 747.999)
+position = Vector2(-359.003, 722.999)
 shape = SubResource("RectangleShape2D_i388g")
 
 [node name="Sprite2D" type="Sprite2D" parent="Water"]
 z_index = -300
-position = Vector2(-340.286, 747.356)
+position = Vector2(-356.003, 722.999)
 scale = Vector2(3.8938, 3.06284)
 texture = ExtResource("5_bfafv")
 

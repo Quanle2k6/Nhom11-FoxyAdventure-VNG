@@ -1,12 +1,12 @@
 extends PlayerState
 
 func _enter() -> void:
+	print('jump')
 	#Change animation to jump
 	obj.change_animation('jump')
 
 func _update(_delta: float):
 	#Control swim
-	control_water()
 	control_moving()
 	control_double_jump()
 	if Input.is_action_just_released("jump") and obj.velocity.y < 0:

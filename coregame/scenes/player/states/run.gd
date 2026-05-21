@@ -1,6 +1,7 @@
 extends PlayerState
 
 func _enter() -> void:
+	print('run')
 	#Change animation to run
 	obj.change_animation('run')
 	pass
