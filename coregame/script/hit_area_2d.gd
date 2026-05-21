@@ -30,6 +30,7 @@ func hit(hurt_area):
 		var hit_dir: Vector2 = hurt_area.global_position - global_position
 		hurt_area.take_damage(hit_dir.normalized(), damage)
 
+
 # Khi chạm vào vùng: trừ máu ngay và bắt đầu cooldown
 func _on_area_entered(area: Area2D) -> void:
 	hit(area)
