@@ -1,6 +1,7 @@
 class_name PlayerState
 extends FSMState
 
+@export var merge_speed = 10
 
 func _enter() -> void:
 	pass

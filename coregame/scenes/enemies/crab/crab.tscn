@@ -61,11 +61,11 @@ animations = [{
 }]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ybsp4"]
-a = Vector2(-5.72205e-05, -16)
+a = Vector2(-6.86646e-05, -19)
 b = Vector2(8.01086e-05, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgm84"]
-size = Vector2(22, 41)
+size = Vector2(19.9999, 41)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_novun"]
 
@@ -74,7 +74,6 @@ size = Vector2(22, 35)
 
 [node name="Crab" type="CharacterBody2D" node_paths=PackedStringArray("start_state")]
 collision_layer = 8
-collision_mask = 3
 script = ExtResource("1_8tk55")
 start_state = NodePath("States/Run")
 movement_speed = 60.0
@@ -104,7 +103,7 @@ script = ExtResource("7_vf5cm")
 metadata/_custom_type_script = "uid://vj34xpkodm6l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
-position = Vector2(4, -9)
+position = Vector2(2, -11)
 rotation = 1.5708
 shape = SubResource("SegmentShape2D_ybsp4")
 
@@ -115,7 +114,7 @@ script = ExtResource("8_ybsp4")
 metadata/_custom_type_script = "uid://5bjaanlcsrbg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
-position = Vector2(-0.5, 3)
+position = Vector2(-0.50002, 4.00004)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_tgm84")
 

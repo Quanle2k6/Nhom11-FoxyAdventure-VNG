@@ -1,6 +1,5 @@
 extends PlayerState
 
-@export var merge_speed = 10
 
 func _enter() -> void:
 	print('wateridle')
