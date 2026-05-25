@@ -111,4 +111,3 @@ func _take_damage_from_dir(_damage_dir: Vector2, _damage: float):
 func vertical_reversal()-> void:
 	vertical_direction = - vertical_direction
 	vertical_ray_cast.rotate(PI)
-	
