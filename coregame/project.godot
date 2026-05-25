@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Coregame"
-run/main_scene="uid://d6b48bj21cnr"
+run/main_scene="uid://blanws8ltxlph"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
