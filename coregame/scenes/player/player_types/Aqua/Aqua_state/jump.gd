@@ -1,0 +1,16 @@
+extends PlayerState
+
+func _enter() -> void:
+	print('jump')
+	#Change animation to jump
+	obj.change_animation('jump')
+
+func _update(_delta: float):
+	#Control swim
+	control_moving()
+	if Input.is_action_just_released("jump") and obj.velocity.y < 0:
+		obj.velocity.y *= 0.5
+	#If velocity.y is greater than 0 change to fall
+	if obj.velocity.y > 0:
+		change_state(fsm.states.fall)
+		

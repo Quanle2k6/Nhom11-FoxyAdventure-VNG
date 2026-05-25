@@ -1,0 +1,170 @@
+[gd_scene load_steps=25 format=3 uid="uid://cxolan44wwqkl"]
+
+[ext_resource type="Script" uid="uid://di75tyxurign3" path="res://scenes/player/player_types/Aqua/aqua.gd" id="1_v56ps"]
+[ext_resource type="Texture2D" uid="uid://ctcp2srlsos4m" path="res://assets/sprites/characters/foxy/fox/fox_fall_1.png" id="2_4cbmv"]
+[ext_resource type="Texture2D" uid="uid://cwgjo8l0lmemi" path="res://assets/sprites/characters/foxy/fox/fox_idle_1.png" id="3_t874g"]
+[ext_resource type="Texture2D" uid="uid://cdiupfoo5xr6u" path="res://assets/sprites/characters/foxy/fox/fox_idle_2.png" id="4_llvtc"]
+[ext_resource type="Texture2D" uid="uid://bunb4hruykt3x" path="res://assets/sprites/characters/foxy/fox/fox_jump_1.png" id="5_rh8r1"]
+[ext_resource type="Texture2D" uid="uid://ddf11anrulx6e" path="res://assets/sprites/characters/foxy/fox/fox_walk_1.png" id="6_fxh1m"]
+[ext_resource type="Texture2D" uid="uid://bsfb723jv8ohi" path="res://assets/sprites/characters/foxy/fox/fox_walk_2.png" id="7_oek1d"]
+[ext_resource type="Texture2D" uid="uid://bj3ls24dmb1u0" path="res://assets/sprites/characters/foxy/fox/fox_walk_3.png" id="8_g5yd6"]
+[ext_resource type="Texture2D" uid="uid://c7b68c2t2m054" path="res://assets/sprites/characters/foxy/fox/fox_walk_4.png" id="9_ng7vc"]
+[ext_resource type="Script" uid="uid://vj34xpkodm6l" path="res://script/hurt_area_2d.gd" id="10_shxw4"]
+[ext_resource type="Script" uid="uid://5bjaanlcsrbg" path="res://script/hit_area_2d.gd" id="11_g6hcb"]
+[ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/player/states/idle.gd" id="12_02yg0"]
+[ext_resource type="Script" uid="uid://bn74l4ngryo6x" path="res://scenes/player/states/run.gd" id="13_nln1n"]
+[ext_resource type="Script" uid="uid://di3w8xw7t025o" path="res://scenes/player/states/jump.gd" id="14_hqq3q"]
+[ext_resource type="Script" uid="uid://caxtbpdyga1ay" path="res://scenes/player/states/fall.gd" id="15_fenqh"]
+[ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="16_x6t26"]
+[ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="17_h0prf"]
+[ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="18_aylck"]
+[ext_resource type="Script" uid="uid://dod3ar7ea4i18" path="res://scenes/player/player_types/Aqua/double_jump.gd" id="19_4cbmv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t874g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4cbmv")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_t874g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_llvtc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_rh8r1")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_fxh1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oek1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_g5yd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ng7vc")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_t874g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_llvtc")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llvtc"]
+size = Vector2(17, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rh8r1"]
+size = Vector2(27, 9.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fxh1m"]
+radius = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oek1d"]
+size = Vector2(19, 26)
+
+[node name="AquaFox" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_v56ps")
+metadata/_custom_type_script = "uid://dt2tsu385v1a5"
+
+[node name="Direction" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
+sprite_frames = SubResource("SpriteFrames_t874g")
+animation = &"swim"
+
+[node name="HurtArea2D" type="Area2D" parent="Direction"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("10_shxw4")
+metadata/_custom_type_script = "uid://vj34xpkodm6l"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_llvtc")
+
+[node name="HitArea2D" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 80
+script = ExtResource("11_g6hcb")
+metadata/_custom_type_script = "uid://5bjaanlcsrbg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
+position = Vector2(0, 9.75)
+shape = SubResource("RectangleShape2D_rh8r1")
+
+[node name="WaterDetectionArea2D" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/WaterDetectionArea2D"]
+shape = SubResource("CircleShape2D_fxh1m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_oek1d")
+
+[node name="States" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="States"]
+script = ExtResource("12_02yg0")
+
+[node name="Run" type="Node" parent="States"]
+script = ExtResource("13_nln1n")
+
+[node name="Jump" type="Node" parent="States"]
+script = ExtResource("14_hqq3q")
+
+[node name="Fall" type="Node" parent="States"]
+script = ExtResource("15_fenqh")
+
+[node name="Swim" type="Node" parent="States"]
+script = ExtResource("16_x6t26")
+
+[node name="Float" type="Node" parent="States"]
+script = ExtResource("17_h0prf")
+
+[node name="WaterIdle" type="Node" parent="States"]
+script = ExtResource("18_aylck")
+
+[node name="DoubleJump" type="Node" parent="States"]
+script = ExtResource("19_4cbmv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, -50)
+rotation = -0.136819
+zoom = Vector2(2.5, 2.5)
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

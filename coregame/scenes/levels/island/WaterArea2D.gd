@@ -1,4 +1,4 @@
-class_name Water
+class_name WaterDetection
 extends Area2D
 
 var surface_y: float = 0.0

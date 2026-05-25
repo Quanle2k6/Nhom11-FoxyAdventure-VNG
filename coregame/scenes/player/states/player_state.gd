@@ -14,6 +14,7 @@ func _update(delta: float) -> void:
 	
 #Control moving and changing state to run
 #Return true if moving
+
 func control_moving() -> bool:
 	var dir: float = Input.get_axis('left','right')
 	var is_moving: bool = abs(dir) > 0.1
@@ -73,8 +74,13 @@ func control_water() -> bool:
 	
 func control_jump_on_water() -> bool:
 	if Input.is_action_just_pressed('jump'):
-		change_state(fsm.states.jump)
 		obj.velocity.y = -obj.jump_speed
+		change_state(fsm.states.jump)
 		return true
 	return false
 	
+func control_attack_by_blade() -> bool:
+	if Input.is_action_just_pressed('attack'):
+		change_state(fsm.states.attackbyblade)
+		return true
+	return false
