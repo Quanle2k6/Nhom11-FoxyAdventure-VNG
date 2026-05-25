@@ -23,3 +23,6 @@ func _on_timer_timeout() -> void:
 
 func can_attack() -> bool:
 	return true
+
+func skill():
+	print("Normal Fox")

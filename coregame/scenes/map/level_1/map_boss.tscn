@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=4 uid="uid://bt60hfqeoqn8q"]
+
+[ext_resource type="TileSet" uid="uid://b8cj8642y4bv2" path="res://assets/sprites/enviroment/terrain/terrain_32x32.tres" id="1_v8jgh"]
+[ext_resource type="Script" uid="uid://w82lu7mfjnba" path="res://scenes/map/island/WaterArea2D.gd" id="2_1ylva"]
+[ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/sprites/enviroment/background/additional_water.png" id="3_3yn6q"]
+[ext_resource type="PackedScene" uid="uid://1rsx5850h8ui" path="res://script/checkpoint.tscn" id="4_3yn6q"]
+[ext_resource type="Texture2D" uid="uid://clbcd3sj0kgix" path="res://assets/sprites/enviroment/background/background_layer_3.png" id="5_iao7t"]
+[ext_resource type="Texture2D" uid="uid://diu3bkqy8e2gf" path="res://assets/sprites/enviroment/rock/rock_2.png" id="6_fpc0d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iao7t"]
+size = Vector2(128, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpc0d"]
+size = Vector2(128.002, 94.9984)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qubsi"]
+size = Vector2(2000, 344)
+
+[node name="Map_Boss" type="Node2D"]
+
+[node name="Terrian" type="TileMapLayer" parent="."]
+top_level = true
+visibility_layer = 2
+position = Vector2(-4, 14)
+tile_map_data = PackedByteArray("AAAAABEAAAAAAAAAAAABABEAAAABAAAAAAACABEAAAABAAAAAAADABEAAAABAAAAAAAEABEAAAABAAAAAAAEABIAAAABAAEAAAAEABMAAAAGAAAAAAAFABIAAAAGAAAAAAAFABEAAAABAAAAAAAGABEAAAAJAAMAAAADABMAAAABAAEAAAAFABMAAAACAAIAAAAGABIAAAAGAAAAAAAGABMAAAAEAAEAAAADABIAAAABAAEAAAACABMAAAABAAEAAAACABIAAAABAAEAAAABABMAAAABAAEAAAABABIAAAABAAEAAAAAABIAAAABAAEAAAAAABMAAAABAAEAAAAPABEAAAAAAAAAAAAPABIAAAABAAEAAAAPABMAAAAGAAAAAAAQABMAAAABAAIAAAARABMAAAABAAIAAAASABMAAAAKAAEAAAATABMAAAABAAIAAAAUABMAAAABAAIAAAAVABMAAAABAAIAAAAWABMAAAABAAIAAAAXABMAAAABAAIAAAAYABMAAAAKAAEAAAAZABMAAAABAAIAAAAaABMAAAABAAIAAAAbABMAAAABAAIAAAAcABMAAAABAAIAAAAdABMAAAABAAIAAAAeABMAAAABAAIAAAAfABMAAAABAAIAAAAgABMAAAABAAIAAAAhABMAAAACAAIAAAAiABMAAAAEAAEAAAAQABEAAAABAAAAAAAQABIAAAABAAEAAAARABIAAAABAAEAAAARABEAAAABAAAAAAASABIAAAABAAEAAAATABIAAAABAAEAAAATABEAAAABAAAAAAAUABEAAAABAAAAAAASABEAAAABAAAAAAAVABEAAAABAAAAAAAUABIAAAABAAEAAAAVABIAAAABAAEAAAAWABIAAAABAAEAAAAXABEAAAABAAAAAAAXABIAAAABAAEAAAAYABIAAAABAAEAAAAWABEAAAABAAAAAAAYABEAAAABAAAAAAAZABEAAAABAAAAAAAaABEAAAABAAAAAAAbABEAAAABAAAAAAAbABIAAAABAAEAAAAaABIAAAABAAEAAAAZABIAAAABAAEAAAAcABIAAAABAAEAAAAcABEAAAABAAAAAAAdABEAAAABAAAAAAAeABEAAAABAAAAAAAfABEAAAABAAAAAAAgABEAAAABAAAAAAAgABIAAAABAAEAAAAhABIAAAAGAAAAAAAiABIAAAAGAAAAAAAiABEAAAAJAAMAAAAhABEAAAABAAAAAAAfABIAAAABAAEAAAAeABIAAAABAAEAAAAdABIAAAABAAEAAAAnABEAAAAEAAAAAAAoABEAAAAEAAAAAAApABEAAAAEAAAAAAAqABEAAAAEAAAAAAArABEAAAAAAAAAAAAnABIAAAAAAAEAAAAoABIAAAABAAEAAAApABIAAAABAAEAAAAqABIAAAABAAEAAAArABIAAAABAAEAAAArABMAAAABAAEAAAAqABMAAAABAAEAAAApABMAAAAHAAAAAAAoABMAAAABAAIAAAAnABMAAAAAAAEAAAALABIAAAAAAAEAAAAMABIAAAABAAEAAAANABIAAAABAAEAAAAOABIAAAABAAEAAAALABMAAAABAAIAAAAMABMAAAABAAIAAAANABMAAAABAAIAAAAOABMAAAAHAAAAAAALABEAAAAKAAMAAAAMABEAAAABAAAAAAANABEAAAABAAAAAAAOABEAAAACAAAAAAAsABEAAAABAAAAAAAtABEAAAABAAAAAAAuABEAAAABAAAAAAAvABEAAAABAAAAAAAwABEAAAABAAAAAAAwABMAAAABAAIAAAAvABMAAAABAAEAAAAuABIAAAABAAEAAAAtABIAAAABAAEAAAAtABMAAAABAAEAAAAsABMAAAABAAEAAAAsABIAAAABAAEAAAAvABIAAAABAAEAAAAwABIAAAABAAEAAAAuABMAAAABAAEAAAAxABEAAAABAAAAAAAyABEAAAABAAAAAAAzABEAAAABAAAAAAA0ABEAAAABAAAAAAA1ABEAAAABAAAAAAA2ABEAAAABAAAAAAA5ABEAAAABAAAAAAA6ABEAAAABAAAAAAA7ABEAAAABAAAAAAA8ABEAAAABAAAAAAA9ABEAAAABAAAAAAA+ABEAAAAJAAMAAAAxABIAAAABAAEAAAAxABMAAAABAAIAAAAyABMAAAABAAIAAAAyABIAAAABAAEAAAAzABMAAAABAAIAAAAzABIAAAABAAEAAAA0ABIAAAABAAEAAAA0ABMAAAABAAIAAAA1ABIAAAABAAEAAAA1ABMAAAABAAIAAAA2ABMAAAABAAIAAAA2ABIAAAABAAEAAAA6ABIAAAABAAEAAAA7ABIAAAABAAEAAAA8ABIAAAABAAEAAAA9ABIAAAABAAEAAAA+ABIAAAABAAEAAAA+ABMAAAABAAEAAAA9ABMAAAABAAEAAAA8ABMAAAABAAEAAAA7ABMAAAABAAEAAAA6ABMAAAABAAEAAAA3ABEAAAABAAAAAAA4ABEAAAABAAAAAAA4ABIAAAABAAEAAAA4ABMAAAABAAEAAAA5ABMAAAABAAEAAAA3ABMAAAABAAEAAAA3ABIAAAABAAEAAAA5ABIAAAABAAEAAAA=")
+tile_set = ExtResource("1_v8jgh")
+
+[node name="WaterGroup2" type="Node2D" parent="."]
+light_mask = 3
+z_index = 1
+position = Vector2(0, 21)
+
+[node name="WaterArea2D" type="Area2D" parent="WaterGroup2" groups=["Water"]]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("2_1ylva")
+
+[node name="AdditionalWater" type="Sprite2D" parent="WaterGroup2/WaterArea2D" groups=["Water"]]
+self_modulate = Color(1, 1, 1, 0.27451)
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+position = Vector2(284, 585)
+scale = Vector2(4, 3)
+texture = ExtResource("3_3yn6q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterGroup2/WaterArea2D" groups=["Water"]]
+position = Vector2(284, 585)
+shape = SubResource("RectangleShape2D_iao7t")
+
+[node name="WaterArea2D2" type="Area2D" parent="WaterGroup2" groups=["Water"]]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("2_1ylva")
+
+[node name="AdditionalWater2" type="Sprite2D" parent="WaterGroup2/WaterArea2D2" groups=["Water"]]
+self_modulate = Color(1, 1, 1, 0.27451)
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+position = Vector2(1180, 585.5)
+scale = Vector2(4, 2.96875)
+texture = ExtResource("3_3yn6q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterGroup2/WaterArea2D2" groups=["Water"]]
+position = Vector2(1180, 585.499)
+rotation = 2.51644e-05
+shape = SubResource("RectangleShape2D_fpc0d")
+
+[node name="WaterArea2D3" type="Area2D" parent="WaterGroup2" groups=["Water"]]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("2_1ylva")
+
+[node name="AdditionalWater2" type="Sprite2D" parent="WaterGroup2/WaterArea2D3"]
+self_modulate = Color(1, 1, 1, 0.27451)
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+position = Vector2(1000, 805.5)
+scale = Vector2(62.5, 10.7813)
+texture = ExtResource("3_3yn6q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterGroup2/WaterArea2D3"]
+position = Vector2(1000, 805)
+shape = SubResource("RectangleShape2D_qubsi")
+
+[node name="StartPoint" parent="." groups=["Checkpoint"] instance=ExtResource("4_3yn6q")]
+position = Vector2(90, 540)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.08, 0.08)
+motion_mirroring = Vector2(767, 0)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(3.84687, 3.1)
+texture = ExtResource("5_iao7t")
+centered = false
+
+[node name="Rock" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(781, 496)
+scale = Vector2(3.9375, 5.13281)
+texture = ExtResource("6_fpc0d")
+centered = false
+
+[node name="Rock2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(155, 521)
+scale = Vector2(2.56713, 3.04948)
+texture = ExtResource("6_fpc0d")
+centered = false
+
+[node name="ParallaxLayerCloud" type="ParallaxLayer" parent="ParallaxBackground"]
