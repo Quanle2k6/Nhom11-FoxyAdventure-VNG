@@ -7,6 +7,7 @@ func _enter() -> void:
 	pass
 
 func _update(delta: float):
+	control_attack_by_blade()
 	#Control swim
 	control_water()
 	#Control jump
@@ -18,3 +19,5 @@ func _update(delta: float):
 	#If not on floor change to fall
 	if not obj.is_on_floor():
 		change_state(fsm.states.fall)
+
+	

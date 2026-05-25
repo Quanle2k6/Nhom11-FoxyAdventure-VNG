@@ -4,10 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://41hkdfkdvk6d" path="res://scenes/player/player.tscn" id="2_grklg"]
 [ext_resource type="PackedScene" uid="uid://cj5a5j1fan0lv" path="res://scenes/enemies/king_crab/king_crab.tscn" id="3_fr5f5"]
 [ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/sprites/enviroment/background/additional_water.png" id="5_bfafv"]
+[ext_resource type="PackedScene" uid="uid://csx5rypnfdxtf" path="res://scenes/enemies/turtle/turtle.tscn" id="5_r546t"]
+[ext_resource type="PackedScene" uid="uid://chie6egstophe" path="res://scenes/player/player_types/Normal/Normal_fox.tscn" id="7_mkjk8"]
 [ext_resource type="PackedScene" uid="uid://1rsx5850h8ui" path="res://script/checkpoint.tscn" id="7_ml0mk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i388g"]
-size = Vector2(114.999, 96.001)
+size = Vector2(119.5, 94.9997)
 
 [node name="Stage" type="Node2D"]
 
@@ -17,7 +19,7 @@ tile_map_data = PackedByteArray("AAAAAAkAAAABAAQAAAABAAkAAAABAAIAAAACAAkAAAABAAI
 tile_set = ExtResource("1_fr5f5")
 
 [node name="Player" parent="." instance=ExtResource("2_grklg")]
-position = Vector2(1343, 221)
+position = Vector2(67, 220)
 
 [node name="Enemy" type="Node2D" parent="."]
 
@@ -28,20 +30,21 @@ position = Vector2(1715, 239)
 
 [node name="Water" type="Area2D" parent="." groups=["Water"]]
 rotation = -1.5708
-collision_layer = 0
-collision_mask = 32
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("5_mkjk8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
-position = Vector2(-359.003, 722.999)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterDetection2D"]
+position = Vector2(-356.753, 720.499)
 shape = SubResource("RectangleShape2D_i388g")
 
-[node name="Sprite2D" type="Sprite2D" parent="Water"]
+[node name="Sprite2D" type="Sprite2D" parent="WaterDetection2D"]
 z_index = -300
-position = Vector2(-356.003, 722.999)
-scale = Vector2(3.8938, 3.06284)
+position = Vector2(-355.81, 721.447)
+scale = Vector2(3.90585, 2.96582)
 texture = ExtResource("5_bfafv")
 
-[node name="Checkpoint" parent="." instance=ExtResource("7_ml0mk")]
+[node name="Checkpoint" parent="." groups=["Checkpoint"] instance=ExtResource("7_ml0mk")]
 position = Vector2(615, 276)
 
 [connection signal="body_entered" from="Water" to="Player" method="_on_water_detection_2d_body_entered"]
