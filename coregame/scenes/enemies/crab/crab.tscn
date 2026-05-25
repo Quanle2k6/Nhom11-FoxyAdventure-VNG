@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://busgwcl68mt08"]
+[gd_scene load_steps=19 format=3 uid="uid://busgwcl68mt08"]
 
 [ext_resource type="Script" uid="uid://bowjew4scfjx8" path="res://scenes/enemies/crab/crab.gd" id="1_8tk55"]
 [ext_resource type="Texture2D" uid="uid://dcltras75v2f6" path="res://assets/sprites/enemies/crab/crab_hit_01.png" id="1_t3xj7"]
@@ -61,13 +61,17 @@ animations = [{
 }]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ybsp4"]
-a = Vector2(-6.86646e-05, -19)
-b = Vector2(8.01086e-05, 22)
+a = Vector2(-3.62396e-05, -10)
+b = Vector2(5.43594e-05, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4mha"]
+size = Vector2(45, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgm84"]
-size = Vector2(19.9999, 41)
+size = Vector2(18, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_novun"]
+size = Vector2(14.0172, 11.2056)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ud0h"]
 size = Vector2(22, 35)
@@ -102,19 +106,23 @@ collision_mask = 0
 script = ExtResource("7_vf5cm")
 metadata/_custom_type_script = "uid://vj34xpkodm6l"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
+[node name="JumpFromPlayer2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
 position = Vector2(2, -11)
 rotation = 1.5708
 shape = SubResource("SegmentShape2D_ybsp4")
 
+[node name="BladeFromPlayer2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_p4mha")
+
 [node name="HitArea2D" type="Area2D" parent="Direction"]
-collision_layer = 0
-collision_mask = 4
+collision_layer = 8
+collision_mask = 6
 script = ExtResource("8_ybsp4")
 metadata/_custom_type_script = "uid://5bjaanlcsrbg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
-position = Vector2(-0.50002, 4.00004)
+position = Vector2(-0.499987, -1)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_tgm84")
 
@@ -123,6 +131,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/DetectPlayerArea2D"]
+position = Vector2(-1.5, 2)
 scale = Vector2(5.20787, 3.39117)
 shape = SubResource("RectangleShape2D_novun")
 

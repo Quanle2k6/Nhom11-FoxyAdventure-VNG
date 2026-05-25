@@ -1,15 +1,16 @@
-[gd_scene load_steps=9 format=4 uid="uid://d6b48bj21cnr"]
+[gd_scene load_steps=10 format=4 uid="uid://d6b48bj21cnr"]
 
 [ext_resource type="TileSet" uid="uid://b8cj8642y4bv2" path="res://assets/sprites/enviroment/terrain/terrain_32x32.tres" id="1_fr5f5"]
-[ext_resource type="PackedScene" uid="uid://41hkdfkdvk6d" path="res://scenes/player/player.tscn" id="2_grklg"]
 [ext_resource type="PackedScene" uid="uid://busgwcl68mt08" path="res://scenes/enemies/crab/crab.tscn" id="3_ml0mk"]
 [ext_resource type="PackedScene" uid="uid://dx6i2u7nrq7ud" path="res://scenes/enemies/bird/bird.tscn" id="4_mkjk8"]
 [ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/sprites/enviroment/background/additional_water.png" id="5_bfafv"]
+[ext_resource type="Script" uid="uid://d23ny3b6mmt57" path="res://scenes/levels/level_1/test_water.gd" id="5_mkjk8"]
 [ext_resource type="PackedScene" uid="uid://csx5rypnfdxtf" path="res://scenes/enemies/turtle/turtle.tscn" id="5_r546t"]
+[ext_resource type="PackedScene" uid="uid://chie6egstophe" path="res://scenes/player/player_types/Normal/Normal_fox.tscn" id="7_mkjk8"]
 [ext_resource type="PackedScene" uid="uid://1rsx5850h8ui" path="res://script/checkpoint.tscn" id="7_ml0mk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i388g"]
-size = Vector2(114.999, 96.001)
+size = Vector2(119.5, 94.9997)
 
 [node name="Stage" type="Node2D"]
 
@@ -17,9 +18,6 @@ size = Vector2(114.999, 96.001)
 position = Vector2(1, 0)
 tile_map_data = PackedByteArray("AAALAAYAAAAAAAQAAAAMAAYAAAAMAAQAAAANAAYAAAACAAQAAAAOAAMAAAAEAAAAAAAAAAkAAAABAAQAAAABAAkAAAABAAIAAAACAAkAAAABAAIAAAADAAkAAAABAAIAAAAEAAkAAAAJAAQAAAAFAAkAAAABAAQAAAAGAAgAAAAAAAAAAAAGAAkAAAAKAAQAAAAHAAgAAAABAAAAAAAHAAkAAAABAAIAAAAIAAgAAAABAAAAAAAJAAgAAAACAAAAAAAJAAkAAAAJAAQAAAAKAAkAAAABAAQAAAALAAkAAAABAAQAAAAMAAUAAAAEAAAAAAAMAAkAAAABAAQAAAANAAkAAAABAAQAAAAOAAkAAAABAAQAAAAPAAkAAAABAAQAAAARAAkAAAACAAQAAAASAAkAAAAAAAQAAAATAAkAAAAKAAMAAAAUAAkAAAACAAAAAAAYAAkAAAAAAAAAAAAZAAkAAAAJAAMAAAAXAAMAAAAEAAEAAAAXAAQAAAAEAAEAAAAXAAUAAAAEAAEAAAAXAAYAAAAEAAEAAAAUAAMAAAAEAAEAAAAUAAQAAAAEAAEAAAAUAAUAAAAEAAEAAAAaAAkAAAABAAQAAAAbAAkAAAABAAQAAAAcAAkAAAABAAQAAAAdAAkAAAABAAQAAAAeAAkAAAABAAQAAAAfAAkAAAABAAQAAAAgAAkAAAABAAQAAAAhAAkAAAABAAQAAAAiAAkAAAABAAQAAAAjAAkAAAABAAQAAAAkAAkAAAABAAQAAAAlAAkAAAABAAQAAAAmAAkAAAABAAQAAAAnAAkAAAABAAQAAAAoAAgAAAAAAAQAAAApAAgAAAABAAQAAAAqAAgAAAANAAQAAAAoAAkAAAAQAAMAAAAqAAcAAAANAAQAAAArAAYAAAAEAAEAAAArAAUAAAAPAAMAAAAsAAUAAAAQAAMAAAAqAAYAAAAQAAMAAAAIAAkAAAABAAIAAAADAAcAAAAEAAAAAAADAAgAAAABAAEAAAACAAgAAAABAAEAAAABAAgAAAABAAEAAAAEAAgAAAABAAEAAAAQAAkAAAABAAQAAAAUAAoAAAAGAAAAAAAUAAsAAAACAAEAAAAYAAsAAAAAAAEAAAAYAAoAAAAAAAEAAAAUAAwAAAACAAEAAAAUAA0AAAABAAIAAAAVAA0AAAABAAIAAAAWAA0AAAABAAIAAAAXAA0AAAABAAIAAAAYAA0AAAABAAIAAAAYAAwAAAAAAAEAAAATAAoAAAAAAAEAAAATAAsAAAAAAAEAAAATAAwAAAAAAAEAAAATAA0AAAABAAIAAAAZAA0AAAACAAEAAAAZAAwAAAACAAEAAAAZAAsAAAACAAEAAAAZAAoAAAAGAAAAAAAEAAIAAAAJAAMAAAADAAYAAQAAAAAAAQD//wkAAAAKAAEAAAD+/wkAAAAKAAEAAAD9/wkAAAAKAAEAAAD8/wkAAAAKAAEAAAD7/wkAAAANAAMAAAD6/wkAAAANAAAAAAD6/wgAAAANAAMAAAD5/wgAAAAKAAAAAAD5/wcAAAACAAEAAAD5/wYAAAACAAEAAAD5/wUAAAABAAEAAAD6/wUAAAACAAEAAAD6/wQAAAACAAEAAAD7/wMAAAAGAAAAAAA=")
 tile_set = ExtResource("1_fr5f5")
-
-[node name="Player" parent="." instance=ExtResource("2_grklg")]
-position = Vector2(67, 220)
 
 [node name="Enemy" type="Node2D" parent="."]
 
@@ -44,26 +42,27 @@ start_state = NodePath("States/Idle")
 position = Vector2(196, 197)
 start_state = NodePath("States/HorizontalMove")
 
-[node name="Water" type="Area2D" parent="." groups=["Water"]]
+[node name="WaterDetection2D" type="Area2D" parent="." groups=["Water"]]
 rotation = -1.5708
-collision_layer = 0
-collision_mask = 32
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("5_mkjk8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
-position = Vector2(-359.003, 722.999)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterDetection2D"]
+position = Vector2(-356.753, 720.499)
 shape = SubResource("RectangleShape2D_i388g")
 
-[node name="Sprite2D" type="Sprite2D" parent="Water"]
+[node name="Sprite2D" type="Sprite2D" parent="WaterDetection2D"]
 z_index = -300
-position = Vector2(-356.003, 722.999)
-scale = Vector2(3.8938, 3.06284)
+position = Vector2(-355.81, 721.447)
+scale = Vector2(3.90585, 2.96582)
 texture = ExtResource("5_bfafv")
 
-[node name="Checkpoint" parent="." instance=ExtResource("7_ml0mk")]
+[node name="Checkpoint" parent="." groups=["Checkpoint"] instance=ExtResource("7_ml0mk")]
 position = Vector2(615, 276)
 
-[connection signal="body_entered" from="Water" to="Player" method="_on_water_detection_2d_body_entered"]
-[connection signal="body_exited" from="Water" to="Player" method="_on_water_detection_2d_body_exited"]
+[node name="NormalFox" parent="." instance=ExtResource("7_mkjk8")]
+position = Vector2(449, 264)
 
 [editable path="Enemy/Crab"]
 [editable path="Enemy/Bird"]

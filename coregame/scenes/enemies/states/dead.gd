@@ -14,7 +14,12 @@ func _update(delta: float):
 		
 func set_dead(is_dead: bool):
 	enemy_obj().main_collision.set_deferred("disabled",is_dead)
-	if enemy_obj().hurt_area and enemy_obj().hurt_area.has_node("CollisionShape2D"):
-		enemy_obj().hurt_area.get_node("CollisionShape2D").set_deferred("disabled", is_dead)
-	if enemy_obj().hit_area and enemy_obj().hit_area.has_node("CollisionShape2D"):
-		enemy_obj().hit_area.get_node("CollisionShape2D").set_deferred("disabled", is_dead)
+	if enemy_obj().hurt_area:
+		for child in enemy_obj().hurt_area.get_children():
+			if child is CollisionShape2D:
+				child.set_deferred("disabled", is_dead)
+
+	if enemy_obj().hit_area:
+		for child in enemy_obj().hit_area.get_children():
+			if child is CollisionShape2D:
+				child.set_deferred("disabled", is_dead)
