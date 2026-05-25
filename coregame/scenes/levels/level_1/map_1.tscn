@@ -130,17 +130,11 @@ position = Vector2(4594, 527)
 position = Vector2(340, 452)
 start_state = NodePath("States/Idle")
 
-[node name="CollisionShape2D" parent="Enemy/Crab/Direction/HitArea2D" index="0"]
-position = Vector2(-0.499987, -1)
-
 [node name="CollisionShape2D" parent="Enemy/Crab/Direction/DetectPlayerArea2D" index="0"]
 position = Vector2(1.5, -8)
 
 [node name="Crab2" parent="Enemy" instance=ExtResource("7_5s4hq")]
 position = Vector2(1184, 63)
-
-[node name="CollisionShape2D" parent="Enemy/Crab2/Direction/HitArea2D" index="0"]
-position = Vector2(-0.499987, -1)
 
 [node name="Crab3" parent="Enemy" instance=ExtResource("7_5s4hq")]
 position = Vector2(1611, 65)
