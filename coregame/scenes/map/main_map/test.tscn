@@ -1,9 +1,13 @@
 [gd_scene load_steps=8 format=4 uid="uid://blanws8ltxlph"]
 
 [ext_resource type="TileSet" uid="uid://b8cj8642y4bv2" path="res://assets/sprites/enviroment/terrain/terrain_32x32.tres" id="1_fr5f5"]
-[ext_resource type="PackedScene" uid="uid://chie6egstophe" path="res://scenes/player/player_types/Normal/Normal_fox.tscn" id="2_d16x5"]
-[ext_resource type="Script" uid="uid://w82lu7mfjnba" path="res://scenes/levels/island/WaterArea2D.gd" id="3_oo8b5"]
-[ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/sprites/enviroment/background/additional_water.png" id="4_fr5f5"]
+[ext_resource type="PackedScene" uid="uid://busgwcl68mt08" path="res://scenes/enemies/crab/crab.tscn" id="3_ml0mk"]
+[ext_resource type="PackedScene" uid="uid://dx6i2u7nrq7ud" path="res://scenes/enemies/bird/bird.tscn" id="4_mkjk8"]
+[ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/sprites/enviroment/background/additional_water.png" id="5_bfafv"]
+[ext_resource type="Script" uid="uid://d23ny3b6mmt57" path="res://scenes/map/main_map/test_water.gd" id="5_mkjk8"]
+[ext_resource type="PackedScene" uid="uid://csx5rypnfdxtf" path="res://scenes/enemies/turtle/turtle.tscn" id="5_r546t"]
+[ext_resource type="PackedScene" uid="uid://chie6egstophe" path="res://scenes/player/player_types/Normal/Normal_fox.tscn" id="7_mkjk8"]
+[ext_resource type="PackedScene" uid="uid://1rsx5850h8ui" path="res://script/checkpoint.tscn" id="7_ml0mk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grklg"]
 size = Vector2(947, 325.5)
