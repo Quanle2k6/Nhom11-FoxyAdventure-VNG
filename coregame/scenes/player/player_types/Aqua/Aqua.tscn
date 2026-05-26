@@ -1,28 +1,27 @@
-[gd_scene load_steps=29 format=3 uid="uid://cxolan44wwqkl"]
+[gd_scene load_steps=28 format=3 uid="uid://cxolan44wwqkl"]
 
-[ext_resource type="Script" uid="uid://di75tyxurign3" path="res://scenes/player/player_types/Aqua/aqua.gd" id="1_v56ps"]
-[ext_resource type="Texture2D" uid="uid://ctcp2srlsos4m" path="res://assets/sprites/characters/foxy/fox/fox_fall_1.png" id="2_4cbmv"]
-[ext_resource type="Texture2D" uid="uid://cwgjo8l0lmemi" path="res://assets/sprites/characters/foxy/fox/fox_idle_1.png" id="3_t874g"]
-[ext_resource type="Texture2D" uid="uid://cdiupfoo5xr6u" path="res://assets/sprites/characters/foxy/fox/fox_idle_2.png" id="4_llvtc"]
-[ext_resource type="Texture2D" uid="uid://bunb4hruykt3x" path="res://assets/sprites/characters/foxy/fox/fox_jump_1.png" id="5_rh8r1"]
-[ext_resource type="Texture2D" uid="uid://ddf11anrulx6e" path="res://assets/sprites/characters/foxy/fox/fox_walk_1.png" id="6_fxh1m"]
-[ext_resource type="Texture2D" uid="uid://bsfb723jv8ohi" path="res://assets/sprites/characters/foxy/fox/fox_walk_2.png" id="7_oek1d"]
-[ext_resource type="Texture2D" uid="uid://bj3ls24dmb1u0" path="res://assets/sprites/characters/foxy/fox/fox_walk_3.png" id="8_g5yd6"]
-[ext_resource type="Texture2D" uid="uid://c7b68c2t2m054" path="res://assets/sprites/characters/foxy/fox/fox_walk_4.png" id="9_ng7vc"]
-[ext_resource type="Script" uid="uid://vj34xpkodm6l" path="res://script/hurt_area_2d.gd" id="10_shxw4"]
-[ext_resource type="Script" uid="uid://5bjaanlcsrbg" path="res://script/hit_area_2d.gd" id="11_g6hcb"]
-[ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/player/states/idle.gd" id="12_02yg0"]
-[ext_resource type="Script" uid="uid://bn74l4ngryo6x" path="res://scenes/player/states/run.gd" id="13_nln1n"]
-[ext_resource type="Script" uid="uid://di3w8xw7t025o" path="res://scenes/player/states/jump.gd" id="14_hqq3q"]
-[ext_resource type="Script" uid="uid://caxtbpdyga1ay" path="res://scenes/player/states/fall.gd" id="15_fenqh"]
-[ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="16_x6t26"]
-[ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="17_h0prf"]
-[ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="18_aylck"]
-[ext_resource type="Script" uid="uid://br6fu5tcikpcw" path="res://scenes/player/player_types/Aqua/Aqua_state/bubble_attack.gd" id="20_mhefo"]
-[ext_resource type="Script" uid="uid://bej6e7vuxeeko" path="res://script/node2d_factory.gd" id="21_jm3ca"]
-[ext_resource type="Script" uid="uid://r7lohgfwp0gt" path="res://scenes/player/states/double_jump.gd" id="21_rh8r1"]
-[ext_resource type="PackedScene" uid="uid://bjovo0yevv0vm" path="res://scenes/player/player_types/Aqua/Projectiles/bubble_projectile.tscn" id="22_32nln"]
-[ext_resource type="Script" uid="uid://b4rywurj6tivu" path="res://scenes/player/player_types/Normal/attack_by_blade.gd" id="23_fxh1m"]
+[ext_resource type="Script" uid="uid://di75tyxurign3" path="res://scenes/player/player_types/aqua/aqua.gd" id="1_eatd6"]
+[ext_resource type="Texture2D" uid="uid://ctcp2srlsos4m" path="res://assets/sprites/characters/foxy/fox/fox_fall_1.png" id="2_a7lqj"]
+[ext_resource type="Texture2D" uid="uid://cwgjo8l0lmemi" path="res://assets/sprites/characters/foxy/fox/fox_idle_1.png" id="3_1daut"]
+[ext_resource type="Texture2D" uid="uid://cdiupfoo5xr6u" path="res://assets/sprites/characters/foxy/fox/fox_idle_2.png" id="4_jhmk2"]
+[ext_resource type="Texture2D" uid="uid://bunb4hruykt3x" path="res://assets/sprites/characters/foxy/fox/fox_jump_1.png" id="5_os0bo"]
+[ext_resource type="Texture2D" uid="uid://ddf11anrulx6e" path="res://assets/sprites/characters/foxy/fox/fox_walk_1.png" id="6_803ls"]
+[ext_resource type="Texture2D" uid="uid://bsfb723jv8ohi" path="res://assets/sprites/characters/foxy/fox/fox_walk_2.png" id="7_q5hew"]
+[ext_resource type="Texture2D" uid="uid://bj3ls24dmb1u0" path="res://assets/sprites/characters/foxy/fox/fox_walk_3.png" id="8_a4n8o"]
+[ext_resource type="Texture2D" uid="uid://c7b68c2t2m054" path="res://assets/sprites/characters/foxy/fox/fox_walk_4.png" id="9_xy4lp"]
+[ext_resource type="Script" uid="uid://vj34xpkodm6l" path="res://script/hurt_area_2d.gd" id="10_34vrj"]
+[ext_resource type="Script" uid="uid://5bjaanlcsrbg" path="res://script/hit_area_2d.gd" id="11_fftqi"]
+[ext_resource type="Script" uid="uid://bej6e7vuxeeko" path="res://script/node2d_factory.gd" id="12_4hw7u"]
+[ext_resource type="PackedScene" uid="uid://bjovo0yevv0vm" path="res://scenes/player/player_types/aqua/Projectiles/bubble_projectile.tscn" id="13_1ceib"]
+[ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/player/states/idle.gd" id="14_k4okj"]
+[ext_resource type="Script" uid="uid://bn74l4ngryo6x" path="res://scenes/player/states/run.gd" id="15_g5e81"]
+[ext_resource type="Script" uid="uid://di3w8xw7t025o" path="res://scenes/player/states/jump.gd" id="16_nju4i"]
+[ext_resource type="Script" uid="uid://caxtbpdyga1ay" path="res://scenes/player/states/fall.gd" id="17_57a2w"]
+[ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="18_3u02w"]
+[ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="19_pt5nb"]
+[ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="20_xyyvy"]
+[ext_resource type="Script" uid="uid://br6fu5tcikpcw" path="res://scenes/player/player_types/aqua/Aqua_state/bubble_attack.gd" id="22_2g26y"]
+[ext_resource type="Script" uid="uid://5oxoj5jfcrl" path="res://scenes/player/states/dead.gd" id="24_yjw33"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t874g"]
 animations = [{
@@ -33,7 +32,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_4cbmv")
+"texture": ExtResource("2_a7lqj")
 }],
 "loop": true,
 "name": &"fall",
@@ -41,10 +40,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_t874g")
+"texture": ExtResource("3_1daut")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_llvtc")
+"texture": ExtResource("4_jhmk2")
 }],
 "loop": true,
 "name": &"idle",
@@ -52,7 +51,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_rh8r1")
+"texture": ExtResource("5_os0bo")
 }],
 "loop": true,
 "name": &"jump",
@@ -60,16 +59,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_fxh1m")
+"texture": ExtResource("6_803ls")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_oek1d")
+"texture": ExtResource("7_q5hew")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_g5yd6")
+"texture": ExtResource("8_a4n8o")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_ng7vc")
+"texture": ExtResource("9_xy4lp")
 }],
 "loop": true,
 "name": &"run",
@@ -77,10 +76,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_t874g")
+"texture": ExtResource("3_1daut")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_llvtc")
+"texture": ExtResource("4_jhmk2")
 }],
 "loop": true,
 "name": &"swim",
@@ -100,8 +99,9 @@ radius = 8.0
 size = Vector2(19, 26)
 
 [node name="AquaFox" type="CharacterBody2D"]
-collision_layer = 2
-script = ExtResource("1_v56ps")
+collision_layer = 6
+collision_mask = 17
+script = ExtResource("1_eatd6")
 metadata/_custom_type_script = "uid://dt2tsu385v1a5"
 
 [node name="Direction" type="Node2D" parent="."]
@@ -113,7 +113,7 @@ animation = &"idle"
 [node name="HurtArea2D" type="Area2D" parent="Direction"]
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("10_shxw4")
+script = ExtResource("10_34vrj")
 metadata/_custom_type_script = "uid://vj34xpkodm6l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
@@ -123,7 +123,7 @@ shape = SubResource("RectangleShape2D_llvtc")
 [node name="HitArea2D" type="Area2D" parent="Direction"]
 collision_layer = 0
 collision_mask = 16
-script = ExtResource("11_g6hcb")
+script = ExtResource("11_fftqi")
 metadata/_custom_type_script = "uid://5bjaanlcsrbg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
@@ -139,8 +139,8 @@ shape = SubResource("CircleShape2D_fxh1m")
 
 [node name="BubbleFactory" type="Marker2D" parent="Direction"]
 position = Vector2(16, 0)
-script = ExtResource("21_jm3ca")
-product_packed_scene = ExtResource("22_32nln")
+script = ExtResource("12_4hw7u")
+product_packed_scene = ExtResource("13_1ceib")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -149,37 +149,31 @@ shape = SubResource("RectangleShape2D_oek1d")
 [node name="States" type="Node" parent="."]
 
 [node name="Idle" type="Node" parent="States"]
-script = ExtResource("12_02yg0")
+script = ExtResource("14_k4okj")
 
 [node name="Run" type="Node" parent="States"]
-script = ExtResource("13_nln1n")
+script = ExtResource("15_g5e81")
 
 [node name="Jump" type="Node" parent="States"]
-script = ExtResource("14_hqq3q")
+script = ExtResource("16_nju4i")
 
 [node name="Fall" type="Node" parent="States"]
-script = ExtResource("15_fenqh")
+script = ExtResource("17_57a2w")
 
 [node name="Swim" type="Node" parent="States"]
-script = ExtResource("16_x6t26")
+script = ExtResource("18_3u02w")
 
 [node name="Float" type="Node" parent="States"]
-script = ExtResource("17_h0prf")
+script = ExtResource("19_pt5nb")
 
 [node name="WaterIdle" type="Node" parent="States"]
-script = ExtResource("18_aylck")
-
-[node name="DoubleJump" type="Node" parent="States"]
-script = ExtResource("21_rh8r1")
+script = ExtResource("20_xyyvy")
 
 [node name="BubbleAttack" type="Node" parent="States"]
-script = ExtResource("20_mhefo")
-
-[node name="AttackByBlade" type="Node" parent="States"]
-script = ExtResource("23_fxh1m")
+script = ExtResource("22_2g26y")
 
 [node name="Dead" type="Node" parent="States"]
-script = ExtResource("20_dead")
+script = ExtResource("24_yjw33")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, -50)
@@ -190,4 +184,5 @@ zoom = Vector2(2.5, 2.5)
 process_callback = 0
 wait_time = 5.0
 
+[connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

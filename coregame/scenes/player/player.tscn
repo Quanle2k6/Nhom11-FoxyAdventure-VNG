@@ -91,9 +91,8 @@ radius = 8.0
 size = Vector2(19, 24)
 
 [node name="Player" type="CharacterBody2D"]
-visible = false
 z_index = 1
-collision_layer = 2
+collision_layer = 6
 collision_mask = 17
 platform_wall_layers = 65535
 script = ExtResource("1_ugbui")

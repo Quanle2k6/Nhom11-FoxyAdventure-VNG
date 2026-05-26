@@ -42,4 +42,4 @@ func change_to_bubble_attack() -> void:
 
 func _on_timer_timeout() -> void:
 	if is_on_floor():
-		respawn()
+		return

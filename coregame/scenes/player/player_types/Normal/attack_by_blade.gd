@@ -6,8 +6,7 @@ func get_hitbox():
 
 
 func _enter() -> void:
-
-
+	timer = 0.5
 	print("attack_blade")
 
 	obj.change_animation("attackblade")
@@ -35,9 +34,7 @@ func _enter() -> void:
 	change_state(fsm.states.idle)
 
 func _update(delta: float) -> void:
-
-	control_moving()
-	control_jump()
-
-	if Input.is_action_just_released("attack"):
-		change_state(fsm.states.idle)
+	if not update_timer(delta):
+		return
+	change_state(fsm.states.idle)
+	

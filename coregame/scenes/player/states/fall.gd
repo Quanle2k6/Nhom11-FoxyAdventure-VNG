@@ -10,7 +10,7 @@ func _update(_delta: float) -> void:
 	control_water()
 	#Control moving
 	control_moving()
-	if fsm.previous_state != fsm.states.doublejump:
+	if fsm.states.has("doublejump") and fsm.previous_state != fsm.states.doublejump:
 		control_double_jump()
 	if obj.is_on_floor():
 		change_state(fsm.states.idle)

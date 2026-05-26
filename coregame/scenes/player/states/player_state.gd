@@ -45,6 +45,8 @@ func control_jump() -> bool:
 	return false
 
 func control_double_jump() -> bool:
+	if not fsm.states.has("doublejump"):
+		return false
 	if Input.is_action_just_pressed('jump'):
 		change_state(fsm.states.doublejump)
 		obj.velocity.y = -obj.jump_speed
