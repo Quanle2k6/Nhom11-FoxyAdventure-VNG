@@ -33,7 +33,7 @@ tile_set = ExtResource("2_f6hat")
 position = Vector2(51, 219)
 
 [node name="WaterStartPoint" type="Marker2D" parent="."]
-position = Vector2(51, 312)
+position = Vector2(52, 332)
 
 [node name="WaterGroup2" type="Node2D" parent="."]
 light_mask = 3
