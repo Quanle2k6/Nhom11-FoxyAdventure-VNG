@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cxolan44wwqkl"]
+[gd_scene load_steps=29 format=3 uid="uid://cxolan44wwqkl"]
 
 [ext_resource type="Script" uid="uid://di75tyxurign3" path="res://scenes/player/player_types/Aqua/aqua.gd" id="1_v56ps"]
 [ext_resource type="Texture2D" uid="uid://ctcp2srlsos4m" path="res://assets/sprites/characters/foxy/fox/fox_fall_1.png" id="2_4cbmv"]
@@ -18,7 +18,11 @@
 [ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="16_x6t26"]
 [ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="17_h0prf"]
 [ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="18_aylck"]
-[ext_resource type="Script" uid="uid://dod3ar7ea4i18" path="res://scenes/player/player_types/Aqua/double_jump.gd" id="19_4cbmv"]
+[ext_resource type="Script" uid="uid://br6fu5tcikpcw" path="res://scenes/player/player_types/Aqua/Aqua_state/bubble_attack.gd" id="20_mhefo"]
+[ext_resource type="Script" uid="uid://bej6e7vuxeeko" path="res://script/node2d_factory.gd" id="21_jm3ca"]
+[ext_resource type="Script" uid="uid://r7lohgfwp0gt" path="res://scenes/player/states/double_jump.gd" id="21_rh8r1"]
+[ext_resource type="PackedScene" uid="uid://bjovo0yevv0vm" path="res://scenes/player/player_types/Aqua/Projectiles/bubble_projectile.tscn" id="22_32nln"]
+[ext_resource type="Script" uid="uid://b4rywurj6tivu" path="res://scenes/player/player_types/Normal/attack_by_blade.gd" id="23_fxh1m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t874g"]
 animations = [{
@@ -128,6 +132,11 @@ collision_mask = 32
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/WaterDetectionArea2D"]
 shape = SubResource("CircleShape2D_fxh1m")
 
+[node name="BubbleFactory" type="Marker2D" parent="Direction"]
+position = Vector2(16, 0)
+script = ExtResource("21_jm3ca")
+product_packed_scene = ExtResource("22_32nln")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_oek1d")
@@ -156,7 +165,13 @@ script = ExtResource("17_h0prf")
 script = ExtResource("18_aylck")
 
 [node name="DoubleJump" type="Node" parent="States"]
-script = ExtResource("19_4cbmv")
+script = ExtResource("21_rh8r1")
+
+[node name="BubbleAttack" type="Node" parent="States"]
+script = ExtResource("20_mhefo")
+
+[node name="AttackByBlade" type="Node" parent="States"]
+script = ExtResource("23_fxh1m")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, -50)

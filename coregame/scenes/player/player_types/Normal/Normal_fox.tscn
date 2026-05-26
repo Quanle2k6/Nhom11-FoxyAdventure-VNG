@@ -24,7 +24,7 @@
 [ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="16_15s8f"]
 [ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="17_7byfn"]
 [ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="18_wvx5a"]
-[ext_resource type="Script" uid="uid://b4rywurj6tivu" path="res://scenes/player/player_types/Normal/attack.gd" id="25_u2rff"]
+[ext_resource type="Script" uid="uid://b4rywurj6tivu" path="res://scenes/player/player_types/Normal/attack_by_blade.gd" id="25_u2rff"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4tlmi"]
 animations = [{
