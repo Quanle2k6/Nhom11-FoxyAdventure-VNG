@@ -1,12 +1,15 @@
-[gd_resource type="TileSet" load_steps=16 format=3 uid="uid://b8cj8642y4bv2"]
+[gd_resource type="TileSet" load_steps=22 format=3 uid="uid://b8cj8642y4bv2"]
 
 [ext_resource type="Texture2D" uid="uid://v2dtejovry7r" path="res://assets/sprites/enviroment/terrain/terrain_32x32.png" id="1_cl6n3"]
 [ext_resource type="PackedScene" uid="uid://nmywse1hay5e" path="res://scenes/map/island/spike.tscn" id="2_v16i1"]
 [ext_resource type="PackedScene" uid="uid://bogw2kf4ihbln" path="res://scenes/map/island/spikeReverse.tscn" id="3_0yb48"]
+[ext_resource type="PackedScene" path="res://scenes/map/island/Cloud2.tscn" id="3_bel6y"]
+[ext_resource type="PackedScene" path="res://scenes/map/island/Cloud3.tscn" id="4_qmqyj"]
 [ext_resource type="PackedScene" uid="uid://lte4qtxr5ot1" path="res://scenes/map/island/PalmTree1.tscn" id="4_v16i1"]
 [ext_resource type="PackedScene" uid="uid://b0isjvep88260" path="res://scenes/map/island/PalmTree2.tscn" id="5_0yb48"]
 [ext_resource type="PackedScene" uid="uid://73twydod2ccn" path="res://scenes/map/island/PalmTree3.tscn" id="6_bel6y"]
 [ext_resource type="PackedScene" uid="uid://dobbc0njjua1f" path="res://scenes/map/island/PalmTree4.tscn" id="7_qmqyj"]
+[ext_resource type="PackedScene" path="res://scenes/map/island/Cloud1.tscn" id="8_0yb48"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_n3f71"]
 tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 2, 1, 65536, 0, 65537, 65536, 2, 2, 65536, 0, 65538, 65536, 2, 3, 65536, 0, 65539, 65536, 2, 4, 65536, 0, 65540, 65536, 2, 5, 131072, 0, 65541, 131072, 2)
@@ -397,6 +400,14 @@ texture_region_size = Vector2i(32, 32)
 resource_name = "spike"
 scenes/1/scene = ExtResource("2_v16i1")
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0yb48"]
+resource_name = "Cloud2"
+scenes/1/scene = ExtResource("3_bel6y")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_nwmuu"]
+resource_name = "Cloud3"
+scenes/1/scene = ExtResource("4_qmqyj")
+
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qmqyj"]
 resource_name = "reverse_spike"
 scenes/1/scene = ExtResource("3_0yb48")
@@ -417,6 +428,10 @@ scenes/1/scene = ExtResource("6_bel6y")
 resource_name = "palmtree4"
 scenes/1/scene = ExtResource("7_qmqyj")
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0sgjk"]
+resource_name = "Cloud1"
+scenes/2/scene = ExtResource("8_0yb48")
+
 [resource]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
@@ -432,4 +447,7 @@ sources/5 = SubResource("TileSetScenesCollectionSource_v8klt")
 sources/6 = SubResource("TileSetScenesCollectionSource_ia42h")
 sources/1 = SubResource("TileSetScenesCollectionSource_bel6y")
 sources/2 = SubResource("TileSetScenesCollectionSource_qmqyj")
+sources/9 = SubResource("TileSetScenesCollectionSource_0sgjk")
+sources/10 = SubResource("TileSetScenesCollectionSource_0yb48")
+sources/11 = SubResource("TileSetScenesCollectionSource_nwmuu")
 pattern_0 = SubResource("TileMapPattern_n3f71")

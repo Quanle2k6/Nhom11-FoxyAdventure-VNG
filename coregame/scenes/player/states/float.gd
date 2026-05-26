@@ -7,7 +7,7 @@ func _enter()->void:
 
 	
 func _update(delta:float)->void:
-	
+	control_attack_by_blade()
 	control_jump_on_water()
 	obj.position.y = obj.water_surface_y
 	var dir: float = Input.get_axis('left', 'right')

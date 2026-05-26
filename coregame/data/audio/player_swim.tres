@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://b520oximbegpn"]
+
+[ext_resource type="Script" uid="uid://chlphbiuq1gay" path="res://script/audio/audio_clip.gd" id="1_s51rq"]
+[ext_resource type="AudioStream" uid="uid://bubbnb5278472" path="res://assets/audio/effect/player/52_Dive_02.wav" id="2_41wf5"]
+
+[resource]
+script = ExtResource("1_s51rq")
+clip_id = "player_swim"
+stream = ExtResource("2_41wf5")
+volume_db = 0.0
+randomize_pitch = false
+pitch_min = 0.9
+pitch_max = 1.1
+description = ""
+metadata/_custom_type_script = "uid://chlphbiuq1gay"

@@ -23,7 +23,7 @@ func control_moving() -> bool:
 		obj.change_direction(dir)
 		obj.velocity.x = obj.movement_speed * dir
 		if obj.is_on_floor():
-			change_state(fsm.states.run)	
+			change_state(fsm.states.run)
 		return true
 	else:
 		if not obj.is_on_floor():
@@ -45,6 +45,8 @@ func control_jump() -> bool:
 	return false
 
 func control_double_jump() -> bool:
+	if not fsm.states.has("doublejump"):
+		return false
 	if Input.is_action_just_pressed('jump'):
 		change_state(fsm.states.doublejump)
 		obj.velocity.y = -obj.jump_speed
@@ -68,7 +70,10 @@ func control_moving_in_water() -> bool:
 
 func control_water() -> bool:
 	if obj.is_in_water >= 1:
-		change_state(fsm.states.float)
+		if obj.global_position.y <= obj.water_surface_y:
+			change_state(fsm.states.float)
+		else:
+			change_state(fsm.states.wateridle)
 		return true
 	return false
 	
@@ -81,6 +86,18 @@ func control_jump_on_water() -> bool:
 	
 func control_attack_by_blade() -> bool:
 	if Input.is_action_just_pressed('attack'):
-		change_state(fsm.states.attackbyblade)
+		if obj.has_method("change_to_bubble_attack"):
+			obj.change_to_bubble_attack()
+		else:
+			change_state(fsm.states.attackbyblade)
+		return true
+	return false
+
+func control_bubble_attack() ->bool:
+	if Input.is_action_just_pressed('attack'):
+		if obj.has_method("change_to_bubble_attack"):
+			obj.change_to_bubble_attack()
+		else:
+			change_state(fsm.states.attackbyblade)
 		return true
 	return false

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://c3mrojgbnl1rt"]
+
+[ext_resource type="Script" uid="uid://chlphbiuq1gay" path="res://script/audio/audio_clip.gd" id="1_ah127"]
+[ext_resource type="AudioStream" uid="uid://ctgesjcqqgl2q" path="res://assets/audio/effect/player/88_Teleport_02.wav" id="2_t2j4w"]
+
+[resource]
+script = ExtResource("1_ah127")
+clip_id = "respawn"
+stream = ExtResource("2_t2j4w")
+volume_db = 0.0
+randomize_pitch = false
+pitch_min = 0.9
+pitch_max = 1.1
+description = ""
+metadata/_custom_type_script = "uid://chlphbiuq1gay"

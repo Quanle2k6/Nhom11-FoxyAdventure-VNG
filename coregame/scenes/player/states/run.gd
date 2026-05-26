@@ -4,6 +4,10 @@ func _enter() -> void:
 	print('run')
 	#Change animation to run
 	obj.change_animation('run')
+	AudioManager.play_sound("player_run")
+	await get_tree().create_timer(1.0).timeout
+	AudioManager.play_sound("player_run")
+
 	pass
 
 func _update(delta: float):
