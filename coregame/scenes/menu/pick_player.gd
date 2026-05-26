@@ -5,7 +5,7 @@ const OPTIONS := [
 		"root_path": "Normal",
 		"button_path": "Normal/NormalFox",
 		"selection_path": "Normal/NormalSelection",
-		"scene": preload("res://scenes/player/player_types/Normal/Normal_fox.tscn"),
+		"scene": preload("res://scenes/player/player_types/Normal/normal.tscn"),
 		"key": GameManager.NORMAL_FOX,
 	},
 	{

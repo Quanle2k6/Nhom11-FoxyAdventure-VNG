@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://bjovo0yevv0vm"]
 
-[ext_resource type="Script" uid="uid://bqvf216o58m84" path="res://scenes/player/player_types/aqua/Projectiles/bubble_projectile.gd" id="1_0mpjt"]
+[ext_resource type="Script" uid="uid://bqvf216o58m84" path="res://scenes/player/player_types/Aqua/Projectiles/bubble_projectile.gd" id="1_0mpjt"]
 [ext_resource type="Script" uid="uid://5bjaanlcsrbg" path="res://script/hit_area_2d.gd" id="2_b2nt6"]
 [ext_resource type="Texture2D" uid="uid://b2g804g1muf06" path="res://assets/animations/WaterBall - Startup and Infinite.png" id="3_r34pv"]
 
@@ -168,7 +168,9 @@ radius = 5.99825
 height = 36.0
 
 [node name="BubbleProjectile" type="RigidBody2D"]
+z_index = 2
 collision_layer = 2
+collision_mask = 0
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_0mpjt")

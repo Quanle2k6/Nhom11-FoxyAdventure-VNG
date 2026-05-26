@@ -1,6 +1,6 @@
-[gd_scene load_steps=33 format=3 uid="uid://chie6egstophe"]
+[gd_scene load_steps=33 format=3 uid="uid://ce55lmohib33q"]
 
-[ext_resource type="Script" uid="uid://uxik123lmwgo" path="res://scenes/player/player_types/normal/normal.gd" id="1_wvouw"]
+[ext_resource type="Script" path="res://scenes/player/player_types/Normal/normal.gd" id="1_ysnvi"]
 [ext_resource type="Texture2D" uid="uid://va8q73lb70ii" path="res://assets/sprites/characters/foxy/fox_blade/fox_atk_1.png" id="2_1wcxm"]
 [ext_resource type="Texture2D" uid="uid://674222iw5dre" path="res://assets/sprites/characters/foxy/fox_blade/fox_atk_2.png" id="3_s42rm"]
 [ext_resource type="Texture2D" uid="uid://dvismq6tm0wpx" path="res://assets/sprites/characters/foxy/fox_blade/fox_fall_1.png" id="4_o0ske"]
@@ -23,11 +23,7 @@
 [ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="16_15s8f"]
 [ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="17_7byfn"]
 [ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="18_wvx5a"]
-<<<<<<<< HEAD:coregame/scenes/player/player_types/Normal/normal.tscn
-[ext_resource type="Script" uid="uid://b4rywurj6tivu" path="res://scenes/player/player_types/normal/attack_by_blade.gd" id="25_wwvf3"]
-========
-[ext_resource type="Script" uid="uid://b4rywurj6tivu" path="res://scenes/player/player_types/Normal/attack.gd" id="25_u2rff"]
->>>>>>>> dev:coregame/scenes/player/player_types/Normal/Normal_fox.tscn
+[ext_resource type="Script" path="res://scenes/player/player_types/Normal/attack_by_blade.gd" id="25_wwvf3"]
 [ext_resource type="Script" uid="uid://5oxoj5jfcrl" path="res://scenes/player/states/dead.gd" id="26_dead"]
 [ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://assets/Porky Bold.otf" id="26_wwvf3"]
 
@@ -138,7 +134,7 @@ size = Vector2(12, 23)
 [node name="NormalFox" type="CharacterBody2D"]
 collision_layer = 6
 collision_mask = 17
-script = ExtResource("1_wvouw")
+script = ExtResource("1_ysnvi")
 
 [node name="Direction" type="Node2D" parent="."]
 

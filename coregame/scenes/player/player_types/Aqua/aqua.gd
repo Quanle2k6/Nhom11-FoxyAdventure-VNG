@@ -49,11 +49,12 @@ func time_left_to_live():
 
 
 func _process(delta: float) -> void:
-	if is_in_water >= 1 or fsm.current_state == fsm.states.float:
+	if fsm.current_state in [fsm.states.swim, fsm.states.wateridle, fsm.states.float]:
 		label.visible = false
 		return
 	# Chỉ update text khi timer đang chạy
 	if not floor_timer.is_stopped():
+		label.visible = true
 		label.text = "%02d" % time_left_to_live()
 
 func shoot_bubble(speed: float) -> void:

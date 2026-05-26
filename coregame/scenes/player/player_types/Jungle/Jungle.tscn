@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://44jb4ljblpvo"]
 
-[ext_resource type="Script" uid="uid://cew02ft03ggrt" path="res://scenes/player/player_types/jungle/jungle.gd" id="1_28lxp"]
+[ext_resource type="Script" uid="uid://cew02ft03ggrt" path="res://scenes/player/player_types/Jungle/jungle.gd" id="1_28lxp"]
 [ext_resource type="Texture2D" uid="uid://ctcp2srlsos4m" path="res://assets/sprites/characters/foxy/fox/fox_fall_1.png" id="2_2cy3g"]
 [ext_resource type="Texture2D" uid="uid://cwgjo8l0lmemi" path="res://assets/sprites/characters/foxy/fox/fox_idle_1.png" id="3_3q62l"]
 [ext_resource type="Texture2D" uid="uid://cdiupfoo5xr6u" path="res://assets/sprites/characters/foxy/fox/fox_idle_2.png" id="4_r4h0g"]

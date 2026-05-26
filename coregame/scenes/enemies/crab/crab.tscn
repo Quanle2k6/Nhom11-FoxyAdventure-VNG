@@ -71,7 +71,7 @@ size = Vector2(45, 20)
 size = Vector2(18, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_novun"]
-size = Vector2(14.0172, 11.2056)
+size = Vector2(54.3411, 50.4319)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ud0h"]
 size = Vector2(22, 35)
@@ -131,7 +131,8 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/DetectPlayerArea2D"]
-position = Vector2(-1.5, 2)
+position = Vector2(-0.496084, -0.502924)
+rotation = 0.00195306
 scale = Vector2(5.20787, 3.39117)
 shape = SubResource("RectangleShape2D_novun")
 
