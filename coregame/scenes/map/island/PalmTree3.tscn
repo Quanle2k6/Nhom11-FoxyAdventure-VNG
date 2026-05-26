@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d1jboc5q1i0tj" path="res://assets/sprites/enviroment/front_palm_trees/front_palm_tree_right.png" id="1_e3yxu"]
 [ext_resource type="Texture2D" uid="uid://cccowqh7kcwbn" path="res://assets/sprites/enviroment/front_palm_trees/front_palm_tree_regular.png" id="1_of3tn"]
-[ext_resource type="PackedScene" uid="uid://bxj0wnh28ag2j" path="res://scenes/levels/island/tree.tscn" id="2_e3yxu"]
+[ext_resource type="PackedScene" uid="uid://bxj0wnh28ag2j" path="res://scenes/map/island/tree.tscn" id="2_e3yxu"]
 
 [node name="PalmTree1" type="Node2D"]
 position = Vector2(0, -102)
