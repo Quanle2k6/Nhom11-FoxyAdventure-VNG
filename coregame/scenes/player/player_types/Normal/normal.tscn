@@ -1,6 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://ce55lmohib33q"]
+[gd_scene load_steps=33 format=3 uid="uid://ce55lmohib33q"]
 
-[ext_resource type="Script" path="res://scenes/player/player_types/normal/normal.gd" id="1_wvouw"]
+[ext_resource type="Script" path="res://scenes/player/player_types/Normal/normal.gd" id="1_ysnvi"]
 [ext_resource type="Texture2D" uid="uid://va8q73lb70ii" path="res://assets/sprites/characters/foxy/fox_blade/fox_atk_1.png" id="2_1wcxm"]
 [ext_resource type="Texture2D" uid="uid://674222iw5dre" path="res://assets/sprites/characters/foxy/fox_blade/fox_atk_2.png" id="3_s42rm"]
 [ext_resource type="Texture2D" uid="uid://dvismq6tm0wpx" path="res://assets/sprites/characters/foxy/fox_blade/fox_fall_1.png" id="4_o0ske"]
@@ -23,8 +23,9 @@
 [ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="16_15s8f"]
 [ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="17_7byfn"]
 [ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="18_wvx5a"]
-[ext_resource type="Script" path="res://scenes/player/player_types/normal/attack_by_blade.gd" id="25_wwvf3"]
+[ext_resource type="Script" path="res://scenes/player/player_types/Normal/attack_by_blade.gd" id="25_wwvf3"]
 [ext_resource type="Script" uid="uid://5oxoj5jfcrl" path="res://scenes/player/states/dead.gd" id="26_dead"]
+[ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://assets/Porky Bold.otf" id="26_wwvf3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4tlmi"]
 animations = [{
@@ -37,7 +38,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attackblade",
-"speed": 6.0
+"speed": 4.0
 }, {
 "frames": [],
 "loop": true,
@@ -122,7 +123,7 @@ size = Vector2(20, 22)
 size = Vector2(17, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2rff"]
-size = Vector2(16.625, 30)
+size = Vector2(14.6563, 31)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bmi8o"]
 radius = 8.0
@@ -133,13 +134,15 @@ size = Vector2(12, 23)
 [node name="NormalFox" type="CharacterBody2D"]
 collision_layer = 6
 collision_mask = 17
-script = ExtResource("1_wvouw")
+script = ExtResource("1_ysnvi")
 
 [node name="Direction" type="Node2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_4tlmi")
-animation = &"idle"
+animation = &"attackblade"
+frame = 1
+frame_progress = 1.0
 
 [node name="HurtArea2D" type="Area2D" parent="Direction"]
 collision_layer = 4
@@ -162,7 +165,7 @@ position = Vector2(0.5, 12.5)
 shape = SubResource("RectangleShape2D_hm0yo")
 
 [node name="HitBox2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
-position = Vector2(26.6875, -1)
+position = Vector2(19, 1.5)
 shape = SubResource("RectangleShape2D_u2rff")
 disabled = true
 
@@ -221,6 +224,15 @@ zoom = Vector2(2.5, 2.5)
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
 wait_time = 5.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = -12.0
+offset_top = -56.0
+offset_right = 28.0
+offset_bottom = -29.0
+theme_override_fonts/font = ExtResource("26_wwvf3")
+theme_override_font_sizes/font_size = 20
+text = "00"
 
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

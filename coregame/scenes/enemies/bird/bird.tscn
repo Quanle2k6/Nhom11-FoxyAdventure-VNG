@@ -70,6 +70,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oniw0"]
+size = Vector2(67.782, 75.1953)
 
 [node name="Bird" type="CharacterBody2D" node_paths=PackedStringArray("start_state")]
 collision_layer = 8
@@ -121,6 +122,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/DetectPlayerArea2D"]
+position = Vector2(0.499994, 0.5)
 scale = Vector2(5.20787, 3.39117)
 shape = SubResource("RectangleShape2D_oniw0")
 
