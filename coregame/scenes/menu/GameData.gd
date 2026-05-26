@@ -3,9 +3,12 @@ extends Node
 const NORMAL_FOX := "normal_fox"
 const AQUA_FOX := "aqua_fox"
 const JUNGLE_FOX := "jungle_fox"
+const BOSS_SPAWN_LAND := "land"
+const BOSS_SPAWN_WATER := "water"
 
 var selected_player_scene: PackedScene
 var selected_player_key: String = NORMAL_FOX
+var boss_spawn_location: String = BOSS_SPAWN_LAND
 var checkpoint_positions: Dictionary = {}
 var unlocked_players: Dictionary = {
 	NORMAL_FOX: true,

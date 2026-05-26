@@ -58,16 +58,27 @@ func exit_water() -> void:
 	if fsm.current_state in [fsm.states.swim, fsm.states.wateridle, fsm.states.float]:
 		fsm.change_state(fsm.states.idle)
 
-func apply_spawn(pos: Vector2) -> void:
+func apply_spawn(pos: Vector2, use_checkpoint: bool = true) -> void:
 	spawn_position = pos
 	player_key = GameData.selected_player_key
-	has_checkpoint = GameData.has_checkpoint(player_key)
+	has_checkpoint = use_checkpoint and GameData.has_checkpoint(player_key)
 	if has_checkpoint:
 		checkpoint_position = GameData.get_checkpoint(player_key)
 		global_position = checkpoint_position
 	else:
 		checkpoint_position = Vector2.ZERO
 		global_position = spawn_position
+	refresh_water_overlap()
+
+func refresh_water_overlap() -> void:
+	is_in_water = 0
+	water_area = null
+	water_surface_y = 0.0
+	if not has_node("Direction/WaterDetectionArea2D"):
+		return
+	for area in $Direction/WaterDetectionArea2D.get_overlapping_areas():
+		if area.is_in_group("Water"):
+			enter_water(area)
 
 func set_checkpoint(pos: Vector2) -> void:
 	checkpoint_position = pos

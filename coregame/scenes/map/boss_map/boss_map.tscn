@@ -1,13 +1,12 @@
-[gd_scene load_steps=14 format=4 uid="uid://bt60hfqeoqn8q"]
+[gd_scene load_steps=13 format=4 uid="uid://bt60hfqeoqn8q"]
 
 [ext_resource type="Script" uid="uid://cwe47jffdcxhk" path="res://scenes/map/boss_map/boss_map.gd" id="1_np36i"]
 [ext_resource type="TileSet" uid="uid://b8cj8642y4bv2" path="res://assets/sprites/enviroment/terrain/terrain_32x32.tres" id="2_f6hat"]
 [ext_resource type="Script" uid="uid://w82lu7mfjnba" path="res://scenes/map/island/WaterArea2D.gd" id="3_w2f8g"]
 [ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/sprites/enviroment/background/additional_water.png" id="4_7y5pq"]
-[ext_resource type="PackedScene" uid="uid://1rsx5850h8ui" path="res://script/checkpoint.tscn" id="5_1rnjf"]
-[ext_resource type="Texture2D" uid="uid://clbcd3sj0kgix" path="res://assets/sprites/enviroment/background/background_layer_3.png" id="6_8i5ay"]
-[ext_resource type="Texture2D" uid="uid://diu3bkqy8e2gf" path="res://assets/sprites/enviroment/rock/rock_2.png" id="7_7eoqm"]
-[ext_resource type="PackedScene" uid="uid://cj5a5j1fan0lv" path="res://scenes/enemies/king_crab/king_crab.tscn" id="8_f6hat"]
+[ext_resource type="Texture2D" uid="uid://clbcd3sj0kgix" path="res://assets/sprites/enviroment/background/background_layer_3.png" id="7_8i5ay"]
+[ext_resource type="Texture2D" uid="uid://diu3bkqy8e2gf" path="res://assets/sprites/enviroment/rock/rock_2.png" id="8_7eoqm"]
+[ext_resource type="PackedScene" uid="uid://cj5a5j1fan0lv" path="res://scenes/enemies/king_crab/king_crab.tscn" id="9_f6hat"]
 [ext_resource type="Script" uid="uid://cfnrcwbhvq04v" path="res://scenes/map/main_map/level_exit.gd" id="9_t6anm"]
 [ext_resource type="Texture2D" uid="uid://drecwj6ashren" path="res://assets/sprites/items/chest_key/key_1.png" id="10_7y5pq"]
 
@@ -29,6 +28,12 @@ visibility_layer = 2
 position = Vector2(-4, 14)
 tile_map_data = PackedByteArray("AAAAAAgAAAAAAAIAAAAAAAcAAAAAAAAAAAACAAgAAAABAAIAAAAHAAgAAAAAAAIAAAAIAAgAAAABAAIAAAAJAAgAAAAKAAEAAAAKAAgAAAABAAEAAAALAAgAAAABAAEAAAAMAAgAAAABAAEAAAANAAgAAAABAAEAAAAOAAgAAAABAAEAAAAPAAgAAAABAAEAAAAQAAgAAAAKAAEAAAARAAgAAAABAAIAAAAWAAgAAAABAAIAAAAXAAgAAAABAAIAAAAYAAgAAAABAAIAAAASAAgAAAACAAIAAAABAAcAAAABAAAAAAACAAcAAAABAAAAAAAIAAcAAAABAAAAAAAJAAcAAAABAAAAAAAKAAcAAAABAAAAAAALAAcAAAABAAAAAAAMAAcAAAABAAAAAAANAAcAAAABAAAAAAAOAAcAAAABAAAAAAAPAAcAAAABAAAAAAAQAAcAAAABAAAAAAARAAcAAAACAAAAAAAWAAcAAAAAAAAAAAAXAAcAAAABAAAAAAAYAAcAAAACAAAAAAAZAAcAAAACAAAAAAAZAAgAAAACAAIAAAARAAYABQAAAAAAAQAXAAYABAAAAAAAAQAIAAYABAAAAAAAAQASAAEACgAAAAAAAQAPAAAACwAAAAAAAQALAAEACgAAAAAAAQAVAAQACwAAAAAAAQAGAAEACQAAAAAAAgAHAAcAAAABAAAAAAAJAAkAAAAAAAIAAAAKAAkAAAABAAIAAAALAAkAAAABAAIAAAAMAAkAAAABAAIAAAANAAkAAAABAAIAAAAOAAkAAAABAAIAAAAPAAkAAAABAAIAAAAQAAkAAAACAAIAAAABAAgAAAABAAIAAAAGAAcAAAAAAAAAAAADAAgAAAABAAIAAAAVAAgAAAAAAAIAAAAFAAUACwAAAAAAAQAOAAMACQAAAAAAAgABAAwAAAABAAIAAAACAAwAAAABAAIAAAADAAwAAAABAAIAAAAEAAwAAAABAAIAAAAFAAwAAAABAAIAAAAGAAwAAAABAAIAAAAHAAwAAAABAAIAAAAIAAwAAAABAAIAAAAJAAwAAAABAAIAAAAKAAwAAAABAAIAAAALAAwAAAABAAIAAAAMAAwAAAABAAIAAAANAAwAAAABAAIAAAAOAAwAAAABAAIAAAAPAAwAAAABAAIAAAAQAAwAAAABAAIAAAARAAwAAAABAAIAAAASAAwAAAABAAIAAAATAAwAAAABAAIAAAAUAAwAAAABAAIAAAAVAAwAAAABAAIAAAAWAAwAAAABAAIAAAAXAAwAAAABAAIAAAAYAAwAAAABAAIAAAAZAAwAAAABAAIAAAAaAAwAAAACAAIAAAAaAAsAAAACAAEAAAAaAAoAAAACAAEAAAAaAAkAAAACAAEAAAAaAAgAAAACAAEAAAAaAAcAAAACAAEAAAAaAAYAAAACAAEAAAAaAAUAAAACAAEAAAAaAAQAAAACAAEAAAAaAAMAAAACAAEAAAAaAAAAAAACAAEAAAAaAAEAAAACAAEAAAAaAAIAAAACAAEAAAAAAAwAAAABAAIAAAA=")
 tile_set = ExtResource("2_f6hat")
+
+[node name="LandStartPoint" type="Marker2D" parent="."]
+position = Vector2(51, 219)
+
+[node name="WaterStartPoint" type="Marker2D" parent="."]
+position = Vector2(51, 312)
 
 [node name="WaterGroup2" type="Node2D" parent="."]
 light_mask = 3
@@ -53,9 +58,6 @@ texture = ExtResource("4_7y5pq")
 position = Vector2(427.5, 320.5)
 shape = SubResource("RectangleShape2D_qubsi")
 
-[node name="StartPoint" parent="." groups=["Checkpoint"] instance=ExtResource("5_1rnjf")]
-position = Vector2(60, 223)
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -64,24 +66,24 @@ motion_mirroring = Vector2(767, 0)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 scale = Vector2(2.5, 2.21667)
-texture = ExtResource("6_8i5ay")
+texture = ExtResource("7_8i5ay")
 centered = false
 
 [node name="Rock" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(70, 195)
+position = Vector2(24, 198)
 scale = Vector2(1.62963, 3.71614)
-texture = ExtResource("7_7eoqm")
+texture = ExtResource("8_7eoqm")
 centered = false
 
 [node name="Rock2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(724, 202)
 scale = Vector2(1.66667, 3.13281)
-texture = ExtResource("7_7eoqm")
+texture = ExtResource("8_7eoqm")
 centered = false
 
 [node name="ParallaxLayerCloud" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[node name="KingCrab" parent="." instance=ExtResource("8_f6hat")]
+[node name="KingCrab" parent="." instance=ExtResource("9_f6hat")]
 position = Vector2(390, 191)
 
 [node name="BossCamera2D" type="Camera2D" parent="."]
