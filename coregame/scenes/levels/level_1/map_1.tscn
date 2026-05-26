@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://iivwwkame5a3"]
+[gd_scene load_steps=19 format=4 uid="uid://iivwwkame5a3"]
 
 [ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/sprites/enviroment/background/additional_water.png" id="1_68o7d"]
 [ext_resource type="TileSet" uid="uid://b8cj8642y4bv2" path="res://assets/sprites/enviroment/terrain/terrain_32x32.tres" id="1_fbgxr"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://chie6egstophe" path="res://scenes/player/player_types/Normal/Normal_fox.tscn" id="10_mnqpx"]
 [ext_resource type="PackedScene" uid="uid://cxtseg0h3dee6" path="res://script/audio/sfx_bus_area_2d.tscn" id="11_5s4hq"]
 [ext_resource type="Texture2D" uid="uid://v2dtejovry7r" path="res://assets/sprites/enviroment/terrain/terrain_32x32.png" id="12_402d3"]
+[ext_resource type="PackedScene" uid="uid://bajt3x6i6s75f" path="res://script/audio/background_music.tscn" id="13_8g8v3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_647ib"]
 size = Vector2(947, 325.5)
@@ -440,6 +441,10 @@ tile_map_data = PackedByteArray("AABUACEAAAABAAEAAABUACMAAAABAAEAAABUACUAAAABAAE
 tile_set = SubResource("TileSet_pbaup")
 y_sort_origin = 3
 rendering_quadrant_size = 32
+
+[node name="BackgroundMusic" parent="." instance=ExtResource("13_8g8v3")]
+volume_db = 5.0
+fade_in = 1.0
 
 [editable path="Enemy/Crab"]
 [editable path="Enemy/Crab2"]

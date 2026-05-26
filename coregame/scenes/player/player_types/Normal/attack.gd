@@ -7,10 +7,10 @@ func get_hitbox():
 
 func _enter() -> void:
 
-
 	print("attack_blade")
 
 	obj.change_animation("attackblade")
+	AudioManager.play_sound("player_attack")
 
 	# Khi attack bắt đầu -> hitbox tắt
 	get_hitbox().set_deferred("disabled", true)

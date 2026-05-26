@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AudioDatabase" load_steps=12 format=3 uid="uid://c1ope6ptf8yny"]
+[gd_resource type="Resource" script_class="AudioDatabase" load_steps=14 format=3 uid="uid://c1ope6ptf8yny"]
 
 [ext_resource type="Script" uid="uid://ovmtn36802i6" path="res://script/audio/audio_database.gd" id="1_nw313"]
 [ext_resource type="Script" uid="uid://chlphbiuq1gay" path="res://script/audio/audio_clip.gd" id="1_x0dso"]
@@ -11,8 +11,10 @@
 [ext_resource type="Resource" uid="uid://dj1udmg27o02i" path="res://data/audio/player_landing.tres" id="8_ykssl"]
 [ext_resource type="Resource" uid="uid://c558sua0tq3yf" path="res://data/audio/player_die.tres" id="9_374as"]
 [ext_resource type="Resource" uid="uid://dpruaj0vjxfss" path="res://data/audio/player_run.tres" id="10_mjplr"]
+[ext_resource type="Resource" uid="uid://drxauyllknx40" path="res://data/audio/background_music.tres" id="11_mjplr"]
+[ext_resource type="Resource" uid="uid://dvl23042a5pya" path="res://data/audio/player_attack.tres" id="12_5g16o"]
 
 [resource]
 script = ExtResource("1_nw313")
-clips = Array[ExtResource("1_x0dso")]([ExtResource("2_quhjw"), ExtResource("3_ut6nb"), ExtResource("4_hsaa8"), ExtResource("5_wru05"), ExtResource("6_xjxco"), ExtResource("7_g1k8g"), ExtResource("8_ykssl"), ExtResource("9_374as"), ExtResource("10_mjplr")])
+clips = Array[ExtResource("1_x0dso")]([ExtResource("2_quhjw"), ExtResource("3_ut6nb"), ExtResource("4_hsaa8"), ExtResource("5_wru05"), ExtResource("6_xjxco"), ExtResource("7_g1k8g"), ExtResource("8_ykssl"), ExtResource("9_374as"), ExtResource("10_mjplr"), ExtResource("11_mjplr"), ExtResource("12_5g16o")])
 metadata/_custom_type_script = "uid://ovmtn36802i6"
