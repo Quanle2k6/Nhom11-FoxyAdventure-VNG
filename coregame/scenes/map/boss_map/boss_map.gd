@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var start_point := $StartPoint
+@onready var land_start_point := $LandStartPoint
 @onready var water_start_point := $WaterStartPoint
 @onready var boss_camera := $BossCamera2D
 @onready var exit_level := $ExitLevel
@@ -10,29 +10,27 @@ var player: Player
 var boss_defeated: bool = false
 
 func _ready() -> void:
+	GameManager.register_stage(self)
 	hide_exit_level()
 	boss_camera.make_current()
-	player = GameData.selected_player_scene.instantiate()
+	player = GameManager.selected_player_scene.instantiate()
 	add_child(player)
-	var spawn_in_water := GameData.boss_spawn_location == GameData.BOSS_SPAWN_WATER
-	player.apply_spawn(get_spawn_point().global_position, false)
-	GameData.boss_spawn_location = GameData.BOSS_SPAWN_LAND
-	if spawn_in_water:
-		await get_tree().physics_frame
-		player.refresh_water_overlap()
+	GameManager.register_player(player)
+	var spawn_location := GameManager.boss_map_spawn_location
+	player.apply_spawn(get_spawn_point(spawn_location).global_position, false)
 	disable_player_camera()
 
 func on_boss_defeated() -> void:
 	if boss_defeated:
 		return
 	boss_defeated = true
-	GameData.unlock_next_player_after_boss()
+	GameManager.unlock_next_player_after_boss()
 	show_exit_level()
 
-func get_spawn_point() -> Node2D:
-	if GameData.boss_spawn_location == GameData.BOSS_SPAWN_WATER:
+func get_spawn_point(spawn_location: String) -> Node2D:
+	if spawn_location == GameManager.BOSS_MAP_SPAWN_WATER:
 		return water_start_point
-	return start_point
+	return land_start_point
 
 func disable_player_camera() -> void:
 	if player.has_node("Camera2D"):

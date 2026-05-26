@@ -6,21 +6,21 @@ const OPTIONS := [
 		"button_path": "Normal/NormalFox",
 		"selection_path": "Normal/NormalSelection",
 		"scene": preload("res://scenes/player/player_types/Normal/Normal_fox.tscn"),
-		"key": GameData.NORMAL_FOX,
+		"key": GameManager.NORMAL_FOX,
 	},
 	{
 		"root_path": "Aqua",
 		"button_path": "Aqua/AquaFox",
 		"selection_path": "Aqua/AquaSelection",
 		"scene": preload("res://scenes/player/player_types/Aqua/Aqua.tscn"),
-		"key": GameData.AQUA_FOX,
+		"key": GameManager.AQUA_FOX,
 	},
 	{
 		"root_path": "Jungle",
 		"button_path": "Jungle/JungleFox",
 		"selection_path": "Jungle/JungleSelection",
 		"scene": preload("res://scenes/player/player_types/Jungle/Jungle.tscn"),
-		"key": GameData.JUNGLE_FOX,
+		"key": GameManager.JUNGLE_FOX,
 	},
 ]
 
@@ -68,17 +68,16 @@ func get_first_unlocked_index() -> int:
 	return 0
 
 func is_option_unlocked(index: int) -> bool:
-	return GameData.is_player_unlocked(OPTIONS[index]["key"])
+	return GameManager.is_player_unlocked(OPTIONS[index]["key"])
 
 func select_current_player() -> void:
 	if not is_option_unlocked(selected_index):
 		return
-	GameData.selected_player_scene = OPTIONS[selected_index]["scene"]
-	GameData.selected_player_key = OPTIONS[selected_index]["key"]
-	get_tree().change_scene_to_file("res://scenes/map/main_map/main_map.tscn")
+	GameManager.select_player(OPTIONS[selected_index]["key"], OPTIONS[selected_index]["scene"])
+	GameManager.change_to_main_map()
 
 func reset_current_checkpoint() -> void:
-	GameData.clear_checkpoint(OPTIONS[selected_index]["key"])
+	GameManager.clear_checkpoint(OPTIONS[selected_index]["key"])
 
 func _on_normal_fox_pressed() -> void:
 	selected_index = 0

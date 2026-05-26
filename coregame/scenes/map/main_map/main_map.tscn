@@ -121,12 +121,15 @@ tile_set = ExtResource("6_h744q")
 
 [node name="Checkpoint1" parent="." groups=["Checkpoint"] instance=ExtResource("7_nkqwp")]
 position = Vector2(1869, 290)
+checkpoint_id = "main_map_checkpoint_1"
 
 [node name="Checkpoint2" parent="." groups=["Checkpoint"] instance=ExtResource("7_nkqwp")]
 position = Vector2(2419, 92)
+checkpoint_id = "main_map_checkpoint_2"
 
 [node name="Checkpoint3" parent="." groups=["Checkpoint"] instance=ExtResource("7_nkqwp")]
 position = Vector2(1675, 572)
+checkpoint_id = "main_map_checkpoint_3"
 
 [node name="LandBossExit" type="Area2D" parent="."]
 z_index = 1
@@ -145,7 +148,7 @@ collision_layer = 64
 collision_mask = 2
 script = ExtResource("9_pjqn1")
 target_scene_path = "uid://bt60hfqeoqn8q"
-boss_spawn_location = "water"
+boss_map_spawn_location = "water"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterBossExit"]
 position = Vector2(4676.5, 736.5)
