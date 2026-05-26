@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://dpruaj0vjxfss"]
+
+[ext_resource type="Script" uid="uid://chlphbiuq1gay" path="res://script/audio/audio_clip.gd" id="1_mv3sn"]
+[ext_resource type="AudioStream" uid="uid://dmxhewh3juljo" path="res://assets/audio/effect/player/03_Step_grass_03.wav" id="2_hw61v"]
+
+[resource]
+script = ExtResource("1_mv3sn")
+clip_id = "player_run"
+stream = ExtResource("2_hw61v")
+volume_db = 0.0
+randomize_pitch = true
+pitch_min = 0.9
+pitch_max = 1.1
+description = ""
+metadata/_custom_type_script = "uid://chlphbiuq1gay"

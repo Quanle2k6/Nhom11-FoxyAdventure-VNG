@@ -4,6 +4,7 @@ func _enter() -> void:
 	print('jump')
 	#Change animation to jump
 	obj.change_animation('jump')
+	AudioManager.play_sound("player_jump")
 
 func _update(_delta: float):
 	control_attack_by_blade()

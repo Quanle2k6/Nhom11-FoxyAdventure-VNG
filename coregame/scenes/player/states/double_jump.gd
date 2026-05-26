@@ -5,6 +5,7 @@ extends PlayerState
 func _enter() -> void:
 	print('doublejumpd')
 	obj.change_animation('jump')
+	AudioManager.play_sound("player_jump")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
