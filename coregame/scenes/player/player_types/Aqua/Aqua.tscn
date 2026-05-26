@@ -26,6 +26,11 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t874g"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_4cbmv")
@@ -103,7 +108,7 @@ metadata/_custom_type_script = "uid://dt2tsu385v1a5"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_t874g")
-animation = &"swim"
+animation = &"idle"
 
 [node name="HurtArea2D" type="Area2D" parent="Direction"]
 collision_layer = 4
@@ -117,7 +122,7 @@ shape = SubResource("RectangleShape2D_llvtc")
 
 [node name="HitArea2D" type="Area2D" parent="Direction"]
 collision_layer = 0
-collision_mask = 80
+collision_mask = 16
 script = ExtResource("11_g6hcb")
 metadata/_custom_type_script = "uid://5bjaanlcsrbg"
 
@@ -172,6 +177,9 @@ script = ExtResource("20_mhefo")
 
 [node name="AttackByBlade" type="Node" parent="States"]
 script = ExtResource("23_fxh1m")
+
+[node name="Dead" type="Node" parent="States"]
+script = ExtResource("20_dead")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, -50)

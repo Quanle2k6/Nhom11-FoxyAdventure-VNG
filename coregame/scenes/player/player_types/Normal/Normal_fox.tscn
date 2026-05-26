@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://chie6egstophe"]
+[gd_scene load_steps=33 format=3 uid="uid://chie6egstophe"]
 
 [ext_resource type="Script" uid="uid://uxik123lmwgo" path="res://scenes/player/player_types/Normal/normal_fox.gd" id="1_wvouw"]
 [ext_resource type="Texture2D" uid="uid://va8q73lb70ii" path="res://assets/sprites/characters/foxy/fox_blade/fox_atk_1.png" id="2_1wcxm"]
@@ -24,7 +24,8 @@
 [ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="16_15s8f"]
 [ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="17_7byfn"]
 [ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="18_wvx5a"]
-[ext_resource type="Script" uid="uid://b4rywurj6tivu" path="res://scenes/player/player_types/Normal/attack_by_blade.gd" id="25_u2rff"]
+[ext_resource type="Script" path="res://scenes/player/player_types/Normal/attack.gd" id="25_u2rff"]
+[ext_resource type="Script" uid="uid://5oxoj5jfcrl" path="res://scenes/player/states/dead.gd" id="26_dead"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4tlmi"]
 animations = [{
@@ -38,6 +39,11 @@ animations = [{
 "loop": false,
 "name": &"attackblade",
 "speed": 6.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -133,7 +139,7 @@ script = ExtResource("1_wvouw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_4tlmi")
-animation = &"attackblade"
+animation = &"idle"
 
 [node name="HurtArea2D" type="Area2D" parent="Direction"]
 collision_layer = 4
@@ -147,7 +153,7 @@ shape = SubResource("RectangleShape2D_00u1h")
 
 [node name="HitArea2D" type="Area2D" parent="Direction"]
 collision_layer = 0
-collision_mask = 88
+collision_mask = 16
 script = ExtResource("10_4nrhj")
 metadata/_custom_type_script = "uid://5bjaanlcsrbg"
 
@@ -165,6 +171,13 @@ collision_layer = 0
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/WaterDetectionArea2D"]
+shape = SubResource("CircleShape2D_bmi8o")
+
+[node name="CheckPointDetectionArea2D" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/CheckPointDetectionArea2D"]
 shape = SubResource("CircleShape2D_bmi8o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -199,6 +212,9 @@ script = ExtResource("18_wvx5a")
 
 [node name="AttackByBlade" type="Node" parent="States"]
 script = ExtResource("25_u2rff")
+
+[node name="Dead" type="Node" parent="States"]
+script = ExtResource("26_dead")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, -50)

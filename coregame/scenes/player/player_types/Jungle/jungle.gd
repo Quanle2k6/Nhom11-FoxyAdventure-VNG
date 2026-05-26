@@ -17,5 +17,5 @@ func _update_movement(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	respawn()
+	fsm.change_state(fsm.states.dead)
 	pass # Replace with function body.

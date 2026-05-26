@@ -16,7 +16,7 @@ func _update_movement(delta: float) -> void:
 	if not is_on_floor() and fsm.current_state != fsm.states.swim and fsm.current_state != fsm.states.wateridle and fsm.current_state != fsm.states.float and fsm.current_state != fsm.states.bubbleattack :
 		velocity.y += delta * gravity
 	# Nếu  on_floor đếm ngược time
-	if fsm.current_state == fsm.states.idle or fsm.current_state == fsm.states.run or fsm.current_state == fsm.states.jump or fsm.current_state == fsm.states.fall:
+	if fsm.current_state == fsm.states.idle or fsm.current_state == fsm.states.run  or fsm.current_state == fsm.states.jump or fsm.current_state == fsm.states.fall:
 		if water_timer.is_stopped():
 			water_timer.start(5.0)
 		else:
