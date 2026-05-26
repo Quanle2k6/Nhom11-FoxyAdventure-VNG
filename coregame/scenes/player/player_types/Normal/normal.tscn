@@ -1,0 +1,226 @@
+[gd_scene load_steps=32 format=3 uid="uid://ce55lmohib33q"]
+
+[ext_resource type="Script" path="res://scenes/player/player_types/normal/normal.gd" id="1_wvouw"]
+[ext_resource type="Texture2D" uid="uid://va8q73lb70ii" path="res://assets/sprites/characters/foxy/fox_blade/fox_atk_1.png" id="2_1wcxm"]
+[ext_resource type="Texture2D" uid="uid://674222iw5dre" path="res://assets/sprites/characters/foxy/fox_blade/fox_atk_2.png" id="3_s42rm"]
+[ext_resource type="Texture2D" uid="uid://dvismq6tm0wpx" path="res://assets/sprites/characters/foxy/fox_blade/fox_fall_1.png" id="4_o0ske"]
+[ext_resource type="Texture2D" uid="uid://c3k7842sg3rwa" path="res://assets/sprites/characters/foxy/fox_blade/fox_idle_1.png" id="5_u2rff"]
+[ext_resource type="Texture2D" uid="uid://dw4fq8i3e2cwx" path="res://assets/sprites/characters/foxy/fox_blade/fox_idle_2.png" id="6_wsxfm"]
+[ext_resource type="Texture2D" uid="uid://4dsxiqa0hyk2" path="res://assets/sprites/characters/foxy/fox_blade/fox_jump_1.png" id="7_4nrhj"]
+[ext_resource type="Texture2D" uid="uid://cs1jhjrfppan1" path="res://assets/sprites/characters/foxy/fox_blade/fox_jump_2.png" id="8_uyro3"]
+[ext_resource type="Texture2D" uid="uid://2t170py13x2q" path="res://assets/sprites/characters/foxy/fox_blade/fox_jump_atk_1.png" id="9_8f4w7"]
+[ext_resource type="Script" uid="uid://vj34xpkodm6l" path="res://script/hurt_area_2d.gd" id="9_wsxfm"]
+[ext_resource type="Script" uid="uid://5bjaanlcsrbg" path="res://script/hit_area_2d.gd" id="10_4nrhj"]
+[ext_resource type="Texture2D" uid="uid://dulpexev42v5b" path="res://assets/sprites/characters/foxy/fox_blade/fox_jump_atk_2.png" id="10_cqj0x"]
+[ext_resource type="Texture2D" uid="uid://kon6uno2dy0g" path="res://assets/sprites/characters/foxy/fox_blade/fox_walk_1.png" id="11_i36ey"]
+[ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/player/states/idle.gd" id="11_uyro3"]
+[ext_resource type="Texture2D" uid="uid://c5ckubn4w2kw6" path="res://assets/sprites/characters/foxy/fox_blade/fox_walk_2.png" id="12_0npvt"]
+[ext_resource type="Script" uid="uid://bn74l4ngryo6x" path="res://scenes/player/states/run.gd" id="12_8f4w7"]
+[ext_resource type="Texture2D" uid="uid://dujfdo1hbu7mn" path="res://assets/sprites/characters/foxy/fox_blade/fox_walk_3.png" id="13_15s8f"]
+[ext_resource type="Script" uid="uid://di3w8xw7t025o" path="res://scenes/player/states/jump.gd" id="13_cqj0x"]
+[ext_resource type="Texture2D" uid="uid://demu2xt523bpp" path="res://assets/sprites/characters/foxy/fox_blade/fox_walk_4.png" id="14_7byfn"]
+[ext_resource type="Script" uid="uid://caxtbpdyga1ay" path="res://scenes/player/states/fall.gd" id="14_i36ey"]
+[ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="16_15s8f"]
+[ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="17_7byfn"]
+[ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="18_wvx5a"]
+[ext_resource type="Script" path="res://scenes/player/player_types/normal/attack_by_blade.gd" id="25_wwvf3"]
+[ext_resource type="Script" uid="uid://5oxoj5jfcrl" path="res://scenes/player/states/dead.gd" id="26_dead"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4tlmi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1wcxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s42rm")
+}],
+"loop": false,
+"name": &"attackblade",
+"speed": 6.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_o0ske")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_u2rff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wsxfm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4nrhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_uyro3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8f4w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cqj0x")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_i36ey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0npvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_15s8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7byfn")
+}],
+"loop": true,
+"name": &"run",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_i36ey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0npvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_15s8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7byfn")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00u1h"]
+size = Vector2(20, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm0yo"]
+size = Vector2(17, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2rff"]
+size = Vector2(16.625, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bmi8o"]
+radius = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0neu7"]
+size = Vector2(12, 23)
+
+[node name="NormalFox" type="CharacterBody2D"]
+collision_layer = 6
+collision_mask = 17
+script = ExtResource("1_wvouw")
+
+[node name="Direction" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
+sprite_frames = SubResource("SpriteFrames_4tlmi")
+animation = &"idle"
+
+[node name="HurtArea2D" type="Area2D" parent="Direction"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("9_wsxfm")
+metadata/_custom_type_script = "uid://vj34xpkodm6l"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_00u1h")
+
+[node name="HitArea2D" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("10_4nrhj")
+metadata/_custom_type_script = "uid://5bjaanlcsrbg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
+position = Vector2(0.5, 12.5)
+shape = SubResource("RectangleShape2D_hm0yo")
+
+[node name="HitBox2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
+position = Vector2(26.6875, -1)
+shape = SubResource("RectangleShape2D_u2rff")
+disabled = true
+
+[node name="WaterDetectionArea2D" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/WaterDetectionArea2D"]
+shape = SubResource("CircleShape2D_bmi8o")
+
+[node name="CheckPointDetectionArea2D" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/CheckPointDetectionArea2D"]
+shape = SubResource("CircleShape2D_bmi8o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2.5)
+shape = SubResource("RectangleShape2D_0neu7")
+
+[node name="States" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="States"]
+script = ExtResource("11_uyro3")
+
+[node name="Run" type="Node" parent="States"]
+script = ExtResource("12_8f4w7")
+
+[node name="Jump" type="Node" parent="States"]
+script = ExtResource("13_cqj0x")
+
+[node name="Fall" type="Node" parent="States"]
+script = ExtResource("14_i36ey")
+
+[node name="Swim" type="Node" parent="States"]
+script = ExtResource("16_15s8f")
+
+[node name="Float" type="Node" parent="States"]
+script = ExtResource("17_7byfn")
+
+[node name="WaterIdle" type="Node" parent="States"]
+script = ExtResource("18_wvx5a")
+
+[node name="AttackByBlade" type="Node" parent="States"]
+script = ExtResource("25_wwvf3")
+
+[node name="Dead" type="Node" parent="States"]
+script = ExtResource("26_dead")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, -50)
+rotation = -0.136819
+zoom = Vector2(2.5, 2.5)
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+
+[connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
