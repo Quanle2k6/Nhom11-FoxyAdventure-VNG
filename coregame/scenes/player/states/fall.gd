@@ -14,3 +14,4 @@ func _update(_delta: float) -> void:
 		control_double_jump()
 	if obj.is_on_floor():
 		change_state(fsm.states.idle)
+		AudioManager.play_sound("player_landing")

@@ -3,6 +3,7 @@ extends PlayerState
 func _enter() -> void:
 	print('swim')
 	obj.change_animation("run")
+	AudioManager.play_sound("player_swim")
 
 
 func _update(delta: float) -> void:

@@ -23,7 +23,11 @@
 [ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="16_15s8f"]
 [ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="17_7byfn"]
 [ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="18_wvx5a"]
+<<<<<<<< HEAD:coregame/scenes/player/player_types/Normal/normal.tscn
 [ext_resource type="Script" uid="uid://b4rywurj6tivu" path="res://scenes/player/player_types/normal/attack_by_blade.gd" id="25_wwvf3"]
+========
+[ext_resource type="Script" uid="uid://b4rywurj6tivu" path="res://scenes/player/player_types/Normal/attack.gd" id="25_u2rff"]
+>>>>>>>> dev:coregame/scenes/player/player_types/Normal/Normal_fox.tscn
 [ext_resource type="Script" uid="uid://5oxoj5jfcrl" path="res://scenes/player/states/dead.gd" id="26_dead"]
 [ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://assets/Porky Bold.otf" id="26_wwvf3"]
 

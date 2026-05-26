@@ -3,10 +3,8 @@ extends BaseCharacter
 var is_in_water: int = 0
 var water_area:WaterDetection = null
 var water_surface_y: float = 0.0
-var checkpoint_position: Vector2 = Vector2.ZERO
 var spawn_position: Vector2 = Vector2.ZERO
 var player_key: String = ""
-var has_checkpoint: bool = false
 ## Player character class that handles movement, combat, and state management
 var is_invulnerable: bool = false
 var count_time_in_water=0
@@ -50,6 +48,7 @@ func enter_water(area: Area2D) -> void:
 	water_area = area
 	if area.is_in_group("Water"):
 		water_surface_y = area.surface_y
+		AudioManager.play_sound("step_water")
 
 func exit_water() -> void:
 	water_area = null
@@ -57,24 +56,14 @@ func exit_water() -> void:
 	if fsm.current_state in [fsm.states.swim, fsm.states.wateridle, fsm.states.float]:
 		fsm.change_state(fsm.states.idle)
 
-func apply_spawn(pos: Vector2) -> void:
+func apply_spawn(pos: Vector2, _use_checkpoint: bool = true) -> void:
 	spawn_position = pos
-	player_key = GameData.selected_player_key
-	has_checkpoint = GameData.has_checkpoint(player_key)
-	if has_checkpoint:
-		checkpoint_position = GameData.get_checkpoint(player_key)
-		global_position = checkpoint_position
-	else:
-		checkpoint_position = Vector2.ZERO
-		global_position = spawn_position
-
-func set_checkpoint(pos: Vector2) -> void:
-	checkpoint_position = pos
-	has_checkpoint = true
-	GameData.save_checkpoint(player_key, pos)
+	player_key = GameManager.selected_player_key
+	global_position = spawn_position
 
 func _on_hurt_area_2d_hurt(_direction: Variant, damage: Variant) -> void:
 	take_damage(damage)
+	AudioManager.play_sound("player_hurt")
 
 func take_damage(damage: int) -> void:
 	if is_invulnerable:
@@ -84,7 +73,7 @@ func take_damage(damage: int) -> void:
 		fsm.change_state(fsm.states.dead)
 
 func _on_check_point_detection_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Checkpoint"):
-		area.activate(self)
+	if area is Checkpoint:
+		area.activate()
 	elif area.has_method("change_to_target_scene"):
 		area.change_to_target_scene()
