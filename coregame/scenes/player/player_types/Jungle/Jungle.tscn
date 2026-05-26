@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://44jb4ljblpvo"]
+[gd_scene load_steps=26 format=3 uid="uid://44jb4ljblpvo"]
 
 [ext_resource type="Script" uid="uid://cew02ft03ggrt" path="res://scenes/player/player_types/Jungle/jungle.gd" id="1_0fw70"]
 [ext_resource type="Texture2D" uid="uid://ctcp2srlsos4m" path="res://assets/sprites/characters/foxy/fox/fox_fall_1.png" id="2_6hgl3"]
@@ -19,9 +19,15 @@
 [ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="17_grf6i"]
 [ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="18_r06q0"]
 [ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="19_w6j1s"]
+[ext_resource type="Script" uid="uid://5oxoj5jfcrl" path="res://scenes/player/states/dead.gd" id="20_dead"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0fw70"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_6hgl3")
@@ -106,7 +112,7 @@ wait_time = 0.1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_0fw70")
-animation = &"swim"
+animation = &"idle"
 
 [node name="HurtArea2D" type="Area2D" parent="Direction"]
 collision_layer = 4
@@ -120,7 +126,7 @@ shape = SubResource("RectangleShape2D_6hgl3")
 
 [node name="HitArea2D" type="Area2D" parent="Direction"]
 collision_layer = 0
-collision_mask = 80
+collision_mask = 16
 script = ExtResource("11_jl11a")
 metadata/_custom_type_script = "uid://5bjaanlcsrbg"
 
@@ -133,6 +139,13 @@ collision_layer = 0
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/WaterDetectionArea2D"]
+shape = SubResource("CircleShape2D_31w2m")
+
+[node name="CheckPointDetectionArea2D" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/CheckPointDetectionArea2D"]
 shape = SubResource("CircleShape2D_31w2m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -163,5 +176,8 @@ script = ExtResource("18_r06q0")
 
 [node name="WaterIdle" type="Node" parent="States"]
 script = ExtResource("19_w6j1s")
+
+[node name="Dead" type="Node" parent="States"]
+script = ExtResource("20_dead")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
