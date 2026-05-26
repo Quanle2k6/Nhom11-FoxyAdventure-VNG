@@ -82,7 +82,7 @@ animations = [{
 size = Vector2(17, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_myrg7"]
-size = Vector2(27, 4.5)
+size = Vector2(27, 9.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lgqa7"]
 radius = 8.0
@@ -91,8 +91,10 @@ radius = 8.0
 size = Vector2(19, 24)
 
 [node name="Player" type="CharacterBody2D"]
+visible = false
 z_index = 1
 collision_layer = 2
+collision_mask = 17
 platform_wall_layers = 65535
 script = ExtResource("1_ugbui")
 metadata/_custom_type_script = "uid://w7xdmsdvf5vd"
@@ -101,7 +103,7 @@ metadata/_custom_type_script = "uid://w7xdmsdvf5vd"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_kvlxm")
-animation = &"swim"
+animation = &"fall"
 
 [node name="HurtArea2D" type="Area2D" parent="Direction"]
 collision_layer = 4
@@ -120,7 +122,7 @@ script = ExtResource("11_kvlxm")
 metadata/_custom_type_script = "uid://5bjaanlcsrbg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
-position = Vector2(0, 12.25)
+position = Vector2(0, 9.75)
 shape = SubResource("RectangleShape2D_myrg7")
 
 [node name="WaterDetectionArea2D" type="Area2D" parent="Direction"]

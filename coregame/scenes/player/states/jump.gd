@@ -6,6 +6,7 @@ func _enter() -> void:
 	obj.change_animation('jump')
 
 func _update(_delta: float):
+	control_attack_by_blade()
 	#Control swim
 	control_moving()
 	control_double_jump()

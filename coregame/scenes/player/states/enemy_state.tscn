@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsmv7rs1efsql"]
-
-[ext_resource type="Script" uid="uid://buf0u8w1ddyhr" path="res://scenes/enemies/states/enemy_state.gd" id="1_ogvqu"]
-
-[node name="EnemyState" type="Node"]
-script = ExtResource("1_ogvqu")
-metadata/_custom_type_script = "uid://buf0u8w1ddyhr"

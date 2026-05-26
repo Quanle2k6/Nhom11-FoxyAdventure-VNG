@@ -15,6 +15,7 @@ var found_player: Player = null
 var hurt_area: Area2D
 var hit_area: Area2D
 var main_collision: CollisionShape2D
+var player_jumped:bool = false
 
 func _ready() -> void:
 	main_collision = $CollisionShape2D
@@ -94,8 +95,12 @@ func _on_body_exited(_body: CharacterBody2D) -> void:
 	_on_player_not_in_sight()
 
 func _on_hurt_area_2d_hurt(_direction: Vector2, _damage: float) -> void:
-	found_player.jump()
-	_take_damage_from_dir(_direction, _damage)
+	if found_player.fsm.previous_state == found_player.fsm.states.jump or found_player.fsm.current_state == found_player.fsm.states.fall :
+		found_player.jump()
+		_take_damage_from_dir(_direction, _damage)
+	if found_player.fsm.current_state == found_player.fsm.states.attackbyblade or found_player.fsm.previous_state == found_player.fsm.states.attackbyblade:
+		_take_damage_from_dir(_direction, _damage)
+
 
 # called when player is in sight
 func _on_player_in_sight(_player_pos: Vector2):
@@ -111,4 +116,3 @@ func _take_damage_from_dir(_damage_dir: Vector2, _damage: float):
 func vertical_reversal()-> void:
 	vertical_direction = - vertical_direction
 	vertical_ray_cast.rotate(PI)
-	

@@ -4,11 +4,11 @@
 [ext_resource type="Script" uid="uid://jlgcl3pyvby2" path="res://script/checkpoint.gd" id="1_fkvpt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i388g"]
-height = 28.0
+height = 32.0
 
 [node name="Checkpoint" type="Area2D"]
-collision_layer = 65
-collision_mask = 65
+collision_layer = 64
+collision_mask = 0
 script = ExtResource("1_fkvpt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

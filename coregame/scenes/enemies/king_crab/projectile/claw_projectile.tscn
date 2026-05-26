@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://bsyyeam7raher"]
+
+[ext_resource type="Script" uid="uid://5bjaanlcsrbg" path="res://script/hit_area_2d.gd" id="1_07w1t"]
+[ext_resource type="Script" uid="uid://dsaikkv1yc7om" path="res://scenes/enemies/king_crab/projectile/claw_projectile.gd" id="1_slkuh"]
+[ext_resource type="Texture2D" uid="uid://dhtl2n7xidbmm" path="res://assets/sprites/enemies/King_Crab/King_Crab_31.png" id="2_07w1t"]
+[ext_resource type="Texture2D" uid="uid://bs3qmcnifrxgw" path="res://assets/sprites/enemies/King_Crab/King_Crab_32.png" id="4_slkuh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_urn4a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_07w1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_slkuh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1m4d4"]
+size = Vector2(21.7777, 29.3334)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcku7"]
+size = Vector2(48, 36)
+
+[node name="ClawProjectile" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_slkuh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_urn4a")
+flip_h = true
+
+[node name="HitArea2D" type="Area2D" parent="."]
+position = Vector2(7, 0)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_07w1t")
+metadata/_custom_type_script = "uid://5bjaanlcsrbg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D"]
+position = Vector2(-2.66667, -1.66667)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_1m4d4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -2)
+shape = SubResource("RectangleShape2D_hcku7")
