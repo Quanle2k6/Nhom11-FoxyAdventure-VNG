@@ -1,19 +1,16 @@
 extends Node2D
 
 @onready var old_player := $Player
+@onready var start_point := $StartPoint
 
 var player: Player
 
-func _ready():
+func _ready() -> void:
+	var spawn_pos := start_point.global_position
+	var parent := old_player.get_parent()
 
-	var spawn_pos = old_player.global_position
-	var parent = old_player.get_parent()
-
-	# xóa Player placeholder
 	old_player.queue_free()
 
-	# tạo Player thật
 	player = GameData.selected_player_scene.instantiate()
-
 	parent.add_child(player)
 	player.apply_spawn(spawn_pos)
