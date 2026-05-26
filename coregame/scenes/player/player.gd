@@ -50,6 +50,7 @@ func enter_water(area: Area2D) -> void:
 	water_area = area
 	if area.is_in_group("Water"):
 		water_surface_y = area.surface_y
+		AudioManager.play_sound("step_water")
 
 func exit_water() -> void:
 	water_area = null
@@ -75,6 +76,7 @@ func set_checkpoint(pos: Vector2) -> void:
 
 func _on_hurt_area_2d_hurt(_direction: Variant, damage: Variant) -> void:
 	take_damage(damage)
+	AudioManager.play_sound("player_hurt")
 
 func take_damage(damage: int) -> void:
 	if is_invulnerable:

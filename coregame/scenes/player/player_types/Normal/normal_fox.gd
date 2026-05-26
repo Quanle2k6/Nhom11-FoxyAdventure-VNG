@@ -18,6 +18,7 @@ func _update_movement(delta: float) -> void:
 	move_and_slide()
 
 func _on_timer_timeout() -> void:
+	AudioManager.play_sound("player_die")
 	fsm.change_state(fsm.states.dead)
 	pass # Replace with function body.
 
