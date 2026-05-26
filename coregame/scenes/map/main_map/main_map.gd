@@ -6,7 +6,7 @@ extends Node2D
 var player: Player
 
 func _ready() -> void:
-	var spawn_pos := start_point.global_position
+	var spawn_pos :Vector2 = start_point.global_position
 	var parent := old_player.get_parent()
 
 	old_player.queue_free()
