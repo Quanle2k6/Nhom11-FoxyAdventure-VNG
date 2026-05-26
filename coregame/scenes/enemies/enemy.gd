@@ -96,12 +96,9 @@ func _on_body_exited(_body: CharacterBody2D) -> void:
 
 func _on_hurt_area_2d_hurt(_direction: Vector2, _damage: float) -> void:
 	if found_player.fsm.previous_state == found_player.fsm.states.jump or found_player.fsm.current_state == found_player.fsm.states.fall :
-		print('i')
 		found_player.jump()
-		print('check_attack')
 		_take_damage_from_dir(_direction, _damage)
 	if found_player.fsm.current_state == found_player.fsm.states.attackbyblade or found_player.fsm.previous_state == found_player.fsm.states.attackbyblade:
-		print('o')
 		_take_damage_from_dir(_direction, _damage)
 
 

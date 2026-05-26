@@ -16,5 +16,4 @@ func _ready():
 	player = GameData.selected_player_scene.instantiate()
 
 	parent.add_child(player)
-
-	player.global_position = spawn_pos
+	player.apply_spawn(spawn_pos)

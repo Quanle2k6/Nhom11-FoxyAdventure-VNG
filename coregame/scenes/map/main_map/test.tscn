@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://busgwcl68mt08" path="res://scenes/enemies/crab/crab.tscn" id="3_ml0mk"]
 [ext_resource type="PackedScene" uid="uid://dx6i2u7nrq7ud" path="res://scenes/enemies/bird/bird.tscn" id="4_mkjk8"]
 [ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/sprites/enviroment/background/additional_water.png" id="5_bfafv"]
-[ext_resource type="Script" uid="uid://d23ny3b6mmt57" path="res://scenes/map/level_1/test_water.gd" id="5_mkjk8"]
+[ext_resource type="Script" uid="uid://d23ny3b6mmt57" path="res://scenes/map/main_map/test_water.gd" id="5_mkjk8"]
 [ext_resource type="PackedScene" uid="uid://csx5rypnfdxtf" path="res://scenes/enemies/turtle/turtle.tscn" id="5_r546t"]
 [ext_resource type="PackedScene" uid="uid://chie6egstophe" path="res://scenes/player/player_types/Normal/Normal_fox.tscn" id="7_mkjk8"]
 [ext_resource type="PackedScene" uid="uid://1rsx5850h8ui" path="res://script/checkpoint.tscn" id="7_ml0mk"]
