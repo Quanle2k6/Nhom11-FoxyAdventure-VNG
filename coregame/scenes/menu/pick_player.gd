@@ -37,9 +37,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		move_selection(-1)
 	elif event.is_action_pressed("right"):
 		move_selection(1)
-	elif event.is_action_pressed("attack") or event.is_action_pressed("ui_accept"):
+	elif event.is_action_pressed("ui_accept"):
 		select_current_player()
-	elif event is InputEventKey and event.pressed and not event.echo and event.physical_keycode == KEY_R:
+	elif event.is_action_pressed("reset"):
 		reset_current_checkpoint()
 
 func move_selection(step: int) -> void:

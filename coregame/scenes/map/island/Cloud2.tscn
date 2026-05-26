@@ -25,6 +25,7 @@ animations = [{
 }]
 
 [node name="Cloud2" type="StaticBody2D"]
+z_index = -1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = -0.00289687

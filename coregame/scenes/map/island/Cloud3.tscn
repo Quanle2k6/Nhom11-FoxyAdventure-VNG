@@ -25,6 +25,7 @@ animations = [{
 }]
 
 [node name="Cloud3" type="StaticBody2D"]
+z_index = -1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.098, 0.1)
