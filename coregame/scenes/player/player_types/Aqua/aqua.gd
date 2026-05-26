@@ -1,29 +1,60 @@
 extends Player
 class_name AquaFox
 
-@onready var water_timer = $Timer
+@onready var floor_timer = $Timer
 @onready var bubble_factory: Node2DFactory = $Direction/BubbleFactory
-
+@onready var label = $Label
 @export var bubble_attack_cooldown: float = 0.8
-
 var check: bool =false
 var print_time: float = 5.0
 var _bubble_cooldown_timer: float = 0.0
 
 func _update_movement(delta: float) -> void:
 	_bubble_cooldown_timer = maxf(_bubble_cooldown_timer - delta, 0.0)
-	# Bỏ qua trọng lực nếu đang ở trạng thái swim
-	if not is_on_floor() and fsm.current_state != fsm.states.swim and fsm.current_state != fsm.states.wateridle and fsm.current_state != fsm.states.float and fsm.current_state != fsm.states.bubbleattack :
+
+	if (not is_on_floor() and fsm.current_state != fsm.states.swim 
+	and fsm.current_state != fsm.states.wateridle 
+	and fsm.current_state != fsm.states.float 
+	and fsm.current_state != fsm.states.bubbleattack):
 		velocity.y += delta * gravity
-	# Nếu  on_floor đếm ngược time
-	if fsm.current_state == fsm.states.idle or fsm.current_state == fsm.states.run  or fsm.current_state == fsm.states.jump or fsm.current_state == fsm.states.fall:
-		if water_timer.is_stopped():
-			water_timer.start(5.0)
-		else:
-			if is_on_floor() and not check:
-				check = true
-				water_timer.stop()
+
+	var in_water_state = (fsm.current_state == fsm.states.swim 
+		or fsm.current_state == fsm.states.wateridle 
+		or fsm.current_state == fsm.states.float)
+
+	var on_land_state = (fsm.current_state == fsm.states.idle 
+		or fsm.current_state == fsm.states.run 
+		or fsm.current_state == fsm.states.jump 
+		or fsm.current_state == fsm.states.fall)
+
+	if in_water_state:
+		if not floor_timer.is_stopped():
+			floor_timer.stop()
+		label.visible = false
+		check = false
+
+	elif on_land_state:
+		if floor_timer.is_stopped() and not check:
+			label.visible = true
+			floor_timer.start(5.0)
+
 	move_and_slide()
+
+
+
+func time_left_to_live():
+	var time_left = floor_timer.time_left
+	var second = int(time_left)
+	return [second]
+
+
+func _process(delta: float) -> void:
+	if is_in_water >= 1 or fsm.current_state == fsm.states.float:
+		label.visible = false
+		return
+	# Chỉ update text khi timer đang chạy
+	if not floor_timer.is_stopped():
+		label.text = "%02d" % time_left_to_live()
 
 func shoot_bubble(speed: float) -> void:
 	var bubble := bubble_factory.create() as BubbleProjectile
@@ -41,5 +72,6 @@ func change_to_bubble_attack() -> void:
 
 
 func _on_timer_timeout() -> void:
-	if is_on_floor():
-		return
+	label.visible = false
+	fsm.change_state(fsm.states.dead)
+	pass # Replace with function body.

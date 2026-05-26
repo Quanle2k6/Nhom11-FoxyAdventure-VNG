@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://b8cj8642y4bv2" path="res://assets/sprites/enviroment/terrain/terrain_32x32.tres" id="1_fr5f5"]
 [ext_resource type="Script" uid="uid://w82lu7mfjnba" path="res://scenes/map/island/WaterArea2D.gd" id="3_oo8b5"]
 [ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/sprites/enviroment/background/additional_water.png" id="4_fr5f5"]
-[ext_resource type="PackedScene" uid="uid://cxolan44wwqkl" path="res://scenes/player/player_types/Aqua/Aqua.tscn" id="4_oo8b5"]
+[ext_resource type="PackedScene" uid="uid://cxolan44wwqkl" path="res://scenes/player/player_types/aqua/aqua.tscn" id="4_oo8b5"]
 [ext_resource type="PackedScene" uid="uid://cj5a5j1fan0lv" path="res://scenes/enemies/king_crab/king_crab.tscn" id="5_fr5f5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grklg"]
