@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AudioDatabase" load_steps=12 format=3 uid="uid://c1ope6ptf8yny"]
+
+[ext_resource type="Script" uid="uid://ovmtn36802i6" path="res://script/audio/audio_database.gd" id="1_nw313"]
+[ext_resource type="Script" uid="uid://chlphbiuq1gay" path="res://script/audio/audio_clip.gd" id="1_x0dso"]
+[ext_resource type="Resource" uid="uid://dsse4vsgye77o" path="res://data/audio/player_jump.tres" id="2_quhjw"]
+[ext_resource type="Resource" uid="uid://cmc75vdf61c4y" path="res://data/audio/player_hurt.tres" id="3_ut6nb"]
+[ext_resource type="Resource" uid="uid://c3mrojgbnl1rt" path="res://data/audio/respawn.tres" id="4_hsaa8"]
+[ext_resource type="Resource" uid="uid://pm6i62hd5hvu" path="res://data/audio/step_water.tres" id="5_wru05"]
+[ext_resource type="Resource" uid="uid://b520oximbegpn" path="res://data/audio/player_swim.tres" id="6_xjxco"]
+[ext_resource type="Resource" uid="uid://05ggg1ajniyq" path="res://data/audio/idle_swim.tres" id="7_g1k8g"]
+[ext_resource type="Resource" uid="uid://dj1udmg27o02i" path="res://data/audio/player_landing.tres" id="8_ykssl"]
+[ext_resource type="Resource" uid="uid://c558sua0tq3yf" path="res://data/audio/player_die.tres" id="9_374as"]
+[ext_resource type="Resource" uid="uid://dpruaj0vjxfss" path="res://data/audio/player_run.tres" id="10_mjplr"]
+
+[resource]
+script = ExtResource("1_nw313")
+clips = Array[ExtResource("1_x0dso")]([ExtResource("2_quhjw"), ExtResource("3_ut6nb"), ExtResource("4_hsaa8"), ExtResource("5_wru05"), ExtResource("6_xjxco"), ExtResource("7_g1k8g"), ExtResource("8_ykssl"), ExtResource("9_374as"), ExtResource("10_mjplr")])
+metadata/_custom_type_script = "uid://ovmtn36802i6"
