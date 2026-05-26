@@ -71,10 +71,11 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oniw0"]
 
-[node name="Bird" type="CharacterBody2D"]
+[node name="Bird" type="CharacterBody2D" node_paths=PackedStringArray("start_state")]
 collision_layer = 8
 collision_mask = 3
 script = ExtResource("1_stf8a")
+start_state = NodePath("States/Idle")
 movement_speed = 60.0
 metadata/_custom_type_script = "uid://dk884dyulupv6"
 
@@ -116,6 +117,8 @@ sprite_frames = SubResource("SpriteFrames_uutas")
 animation = &"idle"
 
 [node name="DetectPlayerArea2D" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/DetectPlayerArea2D"]
 scale = Vector2(5.20787, 3.39117)
