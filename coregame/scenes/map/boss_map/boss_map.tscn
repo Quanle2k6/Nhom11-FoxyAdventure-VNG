@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bt60hfqeoqn8q"]
+[gd_scene load_steps=15 format=4 uid="uid://bt60hfqeoqn8q"]
 
 [ext_resource type="Script" uid="uid://cwe47jffdcxhk" path="res://scenes/map/boss_map/boss_map.gd" id="1_np36i"]
 [ext_resource type="TileSet" uid="uid://b8cj8642y4bv2" path="res://assets/sprites/enviroment/terrain/terrain_32x32.tres" id="2_f6hat"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://1rsx5850h8ui" path="res://script/checkpoint.tscn" id="5_1rnjf"]
 [ext_resource type="Texture2D" uid="uid://clbcd3sj0kgix" path="res://assets/sprites/enviroment/background/background_layer_3.png" id="6_8i5ay"]
 [ext_resource type="Texture2D" uid="uid://diu3bkqy8e2gf" path="res://assets/sprites/enviroment/rock/rock_2.png" id="7_7eoqm"]
+[ext_resource type="PackedScene" uid="uid://cj5a5j1fan0lv" path="res://scenes/enemies/king_crab/king_crab.tscn" id="8_f6hat"]
+[ext_resource type="Script" uid="uid://cfnrcwbhvq04v" path="res://scenes/map/main_map/level_exit.gd" id="9_t6anm"]
+[ext_resource type="Texture2D" uid="uid://drecwj6ashren" path="res://assets/sprites/items/chest_key/key_1.png" id="10_7y5pq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iao7t"]
 size = Vector2(128, 96)
@@ -16,6 +19,9 @@ size = Vector2(128.002, 94.9984)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qubsi"]
 size = Vector2(2000, 344)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gh2e"]
+size = Vector2(120, 180)
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_np36i")
@@ -114,3 +120,27 @@ texture = ExtResource("7_7eoqm")
 centered = false
 
 [node name="ParallaxLayerCloud" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="KingCrab" parent="." instance=ExtResource("8_f6hat")]
+position = Vector2(1023, 502)
+
+[node name="BossCamera2D" type="Camera2D" parent="."]
+position = Vector2(1003, 501)
+rotation = 0.00980181
+zoom = Vector2(2.5, 2.5)
+
+[node name="ExitLevel" type="Area2D" parent="."]
+visible = false
+position = Vector2(797, 539)
+collision_layer = 64
+collision_mask = 2
+monitoring = false
+script = ExtResource("9_t6anm")
+target_scene_path = "uid://dbylbjddg4q8n"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitLevel"]
+shape = SubResource("RectangleShape2D_8gh2e")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ExitLevel"]
+texture = ExtResource("10_7y5pq")

@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="16_x6t26"]
 [ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="17_h0prf"]
 [ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="18_aylck"]
-[ext_resource type="Script" path="res://scenes/player/player_types/Aqua/double_jump.gd" id="19_4cbmv"]
+[ext_resource type="Script" uid="uid://dod3ar7ea4i18" path="res://scenes/player/player_types/Aqua/double_jump.gd" id="19_4cbmv"]
 [ext_resource type="Script" uid="uid://5oxoj5jfcrl" path="res://scenes/player/states/dead.gd" id="20_dead"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t874g"]

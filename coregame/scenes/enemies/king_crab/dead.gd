@@ -4,6 +4,9 @@ func _enter() -> void:
 	obj.change_animation('dead')
 	obj.stop_move()
 	set_dead(true)
+	var current_scene := obj.get_tree().current_scene
+	if current_scene != null and current_scene.has_method("on_boss_defeated"):
+		current_scene.on_boss_defeated()
 
 
 func set_dead(is_dead: bool):
