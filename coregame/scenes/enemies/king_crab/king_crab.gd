@@ -1,7 +1,6 @@
 extends EnemyCharacter
 
 @onready var claw_projectile_factory: Node2DFactory = $Direction/ProjectileFactory
-@onready var near_player_area: Area2D = $Direction/NearPlayerArea2D
 
 @export var shoot_speed: float = 320.0
 @export var roll_speed: float = 110
@@ -20,15 +19,12 @@ extends EnemyCharacter
 @export var damage_trigger_window: float = 1.2 
 
 var is_shielding: bool = false
-var is_player_near: bool = false
 var should_shield_after_hurt: bool = false
 var last_damage_direction: Vector2 = Vector2.ZERO
 var _recent_damage: float = 0.0
 var _recent_damage_timer: float = 0.0
 
 func _ready() -> void:
-	near_player_area.body_entered.connect(_on_near_player_area_body_entered)
-	near_player_area.body_exited.connect(_on_near_player_area_body_exited)
 	super._ready()
 
 func _update_movement(delta: float) -> void:
@@ -61,12 +57,6 @@ func set_shield_enabled(enabled: bool) -> void:
 	is_shielding = enabled
 	set_hit_area_enabled(not enabled)
 	set_hurt_area_enabled(not enabled)
-
-func _on_near_player_area_body_entered(_body: CharacterBody2D) -> void:
-	is_player_near = true
-
-func _on_near_player_area_body_exited(_body: CharacterBody2D) -> void:
-	is_player_near = false
 
 func _take_damage_from_dir(damage_dir: Vector2, damage: float):
 	if is_shielding:

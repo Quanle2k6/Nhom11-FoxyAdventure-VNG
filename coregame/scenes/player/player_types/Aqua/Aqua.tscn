@@ -20,7 +20,7 @@
 [ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="18_pt7im"]
 [ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="19_4vx50"]
 [ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="20_am2ss"]
-[ext_resource type="Script" path="res://scenes/player/player_types/aqua/Aqua_state/bubble_attack.gd" id="21_8vvd7"]
+[ext_resource type="Script" uid="uid://br6fu5tcikpcw" path="res://scenes/player/player_types/aqua/Aqua_state/bubble_attack.gd" id="21_8vvd7"]
 [ext_resource type="Script" uid="uid://5oxoj5jfcrl" path="res://scenes/player/states/dead.gd" id="22_jdi0m"]
 [ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://assets/Porky Bold.otf" id="23_33bvd"]
 
