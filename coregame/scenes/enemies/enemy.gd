@@ -1,7 +1,7 @@
 class_name EnemyCharacter
 extends BaseCharacter
 
-@export_enum("Idle","Run","VerticleMove","HorizontalMove") var start_state: String = "Idle"
+@export_enum("Idle","Run","VerticalMove","HorizontalMove") var start_state: String = "Idle"
 @export var vertical_direction: int = -1
 
 # Raycast check wall and fall

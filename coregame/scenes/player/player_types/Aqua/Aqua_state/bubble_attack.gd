@@ -8,6 +8,7 @@ func _enter() -> void:
 	obj.shoot_bubble(bubble_speed)
 	await get_tree().create_timer(attack_duration).timeout
 	if fsm.current_state == self:
+		obj.mark_attack_completed()
 		if obj.is_in_water >= 1:
 			change_state(fsm.states.float)
 		elif obj.is_on_floor():
