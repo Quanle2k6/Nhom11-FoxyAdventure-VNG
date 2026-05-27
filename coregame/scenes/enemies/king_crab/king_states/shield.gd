@@ -4,6 +4,7 @@ func _enter() -> void:
 	stop_velocity()
 	obj.set_shield_enabled(true)
 	obj.change_animation("shield")
+	AudioManager.play_sound("boss_shield")
 	timer = obj.shield_duration
 
 func _update(delta: float) -> void:

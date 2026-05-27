@@ -6,6 +6,7 @@ func _enter() -> void:
 	timer = 0.5
 	obj.change_animation("attackblade")
 	get_hitbox().set_deferred("disabled", true)
+	AudioManager.play_sound("player_sword")
 	obj.stop_move()
 
 

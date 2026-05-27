@@ -4,5 +4,5 @@
 
 [node name="BackgroundMusic" type="Node"]
 script = ExtResource("1_kr25r")
-volume_db = 60.0
-fade_in = 20.0
+volume_db = 5.0
+fade_in = 2.0

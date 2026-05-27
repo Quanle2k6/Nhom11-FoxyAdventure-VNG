@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bn5gos22mxbx6"]
+[gd_scene load_steps=12 format=3 uid="uid://bn5gos22mxbx6"]
 
 [ext_resource type="Script" uid="uid://biurp4ahvo8s7" path="res://scenes/menu/menu.gd" id="1_kcc1k"]
 [ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://assets/sprites/enviroment/background/big_clouds.png" id="3_iflpk"]
 [ext_resource type="Texture2D" uid="uid://bqde0l4at7gv8" path="res://assets/sprites/enviroment/background/bg_image.png" id="3_u7h56"]
 [ext_resource type="Texture2D" uid="uid://dcvs45slp2tv3" path="res://assets/sprites/enviroment/background/small_cloud_3.png" id="4_u7h56"]
 [ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://assets/Porky Bold.otf" id="5_yenv6"]
+[ext_resource type="PackedScene" uid="uid://dsn843shibdbt" path="res://script/audio/intro_music.tscn" id="6_a7470"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7470"]
 bg_color = Color(0.67069, 0.67069, 0.67069, 1)
@@ -160,6 +161,8 @@ theme_override_colors/font_color = Color(0.015918, 0.118978, 0.255404, 1)
 theme_override_fonts/font = ExtResource("5_yenv6")
 theme_override_font_sizes/font_size = 100
 text = "Foxy Adventure"
+
+[node name="BackgroundMusic" parent="." instance=ExtResource("6_a7470")]
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

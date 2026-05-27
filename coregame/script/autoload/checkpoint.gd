@@ -34,6 +34,7 @@ func activate() -> void:
 	GameManager.save_checkpoint(checkpoint_id)
 	checkpoint_activated.emit(checkpoint_id)
 	print("Checkpoint activated: ", checkpoint_id)
+	AudioManager.play_sound("key_collect")
 
 
 #activate checkpoint visually without saving

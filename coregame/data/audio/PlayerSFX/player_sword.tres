@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://cbv0enbvjwifb"]
+
+[ext_resource type="Script" uid="uid://chlphbiuq1gay" path="res://script/audio/audio_clip.gd" id="1_qy3et"]
+[ext_resource type="AudioStream" uid="uid://bevo1xsm4k7na" path="res://assets/audio/effect/player/56_Attack_03.wav" id="2_10lbl"]
+
+[resource]
+script = ExtResource("1_qy3et")
+clip_id = "player_sword"
+stream = ExtResource("2_10lbl")
+volume_db = 0.0
+randomize_pitch = false
+pitch_min = 0.9
+pitch_max = 1.1
+description = ""
+metadata/_custom_type_script = "uid://chlphbiuq1gay"

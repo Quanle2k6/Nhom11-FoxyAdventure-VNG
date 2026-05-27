@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://0dafck0pg4a4"]
+
+[ext_resource type="Script" uid="uid://b5dfisntwybbg" path="res://script/audio/ambience_area_2d(Water).gd" id="1_edjdr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edjdr"]
+
+[node name="AmbienceArea2D" type="Area2D"]
+scale = Vector2(2.03175, 0.764706)
+script = ExtResource("1_edjdr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 0.00469619
+scale = Vector2(4.34711, 1.26154)
+shape = SubResource("RectangleShape2D_edjdr")
