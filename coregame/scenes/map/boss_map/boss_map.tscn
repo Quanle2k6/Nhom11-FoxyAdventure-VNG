@@ -1,21 +1,23 @@
-[gd_scene load_steps=11 format=4 uid="uid://bt60hfqeoqn8q"]
+[gd_scene load_steps=13 format=4 uid="uid://bt60hfqeoqn8q"]
 
 [ext_resource type="Script" uid="uid://cwe47jffdcxhk" path="res://scenes/map/boss_map/boss_map.gd" id="1_np36i"]
 [ext_resource type="TileSet" uid="uid://b8cj8642y4bv2" path="res://assets/sprites/enviroment/terrain/terrain_32x32.tres" id="2_f6hat"]
 [ext_resource type="Script" uid="uid://w82lu7mfjnba" path="res://scenes/map/island/WaterArea2D.gd" id="3_w2f8g"]
 [ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/sprites/enviroment/background/additional_water.png" id="4_7y5pq"]
-[ext_resource type="PackedScene" uid="uid://1rsx5850h8ui" path="res://script/checkpoint.tscn" id="5_1rnjf"]
-[ext_resource type="Texture2D" uid="uid://clbcd3sj0kgix" path="res://assets/sprites/enviroment/background/background_layer_3.png" id="6_8i5ay"]
-[ext_resource type="Texture2D" uid="uid://diu3bkqy8e2gf" path="res://assets/sprites/enviroment/rock/rock_2.png" id="7_7eoqm"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iao7t"]
-size = Vector2(128, 96)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpc0d"]
-size = Vector2(128.002, 94.9984)
+[ext_resource type="Texture2D" uid="uid://clbcd3sj0kgix" path="res://assets/sprites/enviroment/background/background_layer_3.png" id="7_8i5ay"]
+[ext_resource type="Texture2D" uid="uid://diu3bkqy8e2gf" path="res://assets/sprites/enviroment/rock/rock_2.png" id="8_7eoqm"]
+[ext_resource type="PackedScene" uid="uid://cj5a5j1fan0lv" path="res://scenes/enemies/king_crab/king_crab.tscn" id="9_f6hat"]
+[ext_resource type="Script" uid="uid://cfnrcwbhvq04v" path="res://scenes/map/main_map/level_exit.gd" id="9_t6anm"]
+[ext_resource type="Texture2D" uid="uid://drecwj6ashren" path="res://assets/sprites/items/chest_key/key_1.png" id="10_7y5pq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qubsi"]
-size = Vector2(2000, 344)
+size = Vector2(855, 167)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gh2e"]
+size = Vector2(120, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7y5pq"]
+size = Vector2(66, 430)
 
 [node name="Stage" type="Node2D"]
 script = ExtResource("1_np36i")
@@ -24,50 +26,19 @@ script = ExtResource("1_np36i")
 top_level = true
 visibility_layer = 2
 position = Vector2(-4, 14)
-tile_map_data = PackedByteArray("AAAAABEAAAAAAAAAAAABABEAAAABAAAAAAACABEAAAABAAAAAAADABEAAAABAAAAAAAEABEAAAABAAAAAAAEABIAAAABAAEAAAAEABMAAAAGAAAAAAAFABIAAAAGAAAAAAAFABEAAAABAAAAAAAGABEAAAAJAAMAAAADABMAAAABAAEAAAAFABMAAAACAAIAAAAGABIAAAAGAAAAAAAGABMAAAAEAAEAAAADABIAAAABAAEAAAACABMAAAABAAEAAAACABIAAAABAAEAAAABABMAAAABAAEAAAABABIAAAABAAEAAAAAABIAAAABAAEAAAAAABMAAAABAAEAAAAPABEAAAAAAAAAAAAPABIAAAABAAEAAAAPABMAAAAGAAAAAAAQABMAAAABAAIAAAARABMAAAABAAIAAAASABMAAAAKAAEAAAATABMAAAABAAIAAAAUABMAAAABAAIAAAAVABMAAAABAAIAAAAWABMAAAABAAIAAAAXABMAAAABAAIAAAAYABMAAAAKAAEAAAAZABMAAAABAAIAAAAaABMAAAABAAIAAAAbABMAAAABAAIAAAAcABMAAAABAAIAAAAdABMAAAABAAIAAAAeABMAAAABAAIAAAAfABMAAAABAAIAAAAgABMAAAABAAIAAAAhABMAAAACAAIAAAAiABMAAAAEAAEAAAAQABEAAAABAAAAAAAQABIAAAABAAEAAAARABIAAAABAAEAAAARABEAAAABAAAAAAASABIAAAABAAEAAAATABIAAAABAAEAAAATABEAAAABAAAAAAAUABEAAAABAAAAAAASABEAAAABAAAAAAAVABEAAAABAAAAAAAUABIAAAABAAEAAAAVABIAAAABAAEAAAAWABIAAAABAAEAAAAXABEAAAABAAAAAAAXABIAAAABAAEAAAAYABIAAAABAAEAAAAWABEAAAABAAAAAAAYABEAAAABAAAAAAAZABEAAAABAAAAAAAaABEAAAABAAAAAAAbABEAAAABAAAAAAAbABIAAAABAAEAAAAaABIAAAABAAEAAAAZABIAAAABAAEAAAAcABIAAAABAAEAAAAcABEAAAABAAAAAAAdABEAAAABAAAAAAAeABEAAAABAAAAAAAfABEAAAABAAAAAAAgABEAAAABAAAAAAAgABIAAAABAAEAAAAhABIAAAAGAAAAAAAiABIAAAAGAAAAAAAiABEAAAAJAAMAAAAhABEAAAABAAAAAAAfABIAAAABAAEAAAAeABIAAAABAAEAAAAdABIAAAABAAEAAAAnABEAAAAEAAAAAAAoABEAAAAEAAAAAAApABEAAAAEAAAAAAAqABEAAAAEAAAAAAArABEAAAAAAAAAAAAnABIAAAAAAAEAAAAoABIAAAABAAEAAAApABIAAAABAAEAAAAqABIAAAABAAEAAAArABIAAAABAAEAAAArABMAAAABAAEAAAAqABMAAAABAAEAAAApABMAAAAHAAAAAAAoABMAAAABAAIAAAAnABMAAAAAAAEAAAALABIAAAAAAAEAAAAMABIAAAABAAEAAAANABIAAAABAAEAAAAOABIAAAABAAEAAAALABMAAAABAAIAAAAMABMAAAABAAIAAAANABMAAAABAAIAAAAOABMAAAAHAAAAAAALABEAAAAKAAMAAAAMABEAAAABAAAAAAANABEAAAABAAAAAAAOABEAAAACAAAAAAAsABEAAAABAAAAAAAtABEAAAABAAAAAAAuABEAAAABAAAAAAAvABEAAAABAAAAAAAwABEAAAABAAAAAAAwABMAAAABAAIAAAAvABMAAAABAAEAAAAuABIAAAABAAEAAAAtABIAAAABAAEAAAAtABMAAAABAAEAAAAsABMAAAABAAEAAAAsABIAAAABAAEAAAAvABIAAAABAAEAAAAwABIAAAABAAEAAAAuABMAAAABAAEAAAAxABEAAAABAAAAAAAyABEAAAABAAAAAAAzABEAAAABAAAAAAA0ABEAAAABAAAAAAA1ABEAAAABAAAAAAA2ABEAAAABAAAAAAA5ABEAAAABAAAAAAA6ABEAAAABAAAAAAA7ABEAAAABAAAAAAA8ABEAAAABAAAAAAA9ABEAAAABAAAAAAA+ABEAAAAJAAMAAAAxABIAAAABAAEAAAAxABMAAAABAAIAAAAyABMAAAABAAIAAAAyABIAAAABAAEAAAAzABMAAAABAAIAAAAzABIAAAABAAEAAAA0ABIAAAABAAEAAAA0ABMAAAABAAIAAAA1ABIAAAABAAEAAAA1ABMAAAABAAIAAAA2ABMAAAABAAIAAAA2ABIAAAABAAEAAAA6ABIAAAABAAEAAAA7ABIAAAABAAEAAAA8ABIAAAABAAEAAAA9ABIAAAABAAEAAAA+ABIAAAABAAEAAAA+ABMAAAABAAEAAAA9ABMAAAABAAEAAAA8ABMAAAABAAEAAAA7ABMAAAABAAEAAAA6ABMAAAABAAEAAAA3ABEAAAABAAAAAAA4ABEAAAABAAAAAAA4ABIAAAABAAEAAAA4ABMAAAABAAEAAAA5ABMAAAABAAEAAAA3ABMAAAABAAEAAAA3ABIAAAABAAEAAAA5ABIAAAABAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAgAAAAAAAIAAAAAAAcAAAAAAAAAAAACAAgAAAABAAIAAAAHAAgAAAAAAAIAAAAIAAgAAAABAAIAAAAJAAgAAAAKAAEAAAAKAAgAAAABAAEAAAALAAgAAAABAAEAAAAMAAgAAAABAAEAAAANAAgAAAABAAEAAAAOAAgAAAABAAEAAAAPAAgAAAABAAEAAAAQAAgAAAAKAAEAAAARAAgAAAABAAIAAAAWAAgAAAABAAIAAAAXAAgAAAABAAIAAAAYAAgAAAABAAIAAAASAAgAAAACAAIAAAABAAcAAAABAAAAAAACAAcAAAABAAAAAAAIAAcAAAABAAAAAAAJAAcAAAABAAAAAAAKAAcAAAABAAAAAAALAAcAAAABAAAAAAAMAAcAAAABAAAAAAANAAcAAAABAAAAAAAOAAcAAAABAAAAAAAPAAcAAAABAAAAAAAQAAcAAAABAAAAAAARAAcAAAACAAAAAAAWAAcAAAAAAAAAAAAXAAcAAAABAAAAAAAYAAcAAAACAAAAAAAZAAcAAAACAAAAAAAZAAgAAAACAAIAAAARAAYABQAAAAAAAQAXAAYABAAAAAAAAQAIAAYABAAAAAAAAQASAAEACgAAAAAAAQAPAAAACwAAAAAAAQALAAEACgAAAAAAAQAVAAQACwAAAAAAAQAGAAEACQAAAAAAAgAHAAcAAAABAAAAAAAJAAkAAAAAAAIAAAAKAAkAAAABAAIAAAALAAkAAAABAAIAAAAMAAkAAAABAAIAAAANAAkAAAABAAIAAAAOAAkAAAABAAIAAAAPAAkAAAABAAIAAAAQAAkAAAACAAIAAAABAAgAAAABAAIAAAAGAAcAAAAAAAAAAAADAAgAAAABAAIAAAAVAAgAAAAAAAIAAAAFAAUACwAAAAAAAQAOAAMACQAAAAAAAgABAAwAAAABAAIAAAACAAwAAAABAAIAAAADAAwAAAABAAIAAAAEAAwAAAABAAIAAAAFAAwAAAABAAIAAAAGAAwAAAABAAIAAAAHAAwAAAABAAIAAAAIAAwAAAABAAIAAAAJAAwAAAABAAIAAAAKAAwAAAABAAIAAAALAAwAAAABAAIAAAAMAAwAAAABAAIAAAANAAwAAAABAAIAAAAOAAwAAAABAAIAAAAPAAwAAAABAAIAAAAQAAwAAAABAAIAAAARAAwAAAABAAIAAAASAAwAAAABAAIAAAATAAwAAAABAAIAAAAUAAwAAAABAAIAAAAVAAwAAAABAAIAAAAWAAwAAAABAAIAAAAXAAwAAAABAAIAAAAYAAwAAAABAAIAAAAZAAwAAAABAAIAAAAaAAwAAAACAAIAAAAaAAsAAAACAAEAAAAaAAoAAAACAAEAAAAaAAkAAAACAAEAAAAaAAgAAAACAAEAAAAaAAcAAAACAAEAAAAaAAYAAAACAAEAAAAaAAUAAAACAAEAAAAaAAQAAAACAAEAAAAaAAMAAAACAAEAAAAaAAAAAAACAAEAAAAaAAEAAAACAAEAAAAaAAIAAAACAAEAAAAAAAwAAAABAAIAAAA=")
 tile_set = ExtResource("2_f6hat")
+
+[node name="LandStartPoint" type="Marker2D" parent="."]
+position = Vector2(51, 219)
+
+[node name="WaterStartPoint" type="Marker2D" parent="."]
+position = Vector2(52, 332)
 
 [node name="WaterGroup2" type="Node2D" parent="."]
 light_mask = 3
 z_index = 1
 position = Vector2(0, 21)
-
-[node name="WaterArea2D" type="Area2D" parent="WaterGroup2" groups=["Water"]]
-collision_layer = 32
-collision_mask = 0
-script = ExtResource("3_w2f8g")
-
-[node name="AdditionalWater" type="Sprite2D" parent="WaterGroup2/WaterArea2D" groups=["Water"]]
-self_modulate = Color(1, 1, 1, 0.27451)
-light_mask = 2
-visibility_layer = 2
-z_index = 1
-position = Vector2(284, 585)
-scale = Vector2(4, 3)
-texture = ExtResource("4_7y5pq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterGroup2/WaterArea2D" groups=["Water"]]
-position = Vector2(284, 585)
-shape = SubResource("RectangleShape2D_iao7t")
-
-[node name="WaterArea2D2" type="Area2D" parent="WaterGroup2" groups=["Water"]]
-collision_layer = 32
-collision_mask = 0
-script = ExtResource("3_w2f8g")
-
-[node name="AdditionalWater2" type="Sprite2D" parent="WaterGroup2/WaterArea2D2" groups=["Water"]]
-self_modulate = Color(1, 1, 1, 0.27451)
-light_mask = 2
-visibility_layer = 2
-z_index = 1
-position = Vector2(1180, 585.5)
-scale = Vector2(4, 2.96875)
-texture = ExtResource("4_7y5pq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterGroup2/WaterArea2D2" groups=["Water"]]
-position = Vector2(1180, 585.499)
-rotation = 2.51644e-05
-shape = SubResource("RectangleShape2D_fpc0d")
 
 [node name="WaterArea2D3" type="Area2D" parent="WaterGroup2" groups=["Water"]]
 collision_layer = 32
@@ -79,16 +50,13 @@ self_modulate = Color(1, 1, 1, 0.27451)
 light_mask = 2
 visibility_layer = 2
 z_index = 1
-position = Vector2(1000, 805.5)
-scale = Vector2(62.5, 10.7813)
+position = Vector2(428, 325)
+scale = Vector2(26.75, 5.5625)
 texture = ExtResource("4_7y5pq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WaterGroup2/WaterArea2D3"]
-position = Vector2(1000, 805)
+position = Vector2(427.5, 320.5)
 shape = SubResource("RectangleShape2D_qubsi")
-
-[node name="StartPoint" parent="." groups=["Checkpoint"] instance=ExtResource("5_1rnjf")]
-position = Vector2(90, 540)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -97,20 +65,53 @@ motion_scale = Vector2(0.08, 0.08)
 motion_mirroring = Vector2(767, 0)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2(3.84687, 3.1)
-texture = ExtResource("6_8i5ay")
+scale = Vector2(2.5, 2.21667)
+texture = ExtResource("7_8i5ay")
 centered = false
 
 [node name="Rock" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(781, 496)
-scale = Vector2(3.9375, 5.13281)
-texture = ExtResource("7_7eoqm")
+position = Vector2(24, 198)
+scale = Vector2(1.62963, 3.71614)
+texture = ExtResource("8_7eoqm")
 centered = false
 
 [node name="Rock2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(156, 521)
-scale = Vector2(2.56713, 3.04948)
-texture = ExtResource("7_7eoqm")
+position = Vector2(724, 202)
+scale = Vector2(1.66667, 3.13281)
+texture = ExtResource("8_7eoqm")
 centered = false
 
 [node name="ParallaxLayerCloud" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="KingCrab" parent="." instance=ExtResource("9_f6hat")]
+position = Vector2(390, 191)
+
+[node name="BossCamera2D" type="Camera2D" parent="."]
+position = Vector2(400, 200)
+rotation = 0.00980181
+zoom = Vector2(2.5, 2.5)
+
+[node name="ExitLevel" type="Area2D" parent="."]
+visible = false
+position = Vector2(807, 539)
+collision_layer = 64
+collision_mask = 2
+monitoring = false
+script = ExtResource("9_t6anm")
+target_scene_path = "uid://dbylbjddg4q8n"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitLevel"]
+position = Vector2(-272, -317)
+shape = SubResource("RectangleShape2D_8gh2e")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ExitLevel"]
+position = Vector2(-400, -319)
+texture = ExtResource("10_7y5pq")
+
+[node name="BanArea" type="StaticBody2D" parent="."]
+position = Vector2(-10, 187)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BanArea"]
+position = Vector2(-23, 28)
+shape = SubResource("RectangleShape2D_7y5pq")

@@ -68,7 +68,10 @@ func control_moving_in_water() -> bool:
 
 func control_water() -> bool:
 	if obj.is_in_water >= 1:
-		change_state(fsm.states.float)
+		if obj.global_position.y <= obj.water_surface_y:
+			change_state(fsm.states.float)
+		else:
+			change_state(fsm.states.wateridle)
 		return true
 	return false
 	

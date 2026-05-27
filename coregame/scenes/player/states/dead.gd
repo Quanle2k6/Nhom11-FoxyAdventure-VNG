@@ -14,4 +14,4 @@ func _enter() -> void:
 func _update(delta: float) -> void:
 	obj.stop_move()
 	if update_timer(delta):
-		obj.get_tree().change_scene_to_file(player_select_menu_path)
+		GameManager.change_to_scene(player_select_menu_path)

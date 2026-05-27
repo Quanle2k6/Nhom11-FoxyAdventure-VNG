@@ -23,61 +23,90 @@ position = Vector2(992.5, 496)
 scale = Vector2(6.21562, 5.48889)
 texture = ExtResource("2_qo55u")
 
-[node name="NormalFox" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -247.0
-offset_top = 94.0
-offset_right = -104.0
-offset_bottom = 422.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 1.5708
-
-[node name="AquaFox" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 301.0
-offset_top = 188.0
-offset_right = 416.0
-offset_bottom = 443.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = -1.5708
-
-[node name="JungleFox" type="TextureButton" parent="."]
+[node name="ResetHint" type="Label" parent="."]
 layout_mode = 0
+offset_left = 760.0
+offset_top = 820.0
+offset_right = 1240.0
+offset_bottom = 900.0
+theme_override_fonts/font = ExtResource("4_n21fu")
+theme_override_font_sizes/font_size = 36
+text = "R: Reset checkpoint"
+horizontal_alignment = 1
+
+[node name="Instruction" type="Label" parent="."]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 89.0
+offset_right = 715.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("4_n21fu")
+theme_override_font_sizes/font_size = 36
+text = "Click Enter to accept"
+horizontal_alignment = 1
+
+[node name="Aqua" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Aqua"]
+offset_left = 860.0
+offset_top = 609.0
+offset_right = 1173.0
+offset_bottom = 750.0
+theme_override_fonts/font = ExtResource("4_n21fu")
+theme_override_font_sizes/font_size = 50
+text = "Aqua Fox
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="Aqua"]
+position = Vector2(1003, 473)
+scale = Vector2(6.45313, 7.0625)
+texture = ExtResource("1_e6dt7")
+
+[node name="AquaFox" type="TextureButton" parent="Aqua"]
 offset_left = 858.0
 offset_top = 688.0
 offset_right = 949.0
 offset_bottom = 1000.0
 rotation = -1.5708
 
-[node name="Fox" type="Sprite2D" parent="."]
-position = Vector2(579.5, 477)
-scale = Vector2(6.45313, 7.0625)
-texture = ExtResource("1_e6dt7")
+[node name="AquaSelection" type="Label" parent="Aqua"]
+visible = false
+offset_left = 823.0
+offset_top = 225.0
+offset_right = 1183.0
+offset_bottom = 305.0
+theme_override_fonts/font = ExtResource("4_n21fu")
+theme_override_font_sizes/font_size = 50
+text = "Select"
+horizontal_alignment = 1
 
-[node name="Fox2" type="Sprite2D" parent="."]
-position = Vector2(1406, 466)
-scale = Vector2(6.45313, 7.0625)
-texture = ExtResource("1_e6dt7")
+[node name="Normal" type="Node2D" parent="."]
 
-[node name="Fox3" type="Sprite2D" parent="."]
-position = Vector2(1003, 473)
-scale = Vector2(6.45313, 7.0625)
-texture = ExtResource("1_e6dt7")
+[node name="NormalFox" type="TextureButton" parent="Normal"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 753.0
+offset_top = 594.0
+offset_right = 896.0
+offset_bottom = 922.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
+[node name="NormalSelection" type="Label" parent="Normal"]
+offset_left = 399.0
+offset_top = 225.0
+offset_right = 759.0
+offset_bottom = 305.0
+theme_override_fonts/font = ExtResource("4_n21fu")
+theme_override_font_sizes/font_size = 50
+text = "Select"
+horizontal_alignment = 1
+
+[node name="Normal" type="Label" parent="Normal"]
 offset_left = 431.0
 offset_top = 609.0
 offset_right = 744.0
@@ -87,28 +116,53 @@ theme_override_font_sizes/font_size = 50
 text = "Normal Fox
 "
 
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 860.0
-offset_top = 609.0
-offset_right = 1173.0
-offset_bottom = 750.0
-theme_override_fonts/font = ExtResource("4_n21fu")
-theme_override_font_sizes/font_size = 50
-text = "Jungle Fox
-"
+[node name="Sprite2D" type="Sprite2D" parent="Normal"]
+position = Vector2(579.5, 477)
+scale = Vector2(6.45313, 7.0625)
+texture = ExtResource("1_e6dt7")
 
-[node name="Label3" type="Label" parent="."]
-layout_mode = 0
+[node name="Jungle" type="Node2D" parent="."]
+
+[node name="Jungle" type="Label" parent="Jungle"]
 offset_left = 1295.0
 offset_top = 601.0
 offset_right = 1608.0
 offset_bottom = 742.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 50
-text = "Aqua Fox
+text = "Jungle Fox
 "
 
-[connection signal="pressed" from="NormalFox" to="." method="_on_normal_fox_pressed"]
-[connection signal="pressed" from="AquaFox" to="." method="_on_aqua_fox_pressed"]
-[connection signal="pressed" from="JungleFox" to="." method="_on_jungle_fox_pressed"]
+[node name="JungleFox" type="TextureButton" parent="Jungle"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1301.0
+offset_top = 688.0
+offset_right = 1416.0
+offset_bottom = 943.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+
+[node name="JungleSelection" type="Label" parent="Jungle"]
+visible = false
+offset_left = 1226.0
+offset_top = 225.0
+offset_right = 1586.0
+offset_bottom = 305.0
+theme_override_fonts/font = ExtResource("4_n21fu")
+theme_override_font_sizes/font_size = 50
+text = "Select"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Jungle"]
+position = Vector2(1406, 466)
+scale = Vector2(6.45313, 7.0625)
+texture = ExtResource("1_e6dt7")
+
+[connection signal="pressed" from="Aqua/AquaFox" to="." method="_on_aqua_fox_pressed"]
+[connection signal="pressed" from="Normal/NormalFox" to="." method="_on_normal_fox_pressed"]
+[connection signal="pressed" from="Jungle/JungleFox" to="." method="_on_jungle_fox_pressed"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://csyxnu2bl6qlp"]
+
+[ext_resource type="Texture2D" uid="uid://d182b57brk58f" path="res://assets/sprites/enviroment/background/3.png" id="1_urltl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfmvh"]
+atlas = ExtResource("1_urltl")
+region = Rect2(0, 512, 759, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5rw2"]
+atlas = ExtResource("1_urltl")
+region = Rect2(759, 512, 759, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uuogd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfmvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5rw2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Cloud3" type="StaticBody2D"]
+z_index = -1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.098, 0.1)
+sprite_frames = SubResource("SpriteFrames_uuogd")
+frame = 1
+frame_progress = 0.899515
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-33, 11, 37, 11, 33, 9, 34, 7, 34, 3, 31, 0, -22, 0, -23, 3, -26, 4, -27, 6, -30, 7)

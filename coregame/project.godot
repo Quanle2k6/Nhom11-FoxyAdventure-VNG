@@ -17,10 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameData="*res://scenes/menu/GameData.gd"
-
-[autoload]
-
+SaveSystem="*res://script/autoload/save_system.gd"
+GameManager="*res://script/autoload/game_manager.gd"
 AudioManager="*res://script/audio/audio_manager.gd"
 
 [display]
@@ -63,6 +61,11 @@ attack={
 gun_point={
 "deadzone": 0.2,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(277, 25),"global_position":Vector2(296, 121),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+reset={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"location":0,"echo":false,"script":null)
 ]
 }
 
