@@ -8,7 +8,6 @@ signal checkpoint_activated(checkpoint_id: String)
 
 @export var checkpoint_id: String = ""
 
-
 var is_activated: bool = false
 
 

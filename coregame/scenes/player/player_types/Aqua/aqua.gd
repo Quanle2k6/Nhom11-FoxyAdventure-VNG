@@ -49,7 +49,7 @@ func time_left_to_live():
 
 
 func _process(delta: float) -> void:
-	if fsm.current_state in [fsm.states.swim, fsm.states.wateridle, fsm.states.float]:
+	if fsm.current_state in [fsm.states.swim, fsm.states.wateridle, fsm.states.float,fsm.states.dead]:
 		label.visible = false
 		return
 	# Chỉ update text khi timer đang chạy

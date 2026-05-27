@@ -7,28 +7,63 @@
 
 [node name="Pick_Player" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 1.0
-offset_right = 5.0
-offset_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fl16o")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(992.5, 496)
+[node name="Sprite2D" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -1074.0
+offset_right = -640.0
+offset_bottom = -683.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.21562, 5.48889)
+texture = ExtResource("2_qo55u")
+
+[node name="Sprite2D2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1029.0
+offset_top = -1060.0
+offset_right = 1349.0
+offset_bottom = -672.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.21562, 5.48889)
+texture = ExtResource("2_qo55u")
+
+[node name="Sprite2D3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2948.0
+offset_top = -1074.0
+offset_right = -2628.0
+offset_bottom = -683.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(6.21562, 5.48889)
 texture = ExtResource("2_qo55u")
 
 [node name="ResetHint" type="Label" parent="."]
 layout_mode = 0
-offset_left = 760.0
-offset_top = 820.0
-offset_right = 1240.0
-offset_bottom = 900.0
+offset_left = -285.0
+offset_top = 273.0
+offset_right = 195.0
+offset_bottom = 353.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 36
 text = "R: Reset checkpoint"
@@ -36,116 +71,160 @@ horizontal_alignment = 1
 
 [node name="Instruction" type="Label" parent="."]
 layout_mode = 0
-offset_left = 235.0
-offset_top = 89.0
-offset_right = 715.0
-offset_bottom = 169.0
+offset_left = -900.0
+offset_top = -397.0
+offset_right = -420.0
+offset_bottom = -317.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 36
 text = "Click Enter to accept"
 horizontal_alignment = 1
 
-[node name="Aqua" type="Node2D" parent="."]
-
-[node name="Label" type="Label" parent="Aqua"]
-offset_left = 860.0
-offset_top = 609.0
-offset_right = 1173.0
-offset_bottom = 750.0
-theme_override_fonts/font = ExtResource("4_n21fu")
-theme_override_font_sizes/font_size = 50
-text = "Aqua Fox
-"
-
-[node name="Sprite2D" type="Sprite2D" parent="Aqua"]
-position = Vector2(1003, 473)
-scale = Vector2(6.45313, 7.0625)
-texture = ExtResource("1_e6dt7")
-
-[node name="AquaFox" type="TextureButton" parent="Aqua"]
-offset_left = 858.0
-offset_top = 688.0
-offset_right = 949.0
-offset_bottom = 1000.0
-rotation = -1.5708
-
-[node name="AquaSelection" type="Label" parent="Aqua"]
-visible = false
-offset_left = 823.0
-offset_top = 225.0
-offset_right = 1183.0
-offset_bottom = 305.0
-theme_override_fonts/font = ExtResource("4_n21fu")
-theme_override_font_sizes/font_size = 50
-text = "Select"
-horizontal_alignment = 1
-
-[node name="Normal" type="Node2D" parent="."]
-
-[node name="NormalFox" type="TextureButton" parent="Normal"]
+[node name="Aqua" type="Control" parent="."]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 753.0
-offset_top = 594.0
-offset_right = 896.0
-offset_bottom = 922.0
+offset_left = -1026.0
+offset_top = -463.0
+offset_right = -1026.0
+offset_bottom = -463.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Aqua"]
+offset_left = 878.0
+offset_top = 601.0
+offset_right = 1191.0
+offset_bottom = 742.0
+theme_override_fonts/font = ExtResource("4_n21fu")
+theme_override_font_sizes/font_size = 50
+text = "Aqua Fox
+"
+
+[node name="Sprite2D" type="TextureRect" parent="Aqua"]
+offset_left = 800.0
+offset_top = 240.0
+offset_right = 864.0
+offset_bottom = 304.0
+scale = Vector2(6.45313, 7.0625)
+texture = ExtResource("1_e6dt7")
+
+[node name="AquaFox" type="TextureButton" parent="Aqua"]
+offset_left = 905.0
+offset_top = 573.0
+offset_right = 1131.0
+offset_bottom = 747.0
+rotation = -1.5708
+
+[node name="AquaSelection" type="Label" parent="Aqua"]
+visible = false
+offset_left = 823.0
+offset_top = 270.0
+offset_right = 1183.0
+offset_bottom = 350.0
+theme_override_fonts/font = ExtResource("4_n21fu")
+theme_override_font_sizes/font_size = 50
+text = "Select"
+horizontal_alignment = 1
+
+[node name="Normal" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1685.0
+offset_top = -1325.0
+offset_right = -1685.0
+offset_bottom = -1325.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NormalFox" type="TextureButton" parent="Normal"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1207.0
+offset_top = 1208.0
+offset_right = 1446.0
+offset_bottom = 1390.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 1.5708
 
 [node name="NormalSelection" type="Label" parent="Normal"]
-offset_left = 399.0
-offset_top = 225.0
-offset_right = 759.0
-offset_bottom = 305.0
+offset_left = 938.5
+offset_top = 1132.0
+offset_right = 1298.5
+offset_bottom = 1212.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 50
 text = "Select"
 horizontal_alignment = 1
 
 [node name="Normal" type="Label" parent="Normal"]
-offset_left = 431.0
-offset_top = 609.0
-offset_right = 744.0
-offset_bottom = 750.0
+offset_left = 978.5
+offset_top = 1457.0
+offset_right = 1291.5
+offset_bottom = 1598.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 50
 text = "Normal Fox
 "
 
-[node name="Sprite2D" type="Sprite2D" parent="Normal"]
-position = Vector2(579.5, 477)
+[node name="Sprite2D" type="TextureRect" parent="Normal"]
+offset_left = 913.5
+offset_top = 1112.0
+offset_right = 977.5
+offset_bottom = 1176.0
 scale = Vector2(6.45313, 7.0625)
 texture = ExtResource("1_e6dt7")
 
-[node name="Jungle" type="Node2D" parent="."]
+[node name="Jungle" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2002.0
+offset_top = -1344.0
+offset_right = -2002.0
+offset_bottom = -1344.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Jungle" type="Label" parent="Jungle"]
-offset_left = 1295.0
-offset_top = 601.0
-offset_right = 1608.0
-offset_bottom = 742.0
+offset_left = 2380.0
+offset_top = 1476.0
+offset_right = 2693.0
+offset_bottom = 1617.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 50
 text = "Jungle Fox
 "
 
 [node name="JungleFox" type="TextureButton" parent="Jungle"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1301.0
-offset_top = 688.0
-offset_right = 1416.0
-offset_bottom = 943.0
+offset_left = 2598.0
+offset_top = 1222.0
+offset_right = 2824.0
+offset_bottom = 1389.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -1.5708
+rotation = 1.57079
 
 [node name="JungleSelection" type="Label" parent="Jungle"]
 visible = false
@@ -158,8 +237,12 @@ theme_override_font_sizes/font_size = 50
 text = "Select"
 horizontal_alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="Jungle"]
-position = Vector2(1406, 466)
+[node name="Sprite2D" type="TextureRect" parent="Jungle"]
+layout_mode = 0
+offset_left = 2314.0
+offset_top = 1115.0
+offset_right = 2378.0
+offset_bottom = 1179.0
 scale = Vector2(6.45313, 7.0625)
 texture = ExtResource("1_e6dt7")
 

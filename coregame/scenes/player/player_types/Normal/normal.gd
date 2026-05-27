@@ -25,7 +25,7 @@ func time_left_to_live():
 
 
 func _process(delta: float) -> void:
-	if is_on_floor() or fsm.current_state == fsm.states.float:
+	if is_on_floor() or fsm.current_state == fsm.states.float or fsm.current_state == fsm.states.dead:
 		label.visible = false
 		return
 	if not water_timer.is_stopped():

@@ -1,165 +1,98 @@
-[gd_scene load_steps=11 format=3 uid="uid://bn5gos22mxbx6"]
+[gd_scene load_steps=7 format=3 uid="uid://bn5gos22mxbx6"]
 
 [ext_resource type="Script" uid="uid://biurp4ahvo8s7" path="res://scenes/menu/menu.gd" id="1_kcc1k"]
-[ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://assets/sprites/enviroment/background/big_clouds.png" id="3_iflpk"]
-[ext_resource type="Texture2D" uid="uid://bqde0l4at7gv8" path="res://assets/sprites/enviroment/background/bg_image.png" id="3_u7h56"]
-[ext_resource type="Texture2D" uid="uid://dcvs45slp2tv3" path="res://assets/sprites/enviroment/background/small_cloud_3.png" id="4_u7h56"]
+[ext_resource type="Texture2D" uid="uid://cy81eia65q4cs" path="res://assets/sprites/enviroment/background/FinalFox.png" id="2_yenv6"]
+[ext_resource type="Texture2D" uid="uid://bdorvbtxjrjko" path="res://assets/sprites/enviroment/textbox.png" id="5_a7470"]
 [ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://assets/Porky Bold.otf" id="5_yenv6"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7470"]
-bg_color = Color(0.67069, 0.67069, 0.67069, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljdvc"]
-bg_color = Color(0.70173, 0.70173, 0.70173, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lumdm"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o0usu"]
-bg_color = Color(0.672752, 0.672752, 0.672751, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yenv6"]
-bg_color = Color(0.633757, 0.633757, 0.633757, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
+[ext_resource type="Theme" uid="uid://oop25hbafu5p" path="res://scenes/menu/game.tres" id="7_o0usu"]
+[ext_resource type="Texture2D" uid="uid://dd3swi40a484w" path="res://assets/ui/result/foxy.png" id="9_053gp"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kcc1k")
 
-[node name="BackGround" type="Node2D" parent="."]
-position = Vector2(1, 0)
-
-[node name="Sea_and_feat" type="Sprite2D" parent="BackGround"]
-position = Vector2(984, 497)
-scale = Vector2(5.1276, 7.76562)
-texture = ExtResource("3_u7h56")
-
-[node name="Wave1" type="Sprite2D" parent="BackGround"]
-position = Vector2(290, 543)
-scale = Vector2(1.34145, 2.67281)
-texture = ExtResource("3_iflpk")
-
-[node name="Wave2" type="Sprite2D" parent="BackGround"]
-position = Vector2(1683, 541)
-scale = Vector2(1.34145, 2.67281)
-texture = ExtResource("3_iflpk")
-
-[node name="Wave3" type="Sprite2D" parent="BackGround"]
-position = Vector2(863, 541)
-scale = Vector2(1.34145, 2.67281)
-texture = ExtResource("3_iflpk")
-
-[node name="Wave4" type="Sprite2D" parent="BackGround"]
-position = Vector2(1437, 539)
-scale = Vector2(1.34145, 2.67281)
-texture = ExtResource("3_iflpk")
-
-[node name="Cloude" type="Sprite2D" parent="BackGround"]
-position = Vector2(315.5, 187)
-scale = Vector2(1.94531, 2.05263)
-texture = ExtResource("4_u7h56")
-
-[node name="Cloude2" type="Sprite2D" parent="BackGround"]
-position = Vector2(553, 73)
-scale = Vector2(1.94531, 2.05263)
-texture = ExtResource("4_u7h56")
-
-[node name="Cloude3" type="Sprite2D" parent="BackGround"]
-position = Vector2(1675, 190)
-scale = Vector2(1.94531, 2.05263)
-texture = ExtResource("4_u7h56")
-
-[node name="Cloude4" type="Sprite2D" parent="BackGround"]
-position = Vector2(1429, 59)
-scale = Vector2(1.94531, 2.05263)
-texture = ExtResource("4_u7h56")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="BackGround" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -383.0
-offset_top = -115.0
-offset_right = 314.0
-offset_bottom = 394.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Sea_and_feat" type="TextureRect" parent="BackGround"]
+custom_minimum_size = Vector2(200, 2000)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -528.0
+offset_right = -1550.0
+offset_bottom = 392.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.1276, 7.76562)
+texture = ExtResource("2_yenv6")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BackGround"]
+layout_mode = 1
+offset_left = 760.0
+offset_top = 685.0
+offset_right = 1111.0
+offset_bottom = 963.0
 theme_override_constants/separation = 100
 
-[node name="Start" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="BackGround/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
-theme_override_styles/hover = SubResource("StyleBoxFlat_a7470")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ljdvc")
-theme_override_styles/normal = SubResource("StyleBoxFlat_lumdm")
+theme = ExtResource("7_o0usu")
+theme_override_font_sizes/font_size = 53
 text = "Start game"
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="BackGround/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
-theme_override_styles/hover = SubResource("StyleBoxFlat_o0usu")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yenv6")
-theme_override_styles/normal = SubResource("StyleBoxFlat_lumdm")
+theme = ExtResource("7_o0usu")
+theme_override_font_sizes/font_size = 53
 text = "Exit"
+
+[node name="Foxy" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 1294.0
+offset_top = 538.0
+offset_right = 1401.0
+offset_bottom = 648.0
+scale = Vector2(5.67757, 5)
+texture = ExtResource("9_053gp")
+flip_h = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 255.0
+offset_top = -340.0
+offset_right = 1737.0
+offset_bottom = 624.0
+texture = ExtResource("5_a7470")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -461.0
-offset_top = -320.0
-offset_right = 431.0
-offset_bottom = -189.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.015918, 0.118978, 0.255404, 1)
+offset_left = 430.0
+offset_top = 114.0
+offset_right = 1536.0
+offset_bottom = 277.0
+theme_override_colors/font_color = Color(0.279841, 0.500129, 0.648294, 1)
 theme_override_fonts/font = ExtResource("5_yenv6")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 124
 text = "Foxy Adventure"
 
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="BackGround/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="BackGround/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
