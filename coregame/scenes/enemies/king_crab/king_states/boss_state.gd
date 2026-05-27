@@ -20,8 +20,9 @@ func face_target() -> void:
 	elif boss_obj().found_player.global_position.x > obj.global_position.x + 20:
 		obj.turn_right()
 
-func is_player_near() -> bool:
-	return obj.is_player_near
+func is_player_in_land_trigger_area() -> bool:
+	var current_scene := obj.get_tree().current_scene
+	return current_scene != null and current_scene.has_method("is_player_in_land_trigger_area") and current_scene.is_player_in_land_trigger_area()
 
 func stop_horizontal_velocity() -> void:
 	obj.velocity.x = 0
@@ -57,6 +58,6 @@ func request_hurt() -> void:
 	change_state(fsm.states.hurt)
 
 func choose_attack_skill() -> FSMState:
-	if is_player_near():
+	if is_player_in_land_trigger_area():
 		return fsm.states.rollforward
 	return fsm.states.shootclaw

@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cj5a5j1fan0lv"]
+[gd_scene load_steps=51 format=3 uid="uid://cj5a5j1fan0lv"]
 
 [ext_resource type="Script" uid="uid://c018snolc17uo" path="res://scenes/enemies/king_crab/king_crab.gd" id="1_king"]
 [ext_resource type="Texture2D" uid="uid://b75i6m21vdlh" path="res://assets/sprites/enemies/King_Crab/King_Crab_1.png" id="3_6d0o4"]
@@ -248,9 +248,6 @@ size = Vector2(48.0006, 82.9998)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_novun"]
 size = Vector2(201.906, 165.43)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_near_player"]
-size = Vector2(252.353, 58.2353)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ud0h"]
 size = Vector2(57, 96)
 
@@ -260,8 +257,8 @@ collision_layer = 8
 script = ExtResource("1_king")
 shoot_speed = 200.0
 skill_decide_delay = 0.5
-shield_duration = 2.0
-no_attack_shoot_delay = 5.0
+no_attack_shoot_delay = 6.0
+damage_trigger_window = 3.0
 start_state = NodePath("States/Idle")
 movement_speed = 60.0
 direction = -1
@@ -313,17 +310,9 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/DetectPlayerArea2D"]
-position = Vector2(1.75, 2)
+position = Vector2(1.76471, 1.76471)
 scale = Vector2(5.20787, 3.39117)
 shape = SubResource("RectangleShape2D_novun")
-
-[node name="NearPlayerArea2D" type="Area2D" parent="Direction"]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/NearPlayerArea2D"]
-position = Vector2(2.05882, -0.882353)
-shape = SubResource("RectangleShape2D_near_player")
 
 [node name="ProjectileFactory" type="Marker2D" parent="Direction"]
 position = Vector2(44.8, -5.96046e-08)
