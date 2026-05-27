@@ -4,9 +4,6 @@ const NORMAL_FOX := "normal_fox"
 const AQUA_FOX := "aqua_fox"
 const JUNGLE_FOX := "jungle_fox"
 
-const BOSS_MAP_SPAWN_LAND := "land"
-const BOSS_MAP_SPAWN_WATER := "water"
-
 const MAIN_MAP_PATH := "res://scenes/map/main_map/main_map.tscn"
 const PICK_PLAYER_PATH := "res://scenes/menu/pick_player.tscn"
 
@@ -14,7 +11,6 @@ var selected_player_scene: PackedScene
 var selected_player_key: String = NORMAL_FOX
 var current_player: Player = null
 var current_stage: Node = null
-var boss_map_spawn_location: String = BOSS_MAP_SPAWN_LAND
 var checkpoint_ids_by_player: Dictionary = {}
 var current_checkpoint_id: String = ""
 var unlocked_players: Dictionary = {
@@ -49,13 +45,6 @@ func change_to_pick_player() -> void:
 
 func change_to_scene(path: String) -> void:
 	get_tree().change_scene_to_file(path)
-
-func change_to_boss_scene(path: String, spawn_location: String) -> void:
-	boss_map_spawn_location = spawn_location
-	change_to_scene(path)
-
-func set_boss_map_spawn_location(spawn_location: String) -> void:
-	boss_map_spawn_location = spawn_location
 
 func save_checkpoint(checkpoint_id: String, player_key: String = selected_player_key) -> void:
 	checkpoint_ids_by_player[player_key] = checkpoint_id

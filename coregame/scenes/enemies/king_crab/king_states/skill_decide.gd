@@ -15,4 +15,7 @@ func _update(delta: float) -> void:
 	face_target()
 	if not update_timer(delta):
 		return
+	if is_target_underwater():
+		change_state(fsm.states.run)
+		return
 	change_state(choose_attack_skill())
