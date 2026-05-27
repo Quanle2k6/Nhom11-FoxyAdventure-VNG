@@ -21,7 +21,7 @@ func _update_movement(delta: float) -> void:
 func time_left_to_live():
 	var time_left = water_timer.time_left
 	var second = int(time_left)
-	return [second]
+	return [second+1]
 
 
 func _process(delta: float) -> void:

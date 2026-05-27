@@ -55,4 +55,4 @@ shape = SubResource("CapsuleShape2D_i388g")
 position = Vector2(0.5, 0.500001)
 scale = Vector2(0.361111, 0.25)
 sprite_frames = SubResource("SpriteFrames_ya2yr")
-animation = &"checkpoint_1"
+animation = &"idle"

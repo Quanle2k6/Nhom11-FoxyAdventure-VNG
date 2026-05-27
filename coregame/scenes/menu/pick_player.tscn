@@ -95,6 +95,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="Aqua"]
+layout_mode = 0
 offset_left = 878.0
 offset_top = 601.0
 offset_right = 1191.0
@@ -105,6 +106,7 @@ text = "Aqua Fox
 "
 
 [node name="Sprite2D" type="TextureRect" parent="Aqua"]
+layout_mode = 0
 offset_left = 800.0
 offset_top = 240.0
 offset_right = 864.0
@@ -113,6 +115,7 @@ scale = Vector2(6.45313, 7.0625)
 texture = ExtResource("1_e6dt7")
 
 [node name="AquaFox" type="TextureButton" parent="Aqua"]
+layout_mode = 0
 offset_left = 905.0
 offset_top = 573.0
 offset_right = 1131.0
@@ -121,6 +124,7 @@ rotation = -1.5708
 
 [node name="AquaSelection" type="Label" parent="Aqua"]
 visible = false
+layout_mode = 0
 offset_left = 823.0
 offset_top = 270.0
 offset_right = 1183.0
@@ -160,6 +164,7 @@ grow_vertical = 2
 rotation = 1.5708
 
 [node name="NormalSelection" type="Label" parent="Normal"]
+layout_mode = 0
 offset_left = 938.5
 offset_top = 1132.0
 offset_right = 1298.5
@@ -170,6 +175,7 @@ text = "Select"
 horizontal_alignment = 1
 
 [node name="Normal" type="Label" parent="Normal"]
+layout_mode = 0
 offset_left = 978.5
 offset_top = 1457.0
 offset_right = 1291.5
@@ -180,6 +186,7 @@ text = "Normal Fox
 "
 
 [node name="Sprite2D" type="TextureRect" parent="Normal"]
+layout_mode = 0
 offset_left = 913.5
 offset_top = 1112.0
 offset_right = 977.5
@@ -202,6 +209,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Jungle" type="Label" parent="Jungle"]
+layout_mode = 0
 offset_left = 2380.0
 offset_top = 1476.0
 offset_right = 2693.0
@@ -228,6 +236,7 @@ rotation = 1.57079
 
 [node name="JungleSelection" type="Label" parent="Jungle"]
 visible = false
+layout_mode = 0
 offset_left = 1226.0
 offset_top = 225.0
 offset_right = 1586.0
