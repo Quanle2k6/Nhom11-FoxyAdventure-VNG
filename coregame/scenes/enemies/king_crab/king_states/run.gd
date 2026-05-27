@@ -18,7 +18,8 @@ func _update(delta: float) -> void:
 		return
 	if update_timer(delta):
 		stop_horizontal_velocity()
-		change_state(fsm.states.shootclaw)
+		if not is_target_underwater():
+			change_state(fsm.states.shootclaw)
 
 func _exit() -> void:
 	stop_horizontal_velocity()

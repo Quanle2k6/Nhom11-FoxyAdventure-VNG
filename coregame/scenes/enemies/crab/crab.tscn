@@ -76,10 +76,10 @@ size = Vector2(54.3411, 50.4319)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ud0h"]
 size = Vector2(22, 35)
 
-[node name="Crab" type="CharacterBody2D" node_paths=PackedStringArray("start_state")]
+[node name="Crab" type="CharacterBody2D"]
 collision_layer = 8
 script = ExtResource("1_8tk55")
-start_state = NodePath("States/Run")
+start_state = "Run"
 movement_speed = 60.0
 metadata/_custom_type_script = "uid://dk884dyulupv6"
 

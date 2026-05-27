@@ -1,7 +1,6 @@
 extends Node2D
 
-@onready var land_start_point := $LandStartPoint
-@onready var water_start_point := $WaterStartPoint
+@onready var start_point := $LandStartPoint
 @onready var boss_camera := $BossCamera2D
 @onready var boss := $KingCrab
 @onready var boss_health_bar := $BossHealthUI/MarginContainer/VBoxContainer/BossHealthBar
@@ -20,8 +19,7 @@ func _ready() -> void:
 	player = GameManager.selected_player_scene.instantiate()
 	add_child(player)
 	GameManager.register_player(player)
-	var spawn_location := GameManager.boss_map_spawn_location
-	player.apply_spawn(get_spawn_point(spawn_location).global_position, false)
+	player.apply_spawn(start_point.global_position, false)
 	disable_player_camera()
 	setup_boss_health_bar()
 	setup_land_trigger_area()
@@ -58,11 +56,6 @@ func on_boss_defeated() -> void:
 	boss_health_bar.get_parent().get_parent().visible = false
 	GameManager.unlock_next_player_after_boss()
 	show_exit_level()
-
-func get_spawn_point(spawn_location: String) -> Node2D:
-	if spawn_location == GameManager.BOSS_MAP_SPAWN_WATER:
-		return water_start_point
-	return land_start_point
 
 func disable_player_camera() -> void:
 	if player.has_node("Camera2D"):

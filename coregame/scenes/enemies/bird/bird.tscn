@@ -72,11 +72,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oniw0"]
 size = Vector2(67.782, 75.1953)
 
-[node name="Bird" type="CharacterBody2D" node_paths=PackedStringArray("start_state")]
+[node name="Bird" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 3
 script = ExtResource("1_stf8a")
-start_state = NodePath("States/Idle")
+start_state = "Idle"
 movement_speed = 60.0
 metadata/_custom_type_script = "uid://dk884dyulupv6"
 

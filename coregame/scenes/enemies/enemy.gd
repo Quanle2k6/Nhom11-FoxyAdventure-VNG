@@ -1,7 +1,7 @@
 class_name EnemyCharacter
 extends BaseCharacter
 
-@export var start_state: EnemyState
+@export_enum("Idle","Run","VerticleMove","HorizontalMove") var start_state: String = "Idle"
 @export var vertical_direction: int = -1
 
 # Raycast check wall and fall
@@ -61,8 +61,15 @@ func _init_hit_area():
 		hit_area = $Direction/HitArea2D
 
 func _init_start_state():
-	if start_state != null:
-		fsm = FSM.new(self, $States, start_state)
+	var initial_state := get_state_by_name(start_state)
+	if initial_state != null:
+		fsm = FSM.new(self, $States, initial_state)
+
+func get_state_by_name(state_name: String) -> EnemyState:
+	return $States.get_node_or_null(state_name) as EnemyState
+
+func get_start_state() -> EnemyState:
+	return get_state_by_name(start_state)
 		
 # check touch wall
 func is_touch_wall() -> bool:

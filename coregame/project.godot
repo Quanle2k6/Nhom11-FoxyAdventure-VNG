@@ -23,8 +23,8 @@ AudioManager="*res://script/audio/audio_manager.gd"
 
 [display]
 
-window/size/viewport_width=2000
-window/size/viewport_height=1000
+window/size/viewport_width=960
+window/size/viewport_height=540
 
 [input]
 

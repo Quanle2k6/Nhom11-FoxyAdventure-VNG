@@ -24,6 +24,16 @@ func is_player_in_land_trigger_area() -> bool:
 	var current_scene := obj.get_tree().current_scene
 	return current_scene != null and current_scene.has_method("is_player_in_land_trigger_area") and current_scene.is_player_in_land_trigger_area()
 
+func is_target_underwater() -> bool:
+	if not has_target():
+		return false
+	var player := boss_obj().found_player
+	if not "is_in_water" in player or player.is_in_water < 1:
+		return false
+	if player.fsm == null or player.fsm.current_state == null:
+		return true
+	return player.fsm.current_state != player.fsm.states.float
+
 func stop_horizontal_velocity() -> void:
 	obj.velocity.x = 0
 

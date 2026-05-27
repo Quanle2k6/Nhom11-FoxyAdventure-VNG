@@ -251,15 +251,14 @@ size = Vector2(201.906, 165.43)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ud0h"]
 size = Vector2(57, 96)
 
-[node name="KingCrab" type="CharacterBody2D" node_paths=PackedStringArray("start_state")]
-scale = Vector2(1.7, 1.7)
+[node name="KingCrab" type="CharacterBody2D"]
+scale = Vector2(1.4, 1.4)
 collision_layer = 8
 script = ExtResource("1_king")
 shoot_speed = 200.0
 skill_decide_delay = 0.5
 no_attack_shoot_delay = 6.0
 damage_trigger_window = 3.0
-start_state = NodePath("States/Idle")
 movement_speed = 60.0
 direction = -1
 max_health = 15
