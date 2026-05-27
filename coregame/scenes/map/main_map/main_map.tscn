@@ -118,6 +118,7 @@ tile_map_data = PackedByteArray("AAAAAAwAAAABAAAAAAAAAA0AAAABAAEAAAAAAA4AAAABAAE
 tile_set = ExtResource("6_h744q")
 
 [node name="StartPoint" type="Marker2D" parent="."]
+position = Vector2(233, 376)
 
 [node name="Checkpoint1" parent="." groups=["Checkpoint"] instance=ExtResource("7_nkqwp")]
 position = Vector2(1869, 290)
@@ -130,6 +131,10 @@ checkpoint_id = "main_map_checkpoint_2"
 [node name="Checkpoint3" parent="." groups=["Checkpoint"] instance=ExtResource("7_nkqwp")]
 position = Vector2(1675, 572)
 checkpoint_id = "main_map_checkpoint_3"
+
+[node name="Checkpoint4" parent="." groups=["Checkpoint"] instance=ExtResource("7_nkqwp")]
+position = Vector2(4458, 579)
+checkpoint_id = "main_map_checkpoint_4"
 
 [node name="LandBossExit" type="Area2D" parent="."]
 z_index = 1
@@ -251,8 +256,8 @@ position = Vector2(4305, 643)
 position = Vector2(4133, 754)
 
 [node name="Player" parent="." instance=ExtResource("12_c216c")]
-visible = true
-position = Vector2(160, 375)
+visible = false
+position = Vector2(235, 371)
 
 [editable path="Enemy/Crab"]
 [editable path="Enemy/Crab2"]
