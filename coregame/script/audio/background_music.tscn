@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bajt3x6i6s75f"]
+
+[ext_resource type="Script" uid="uid://bgsvhxa2vem8k" path="res://script/audio/background_music.gd" id="1_kr25r"]
+
+[node name="BackgroundMusic" type="Node"]
+script = ExtResource("1_kr25r")
+volume_db = 60.0
+fade_in = 20.0
