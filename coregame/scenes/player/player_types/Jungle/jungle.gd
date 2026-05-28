@@ -3,7 +3,7 @@ class_name  JungleFox
 @onready var water_timer = $Timer
 func _update_movement(delta: float) -> void:
 	# Bỏ qua trọng lực nếu đang ở trạng thái swim
-	if not is_on_floor() :
+	if should_apply_gravity():
 		velocity.y += delta * gravity
 	if is_in_water >=1:
 		# Nếu đang ở dưới nước mà Timer CHƯA CHẠY, thì mới kích  hoạt cho nó chạy

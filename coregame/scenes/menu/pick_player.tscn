@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbylbjddg4q8n"]
+[gd_scene load_steps=16 format=3 uid="uid://dbylbjddg4q8n"]
 
 [ext_resource type="Texture2D" uid="uid://c7b68c2t2m054" path="res://assets/sprites/characters/foxy/fox/fox_walk_4.png" id="1_e6dt7"]
 [ext_resource type="Script" uid="uid://dkkog6lsuhg2v" path="res://scenes/menu/pick_player.gd" id="1_fl16o"]
-[ext_resource type="Texture2D" uid="uid://x5sje5usbogq" path="res://assets/sprites/enviroment/background/background_layer_2.png" id="2_qo55u"]
 [ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://assets/Porky Bold.otf" id="4_n21fu"]
+[ext_resource type="Texture2D" uid="uid://x6swgis0gmm3" path="res://assets/Background layers/Layer_0011_0.png" id="5_kq75b"]
+[ext_resource type="Texture2D" uid="uid://cvryeg3ybnc26" path="res://assets/Background layers/Layer_0010_1.png" id="6_k68ue"]
+[ext_resource type="Texture2D" uid="uid://d2rv12fa6k15m" path="res://assets/Background layers/Layer_0009_2.png" id="7_wcww0"]
+[ext_resource type="Texture2D" uid="uid://cqq503sinpnvj" path="res://assets/Background layers/Layer_0008_3.png" id="8_02srb"]
+[ext_resource type="Texture2D" uid="uid://bx2s1ie3ve5r2" path="res://assets/Background layers/Layer_0007_Lights.png" id="9_ewct4"]
+[ext_resource type="Texture2D" uid="uid://bft8gfjmt6d4q" path="res://assets/Background layers/Layer_0006_4.png" id="10_ifw7v"]
+[ext_resource type="Texture2D" uid="uid://y1fnqflwujgq" path="res://assets/Background layers/Layer_0005_5.png" id="11_wyw2k"]
+[ext_resource type="Texture2D" uid="uid://dfajlam41ft2x" path="res://assets/Background layers/Layer_0004_Lights.png" id="12_t34fj"]
+[ext_resource type="Texture2D" uid="uid://deib2y1iasr55" path="res://assets/Background layers/Layer_0003_6.png" id="13_tdj6y"]
+[ext_resource type="Texture2D" uid="uid://bicvvkfdgxawe" path="res://assets/Background layers/Layer_0002_7.png" id="14_a0hlx"]
+[ext_resource type="Texture2D" uid="uid://cnxyu60ia74ah" path="res://assets/Background layers/Layer_0001_8.png" id="15_pwre4"]
+[ext_resource type="Texture2D" uid="uid://ddvyysm86w0db" path="res://assets/Background layers/Layer_0000_9.png" id="16_asv0c"]
 
 [node name="Pick_Player" type="Control"]
 layout_mode = 3
@@ -16,54 +27,124 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fl16o")
 
-[node name="Sprite2D" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -960.0
-offset_top = -1074.0
-offset_right = -640.0
-offset_bottom = -683.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(6.21562, 5.48889)
-texture = ExtResource("2_qo55u")
+[node name="ParallaxLayer" type="Node2D" parent="."]
+position = Vector2(-968, -884)
+scale = Vector2(1, 1.8)
 
-[node name="Sprite2D2" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1029.0
-offset_top = -1060.0
-offset_right = 1349.0
-offset_bottom = -672.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(6.21562, 5.48889)
-texture = ExtResource("2_qo55u")
+[node name="Layer1" type="Parallax2D" parent="ParallaxLayer"]
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(928, 0)
+repeat_times = 8
 
-[node name="Sprite2D3" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2948.0
-offset_top = -1074.0
-offset_right = -2628.0
-offset_bottom = -683.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(6.21562, 5.48889)
-texture = ExtResource("2_qo55u")
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer1"]
+texture = ExtResource("5_kq75b")
+centered = false
+
+[node name="Layer2" type="Parallax2D" parent="ParallaxLayer"]
+scroll_scale = Vector2(0.04, 0)
+repeat_size = Vector2(928, 0)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer2"]
+texture = ExtResource("6_k68ue")
+centered = false
+
+[node name="Layer3" type="Parallax2D" parent="ParallaxLayer"]
+scroll_scale = Vector2(0.07, 0)
+repeat_size = Vector2(928, 0)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer3"]
+texture = ExtResource("7_wcww0")
+centered = false
+
+[node name="Layer4" type="Parallax2D" parent="ParallaxLayer"]
+scroll_scale = Vector2(0.1, 0)
+repeat_size = Vector2(928, 0)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer4"]
+texture = ExtResource("8_02srb")
+centered = false
+
+[node name="Layer5" type="Parallax2D" parent="ParallaxLayer"]
+scroll_scale = Vector2(0.12, 0)
+repeat_size = Vector2(928, 0)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer5"]
+texture = ExtResource("9_ewct4")
+centered = false
+
+[node name="Layer6" type="Parallax2D" parent="ParallaxLayer"]
+scroll_scale = Vector2(0.16, 0)
+repeat_size = Vector2(928, 0)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer6"]
+texture = ExtResource("10_ifw7v")
+centered = false
+
+[node name="Layer7" type="Parallax2D" parent="ParallaxLayer"]
+scroll_scale = Vector2(0.21, 0)
+repeat_size = Vector2(928, 0)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer7"]
+texture = ExtResource("11_wyw2k")
+centered = false
+
+[node name="Layer8" type="Parallax2D" parent="ParallaxLayer"]
+scroll_scale = Vector2(0.25, 0)
+repeat_size = Vector2(928, 0)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer8"]
+texture = ExtResource("12_t34fj")
+centered = false
+
+[node name="Layer9" type="Parallax2D" parent="ParallaxLayer"]
+scroll_scale = Vector2(0.33, 0)
+repeat_size = Vector2(928, 0)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer9"]
+texture = ExtResource("13_tdj6y")
+centered = false
+
+[node name="Layer10" type="Parallax2D" parent="ParallaxLayer"]
+scroll_scale = Vector2(0.45, 0)
+repeat_size = Vector2(928, 0)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer10"]
+texture = ExtResource("14_a0hlx")
+centered = false
+
+[node name="Layer11" type="Parallax2D" parent="ParallaxLayer"]
+scroll_scale = Vector2(0.62, 0)
+repeat_size = Vector2(928, 0)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer11"]
+texture = ExtResource("15_pwre4")
+centered = false
+
+[node name="Layer12" type="Parallax2D" parent="ParallaxLayer"]
+scroll_scale = Vector2(0.82, 0)
+repeat_size = Vector2(928, 0)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer12"]
+texture = ExtResource("16_asv0c")
+centered = false
 
 [node name="ResetHint" type="Label" parent="."]
 layout_mode = 0
-offset_left = -285.0
-offset_top = 273.0
-offset_right = 195.0
-offset_bottom = 353.0
+offset_left = 208.0
+offset_top = -404.0
+offset_right = 688.0
+offset_bottom = -324.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 36
 text = "R: Reset checkpoint"
@@ -87,10 +168,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1026.0
-offset_top = -463.0
-offset_right = -1026.0
-offset_bottom = -463.0
+offset_left = -992.0
+offset_top = -251.0
+offset_right = -992.0
+offset_bottom = -251.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -141,10 +222,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1685.0
-offset_top = -1325.0
-offset_right = -1685.0
-offset_bottom = -1325.0
+offset_left = -1651.0
+offset_top = -1113.0
+offset_right = -1651.0
+offset_bottom = -1113.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -201,10 +282,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -2002.0
-offset_top = -1344.0
-offset_right = -2002.0
-offset_bottom = -1344.0
+offset_left = -1968.0
+offset_top = -1132.0
+offset_right = -1968.0
+offset_bottom = -1132.0
 grow_horizontal = 2
 grow_vertical = 2
 

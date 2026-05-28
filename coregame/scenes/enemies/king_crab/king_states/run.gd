@@ -13,6 +13,10 @@ func _update(delta: float) -> void:
 		stop_horizontal_velocity()
 		change_state(fsm.states.idle)
 		return
+	if is_target_underwater():
+		patrol()
+		_reset_timer_if_target_finished_attack()
+		return
 	face_target()
 	set_run_velocity()
 	_reset_timer_if_target_finished_attack()
@@ -22,8 +26,7 @@ func _update(delta: float) -> void:
 		return
 	if update_timer(delta):
 		stop_horizontal_velocity()
-		if not is_target_underwater():
-			change_state(fsm.states.shootclaw)
+		change_state(fsm.states.shootclaw)
 
 func _exit() -> void:
 	stop_horizontal_velocity()

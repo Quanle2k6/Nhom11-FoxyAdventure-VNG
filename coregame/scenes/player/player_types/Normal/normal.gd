@@ -5,7 +5,7 @@ class_name  NormalFox
 func _update_movement(delta: float) -> void:
 	
 	# Bỏ qua trọng lực nếu đang ở trạng thái swim
-	if not is_on_floor() and fsm.current_state != fsm.states.swim and fsm.current_state != fsm.states.wateridle and fsm.current_state != fsm.states.float:
+	if should_apply_gravity():
 		velocity.y += delta * gravity
 
 	if fsm.current_state == fsm.states.swim or fsm.current_state == fsm.states.wateridle:

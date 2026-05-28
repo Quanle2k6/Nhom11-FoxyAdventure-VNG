@@ -25,6 +25,9 @@ const OPTIONS := [
 ]
 
 @onready var reset_hint: Label = $ResetHint
+@onready var parallax_layer: Node2D = $ParallaxLayer
+
+@export var background_scroll_speed: float = 25.0
 
 var selected_index: int = 0
 
@@ -32,6 +35,11 @@ func _ready() -> void:
 	selected_index = get_first_unlocked_index()
 	AudioManager.stop_music()
 	update_selection()
+
+func _process(delta: float) -> void:
+	for layer in parallax_layer.get_children():
+		if layer is Parallax2D:
+			layer.scroll_offset.x -= background_scroll_speed * delta * maxf(layer.scroll_scale.x, 0.05)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left"):

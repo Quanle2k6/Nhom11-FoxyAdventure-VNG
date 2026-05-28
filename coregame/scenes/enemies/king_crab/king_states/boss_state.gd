@@ -43,6 +43,11 @@ func stop_velocity() -> void:
 func set_run_velocity() -> void:
 	obj.velocity.x = obj.movement_speed * obj.direction
 
+func patrol() -> void:
+	set_run_velocity()
+	if enemy_obj().is_touch_wall() or enemy_obj().is_can_fall():
+		enemy_obj().turn_around()
+
 func set_roll_velocity() -> void:
 	obj.velocity.x = obj.direction * obj.roll_speed
 
