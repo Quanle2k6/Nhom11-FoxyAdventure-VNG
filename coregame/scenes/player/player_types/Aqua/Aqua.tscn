@@ -219,6 +219,7 @@ script = ExtResource("20_am2ss")
 [node name="BubbleAttack" type="Node" parent="States"]
 script = ExtResource("21_8vvd7")
 bubble_speed = 400.0
+max_charge_time = 0.5
 
 [node name="Dead" type="Node" parent="States"]
 script = ExtResource("22_jdi0m")
