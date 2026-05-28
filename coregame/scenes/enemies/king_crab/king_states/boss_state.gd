@@ -47,10 +47,21 @@ func set_roll_velocity() -> void:
 	obj.velocity.x = obj.direction * obj.roll_speed
 
 func set_hurt_velocity() -> void:
-	var knockback_direction :float = obj.last_damage_direction.x
+	var knockback_direction: float = obj.last_damage_direction.x
 	if is_zero_approx(knockback_direction):
 		knockback_direction = -obj.direction
-	obj.velocity.x = sign(knockback_direction) * obj.hurt_knockback_speed
+	knockback_direction = sign(knockback_direction)
+	if _is_knockback_blocked(knockback_direction):
+		stop_horizontal_velocity()
+		return
+	obj.velocity.x = knockback_direction * obj.hurt_knockback_speed
+
+func _is_knockback_blocked(knockback_direction: float) -> bool:
+	var horizontal_motion := Vector2(knockback_direction * 6.0, 0.0)
+	if obj.test_move(obj.global_transform, horizontal_motion):
+		return true
+	var floor_check_transform := obj.global_transform.translated(Vector2(knockback_direction * 18.0, 0.0))
+	return not obj.test_move(floor_check_transform, Vector2(0.0, 36.0))
 
 func enable_contact_damage() -> void:
 	if not obj.is_shielding and fsm.current_state != fsm.states.dead:
@@ -64,6 +75,8 @@ func return_to_combat_state() -> void:
 
 func request_hurt() -> void:
 	if fsm.current_state == fsm.states.dead or fsm.current_state == fsm.states.hurt:
+		return
+	if fsm.current_state == fsm.states.rollforward or fsm.current_state == fsm.states.shootclaw:
 		return
 	change_state(fsm.states.hurt)
 

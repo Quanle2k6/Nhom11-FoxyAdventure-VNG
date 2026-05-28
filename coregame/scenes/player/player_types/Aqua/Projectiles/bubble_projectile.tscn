@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://b2g804g1muf06" path="res://assets/animations/WaterBall - Startup and Infinite.png" id="3_r34pv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2oh2p"]
-radius = 4.0
-height = 34.0
+radius = 8.0
+height = 44.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nqndg"]
 atlas = ExtResource("3_r34pv")
@@ -164,8 +164,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ry1q2"]
-radius = 5.99825
-height = 36.0
+radius = 8.99999
+height = 51.9999
 
 [node name="BubbleProjectile" type="RigidBody2D"]
 z_index = 2
@@ -187,10 +187,12 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_2oh2p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-9.53674e-07, -1.90735e-06)
-scale = Vector2(0.563492, 0.4375)
+position = Vector2(0.500001, -1.90735e-06)
+scale = Vector2(0.809524, 0.4375)
 sprite_frames = SubResource("SpriteFrames_rqf4t")
 animation = &"new_animation"
+frame = 20
+frame_progress = 0.11906
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.56905

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ce55lmohib33q"]
+[gd_scene load_steps=37 format=3 uid="uid://ce55lmohib33q"]
 
 [ext_resource type="Script" uid="uid://uxik123lmwgo" path="res://scenes/player/player_types/Normal/normal.gd" id="1_ysnvi"]
 [ext_resource type="Texture2D" uid="uid://va8q73lb70ii" path="res://assets/sprites/characters/foxy/fox_blade/fox_atk_1.png" id="2_1wcxm"]
@@ -12,10 +12,12 @@
 [ext_resource type="Script" uid="uid://vj34xpkodm6l" path="res://script/hurt_area_2d.gd" id="9_wsxfm"]
 [ext_resource type="Script" uid="uid://5bjaanlcsrbg" path="res://script/hit_area_2d.gd" id="10_4nrhj"]
 [ext_resource type="Texture2D" uid="uid://dulpexev42v5b" path="res://assets/sprites/characters/foxy/fox_blade/fox_jump_atk_2.png" id="10_cqj0x"]
+[ext_resource type="Texture2D" uid="uid://btupd7klu8li4" path="res://assets/ui/health_bar_empty.png" id="11_health_empty"]
 [ext_resource type="Texture2D" uid="uid://kon6uno2dy0g" path="res://assets/sprites/characters/foxy/fox_blade/fox_walk_1.png" id="11_i36ey"]
 [ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/player/states/idle.gd" id="11_uyro3"]
 [ext_resource type="Texture2D" uid="uid://c5ckubn4w2kw6" path="res://assets/sprites/characters/foxy/fox_blade/fox_walk_2.png" id="12_0npvt"]
 [ext_resource type="Script" uid="uid://bn74l4ngryo6x" path="res://scenes/player/states/run.gd" id="12_8f4w7"]
+[ext_resource type="Texture2D" uid="uid://botja8dg07cnw" path="res://assets/ui/health_bar_full.png" id="12_health_full"]
 [ext_resource type="Texture2D" uid="uid://dujfdo1hbu7mn" path="res://assets/sprites/characters/foxy/fox_blade/fox_walk_3.png" id="13_15s8f"]
 [ext_resource type="Script" uid="uid://di3w8xw7t025o" path="res://scenes/player/states/jump.gd" id="13_cqj0x"]
 [ext_resource type="Texture2D" uid="uid://demu2xt523bpp" path="res://assets/sprites/characters/foxy/fox_blade/fox_walk_4.png" id="14_7byfn"]
@@ -131,10 +133,18 @@ radius = 8.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0neu7"]
 size = Vector2(12, 23)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_health_empty"]
+texture = ExtResource("11_health_empty")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_health_full"]
+texture = ExtResource("12_health_full")
+
 [node name="NormalFox" type="CharacterBody2D"]
-collision_layer = 6
-collision_mask = 17
+collision_layer = 2
 script = ExtResource("1_ysnvi")
+movement_speed = 130.0
+attack_damage = 3
+max_health = 4
 
 [node name="Direction" type="Node2D" parent="."]
 
@@ -186,6 +196,30 @@ shape = SubResource("CircleShape2D_bmi8o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 2.5)
 shape = SubResource("RectangleShape2D_0neu7")
+
+[node name="PlayerHealthBarContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.0
+offset_top = -26.0
+offset_right = 13.0
+offset_bottom = -26.0
+
+[node name="PlayerHealthBar" type="ProgressBar" parent="PlayerHealthBarContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -5.0
+offset_right = 1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_health_empty")
+theme_override_styles/fill = SubResource("StyleBoxTexture_health_full")
+show_percentage = false
 
 [node name="States" type="Node" parent="."]
 

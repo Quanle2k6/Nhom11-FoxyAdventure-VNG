@@ -28,7 +28,15 @@ func _process(delta: float) -> void:
 func hit(hurt_area):
 	if hurt_area.has_method("take_damage"):
 		var hit_dir: Vector2 = hurt_area.global_position - global_position
-		hurt_area.take_damage(hit_dir.normalized(), damage)
+		hurt_area.take_damage(hit_dir.normalized(), get_damage())
+
+func get_damage() -> int:
+	var source := get_parent()
+	while source != null:
+		if source is BaseCharacter:
+			return source.attack_damage
+		source = source.get_parent()
+	return damage
 
 
 # Khi chạm vào vùng: trừ máu ngay và bắt đầu cooldown

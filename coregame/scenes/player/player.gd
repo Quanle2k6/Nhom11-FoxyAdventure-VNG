@@ -5,6 +5,7 @@ var water_area:WaterDetection = null
 var water_surface_y: float = 0.0
 var spawn_position: Vector2 = Vector2.ZERO
 var player_key: String = ""
+var last_attack_completed_time: float = -1.0
 ## Player character class that handles movement, combat, and state management
 var is_invulnerable: bool = false
 var count_time_in_water=0
@@ -25,7 +26,7 @@ func _ready() -> void:
 
 func _update_movement(delta: float) -> void:
 	# Bỏ qua trọng lực nếu đang ở trạng thái swim
-	if not is_on_floor() and fsm.current_state != fsm.states.swim and fsm.current_state != fsm.states.wateridle and fsm.current_state != fsm.states.float and fsm.current_state != fsm.states.dead:
+	if not is_on_floor() and fsm.current_state != fsm.states.swim and fsm.current_state != fsm.states.wateridle and fsm.current_state != fsm.states.float and fsm.current_state != fsm.states.attackbyblade and fsm.current_state != fsm.states.dead:
 		velocity.y += delta * gravity
 	move_and_slide()
 
@@ -71,6 +72,9 @@ func take_damage(damage: int) -> void:
 	super.take_damage(damage)
 	if health <= 0:
 		fsm.change_state(fsm.states.dead)
+
+func mark_attack_completed() -> void:
+	last_attack_completed_time = Time.get_ticks_msec() / 1000.0
 
 func _on_check_point_detection_area_2d_area_entered(area: Area2D) -> void:
 	if area is Checkpoint:
