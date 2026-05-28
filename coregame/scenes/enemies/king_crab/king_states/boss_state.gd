@@ -60,8 +60,14 @@ func _is_knockback_blocked(knockback_direction: float) -> bool:
 	var horizontal_motion := Vector2(knockback_direction * 6.0, 0.0)
 	if obj.test_move(obj.global_transform, horizontal_motion):
 		return true
-	var floor_check_transform := obj.global_transform.translated(Vector2(knockback_direction * 18.0, 0.0))
-	return not obj.test_move(floor_check_transform, Vector2(0.0, 36.0))
+	return not _has_floor_in_knockback_direction(knockback_direction)
+
+func _has_floor_in_knockback_direction(knockback_direction: float) -> bool:
+	var raycast_name := "VerticalRayCast2D"
+	if knockback_direction != obj.direction:
+		raycast_name = "VerticalRayCast2D2"
+	var floor_raycast := obj.get_node_or_null("Direction/%s" % raycast_name) as RayCast2D
+	return floor_raycast != null and floor_raycast.is_colliding()
 
 func enable_contact_damage() -> void:
 	if not obj.is_shielding and fsm.current_state != fsm.states.dead:

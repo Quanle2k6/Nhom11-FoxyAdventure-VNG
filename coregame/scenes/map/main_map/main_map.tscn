@@ -119,19 +119,19 @@ tile_set = ExtResource("6_h744q")
 position = Vector2(233, 376)
 
 [node name="Checkpoint1" parent="." groups=["Checkpoint"] instance=ExtResource("7_nkqwp")]
-position = Vector2(2187, 372)
+position = Vector2(2184, 367)
 checkpoint_id = "main_map_checkpoint_1"
 
 [node name="Checkpoint2" parent="." groups=["Checkpoint"] instance=ExtResource("7_nkqwp")]
-position = Vector2(2247, 87)
+position = Vector2(2261, 80)
 checkpoint_id = "main_map_checkpoint_2"
 
 [node name="Checkpoint3" parent="." groups=["Checkpoint"] instance=ExtResource("7_nkqwp")]
-position = Vector2(1696, 588)
+position = Vector2(1696, 592)
 checkpoint_id = "main_map_checkpoint_3"
 
 [node name="Checkpoint4" parent="." groups=["Checkpoint"] instance=ExtResource("7_nkqwp")]
-position = Vector2(4528, 513)
+position = Vector2(4530, 527)
 checkpoint_id = "main_map_checkpoint_4"
 
 [node name="LandBossExit" type="Area2D" parent="."]

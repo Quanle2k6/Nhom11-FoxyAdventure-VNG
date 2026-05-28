@@ -6,7 +6,7 @@ func _update_movement(delta: float) -> void:
 	if not is_on_floor() :
 		velocity.y += delta * gravity
 	if is_in_water >=1:
-		# Nếu đang ở dưới nước mà Timer CHƯA CHẠY, thì mới kích hoạt cho nó chạy
+		# Nếu đang ở dưới nước mà Timer CHƯA CHẠY, thì mới kích  hoạt cho nó chạy
 		if water_timer.is_stopped():
 			water_timer.start(0.001) # Bắt đầu đếm ngược từ 5 giây
 	else:

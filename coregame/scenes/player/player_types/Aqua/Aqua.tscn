@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=3 uid="uid://cxolan44wwqkl"]
 
-[ext_resource type="Script" uid="uid://di75tyxurign3" path="res://scenes/player/player_types/Aqua/aqua.gd" id="1_kekb6"]
+[ext_resource type="Script" uid="uid://di75tyxurign3" path="res://scenes/player/player_types/aqua/aqua.gd" id="1_kekb6"]
 [ext_resource type="Texture2D" uid="uid://ctcp2srlsos4m" path="res://assets/sprites/characters/foxy/fox/fox_fall_1.png" id="2_n7ebo"]
 [ext_resource type="Texture2D" uid="uid://cwgjo8l0lmemi" path="res://assets/sprites/characters/foxy/fox/fox_idle_1.png" id="3_0ga0c"]
 [ext_resource type="Texture2D" uid="uid://cdiupfoo5xr6u" path="res://assets/sprites/characters/foxy/fox/fox_idle_2.png" id="4_63ugr"]

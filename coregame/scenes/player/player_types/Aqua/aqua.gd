@@ -45,11 +45,11 @@ func _update_movement(delta: float) -> void:
 func time_left_to_live():
 	var time_left = floor_timer.time_left
 	var second = int(time_left)
-	return [second]
+	return [second+1]
 
 
 func _process(delta: float) -> void:
-	if fsm.current_state in [fsm.states.swim, fsm.states.wateridle, fsm.states.float]:
+	if fsm.current_state in [fsm.states.swim, fsm.states.wateridle, fsm.states.float,fsm.states.dead]:
 		label.visible = false
 		return
 	# Chỉ update text khi timer đang chạy

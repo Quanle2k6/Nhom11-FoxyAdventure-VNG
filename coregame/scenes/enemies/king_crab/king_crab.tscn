@@ -283,6 +283,11 @@ position = Vector2(44.4, 22.8)
 scale = Vector2(1, 0.119999)
 target_position = Vector2(0, 125.001)
 
+[node name="VerticalRayCast2D2" type="RayCast2D" parent="Direction"]
+position = Vector2(-51.4286, 21.4286)
+scale = Vector2(1, 0.119999)
+target_position = Vector2(0, 125.001)
+
 [node name="HurtArea2D" type="Area2D" parent="Direction"]
 collision_layer = 16
 collision_mask = 0

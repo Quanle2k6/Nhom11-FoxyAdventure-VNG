@@ -4,7 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://va8q73lb70ii" path="res://assets/sprites/characters/foxy/fox_blade/fox_atk_1.png" id="2_1wcxm"]
 [ext_resource type="Texture2D" uid="uid://674222iw5dre" path="res://assets/sprites/characters/foxy/fox_blade/fox_atk_2.png" id="3_s42rm"]
 [ext_resource type="Texture2D" uid="uid://dvismq6tm0wpx" path="res://assets/sprites/characters/foxy/fox_blade/fox_fall_1.png" id="4_o0ske"]
+[ext_resource type="Texture2D" uid="uid://cbcqohjm6rr5s" path="res://assets/sprites/characters/foxy/fox_blade/fox_defeat_1.png" id="4_uxbeq"]
+[ext_resource type="Texture2D" uid="uid://bhk4wpsbf5t6l" path="res://assets/sprites/characters/foxy/fox_blade/fox_defeat_2.png" id="5_barxf"]
 [ext_resource type="Texture2D" uid="uid://c3k7842sg3rwa" path="res://assets/sprites/characters/foxy/fox_blade/fox_idle_1.png" id="5_u2rff"]
+[ext_resource type="Texture2D" uid="uid://d0geftcs6cm87" path="res://assets/sprites/characters/foxy/fox_blade/fox_defeat_3.png" id="6_fa0bv"]
 [ext_resource type="Texture2D" uid="uid://dw4fq8i3e2cwx" path="res://assets/sprites/characters/foxy/fox_blade/fox_idle_2.png" id="6_wsxfm"]
 [ext_resource type="Texture2D" uid="uid://4dsxiqa0hyk2" path="res://assets/sprites/characters/foxy/fox_blade/fox_jump_1.png" id="7_4nrhj"]
 [ext_resource type="Texture2D" uid="uid://cs1jhjrfppan1" path="res://assets/sprites/characters/foxy/fox_blade/fox_jump_2.png" id="8_uyro3"]
@@ -42,8 +45,17 @@ animations = [{
 "name": &"attackblade",
 "speed": 4.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_uxbeq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_barxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fa0bv")
+}],
+"loop": false,
 "name": &"dead",
 "speed": 5.0
 }, {
@@ -150,9 +162,7 @@ max_health = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_4tlmi")
-animation = &"attackblade"
-frame = 1
-frame_progress = 1.0
+animation = &"dead"
 
 [node name="HurtArea2D" type="Area2D" parent="Direction"]
 collision_layer = 4
@@ -187,7 +197,7 @@ collision_mask = 32
 shape = SubResource("CircleShape2D_bmi8o")
 
 [node name="CheckPointDetectionArea2D" type="Area2D" parent="Direction"]
-collision_layer = 0
+collision_layer = 2
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/CheckPointDetectionArea2D"]
