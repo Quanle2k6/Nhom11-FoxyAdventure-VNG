@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bqde0l4at7gv8" path="res://assets/sprites/enviroment/background/bg_image.png" id="3_u7h56"]
 [ext_resource type="Texture2D" uid="uid://dcvs45slp2tv3" path="res://assets/sprites/enviroment/background/small_cloud_3.png" id="4_u7h56"]
 [ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://assets/Porky Bold.otf" id="5_yenv6"]
-[ext_resource type="PackedScene" uid="uid://dsn843shibdbt" path="res://script/audio/intro_music.tscn" id="6_a7470"]
+[ext_resource type="PackedScene" path="res://script/audio/intro_music.tscn" id="6_a7470"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7470"]
 bg_color = Color(0.67069, 0.67069, 0.67069, 1)

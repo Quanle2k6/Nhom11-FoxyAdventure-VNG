@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://diu3bkqy8e2gf" path="res://assets/sprites/enviroment/rock/rock_2.png" id="8_7eoqm"]
 [ext_resource type="PackedScene" uid="uid://cj5a5j1fan0lv" path="res://scenes/enemies/king_crab/king_crab.tscn" id="9_f6hat"]
 [ext_resource type="Script" uid="uid://cfnrcwbhvq04v" path="res://scenes/map/main_map/level_exit.gd" id="9_t6anm"]
-[ext_resource type="PackedScene" uid="uid://1xgp3xpxxhqk" path="res://script/audio/ambience_area_2d.tscn" id="10_1rnjf"]
+[ext_resource type="PackedScene" path="res://script/audio/ambience_area_2d.tscn" id="10_1rnjf"]
 [ext_resource type="Texture2D" uid="uid://drecwj6ashren" path="res://assets/sprites/items/chest_key/key_1.png" id="10_7y5pq"]
-[ext_resource type="PackedScene" uid="uid://bajt3x6i6s75f" path="res://script/audio/background_music.tscn" id="11_8i5ay"]
+[ext_resource type="PackedScene" path="res://script/audio/background_music.tscn" id="11_8i5ay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qubsi"]
 size = Vector2(1001, 217)
@@ -148,7 +148,7 @@ position = Vector2(502, 292)
 zoom = Vector2(2, 2)
 
 [node name="AmbienceArea2D" parent="." instance=ExtResource("10_1rnjf")]
-position = Vector2(497, 222)
+position = Vector2(-7.00003, -189)
 scale = Vector2(1.93028, 6.33138)
 
 [node name="BackgroundMusic" parent="." instance=ExtResource("11_8i5ay")]

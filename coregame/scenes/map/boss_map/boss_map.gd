@@ -66,6 +66,7 @@ func show_exit_level() -> void:
 	exit_level.visible = true
 	exit_level.monitoring = true
 	exit_collision_shape.disabled = false
+	
 
 func hide_exit_level() -> void:
 	exit_level.visible = false

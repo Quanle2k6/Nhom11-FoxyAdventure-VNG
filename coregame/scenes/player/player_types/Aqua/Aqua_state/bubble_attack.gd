@@ -6,6 +6,7 @@ extends PlayerState
 func _enter() -> void:
 	obj.change_animation("idle")
 	obj.shoot_bubble(bubble_speed)
+	AudioManager.play_sound("player_shoot")
 	await get_tree().create_timer(attack_duration).timeout
 	if fsm.current_state == self:
 		if obj.is_in_water >= 1:
