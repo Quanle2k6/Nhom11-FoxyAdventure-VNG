@@ -12,10 +12,7 @@ var _bubble_cooldown_timer: float = 0.0
 func _update_movement(delta: float) -> void:
 	_bubble_cooldown_timer = maxf(_bubble_cooldown_timer - delta, 0.0)
 
-	if (not is_on_floor() and fsm.current_state != fsm.states.swim 
-	and fsm.current_state != fsm.states.wateridle 
-	and fsm.current_state != fsm.states.float 
-	and fsm.current_state != fsm.states.bubbleattack):
+	if should_apply_gravity() and fsm.current_state != fsm.states.bubbleattack:
 		velocity.y += delta * gravity
 
 	var in_water_state = (fsm.current_state == fsm.states.swim 
@@ -69,8 +66,10 @@ func can_shoot_bubble() -> bool:
 func change_to_bubble_attack() -> void:
 	if not can_shoot_bubble():
 		return
-	_bubble_cooldown_timer = bubble_attack_cooldown
 	fsm.change_state(fsm.states.bubbleattack)
+
+func start_bubble_cooldown() -> void:
+	_bubble_cooldown_timer = bubble_attack_cooldown
 
 
 func _on_timer_timeout() -> void:
