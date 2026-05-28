@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bogw2kf4ihbln"]
+[gd_scene load_steps=4 format=3 uid="uid://bogw2kf4ihbln"]
 
 [ext_resource type="Texture2D" uid="uid://bqd1fckjg6i6s" path="res://assets/sprites/enviroment/objects/spikes/spikesReverse .png" id="1_ge5kc"]
+[ext_resource type="Script" uid="uid://5bjaanlcsrbg" path="res://script/hit_area_2d.gd" id="2_tb4hg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k7bx"]
 size = Vector2(28, 8)
@@ -13,6 +14,8 @@ texture = ExtResource("1_ge5kc")
 [node name="HitArea2D" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 0
+script = ExtResource("2_tb4hg")
+damage = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D"]
 light_mask = 4
