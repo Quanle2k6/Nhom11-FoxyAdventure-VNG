@@ -237,10 +237,10 @@ rotation = 1.57079
 [node name="JungleSelection" type="Label" parent="Jungle"]
 visible = false
 layout_mode = 0
-offset_left = 1226.0
-offset_top = 225.0
-offset_right = 1586.0
-offset_bottom = 305.0
+offset_left = 2340.0
+offset_top = 1132.0
+offset_right = 2700.0
+offset_bottom = 1212.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 50
 text = "Select"
