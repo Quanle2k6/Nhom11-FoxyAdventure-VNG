@@ -10,6 +10,7 @@ func _enter() -> void:
 	if obj.animated_sprite != null and obj.animated_sprite.sprite_frames.has_animation("dead"):
 		obj.change_animation("dead")
 	timer = return_delay
+	AudioManager.stop_music(0.5)
 
 func _update(delta: float) -> void:
 	obj.stop_move()

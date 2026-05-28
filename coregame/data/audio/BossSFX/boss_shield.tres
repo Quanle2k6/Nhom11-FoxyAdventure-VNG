@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AudioClip" load_steps=3 format=3 uid="uid://djpkoxtt77gdl"]
+
+[ext_resource type="Script" uid="uid://chlphbiuq1gay" path="res://script/audio/audio_clip.gd" id="1_ko35m"]
+[ext_resource type="AudioStream" uid="uid://b1a775gs3ik03" path="res://assets/audio/effect/enemy/shield_guard.wav" id="2_1njwq"]
+
+[resource]
+script = ExtResource("1_ko35m")
+clip_id = "boss_shield"
+stream = ExtResource("2_1njwq")
+volume_db = 0.0
+randomize_pitch = false
+pitch_min = 0.9
+pitch_max = 1.1
+description = ""
+metadata/_custom_type_script = "uid://chlphbiuq1gay"

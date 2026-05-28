@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://oop25hbafu5p"]
+
+[ext_resource type="Texture2D" uid="uid://b54307vngn23p" path="res://assets/ui/yellow_button.png" id="1_rgfq2"]
+[ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://assets/Porky Bold.otf" id="1_usfv7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_usfv7"]
+texture = ExtResource("1_rgfq2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qecqo"]
+texture = ExtResource("1_rgfq2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_053gp"]
+content_margin_bottom = 10.0
+texture = ExtResource("1_rgfq2")
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.447059, 0.447059, 0.447059, 1)
+Button/colors/font_pressed_color = Color(0.448712, 0.448712, 0.448712, 1)
+Button/constants/h_separation = 0
+Button/fonts/font = ExtResource("1_usfv7")
+Button/styles/focus = SubResource("StyleBoxTexture_usfv7")
+Button/styles/hover = SubResource("StyleBoxTexture_qecqo")
+Button/styles/normal = SubResource("StyleBoxTexture_053gp")

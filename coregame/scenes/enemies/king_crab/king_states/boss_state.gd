@@ -20,8 +20,19 @@ func face_target() -> void:
 	elif boss_obj().found_player.global_position.x > obj.global_position.x + 20:
 		obj.turn_right()
 
-func is_player_near() -> bool:
-	return obj.is_player_near
+func is_player_in_land_trigger_area() -> bool:
+	var current_scene := obj.get_tree().current_scene
+	return current_scene != null and current_scene.has_method("is_player_in_land_trigger_area") and current_scene.is_player_in_land_trigger_area()
+
+func is_target_underwater() -> bool:
+	if not has_target():
+		return false
+	var player := boss_obj().found_player
+	if not "is_in_water" in player or player.is_in_water < 1:
+		return false
+	if player.fsm == null or player.fsm.current_state == null:
+		return true
+	return player.fsm.current_state != player.fsm.states.float
 
 func stop_horizontal_velocity() -> void:
 	obj.velocity.x = 0
@@ -36,10 +47,27 @@ func set_roll_velocity() -> void:
 	obj.velocity.x = obj.direction * obj.roll_speed
 
 func set_hurt_velocity() -> void:
-	var knockback_direction :float = obj.last_damage_direction.x
+	var knockback_direction: float = obj.last_damage_direction.x
 	if is_zero_approx(knockback_direction):
 		knockback_direction = -obj.direction
-	obj.velocity.x = sign(knockback_direction) * obj.hurt_knockback_speed
+	knockback_direction = sign(knockback_direction)
+	if _is_knockback_blocked(knockback_direction):
+		stop_horizontal_velocity()
+		return
+	obj.velocity.x = knockback_direction * obj.hurt_knockback_speed
+
+func _is_knockback_blocked(knockback_direction: float) -> bool:
+	var horizontal_motion := Vector2(knockback_direction * 6.0, 0.0)
+	if obj.test_move(obj.global_transform, horizontal_motion):
+		return true
+	return not _has_floor_in_knockback_direction(knockback_direction)
+
+func _has_floor_in_knockback_direction(knockback_direction: float) -> bool:
+	var raycast_name := "VerticalRayCast2D"
+	if knockback_direction != obj.direction:
+		raycast_name = "VerticalRayCast2D2"
+	var floor_raycast := obj.get_node_or_null("Direction/%s" % raycast_name) as RayCast2D
+	return floor_raycast != null and floor_raycast.is_colliding()
 
 func enable_contact_damage() -> void:
 	if not obj.is_shielding and fsm.current_state != fsm.states.dead:
@@ -54,9 +82,11 @@ func return_to_combat_state() -> void:
 func request_hurt() -> void:
 	if fsm.current_state == fsm.states.dead or fsm.current_state == fsm.states.hurt:
 		return
+	if fsm.current_state == fsm.states.rollforward or fsm.current_state == fsm.states.shootclaw:
+		return
 	change_state(fsm.states.hurt)
 
 func choose_attack_skill() -> FSMState:
-	if is_player_near():
+	if is_player_in_land_trigger_area():
 		return fsm.states.rollforward
 	return fsm.states.shootclaw

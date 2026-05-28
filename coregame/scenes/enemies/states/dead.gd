@@ -2,6 +2,7 @@ extends EnemyState
 
 func _enter() -> void:
 	obj.change_animation('dead')
+	AudioManager.play_sound("enemy_hurt")
 	obj.stop_move()
 	set_dead(true)
 	timer = 5
@@ -9,7 +10,7 @@ func _enter() -> void:
 func update(delta:float) -> void:
 	if update_timer(delta):
 		set_dead(false)
-		change_state(obj.start_state)
+		change_state(obj.get_start_state())
 
 func set_dead(is_dead: bool):
 	enemy_obj().main_collision.set_deferred("disabled",is_dead)

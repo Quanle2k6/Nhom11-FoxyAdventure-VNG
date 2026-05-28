@@ -3,6 +3,7 @@ extends BossState
 func _enter() -> void:
 	enable_contact_damage()
 	obj.change_animation("hurt")
+	AudioManager.play_sound("boss_hurt")
 	timer = obj.hurt_duration
 
 func _update(delta: float) -> void:

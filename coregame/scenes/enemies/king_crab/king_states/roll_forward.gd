@@ -3,6 +3,7 @@ extends BossState
 func _enter() -> void:
 	face_target()
 	obj.change_animation("roll")
+	AudioManager.play_sound("boss_roll")
 	enable_contact_damage()
 	timer = obj.roll_duration
 
