@@ -11,10 +11,17 @@ func _enter() -> void:
 
 
 func _update(delta: float) -> void:
+	if obj.is_in_water >= 1:
+		obj.global_position.y = obj.water_surface_y
+		obj.velocity.y = 0
 	if not update_timer(delta):
 		return
-	change_state(fsm.states.idle)
+	if obj.is_in_water >= 1:
+		change_state(fsm.states.float)
+	else:
+		change_state(fsm.states.idle)
 	
 
 func _exit() ->void:
-	get_hitbox().set_deferred("disabled", false)
+	get_hitbox().set_deferred("disabled", true)
+	obj.mark_attack_completed()

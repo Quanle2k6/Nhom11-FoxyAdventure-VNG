@@ -9,6 +9,7 @@ extends Node2D
 @onready var exit_collision_shape := $ExitLevel/CollisionShape2D
 
 var player: Player
+var player_health_bar: ProgressBar
 var boss_defeated: bool = false
 var _player_in_land_trigger_area: bool = false
 
@@ -22,6 +23,7 @@ func _ready() -> void:
 	player.apply_spawn(start_point.global_position, false)
 	disable_player_camera()
 	setup_boss_health_bar()
+	setup_player_health_bar()
 	setup_land_trigger_area()
 
 func setup_land_trigger_area() -> void:
@@ -49,6 +51,18 @@ func _on_boss_health_changed(current_health: int, max_health: int) -> void:
 	boss_health_bar.max_value = max_health
 	boss_health_bar.value = max(current_health, 0)
 
+func setup_player_health_bar() -> void:
+	var health_bar_container := player.get_node("PlayerHealthBarContainer") as Control
+	player_health_bar = health_bar_container.get_node("PlayerHealthBar") as ProgressBar
+	player_health_bar.visible = true
+	player_health_bar.max_value = player.max_health
+	player_health_bar.value = player.health
+	player.health_changed.connect(_on_player_health_changed)
+
+func _on_player_health_changed(current_health: int, max_health: int) -> void:
+	player_health_bar.max_value = max_health
+	player_health_bar.value = max(current_health, 0)
+
 func on_boss_defeated() -> void:
 	if boss_defeated:
 		return
@@ -66,6 +80,7 @@ func show_exit_level() -> void:
 	exit_level.visible = true
 	exit_level.monitoring = true
 	exit_collision_shape.disabled = false
+	$ExitLevel/AnimatedSprite2D.play()
 
 func hide_exit_level() -> void:
 	exit_level.visible = false

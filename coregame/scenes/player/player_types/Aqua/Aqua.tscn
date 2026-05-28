@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cxolan44wwqkl"]
+[gd_scene load_steps=34 format=3 uid="uid://cxolan44wwqkl"]
 
 [ext_resource type="Script" uid="uid://di75tyxurign3" path="res://scenes/player/player_types/aqua/aqua.gd" id="1_kekb6"]
 [ext_resource type="Texture2D" uid="uid://ctcp2srlsos4m" path="res://assets/sprites/characters/foxy/fox/fox_fall_1.png" id="2_n7ebo"]
@@ -13,8 +13,10 @@
 [ext_resource type="Script" uid="uid://5bjaanlcsrbg" path="res://script/hit_area_2d.gd" id="11_i8c67"]
 [ext_resource type="Script" uid="uid://bej6e7vuxeeko" path="res://script/node2d_factory.gd" id="12_f8l1g"]
 [ext_resource type="PackedScene" uid="uid://bjovo0yevv0vm" path="res://scenes/player/player_types/aqua/Projectiles/bubble_projectile.tscn" id="13_8mrx7"]
+[ext_resource type="Texture2D" uid="uid://btupd7klu8li4" path="res://assets/ui/health_bar_empty.png" id="14_g5yd6"]
 [ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/player/states/idle.gd" id="14_utlyr"]
 [ext_resource type="Script" uid="uid://bn74l4ngryo6x" path="res://scenes/player/states/run.gd" id="15_1il5j"]
+[ext_resource type="Texture2D" uid="uid://botja8dg07cnw" path="res://assets/ui/health_bar_full.png" id="15_ng7vc"]
 [ext_resource type="Script" uid="uid://di3w8xw7t025o" path="res://scenes/player/states/jump.gd" id="16_cgpjb"]
 [ext_resource type="Script" uid="uid://caxtbpdyga1ay" path="res://scenes/player/states/fall.gd" id="17_0cwik"]
 [ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="18_pt7im"]
@@ -22,7 +24,7 @@
 [ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="20_am2ss"]
 [ext_resource type="Script" uid="uid://br6fu5tcikpcw" path="res://scenes/player/player_types/aqua/Aqua_state/bubble_attack.gd" id="21_8vvd7"]
 [ext_resource type="Script" uid="uid://5oxoj5jfcrl" path="res://scenes/player/states/dead.gd" id="22_jdi0m"]
-[ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://assets/Porky Bold.otf" id="23_33bvd"]
+[ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://data/Porky Bold.otf" id="23_33bvd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t874g"]
 animations = [{
@@ -102,11 +104,19 @@ radius = 8.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oek1d"]
 size = Vector2(19, 26)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_shxw4"]
+texture = ExtResource("14_g5yd6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g6hcb"]
+texture = ExtResource("15_ng7vc")
+
 [node name="AquaFox" type="CharacterBody2D"]
-collision_layer = 6
-collision_mask = 17
+collision_layer = 2
 script = ExtResource("1_kekb6")
 bubble_attack_cooldown = 1.2
+movement_speed = 150.0
+attack_damage = 3
+max_health = 2
 metadata/_custom_type_script = "uid://dt2tsu385v1a5"
 
 [node name="Direction" type="Node2D" parent="."]
@@ -157,6 +167,30 @@ product_packed_scene = ExtResource("13_8mrx7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_oek1d")
+
+[node name="PlayerHealthBarContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.0
+offset_top = -26.0
+offset_right = 13.0
+offset_bottom = -26.0
+
+[node name="PlayerHealthBar" type="ProgressBar" parent="PlayerHealthBarContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -5.0
+offset_right = 1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_shxw4")
+theme_override_styles/fill = SubResource("StyleBoxTexture_g6hcb")
+show_percentage = false
 
 [node name="States" type="Node" parent="."]
 

@@ -4,7 +4,8 @@ extends Control
 @onready var vbox_container = $VBoxContainer
 @onready var open_setting_btn = $OpenSetting
 @onready var setting_node = $Setting
-
+@onready var foxy = $Foxy
+@onready var intro =$IntroSetting
 func _ready() -> void:
 	# 1. Kết nối sự kiện click chuột của nút bánh răng vào hàm mở setting
 	open_setting_btn.pressed.connect(_on_open_setting_pressed)
@@ -20,10 +21,14 @@ func _on_open_setting_pressed() -> void:
 func _on_settings_toggled(is_open: bool) -> void:
 	if is_open:
 		# Nếu Setting đang MỞ -> Ẩn các nút Menu chính và ẩn luôn cả chính nó (nút bánh răng)
+		intro.visible = false
 		vbox_container.visible = false
 		open_setting_btn.visible = false
+		foxy.visible=false
 	else:
 		# Nếu Setting ĐÓNG -> Hiện lại tất cả
+		intro.visible = true
+		foxy.visible=true
 		vbox_container.visible = true
 		open_setting_btn.visible = true
 func _on_start_pressed() -> void:

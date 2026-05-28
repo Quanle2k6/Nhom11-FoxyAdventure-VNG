@@ -6,7 +6,7 @@ signal settings_toggled(is_open: bool)
 @onready var canvas = $CanvasLayer
 @onready var slider_music = $CanvasLayer/setting_panel/Music
 @onready var slider_sfx = $CanvasLayer/setting_panel/SFX
-	
+
 func _ready() -> void:
 	canvas.visible = false
 	slider_music.value = AudioSetting.get_music_volume()
@@ -43,8 +43,4 @@ func _on_close_pressed() -> void:
 
 
 func _on_open_setting_pressed() -> void:
-	close_settings()
-
-
-func _on_open_setting_2_pressed() -> void:
 	close_settings()

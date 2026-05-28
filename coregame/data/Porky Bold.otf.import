@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://nua42o64j8iv"
-path="res://.godot/imported/Porky Bold.otf-484b0793fbd1a48ab9b5fc4cec2eb279.fontdata"
+path="res://.godot/imported/Porky Bold.otf-72174597c3d978f164394a71bd8a9480.fontdata"
 
 [deps]
 
-source_file="res://assets/Porky Bold.otf"
-dest_files=["res://.godot/imported/Porky Bold.otf-484b0793fbd1a48ab9b5fc4cec2eb279.fontdata"]
+source_file="res://data/Porky Bold.otf"
+dest_files=["res://.godot/imported/Porky Bold.otf-72174597c3d978f164394a71bd8a9480.fontdata"]
 
 [params]
 

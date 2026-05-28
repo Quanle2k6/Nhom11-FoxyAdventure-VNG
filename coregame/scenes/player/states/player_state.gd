@@ -11,7 +11,7 @@ func _exit() -> void:
 
 func _update(delta: float) -> void:
 	pass
-	
+
 #Control moving and changing state to run
 #Return true if moving
 
@@ -27,7 +27,7 @@ func control_moving() -> bool:
 		return true
 	else:
 		if not obj.is_on_floor():
-			obj.velocity.x *= 0.97
+			obj.velocity.x *= 0.8
 			if abs(obj.velocity.x) < 5:
 				obj.velocity.x = 0
 		else:
@@ -63,7 +63,8 @@ func control_moving_in_water() -> bool:
 		return false
 	else:
 		obj.velocity = move_dir * obj.movement_speed
-		obj.change_direction(move_dir.x)
+		if move_dir.x != 0:
+			obj.change_direction(sign(move_dir.x))
 		if fsm.current_state != fsm.states.swim:
 			fsm.change_state(fsm.states.swim)
 		return true
@@ -76,14 +77,14 @@ func control_water() -> bool:
 			change_state(fsm.states.wateridle)
 		return true
 	return false
-	
+
 func control_jump_on_water() -> bool:
 	if Input.is_action_just_pressed('jump'):
 		obj.velocity.y = -obj.jump_speed
 		change_state(fsm.states.jump)
 		return true
 	return false
-	
+
 func control_attack_by_blade() -> bool:
 	if Input.is_action_just_pressed('attack'):
 		if obj.has_method("change_to_bubble_attack"):

@@ -1,19 +1,64 @@
-[gd_scene load_steps=4 format=3 uid="uid://1rsx5850h8ui"]
+[gd_scene load_steps=10 format=3 uid="uid://1rsx5850h8ui"]
 
-[ext_resource type="Texture2D" uid="uid://drecwj6ashren" path="res://assets/sprites/items/chest_key/key_1.png" id="1_b7vqu"]
 [ext_resource type="Script" uid="uid://jlgcl3pyvby2" path="res://script/autoload/checkpoint.gd" id="1_fkvpt"]
+[ext_resource type="Texture2D" uid="uid://c6e4xfiregoyl" path="res://assets/sprites/enviroment/objects/flag/flag_01.png" id="2_fbxvj"]
+[ext_resource type="Texture2D" uid="uid://b521ivvndj5ok" path="res://assets/sprites/enviroment/objects/flag/flag_02.png" id="3_h128v"]
+[ext_resource type="Texture2D" uid="uid://c1v7dwqfuk5qx" path="res://assets/sprites/enviroment/objects/flag/flag_03.png" id="4_gh15o"]
+[ext_resource type="Texture2D" uid="uid://celfjecswqyk" path="res://assets/sprites/enviroment/objects/flag/flag_04.png" id="5_miukj"]
+[ext_resource type="Texture2D" uid="uid://c65a5nt45l57l" path="res://assets/sprites/enviroment/objects/flag/flag_05.png" id="6_v5d5o"]
+[ext_resource type="Texture2D" uid="uid://b1tbo5tpcavu0" path="res://assets/sprites/characters/foxy/flag/flag_0.png" id="7_h128v"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i388g"]
-height = 32.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h128v"]
+size = Vector2(13, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ya2yr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fbxvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h128v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gh15o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_miukj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v5d5o")
+}],
+"loop": true,
+"name": &"checkpoint_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_h128v")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="Checkpoint" type="Area2D"]
+scale = Vector2(2.5, 2.5)
 collision_layer = 64
 collision_mask = 0
 script = ExtResource("1_fkvpt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 1)
-shape = SubResource("CapsuleShape2D_i388g")
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_h128v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.5, 0.500001)
+scale = Vector2(0.361111, 0.25)
+sprite_frames = SubResource("SpriteFrames_ya2yr")
+animation = &"checkpoint_1"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_b7vqu")
+position = Vector2(-5, 0.739507)
+scale = Vector2(-0.360744, 0.257408)
+texture = ExtResource("7_h128v")

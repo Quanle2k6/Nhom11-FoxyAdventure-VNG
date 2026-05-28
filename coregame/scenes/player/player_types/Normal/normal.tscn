@@ -1,10 +1,13 @@
-[gd_scene load_steps=33 format=3 uid="uid://ce55lmohib33q"]
+[gd_scene load_steps=40 format=3 uid="uid://ce55lmohib33q"]
 
 [ext_resource type="Script" uid="uid://uxik123lmwgo" path="res://scenes/player/player_types/normal/normal.gd" id="1_ysnvi"]
 [ext_resource type="Texture2D" uid="uid://va8q73lb70ii" path="res://assets/sprites/characters/foxy/fox_blade/fox_atk_1.png" id="2_1wcxm"]
 [ext_resource type="Texture2D" uid="uid://674222iw5dre" path="res://assets/sprites/characters/foxy/fox_blade/fox_atk_2.png" id="3_s42rm"]
 [ext_resource type="Texture2D" uid="uid://dvismq6tm0wpx" path="res://assets/sprites/characters/foxy/fox_blade/fox_fall_1.png" id="4_o0ske"]
+[ext_resource type="Texture2D" uid="uid://cbcqohjm6rr5s" path="res://assets/sprites/characters/foxy/fox_blade/fox_defeat_1.png" id="4_uxbeq"]
+[ext_resource type="Texture2D" uid="uid://bhk4wpsbf5t6l" path="res://assets/sprites/characters/foxy/fox_blade/fox_defeat_2.png" id="5_barxf"]
 [ext_resource type="Texture2D" uid="uid://c3k7842sg3rwa" path="res://assets/sprites/characters/foxy/fox_blade/fox_idle_1.png" id="5_u2rff"]
+[ext_resource type="Texture2D" uid="uid://d0geftcs6cm87" path="res://assets/sprites/characters/foxy/fox_blade/fox_defeat_3.png" id="6_fa0bv"]
 [ext_resource type="Texture2D" uid="uid://dw4fq8i3e2cwx" path="res://assets/sprites/characters/foxy/fox_blade/fox_idle_2.png" id="6_wsxfm"]
 [ext_resource type="Texture2D" uid="uid://4dsxiqa0hyk2" path="res://assets/sprites/characters/foxy/fox_blade/fox_jump_1.png" id="7_4nrhj"]
 [ext_resource type="Texture2D" uid="uid://cs1jhjrfppan1" path="res://assets/sprites/characters/foxy/fox_blade/fox_jump_2.png" id="8_uyro3"]
@@ -12,10 +15,12 @@
 [ext_resource type="Script" uid="uid://vj34xpkodm6l" path="res://script/hurt_area_2d.gd" id="9_wsxfm"]
 [ext_resource type="Script" uid="uid://5bjaanlcsrbg" path="res://script/hit_area_2d.gd" id="10_4nrhj"]
 [ext_resource type="Texture2D" uid="uid://dulpexev42v5b" path="res://assets/sprites/characters/foxy/fox_blade/fox_jump_atk_2.png" id="10_cqj0x"]
+[ext_resource type="Texture2D" uid="uid://btupd7klu8li4" path="res://assets/ui/health_bar_empty.png" id="11_health_empty"]
 [ext_resource type="Texture2D" uid="uid://kon6uno2dy0g" path="res://assets/sprites/characters/foxy/fox_blade/fox_walk_1.png" id="11_i36ey"]
 [ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/player/states/idle.gd" id="11_uyro3"]
 [ext_resource type="Texture2D" uid="uid://c5ckubn4w2kw6" path="res://assets/sprites/characters/foxy/fox_blade/fox_walk_2.png" id="12_0npvt"]
 [ext_resource type="Script" uid="uid://bn74l4ngryo6x" path="res://scenes/player/states/run.gd" id="12_8f4w7"]
+[ext_resource type="Texture2D" uid="uid://botja8dg07cnw" path="res://assets/ui/health_bar_full.png" id="12_health_full"]
 [ext_resource type="Texture2D" uid="uid://dujfdo1hbu7mn" path="res://assets/sprites/characters/foxy/fox_blade/fox_walk_3.png" id="13_15s8f"]
 [ext_resource type="Script" uid="uid://di3w8xw7t025o" path="res://scenes/player/states/jump.gd" id="13_cqj0x"]
 [ext_resource type="Texture2D" uid="uid://demu2xt523bpp" path="res://assets/sprites/characters/foxy/fox_blade/fox_walk_4.png" id="14_7byfn"]
@@ -25,7 +30,7 @@
 [ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="18_wvx5a"]
 [ext_resource type="Script" uid="uid://b4rywurj6tivu" path="res://scenes/player/player_types/normal/attack_by_blade.gd" id="25_wwvf3"]
 [ext_resource type="Script" uid="uid://5oxoj5jfcrl" path="res://scenes/player/states/dead.gd" id="26_dead"]
-[ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://assets/Porky Bold.otf" id="26_wwvf3"]
+[ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://data/Porky Bold.otf" id="26_wwvf3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4tlmi"]
 animations = [{
@@ -40,8 +45,17 @@ animations = [{
 "name": &"attackblade",
 "speed": 4.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_uxbeq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_barxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fa0bv")
+}],
+"loop": false,
 "name": &"dead",
 "speed": 5.0
 }, {
@@ -131,18 +145,24 @@ radius = 8.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0neu7"]
 size = Vector2(12, 23)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_health_empty"]
+texture = ExtResource("11_health_empty")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_health_full"]
+texture = ExtResource("12_health_full")
+
 [node name="NormalFox" type="CharacterBody2D"]
-collision_layer = 6
-collision_mask = 17
+collision_layer = 2
 script = ExtResource("1_ysnvi")
+movement_speed = 130.0
+attack_damage = 3
+max_health = 4
 
 [node name="Direction" type="Node2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_4tlmi")
-animation = &"attackblade"
-frame = 1
-frame_progress = 1.0
+animation = &"swim"
 
 [node name="HurtArea2D" type="Area2D" parent="Direction"]
 collision_layer = 4
@@ -177,7 +197,7 @@ collision_mask = 32
 shape = SubResource("CircleShape2D_bmi8o")
 
 [node name="CheckPointDetectionArea2D" type="Area2D" parent="Direction"]
-collision_layer = 0
+collision_layer = 2
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/CheckPointDetectionArea2D"]
@@ -186,6 +206,30 @@ shape = SubResource("CircleShape2D_bmi8o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 2.5)
 shape = SubResource("RectangleShape2D_0neu7")
+
+[node name="PlayerHealthBarContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.0
+offset_top = -26.0
+offset_right = 13.0
+offset_bottom = -26.0
+
+[node name="PlayerHealthBar" type="ProgressBar" parent="PlayerHealthBarContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -5.0
+offset_right = 1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_health_empty")
+theme_override_styles/fill = SubResource("StyleBoxTexture_health_full")
+show_percentage = false
 
 [node name="States" type="Node" parent="."]
 
