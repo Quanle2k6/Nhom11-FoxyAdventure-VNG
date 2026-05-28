@@ -1,0 +1,154 @@
+[gd_scene load_steps=17 format=4 uid="uid://33jm8hsikosv"]
+
+[ext_resource type="Script" uid="uid://cwe47jffdcxhk" path="res://scenes/map/boss_map/boss_map.gd" id="1_26k8b"]
+[ext_resource type="TileSet" uid="uid://b8cj8642y4bv2" path="res://assets/sprites/enviroment/terrain/terrain_32x32.tres" id="2_fqso4"]
+[ext_resource type="Script" uid="uid://w82lu7mfjnba" path="res://scenes/map/island/WaterArea2D.gd" id="3_heg18"]
+[ext_resource type="Texture2D" uid="uid://ck8762h1hy2cf" path="res://assets/sprites/enviroment/background/additional_water.png" id="4_mm5vv"]
+[ext_resource type="Texture2D" uid="uid://clbcd3sj0kgix" path="res://assets/sprites/enviroment/background/background_layer_3.png" id="5_t7xom"]
+[ext_resource type="Texture2D" uid="uid://diu3bkqy8e2gf" path="res://assets/sprites/enviroment/rock/rock_2.png" id="6_3xga5"]
+[ext_resource type="PackedScene" uid="uid://cj5a5j1fan0lv" path="res://scenes/enemies/king_crab/king_crab.tscn" id="7_to1hi"]
+[ext_resource type="Script" uid="uid://cfnrcwbhvq04v" path="res://scenes/map/main_map/level_exit.gd" id="8_r3wht"]
+[ext_resource type="Texture2D" uid="uid://drecwj6ashren" path="res://assets/sprites/items/chest_key/key_1.png" id="9_50jmi"]
+[ext_resource type="PackedScene" uid="uid://1xgp3xpxxhqk" path="res://script/audio/ambience_area_2d.tscn" id="10_t18vy"]
+[ext_resource type="PackedScene" uid="uid://bajt3x6i6s75f" path="res://script/audio/background_music.tscn" id="11_ojman"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qubsi"]
+size = Vector2(1001, 217)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boss_health_background"]
+bg_color = Color(0.1, 0.02, 0.02, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boss_health_fill"]
+bg_color = Color(0.615562, 0.017759, 0.0106001, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gh2e"]
+size = Vector2(66, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2f8g"]
+size = Vector2(316, 85.2351)
+
+[node name="Stage" type="Node2D"]
+script = ExtResource("1_26k8b")
+
+[node name="Terrian" type="TileMapLayer" parent="."]
+top_level = true
+visibility_layer = 2
+position = Vector2(-4, 14)
+tile_map_data = PackedByteArray("AAAWABAAAAABAAQAAAAXABAAAAABAAQAAAAYABAAAAABAAQAAAAZABAAAAABAAQAAAAaABAAAAABAAQAAAAbABAAAAABAAQAAAAcAA8AAAAAAAEAAAAcABAAAAAKAAQAAAAdAAQAAAAAAAEAAAAdAAUAAAAAAAEAAAAdAAYAAAAAAAEAAAAdAAcAAAAHAAEAAAAdAAgAAAABAAEAAAAdAAkAAAABAAEAAAAdAAoAAAABAAEAAAAdAAsAAAABAAEAAAAdAAwAAAABAAEAAAAdAA0AAAABAAEAAAAdAA4AAAABAAEAAAAdAA8AAAABAAEAAAAdABAAAAABAAIAAAAKABAAAAABAAQAAAALABAAAAABAAQAAAAMABAAAAABAAQAAAANABAAAAABAAQAAAAOABAAAAABAAQAAAAPABAAAAABAAQAAAAQABAAAAABAAQAAAARABAAAAAMAAQAAAASABAAAAABAAQAAAATABAAAAABAAQAAAAUABAAAAABAAQAAAAVABAAAAABAAQAAAADABAAAAABAAQAAAAEABAAAAABAAQAAAAFABAAAAABAAQAAAAGABAAAAAMAAQAAAD//wMAAAAEAAEAAAD//wQAAAAEAAEAAAD//wUAAAAEAAEAAAD//wYAAAAEAAEAAAD//wcAAAAEAAEAAAD//wgAAAAEAAEAAAD//wkAAAAEAAEAAAD//woAAAAAAAEAAAAAAA8AAAACAAEAAAAAABAAAAAJAAQAAAABABAAAAABAAQAAAACABAAAAABAAQAAAAHABAAAAABAAQAAAAIABAAAAABAAQAAAAJABAAAAABAAQAAAAdAAAAAAAAAAEAAAAdAAEAAAAAAAEAAAAeAAIAAAACAAEAAAAeAAMAAAACAAEAAAAeAAQAAAACAAEAAAAdAAIAAAAAAAEAAAAdAAMAAAAAAAEAAAAeAAAAAAACAAEAAAAeAAEAAAACAAEAAAAdAP//AAAAAAAAAAAeAP//AAACAAAAAAAeAAUAAAACAAEAAAAeAAYAAAACAAEAAAAeAAcAAAACAAEAAAAeAAgAAAACAAEAAAAeAAkAAAACAAEAAAAeAAoAAAACAAEAAAAeAAsAAAACAAEAAAAeAAwAAAACAAEAAAAeAA0AAAACAAEAAAAeAA4AAAACAAEAAAAeAA8AAAACAAEAAAAeABAAAAACAAIAAAD//wsAAAAAAAEAAAD//wwAAAAAAAEAAAD//w0AAAAAAAEAAAD//w4AAAAAAAEAAAD//w8AAAAAAAEAAAD//xAAAAAAAAIAAAD//wEAAAAEAAEAAAD//wIAAAAEAAEAAAD//wAAAAAEAAEAAAD/////AAAEAAAAAAAAAAkAAAAAAAAAAAAAAAoAAAAGAAAAAAAAAAsAAAACAAEAAAAAAAwAAAACAAEAAAABAAkAAAABAAAAAAABAAoAAAABAAIAAAACAAgABQAAAAAAAQACAAkAAAAJAAMAAAACAAoAAAACAAIAAAADAAkAAAACAAQAAAAGAAUAAAAEAAQAAAALAAoAAAAAAAAAAAAMAAoAAAABAAAAAAAMAAsAAAABAAEAAAANAAoAAAABAAAAAAANAAsAAAAGAAAAAAAOAAQAAAAEAAQAAAAOAAoAAAABAAAAAAAOAAsAAAABAAIAAAAPAAoAAAABAAAAAAAPAAsAAAABAAIAAAAQAAoAAAABAAAAAAAQAAsAAAABAAIAAAARAAoAAAABAAAAAAARAAsAAAABAAIAAAASAAoAAAABAAAAAAASAAsAAAABAAIAAAATAAoAAAAJAAMAAAATAAsAAAACAAIAAAAUAAoAAAACAAQAAAAaAAgABAAAAAAAAQAaAAkAAAAKAAMAAAAaAAoAAAAAAAIAAAAbAAkAAAABAAAAAAAbAAoAAAAHAAAAAAAbAAsAAAAAAAIAAAAcAAkAAAAHAAEAAAAcAAoAAAABAAEAAAAcAAsAAAAHAAAAAAAcAAwAAAAAAAEAAAAAAA0AAAACAAEAAAAAAA4AAAACAAEAAAAcAA0AAAAAAAEAAAAcAA4AAAAAAAEAAAARAA8AAAAEAAAAAAAGAA8AAAAEAAAAAAAMAAwAAAAHAAAAAAAMAA0AAAAAAAIAAAALAAwAAAAAAAIAAAALAAsAAAAAAAEAAAANAAwAAAACAAEAAAANAA0AAAACAAIAAAAQAA8AAQAAAAAAAQAPAA8AAQAAAAAAAQASAA8AAQAAAAAAAQATAA8AAQAAAAAAAQAFAA8AAQAAAAAAAQAEAA8AAQAAAAAAAQAOAAwAAgAAAAAAAQAPAAwAAgAAAAAAAQAKAAYAAAAEAAQAAAAcAAgAAAAAAAEAAAAcAAcAAAAAAAAAAAAVAAMAAAAEAAQAAAAZAAkAAAAAAAQAAAAXAAcAAAAEAAQAAAA=")
+tile_set = ExtResource("2_fqso4")
+
+[node name="LandStartPoint" type="Marker2D" parent="."]
+position = Vector2(51, 219)
+
+[node name="WaterGroup2" type="Node2D" parent="."]
+light_mask = 3
+z_index = 1
+position = Vector2(0, 21)
+
+[node name="WaterArea2D3" type="Area2D" parent="WaterGroup2" groups=["Water"]]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("3_heg18")
+
+[node name="AdditionalWater2" type="Sprite2D" parent="WaterGroup2/WaterArea2D3"]
+self_modulate = Color(1, 1, 1, 0.596078)
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+position = Vector2(464, 429.5)
+scale = Vector2(31.4375, 6.78125)
+texture = ExtResource("4_mm5vv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterGroup2/WaterArea2D3"]
+position = Vector2(466.5, 429.5)
+shape = SubResource("RectangleShape2D_qubsi")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.08, 0.08)
+motion_mirroring = Vector2(767, 0)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(2.5, 2.21667)
+texture = ExtResource("5_t7xom")
+centered = false
+
+[node name="Rock" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(29, 258)
+scale = Vector2(1.62963, 3.71614)
+texture = ExtResource("6_3xga5")
+centered = false
+
+[node name="Rock2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(621, 297)
+scale = Vector2(1.66667, 3.13281)
+texture = ExtResource("6_3xga5")
+centered = false
+
+[node name="ParallaxLayerCloud" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="KingCrab" parent="." instance=ExtResource("7_to1hi")]
+position = Vector2(506, 289)
+
+[node name="BossHealthUI" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="BossHealthUI"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BossHealthUI/MarginContainer"]
+layout_mode = 2
+
+[node name="BossNameLabel" type="Label" parent="BossHealthUI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "KING CRAB"
+horizontal_alignment = 1
+
+[node name="BossHealthBar" type="ProgressBar" parent="BossHealthUI/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_boss_health_background")
+theme_override_styles/fill = SubResource("StyleBoxFlat_boss_health_fill")
+show_percentage = false
+
+[node name="ExitLevel" type="Area2D" parent="."]
+position = Vector2(776, 560)
+collision_layer = 64
+collision_mask = 2
+monitoring = false
+script = ExtResource("8_r3wht")
+target_scene_path = "uid://dbylbjddg4q8n"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitLevel"]
+position = Vector2(-277, -252)
+shape = SubResource("RectangleShape2D_8gh2e")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ExitLevel"]
+position = Vector2(-274, -246)
+texture = ExtResource("9_50jmi")
+
+[node name="LandTriggerArea2D" type="Area2D" parent="."]
+position = Vector2(543, 305)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LandTriggerArea2D"]
+position = Vector2(-35, -14.3824)
+shape = SubResource("RectangleShape2D_w2f8g")
+
+[node name="BossCamera2D" type="Camera2D" parent="."]
+position = Vector2(502, 292)
+zoom = Vector2(2, 2)
+
+[node name="AmbienceArea2D" parent="." instance=ExtResource("10_t18vy")]
+position = Vector2(-7.00003, -189)
+scale = Vector2(1.93028, 6.33138)
+
+[node name="BackgroundMusic" parent="." instance=ExtResource("11_ojman")]

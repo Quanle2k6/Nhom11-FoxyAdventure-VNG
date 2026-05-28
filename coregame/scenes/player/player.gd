@@ -6,6 +6,7 @@ var water_surface_y: float = 0.0
 var spawn_position: Vector2 = Vector2.ZERO
 var player_key: String = ""
 var last_attack_completed_time: float = -1.0
+var last_hurt_direction: Vector2 = Vector2.ZERO
 ## Player character class that handles movement, combat, and state management
 var is_invulnerable: bool = false
 var count_time_in_water=0
@@ -24,9 +25,18 @@ func _ready() -> void:
 
 
 
+func should_apply_gravity() -> bool:
+	if is_on_floor():
+		return false
+	if fsm.current_state == fsm.states.swim or fsm.current_state == fsm.states.wateridle or fsm.current_state == fsm.states.float or fsm.current_state == fsm.states.dead:
+		return false
+	if fsm.states.has("hurt") and fsm.current_state == fsm.states.hurt and is_in_water >= 1:
+		return false
+	return true
+
 func _update_movement(delta: float) -> void:
 	# Bỏ qua trọng lực nếu đang ở trạng thái swim
-	if not is_on_floor() and fsm.current_state != fsm.states.swim and fsm.current_state != fsm.states.wateridle and fsm.current_state != fsm.states.float and fsm.current_state != fsm.states.attackbyblade and fsm.current_state != fsm.states.dead:
+	if should_apply_gravity() and fsm.current_state != fsm.states.attackbyblade:
 		velocity.y += delta * gravity
 	move_and_slide()
 
@@ -63,16 +73,19 @@ func apply_spawn(pos: Vector2, _use_checkpoint: bool = true) -> void:
 	global_position = spawn_position
 	AudioManager.play_sound("respawn")
 
-func _on_hurt_area_2d_hurt(_direction: Variant, damage: Variant) -> void:
-	take_damage(damage)
+func _on_hurt_area_2d_hurt(direction: Variant, damage: Variant) -> void:
+	take_damage(damage, direction)
 	AudioManager.play_sound("player_hurt")
 
-func take_damage(damage: int) -> void:
+func take_damage(damage: int, hurt_direction: Vector2 = Vector2.ZERO) -> void:
 	if is_invulnerable:
 		return
+	last_hurt_direction = hurt_direction
 	super.take_damage(damage)
 	if health <= 0:
 		fsm.change_state(fsm.states.dead)
+	elif fsm.states.has("hurt"):
+		fsm.change_state(fsm.states.hurt)
 
 func mark_attack_completed() -> void:
 	last_attack_completed_time = Time.get_ticks_msec() / 1000.0

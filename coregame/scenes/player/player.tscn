@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://41hkdfkdvk6d"]
+[gd_scene load_steps=26 format=3 uid="uid://41hkdfkdvk6d"]
 
 [ext_resource type="Script" uid="uid://dt2tsu385v1a5" path="res://scenes/player/player.gd" id="1_ugbui"]
 [ext_resource type="Texture2D" uid="uid://ctcp2srlsos4m" path="res://assets/sprites/characters/foxy/fox/fox_fall_1.png" id="2_fcs02"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="17_kvlxm"]
 [ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="18_uf5tr"]
 [ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="19_lgqa7"]
+[ext_resource type="Script" path="res://scenes/player/states/hurt.gd" id="20_hurt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvlxm"]
 animations = [{
@@ -159,6 +160,9 @@ script = ExtResource("18_uf5tr")
 
 [node name="WaterIdle" type="Node" parent="States"]
 script = ExtResource("19_lgqa7")
+
+[node name="Hurt" type="Node" parent="States"]
+script = ExtResource("20_hurt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, -50)
