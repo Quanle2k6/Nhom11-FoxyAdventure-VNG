@@ -1,10 +1,13 @@
-[gd_scene load_steps=33 format=3 uid="uid://ce55lmohib33q"]
+[gd_scene load_steps=36 format=3 uid="uid://ce55lmohib33q"]
 
-[ext_resource type="Script" uid="uid://uxik123lmwgo" path="res://scenes/player/player_types/Normal/normal.gd" id="1_ysnvi"]
+[ext_resource type="Script" uid="uid://uxik123lmwgo" path="res://scenes/player/player_types/normal/normal.gd" id="1_ysnvi"]
 [ext_resource type="Texture2D" uid="uid://va8q73lb70ii" path="res://assets/sprites/characters/foxy/fox_blade/fox_atk_1.png" id="2_1wcxm"]
 [ext_resource type="Texture2D" uid="uid://674222iw5dre" path="res://assets/sprites/characters/foxy/fox_blade/fox_atk_2.png" id="3_s42rm"]
 [ext_resource type="Texture2D" uid="uid://dvismq6tm0wpx" path="res://assets/sprites/characters/foxy/fox_blade/fox_fall_1.png" id="4_o0ske"]
+[ext_resource type="Texture2D" uid="uid://cbcqohjm6rr5s" path="res://assets/sprites/characters/foxy/fox_blade/fox_defeat_1.png" id="4_uxbeq"]
+[ext_resource type="Texture2D" uid="uid://bhk4wpsbf5t6l" path="res://assets/sprites/characters/foxy/fox_blade/fox_defeat_2.png" id="5_barxf"]
 [ext_resource type="Texture2D" uid="uid://c3k7842sg3rwa" path="res://assets/sprites/characters/foxy/fox_blade/fox_idle_1.png" id="5_u2rff"]
+[ext_resource type="Texture2D" uid="uid://d0geftcs6cm87" path="res://assets/sprites/characters/foxy/fox_blade/fox_defeat_3.png" id="6_fa0bv"]
 [ext_resource type="Texture2D" uid="uid://dw4fq8i3e2cwx" path="res://assets/sprites/characters/foxy/fox_blade/fox_idle_2.png" id="6_wsxfm"]
 [ext_resource type="Texture2D" uid="uid://4dsxiqa0hyk2" path="res://assets/sprites/characters/foxy/fox_blade/fox_jump_1.png" id="7_4nrhj"]
 [ext_resource type="Texture2D" uid="uid://cs1jhjrfppan1" path="res://assets/sprites/characters/foxy/fox_blade/fox_jump_2.png" id="8_uyro3"]
@@ -23,7 +26,7 @@
 [ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="16_15s8f"]
 [ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="17_7byfn"]
 [ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="18_wvx5a"]
-[ext_resource type="Script" uid="uid://b4rywurj6tivu" path="res://scenes/player/player_types/Normal/attack_by_blade.gd" id="25_wwvf3"]
+[ext_resource type="Script" uid="uid://b4rywurj6tivu" path="res://scenes/player/player_types/normal/attack_by_blade.gd" id="25_wwvf3"]
 [ext_resource type="Script" uid="uid://5oxoj5jfcrl" path="res://scenes/player/states/dead.gd" id="26_dead"]
 [ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://assets/Porky Bold.otf" id="26_wwvf3"]
 
@@ -40,8 +43,17 @@ animations = [{
 "name": &"attackblade",
 "speed": 4.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_uxbeq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_barxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fa0bv")
+}],
+"loop": false,
 "name": &"dead",
 "speed": 5.0
 }, {
@@ -140,9 +152,7 @@ script = ExtResource("1_ysnvi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_4tlmi")
-animation = &"attackblade"
-frame = 1
-frame_progress = 1.0
+animation = &"dead"
 
 [node name="HurtArea2D" type="Area2D" parent="Direction"]
 collision_layer = 4
@@ -226,10 +236,10 @@ process_callback = 0
 wait_time = 5.0
 
 [node name="Label" type="Label" parent="."]
-offset_left = -12.0
-offset_top = -56.0
-offset_right = 28.0
-offset_bottom = -29.0
+offset_left = -11.0
+offset_top = -58.0
+offset_right = 29.0
+offset_bottom = -31.0
 theme_override_fonts/font = ExtResource("26_wwvf3")
 theme_override_font_sizes/font_size = 20
 text = "00"

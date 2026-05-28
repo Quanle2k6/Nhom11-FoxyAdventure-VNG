@@ -12,15 +12,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 5.0
 offset_top = 1.0
-offset_right = 5.0
-offset_bottom = 1.0
+offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fl16o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(992.5, 496)
-scale = Vector2(6.21562, 5.48889)
+position = Vector2(992.5, 540.5)
+scale = Vector2(6.21562, 5.98333)
 texture = ExtResource("2_qo55u")
 
 [node name="ResetHint" type="Label" parent="."]

@@ -56,55 +56,96 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1018.0
+offset_bottom = 401.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kcc1k")
 
-[node name="BackGround" type="Node2D" parent="."]
-position = Vector2(1, 0)
+[node name="BackGround" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1.0
 
-[node name="Sea_and_feat" type="Sprite2D" parent="BackGround"]
-position = Vector2(984, 497)
+[node name="Sea_and_feat" type="TextureRect" parent="BackGround"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 3.0
+offset_right = 383.0
+offset_bottom = 149.0
 scale = Vector2(5.1276, 7.76562)
 texture = ExtResource("3_u7h56")
+stretch_mode = 2
 
-[node name="Wave1" type="Sprite2D" parent="BackGround"]
-position = Vector2(290, 543)
+[node name="Wave1" type="TextureRect" parent="BackGround"]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 543.0
+offset_right = 290.0
+offset_bottom = 543.0
 scale = Vector2(1.34145, 2.67281)
 texture = ExtResource("3_iflpk")
 
-[node name="Wave2" type="Sprite2D" parent="BackGround"]
-position = Vector2(1683, 541)
+[node name="Wave2" type="TextureRect" parent="BackGround"]
+layout_mode = 0
+offset_left = 1683.0
+offset_top = 541.0
+offset_right = 1683.0
+offset_bottom = 541.0
 scale = Vector2(1.34145, 2.67281)
 texture = ExtResource("3_iflpk")
 
-[node name="Wave3" type="Sprite2D" parent="BackGround"]
-position = Vector2(863, 541)
+[node name="Wave3" type="TextureRect" parent="BackGround"]
+layout_mode = 0
+offset_left = 863.0
+offset_top = 541.0
+offset_right = 863.0
+offset_bottom = 541.0
 scale = Vector2(1.34145, 2.67281)
 texture = ExtResource("3_iflpk")
 
-[node name="Wave4" type="Sprite2D" parent="BackGround"]
-position = Vector2(1437, 539)
+[node name="Wave4" type="TextureRect" parent="BackGround"]
+layout_mode = 0
+offset_left = 1437.0
+offset_top = 539.0
+offset_right = 1437.0
+offset_bottom = 539.0
 scale = Vector2(1.34145, 2.67281)
 texture = ExtResource("3_iflpk")
 
-[node name="Cloude" type="Sprite2D" parent="BackGround"]
-position = Vector2(315.5, 187)
+[node name="Cloude" type="TextureRect" parent="BackGround"]
+layout_mode = 0
+offset_left = 315.5
+offset_top = 187.0
+offset_right = 315.5
+offset_bottom = 187.0
 scale = Vector2(1.94531, 2.05263)
 texture = ExtResource("4_u7h56")
 
-[node name="Cloude2" type="Sprite2D" parent="BackGround"]
-position = Vector2(553, 73)
+[node name="Cloude2" type="TextureRect" parent="BackGround"]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 73.0
+offset_right = 553.0
+offset_bottom = 73.0
 scale = Vector2(1.94531, 2.05263)
 texture = ExtResource("4_u7h56")
 
-[node name="Cloude3" type="Sprite2D" parent="BackGround"]
-position = Vector2(1675, 190)
+[node name="Cloude3" type="TextureRect" parent="BackGround"]
+layout_mode = 0
+offset_left = 1675.0
+offset_top = 190.0
+offset_right = 1675.0
+offset_bottom = 190.0
 scale = Vector2(1.94531, 2.05263)
 texture = ExtResource("4_u7h56")
 
-[node name="Cloude4" type="Sprite2D" parent="BackGround"]
-position = Vector2(1429, 59)
+[node name="Cloude4" type="TextureRect" parent="BackGround"]
+layout_mode = 0
+offset_left = 1429.0
+offset_top = 59.0
+offset_right = 1429.0
+offset_bottom = 59.0
 scale = Vector2(1.94531, 2.05263)
 texture = ExtResource("4_u7h56")
 

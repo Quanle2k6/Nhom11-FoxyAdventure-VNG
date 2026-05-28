@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://cxolan44wwqkl"]
 
-[ext_resource type="Script" uid="uid://di75tyxurign3" path="res://scenes/player/player_types/Aqua/aqua.gd" id="1_kekb6"]
+[ext_resource type="Script" uid="uid://di75tyxurign3" path="res://scenes/player/player_types/aqua/aqua.gd" id="1_kekb6"]
 [ext_resource type="Texture2D" uid="uid://ctcp2srlsos4m" path="res://assets/sprites/characters/foxy/fox/fox_fall_1.png" id="2_n7ebo"]
 [ext_resource type="Texture2D" uid="uid://cwgjo8l0lmemi" path="res://assets/sprites/characters/foxy/fox/fox_idle_1.png" id="3_0ga0c"]
 [ext_resource type="Texture2D" uid="uid://cdiupfoo5xr6u" path="res://assets/sprites/characters/foxy/fox/fox_idle_2.png" id="4_63ugr"]
@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://vj34xpkodm6l" path="res://script/hurt_area_2d.gd" id="10_1tyoo"]
 [ext_resource type="Script" uid="uid://5bjaanlcsrbg" path="res://script/hit_area_2d.gd" id="11_i8c67"]
 [ext_resource type="Script" uid="uid://bej6e7vuxeeko" path="res://script/node2d_factory.gd" id="12_f8l1g"]
-[ext_resource type="PackedScene" uid="uid://bjovo0yevv0vm" path="res://scenes/player/player_types/Aqua/Projectiles/bubble_projectile.tscn" id="13_8mrx7"]
+[ext_resource type="PackedScene" uid="uid://bjovo0yevv0vm" path="res://scenes/player/player_types/aqua/Projectiles/bubble_projectile.tscn" id="13_8mrx7"]
 [ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/player/states/idle.gd" id="14_utlyr"]
 [ext_resource type="Script" uid="uid://bn74l4ngryo6x" path="res://scenes/player/states/run.gd" id="15_1il5j"]
 [ext_resource type="Script" uid="uid://di3w8xw7t025o" path="res://scenes/player/states/jump.gd" id="16_cgpjb"]

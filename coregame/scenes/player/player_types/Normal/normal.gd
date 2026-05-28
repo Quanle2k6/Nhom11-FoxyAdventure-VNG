@@ -21,11 +21,11 @@ func _update_movement(delta: float) -> void:
 func time_left_to_live():
 	var time_left = water_timer.time_left
 	var second = int(time_left)
-	return [second]
+	return [second+1]
 
 
 func _process(delta: float) -> void:
-	if is_on_floor() or fsm.current_state == fsm.states.float:
+	if is_on_floor() or fsm.current_state == fsm.states.float or fsm.current_state == fsm.states.dead or fsm.current_state == fsm.states.fall:
 		label.visible = false
 		return
 	if not water_timer.is_stopped():
