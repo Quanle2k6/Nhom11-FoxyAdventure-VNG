@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://bn5gos22mxbx6"]
 
 [ext_resource type="Script" uid="uid://biurp4ahvo8s7" path="res://scenes/menu/menu.gd" id="1_kcc1k"]
-[ext_resource type="Texture2D" uid="uid://m5yds3bm8pou" path="res://assets/sprites/enviroment/background/big_clouds.png" id="3_iflpk"]
 [ext_resource type="Texture2D" uid="uid://bqde0l4at7gv8" path="res://assets/sprites/enviroment/background/bg_image.png" id="3_u7h56"]
-[ext_resource type="Texture2D" uid="uid://dcvs45slp2tv3" path="res://assets/sprites/enviroment/background/small_cloud_3.png" id="4_u7h56"]
+[ext_resource type="Texture2D" uid="uid://d1s2v2t53t83s" path="res://assets/ui/settings_button.png" id="5_a7470"]
 [ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://assets/Porky Bold.otf" id="5_yenv6"]
 [ext_resource type="PackedScene" uid="uid://dsn843shibdbt" path="res://script/audio/intro_music.tscn" id="6_a7470"]
+[ext_resource type="PackedScene" uid="uid://bu4h7kjfast0b" path="res://scenes/menu/setting.tscn" id="6_ljdvc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7470"]
 bg_color = Color(0.67069, 0.67069, 0.67069, 1)
@@ -61,53 +61,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kcc1k")
 
-[node name="BackGround" type="Node2D" parent="."]
-position = Vector2(1, 0)
-
-[node name="Sea_and_feat" type="Sprite2D" parent="BackGround"]
-position = Vector2(984, 497)
-scale = Vector2(5.1276, 7.76562)
+[node name="Sea_and_feat" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -270.0
+offset_right = -96.0
+offset_bottom = -141.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.51953, 4.17187)
 texture = ExtResource("3_u7h56")
-
-[node name="Wave1" type="Sprite2D" parent="BackGround"]
-position = Vector2(290, 543)
-scale = Vector2(1.34145, 2.67281)
-texture = ExtResource("3_iflpk")
-
-[node name="Wave2" type="Sprite2D" parent="BackGround"]
-position = Vector2(1683, 541)
-scale = Vector2(1.34145, 2.67281)
-texture = ExtResource("3_iflpk")
-
-[node name="Wave3" type="Sprite2D" parent="BackGround"]
-position = Vector2(863, 541)
-scale = Vector2(1.34145, 2.67281)
-texture = ExtResource("3_iflpk")
-
-[node name="Wave4" type="Sprite2D" parent="BackGround"]
-position = Vector2(1437, 539)
-scale = Vector2(1.34145, 2.67281)
-texture = ExtResource("3_iflpk")
-
-[node name="Cloude" type="Sprite2D" parent="BackGround"]
-position = Vector2(315.5, 187)
-scale = Vector2(1.94531, 2.05263)
-texture = ExtResource("4_u7h56")
-
-[node name="Cloude2" type="Sprite2D" parent="BackGround"]
-position = Vector2(553, 73)
-scale = Vector2(1.94531, 2.05263)
-texture = ExtResource("4_u7h56")
-
-[node name="Cloude3" type="Sprite2D" parent="BackGround"]
-position = Vector2(1675, 190)
-scale = Vector2(1.94531, 2.05263)
-texture = ExtResource("4_u7h56")
-
-[node name="Cloude4" type="Sprite2D" parent="BackGround"]
-position = Vector2(1429, 59)
-scale = Vector2(1.94531, 2.05263)
-texture = ExtResource("4_u7h56")
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -116,10 +85,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -383.0
-offset_top = -115.0
-offset_right = 314.0
-offset_bottom = 394.0
+offset_left = -348.0
+offset_top = -92.0
+offset_right = 349.0
+offset_bottom = 214.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 100
@@ -151,10 +120,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -461.0
-offset_top = -320.0
-offset_right = 431.0
-offset_bottom = -189.0
+offset_left = -442.0
+offset_top = -258.0
+offset_right = 497.0
+offset_bottom = -127.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.015918, 0.118978, 0.255404, 1)
@@ -163,6 +132,20 @@ theme_override_font_sizes/font_size = 100
 text = "Foxy Adventure"
 
 [node name="BackgroundMusic" parent="." instance=ExtResource("6_a7470")]
+process_mode = 3
+
+[node name="Setting" parent="." instance=ExtResource("6_ljdvc")]
+
+[node name="OpenSetting" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 467.0
+offset_right = 42.0
+offset_bottom = 507.0
+scale = Vector2(2, 2)
+action_mode = 0
+texture_normal = ExtResource("5_a7470")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="OpenSetting" to="Setting" method="_on_open_setting_pressed"]

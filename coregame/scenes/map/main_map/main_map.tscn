@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://iivwwkame5a3"]
+[gd_scene load_steps=23 format=4 uid="uid://iivwwkame5a3"]
 
 [ext_resource type="Script" uid="uid://d0c875xe3fow1" path="res://scenes/map/main_map/main_map.gd" id="1_efosh"]
 [ext_resource type="Texture2D" uid="uid://dcrnqve71d36p" path="res://assets/sprites/enviroment/background/additional_sky.png" id="2_t1y3s"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://cxtseg0h3dee6" path="res://script/audio/sfx_bus_area_2d.tscn" id="14_u2prw"]
 [ext_resource type="PackedScene" uid="uid://bajt3x6i6s75f" path="res://script/audio/background_music.tscn" id="15_t1p2k"]
 [ext_resource type="PackedScene" uid="uid://0dafck0pg4a4" path="res://script/audio/ambience_area_2d(Water).tscn" id="16_qqqb4"]
+[ext_resource type="PackedScene" uid="uid://bu4h7kjfast0b" path="res://scenes/menu/setting.tscn" id="17_h744q"]
+[ext_resource type="Texture2D" uid="uid://d1s2v2t53t83s" path="res://assets/ui/settings_button.png" id="18_nkqwp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_647ib"]
 size = Vector2(947, 325.5)
@@ -252,7 +254,6 @@ position = Vector2(4305, 643)
 position = Vector2(4133, 754)
 
 [node name="Player" parent="." instance=ExtResource("12_c216c")]
-visible = false
 position = Vector2(235, 371)
 
 [node name="SfxBusArea2d" parent="." instance=ExtResource("14_u2prw")]
@@ -265,3 +266,21 @@ scale = Vector2(1.8466, 1)
 position = Vector2(2071, 812)
 rotation = -3.14159
 scale = Vector2(170.771, -14.6482)
+
+[node name="Setting" parent="." instance=ExtResource("17_h744q")]
+
+[node name="OpenSetting2" type="TextureButton" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_right = 41.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture_normal = ExtResource("18_nkqwp")
+
+[connection signal="pressed" from="OpenSetting2" to="Setting" method="_on_open_setting_2_pressed"]
