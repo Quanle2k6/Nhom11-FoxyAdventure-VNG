@@ -59,6 +59,7 @@ func _process(delta: float) -> void:
 
 func shoot_bubble(speed: float) -> void:
 	var bubble := bubble_factory.create() as BubbleProjectile
+	bubble.hit_area.damage = attack_damage
 	var shooting_direction := Vector2(direction * cos(deg_to_rad(60.0)), -sin(deg_to_rad(60.0)))
 	bubble.shoot(shooting_direction, speed)
 

@@ -1,6 +1,8 @@
 class_name BaseCharacter
 extends CharacterBody2D
 
+signal health_changed(current_health: int, max_health: int)
+
 ## Base character class that provides common functionality for all characters
 
 @export var movement_speed: float = 200.0
@@ -68,6 +70,7 @@ func stop_move() -> void:
 
 func take_damage(damage: int) -> void:
 	health -= damage
+	health_changed.emit(health, max_health)
 
 # Change the animation of the character on the next frame
 func change_animation(new_animation: String) -> void:

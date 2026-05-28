@@ -1,6 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://44jb4ljblpvo"]
+[gd_scene load_steps=30 format=3 uid="uid://44jb4ljblpvo"]
 
-[ext_resource type="Script" uid="uid://cew02ft03ggrt" path="res://scenes/player/player_types/jungle/jungle.gd" id="1_28lxp"]
+[ext_resource type="Script" uid="uid://cew02ft03ggrt" path="res://scenes/player/player_types/Jungle/jungle.gd" id="1_28lxp"]
 [ext_resource type="Texture2D" uid="uid://ctcp2srlsos4m" path="res://assets/sprites/characters/foxy/fox/fox_fall_1.png" id="2_2cy3g"]
 [ext_resource type="Texture2D" uid="uid://cwgjo8l0lmemi" path="res://assets/sprites/characters/foxy/fox/fox_idle_1.png" id="3_3q62l"]
 [ext_resource type="Texture2D" uid="uid://cdiupfoo5xr6u" path="res://assets/sprites/characters/foxy/fox/fox_idle_2.png" id="4_r4h0g"]
@@ -11,8 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://c7b68c2t2m054" path="res://assets/sprites/characters/foxy/fox/fox_walk_4.png" id="9_0kq4v"]
 [ext_resource type="Script" uid="uid://vj34xpkodm6l" path="res://script/hurt_area_2d.gd" id="10_2u4hq"]
 [ext_resource type="Script" uid="uid://5bjaanlcsrbg" path="res://script/hit_area_2d.gd" id="11_6crnl"]
+[ext_resource type="Texture2D" uid="uid://btupd7klu8li4" path="res://assets/ui/health_bar_empty.png" id="11_health_empty"]
 [ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/player/states/idle.gd" id="12_eyhng"]
 [ext_resource type="Script" uid="uid://bn74l4ngryo6x" path="res://scenes/player/states/run.gd" id="13_01kae"]
+[ext_resource type="Texture2D" uid="uid://botja8dg07cnw" path="res://assets/ui/health_bar_full.png" id="13_health_full"]
 [ext_resource type="Script" uid="uid://di3w8xw7t025o" path="res://scenes/player/states/jump.gd" id="14_oxjul"]
 [ext_resource type="Script" uid="uid://caxtbpdyga1ay" path="res://scenes/player/states/fall.gd" id="15_nxqok"]
 [ext_resource type="Script" uid="uid://r7lohgfwp0gt" path="res://scenes/player/states/double_jump.gd" id="16_sph7p"]
@@ -96,10 +98,18 @@ radius = 8.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ujhx3"]
 size = Vector2(19, 24)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_health_empty"]
+texture = ExtResource("11_health_empty")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_health_full"]
+texture = ExtResource("13_health_full")
+
 [node name="Jungle" type="CharacterBody2D"]
-collision_layer = 6
-collision_mask = 17
+collision_layer = 2
 script = ExtResource("1_28lxp")
+movement_speed = 180.0
+attack_damage = 2
+max_health = 3
 metadata/_custom_type_script = "uid://dt2tsu385v1a5"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -152,6 +162,30 @@ shape = SubResource("CircleShape2D_31w2m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ujhx3")
+
+[node name="PlayerHealthBarContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.0
+offset_top = -26.0
+offset_right = 13.0
+offset_bottom = -26.0
+
+[node name="PlayerHealthBar" type="ProgressBar" parent="PlayerHealthBarContainer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -5.0
+offset_right = 1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_health_empty")
+theme_override_styles/fill = SubResource("StyleBoxTexture_health_full")
+show_percentage = false
 
 [node name="States" type="Node" parent="."]
 
