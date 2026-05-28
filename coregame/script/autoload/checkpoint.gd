@@ -8,7 +8,6 @@ signal checkpoint_activated(checkpoint_id: String)
 
 @export var checkpoint_id: String = ""
 
-
 var is_activated: bool = false
 
 
@@ -28,6 +27,9 @@ func _on_body_entered(body: Node2D) -> void:
 
 #activate checkpoint
 func activate() -> void:
+	$AnimatedSprite2D.visible = true
+	$AnimatedSprite2D.play()
+	$Sprite2D.visible = false
 	if is_activated:
 		return
 	is_activated = true
@@ -41,3 +43,6 @@ func activate() -> void:
 func activate_visual_only() -> void:
 	is_activated = true
 	# Need animation for already activated checkpoints
+	$AnimatedSprite2D.visible = true
+	$AnimatedSprite2D.play()
+	$Sprite2D.visible = false

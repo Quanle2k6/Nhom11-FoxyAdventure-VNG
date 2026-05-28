@@ -15,6 +15,7 @@ texture = ExtResource("1_frd8p")
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("2_ux3io")
+damage = 10
 metadata/_custom_type_script = "uid://5bjaanlcsrbg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D"]

@@ -256,8 +256,9 @@ scale = Vector2(1.4, 1.4)
 collision_layer = 8
 script = ExtResource("1_king")
 shoot_speed = 200.0
-skill_decide_delay = 0.5
-no_attack_shoot_delay = 6.0
+skill_decide_delay = 0.7
+no_attack_shoot_delay = 7.0
+damage_to_shield_threshold = 4
 damage_trigger_window = 3.0
 movement_speed = 60.0
 direction = -1
@@ -279,6 +280,11 @@ target_position = Vector2(1.90735e-06, 158.335)
 
 [node name="VerticalRayCast2D" type="RayCast2D" parent="Direction"]
 position = Vector2(44.4, 22.8)
+scale = Vector2(1, 0.119999)
+target_position = Vector2(0, 125.001)
+
+[node name="VerticalRayCast2D2" type="RayCast2D" parent="Direction"]
+position = Vector2(-51.4286, 21.4286)
 scale = Vector2(1, 0.119999)
 target_position = Vector2(0, 125.001)
 

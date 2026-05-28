@@ -45,11 +45,11 @@ func _update_movement(delta: float) -> void:
 func time_left_to_live():
 	var time_left = floor_timer.time_left
 	var second = int(time_left)
-	return [second]
+	return [second+1]
 
 
 func _process(delta: float) -> void:
-	if fsm.current_state in [fsm.states.swim, fsm.states.wateridle, fsm.states.float]:
+	if fsm.current_state in [fsm.states.swim, fsm.states.wateridle, fsm.states.float,fsm.states.dead]:
 		label.visible = false
 		return
 	# Chỉ update text khi timer đang chạy
@@ -59,6 +59,7 @@ func _process(delta: float) -> void:
 
 func shoot_bubble(speed: float) -> void:
 	var bubble := bubble_factory.create() as BubbleProjectile
+	bubble.hit_area.damage = attack_damage
 	var shooting_direction := Vector2(direction * cos(deg_to_rad(60.0)), -sin(deg_to_rad(60.0)))
 	bubble.shoot(shooting_direction, speed)
 
