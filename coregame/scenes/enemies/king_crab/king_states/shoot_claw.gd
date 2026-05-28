@@ -7,6 +7,7 @@ func _enter() -> void:
 	enable_contact_damage()
 	face_target()
 	obj.change_animation("shoot")
+	AudioManager.play_sound("boss_shoot")
 	_shots_fired = 0
 	timer = obj.shoot_delay
 

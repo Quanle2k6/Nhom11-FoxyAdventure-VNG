@@ -30,6 +30,7 @@ var selected_index: int = 0
 
 func _ready() -> void:
 	selected_index = get_first_unlocked_index()
+	AudioManager.stop_music()
 	update_selection()
 
 func _unhandled_input(event: InputEvent) -> void:

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsn843shibdbt"]
+
+[ext_resource type="Script" uid="uid://47ud34wf2rku" path="res://script/audio/intro_music.gd" id="1_i3i0x"]
+
+[node name="IntroMusic" type="Node"]
+script = ExtResource("1_i3i0x")
+volume_db = 2.0
+fade_in = 1.0

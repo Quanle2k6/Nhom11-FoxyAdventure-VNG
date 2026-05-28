@@ -61,6 +61,7 @@ func apply_spawn(pos: Vector2, _use_checkpoint: bool = true) -> void:
 	spawn_position = pos
 	player_key = GameManager.selected_player_key
 	global_position = spawn_position
+	AudioManager.play_sound("respawn")
 
 func _on_hurt_area_2d_hurt(_direction: Variant, damage: Variant) -> void:
 	take_damage(damage)

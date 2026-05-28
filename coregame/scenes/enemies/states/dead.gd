@@ -2,6 +2,7 @@ extends EnemyState
 
 func _enter() -> void:
 	obj.change_animation('dead')
+	AudioManager.play_sound("enemy_hurt")
 	obj.stop_move()
 	set_dead(true)
 	timer = 5
