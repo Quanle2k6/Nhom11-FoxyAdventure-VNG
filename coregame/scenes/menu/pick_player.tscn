@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dbylbjddg4q8n"]
+[gd_scene load_steps=18 format=3 uid="uid://dbylbjddg4q8n"]
 
 [ext_resource type="Texture2D" uid="uid://c7b68c2t2m054" path="res://assets/sprites/characters/foxy/fox/fox_walk_4.png" id="1_e6dt7"]
 [ext_resource type="Script" uid="uid://dkkog6lsuhg2v" path="res://scenes/menu/pick_player.gd" id="1_fl16o"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://bicvvkfdgxawe" path="res://assets/Background layers/Layer_0002_7.png" id="14_a0hlx"]
 [ext_resource type="Texture2D" uid="uid://cnxyu60ia74ah" path="res://assets/Background layers/Layer_0001_8.png" id="15_pwre4"]
 [ext_resource type="Texture2D" uid="uid://ddvyysm86w0db" path="res://assets/Background layers/Layer_0000_9.png" id="16_asv0c"]
+[ext_resource type="Texture2D" uid="uid://bo6mo5wud02ow" path="res://assets/sprites/Keyboard/Enter.png" id="16_k68ue"]
+[ext_resource type="Texture2D" uid="uid://qa8jfo30362r" path="res://assets/sprites/Keyboard/R.png" id="17_wcww0"]
 
 [node name="Pick_Player" type="Control"]
 layout_mode = 3
@@ -141,21 +143,21 @@ centered = false
 
 [node name="ResetHint" type="Label" parent="."]
 layout_mode = 0
-offset_left = 208.0
-offset_top = -404.0
-offset_right = 688.0
-offset_bottom = -324.0
+offset_left = -453.0
+offset_top = -276.0
+offset_right = 27.0
+offset_bottom = -196.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 36
-text = "R: Reset checkpoint"
+text = "Reset checkpoint"
 horizontal_alignment = 1
 
 [node name="Instruction" type="Label" parent="."]
 layout_mode = 0
-offset_left = -900.0
-offset_top = -397.0
-offset_right = -420.0
-offset_bottom = -317.0
+offset_left = -418.0
+offset_top = -394.0
+offset_right = 62.0
+offset_bottom = -314.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 36
 text = "Click Enter to accept"
@@ -335,6 +337,16 @@ offset_right = 2378.0
 offset_bottom = 1179.0
 scale = Vector2(6.45313, 7.0625)
 texture = ExtResource("1_e6dt7")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-525, -362)
+scale = Vector2(7, 7)
+texture = ExtResource("16_k68ue")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-527, -244)
+scale = Vector2(7, 7)
+texture = ExtResource("17_wcww0")
 
 [connection signal="pressed" from="Aqua/AquaFox" to="." method="_on_aqua_fox_pressed"]
 [connection signal="pressed" from="Normal/NormalFox" to="." method="_on_normal_fox_pressed"]
