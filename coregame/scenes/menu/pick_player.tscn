@@ -19,8 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://cnxyu60ia74ah" path="res://assets/Background layers/Layer_0001_8.png" id="15_pwre4"]
 [ext_resource type="Texture2D" uid="uid://ddvyysm86w0db" path="res://assets/Background layers/Layer_0000_9.png" id="16_asv0c"]
 [ext_resource type="Texture2D" uid="uid://dywt7gf4ogmxq" path="res://assets/sprites/Keyboard/space.png" id="19_02srb"]
-[ext_resource type="Texture2D" uid="uid://cna7xa84rurj" path="res://assets/ui/up,left,right.png" id="20_ifw7v"]
-[ext_resource type="Texture2D" uid="uid://cb5kaeyj3sq6k" path="res://assets/ui/Keyboard Letters and Symbols.png" id="21_ifw7v"]
+[ext_resource type="Texture2D" uid="uid://b3tatn6opjgks" path="res://assets/ui/Keyboard Full UI.png" id="20_ifw7v"]
+[ext_resource type="Texture2D" uid="uid://caciuee60ie7l" path="res://assets/ui/Keyboard Enter.png" id="21_ifw7v"]
 
 [node name="Pick_Player" type="Control"]
 layout_mode = 3
@@ -461,10 +461,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -880.0
-offset_top = -428.0
-offset_right = -768.0
-offset_bottom = -348.0
+offset_left = -895.0
+offset_top = -436.0
+offset_right = -783.0
+offset_bottom = -356.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("19_02srb")
@@ -493,7 +493,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -888.0
+offset_left = -902.0
 offset_top = -324.0
 offset_right = -744.0
 offset_bottom = -236.0
@@ -505,11 +505,11 @@ texture = ExtResource("20_ifw7v")
 layout_mode = 0
 offset_left = -744.0
 offset_top = -300.0
-offset_right = -54.0
+offset_right = 747.0
 offset_bottom = -258.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 30
-text = ": Press \"down,left and right\" to move left, down, right."
+text = ": Press to move up,  down,l eft, right, using \"W,S,A,D\" for instead."
 
 [node name="Aqua,Knight" type="TextureRect" parent="."]
 layout_mode = 1
@@ -518,9 +518,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 184.0
+offset_left = 145.0
 offset_top = -420.0
-offset_right = 248.0
+offset_right = 232.0
 offset_bottom = -356.0
 grow_horizontal = 2
 grow_vertical = 2
