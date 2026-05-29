@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://44jb4ljblpvo"]
+[gd_scene load_steps=31 format=3 uid="uid://44jb4ljblpvo"]
 
 [ext_resource type="Script" uid="uid://cew02ft03ggrt" path="res://scenes/player/player_types/jungle/jungle.gd" id="1_28lxp"]
 [ext_resource type="Texture2D" uid="uid://bdr27pudej2bt" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_defeat_1.png" id="2_2rfqd"]
@@ -28,6 +28,7 @@
 [ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="18_ovxuk"]
 [ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="19_610n4"]
 [ext_resource type="Script" uid="uid://5oxoj5jfcrl" path="res://scenes/player/states/dead.gd" id="20_gmlqo"]
+[ext_resource type="Script" path="res://scenes/player/states/hurt.gd" id="21_hurt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0fw70"]
 animations = [{
@@ -233,6 +234,9 @@ script = ExtResource("19_610n4")
 
 [node name="Dead" type="Node" parent="States"]
 script = ExtResource("20_gmlqo")
+
+[node name="Hurt" type="Node" parent="States"]
+script = ExtResource("21_hurt")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]

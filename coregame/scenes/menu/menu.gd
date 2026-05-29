@@ -1,5 +1,7 @@
 extends Control
 
+func _ready() -> void:
+	$AnimatedSprite2D.play()
 
 @onready var vbox_container = $VBoxContainer
 @onready var open_setting_btn = $OpenSetting
@@ -7,26 +9,26 @@ extends Control
 @onready var foxy = $Foxy
 @onready var intro =$IntroSetting
 func _ready() -> void:
-	# 1. Kết nối sự kiện click chuột của nút bánh răng vào hàm mở setting
+	# 1. K?t n?i s? ki?n click chu?t c?a n�t b�nh rang v�o h�m m? setting
 	open_setting_btn.pressed.connect(_on_open_setting_pressed)
 	
-	# 2. Lắng nghe tín hiệu đóng/mở từ Node Setting
+	# 2. L?ng nghe t�n hi?u d�ng/m? t? Node Setting
 	setting_node.settings_toggled.connect(_on_settings_toggled)
 
-# Hàm chạy khi người chơi click vào nút bánh răng OpenSetting
+# H�m ch?y khi ngu?i choi click v�o n�t b�nh rang OpenSetting
 func _on_open_setting_pressed() -> void:
 	setting_node.open_settings()
 
-# Hàm tự động xử lý ẩn/hiện các nút của Menu dựa trên trạng thái của Setting
+# H�m t? d?ng x? l� ?n/hi?n c�c n�t c?a Menu d?a tr�n tr?ng th�i c?a Setting
 func _on_settings_toggled(is_open: bool) -> void:
 	if is_open:
-		# Nếu Setting đang MỞ -> Ẩn các nút Menu chính và ẩn luôn cả chính nó (nút bánh răng)
+		# N?u Setting dang M? -> ?n c�c n�t Menu ch�nh v� ?n lu�n c? ch�nh n� (n�t b�nh rang)
 		intro.visible = false
 		vbox_container.visible = false
 		open_setting_btn.visible = false
 		foxy.visible=false
 	else:
-		# Nếu Setting ĐÓNG -> Hiện lại tất cả
+		# N?u Setting ��NG -> Hi?n l?i t?t c?
 		intro.visible = true
 		foxy.visible=true
 		vbox_container.visible = true

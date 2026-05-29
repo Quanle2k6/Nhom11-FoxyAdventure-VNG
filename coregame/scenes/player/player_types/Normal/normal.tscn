@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=40 format=3 uid="uid://ce55lmohib33q"]
+=======
+[gd_scene load_steps=41 format=3 uid="uid://ce55lmohib33q"]
+>>>>>>> remotes/origin/dev
 
 [ext_resource type="Script" uid="uid://uxik123lmwgo" path="res://scenes/player/player_types/normal/normal.gd" id="1_ysnvi"]
 [ext_resource type="Texture2D" uid="uid://va8q73lb70ii" path="res://assets/sprites/characters/foxy/fox_blade/fox_atk_1.png" id="2_1wcxm"]
@@ -30,7 +34,12 @@
 [ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="18_wvx5a"]
 [ext_resource type="Script" uid="uid://b4rywurj6tivu" path="res://scenes/player/player_types/normal/attack_by_blade.gd" id="25_wwvf3"]
 [ext_resource type="Script" uid="uid://5oxoj5jfcrl" path="res://scenes/player/states/dead.gd" id="26_dead"]
+<<<<<<< HEAD
 [ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://data/Porky Bold.otf" id="26_wwvf3"]
+=======
+[ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://assets/Porky Bold.otf" id="26_wwvf3"]
+[ext_resource type="Script" uid="uid://b8hfcbm6lpekx" path="res://scenes/player/states/hurt.gd" id="27_hurt"]
+>>>>>>> remotes/origin/dev
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4tlmi"]
 animations = [{
@@ -162,7 +171,11 @@ max_health = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_4tlmi")
+<<<<<<< HEAD
 animation = &"fall"
+=======
+animation = &"jump"
+>>>>>>> remotes/origin/dev
 
 [node name="HurtArea2D" type="Area2D" parent="Direction"]
 collision_layer = 4
@@ -184,7 +197,13 @@ metadata/_custom_type_script = "uid://5bjaanlcsrbg"
 position = Vector2(0.5, 12.5)
 shape = SubResource("RectangleShape2D_hm0yo")
 
-[node name="HitBox2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
+[node name="AttackArea2D" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("10_4nrhj")
+metadata/_custom_type_script = "uid://5bjaanlcsrbg"
+
+[node name="HitBox2D" type="CollisionShape2D" parent="Direction/AttackArea2D"]
 position = Vector2(19, 1.5)
 shape = SubResource("RectangleShape2D_u2rff")
 disabled = true
@@ -259,6 +278,9 @@ script = ExtResource("25_wwvf3")
 
 [node name="Dead" type="Node" parent="States"]
 script = ExtResource("26_dead")
+
+[node name="Hurt" type="Node" parent="States"]
+script = ExtResource("27_hurt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, -50)
