@@ -253,7 +253,7 @@ size = Vector2(57, 96)
 
 [node name="KingCrab" type="CharacterBody2D"]
 scale = Vector2(1.4, 1.4)
-collision_layer = 8
+collision_layer = 128
 script = ExtResource("1_king")
 shoot_speed = 200.0
 skill_decide_delay = 0.7
@@ -289,7 +289,7 @@ scale = Vector2(1, 0.119999)
 target_position = Vector2(0, 125.001)
 
 [node name="HurtArea2D" type="Area2D" parent="Direction"]
-collision_layer = 16
+collision_layer = 256
 collision_mask = 0
 script = ExtResource("7_vf5cm")
 metadata/_custom_type_script = "uid://vj34xpkodm6l"
