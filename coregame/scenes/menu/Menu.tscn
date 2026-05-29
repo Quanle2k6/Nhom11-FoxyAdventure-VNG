@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bn5gos22mxbx6"]
 
 [ext_resource type="Script" uid="uid://biurp4ahvo8s7" path="res://scenes/menu/menu.gd" id="1_kcc1k"]
-[ext_resource type="Texture2D" uid="uid://cy81eia65q4cs" path="res://assets/sprites/enviroment/background/FinalFox.png" id="2_yenv6"]
+[ext_resource type="Texture2D" uid="uid://d3ext1nxqeowb" path="res://assets/BackgroundMenu/c85d2577-189d-4118-9cf1-a06f82ec100b.png" id="2_053gp"]
 [ext_resource type="Texture2D" uid="uid://bdorvbtxjrjko" path="res://assets/sprites/enviroment/textbox.png" id="5_a7470"]
 [ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://data/Porky Bold.otf" id="5_yenv6"]
 [ext_resource type="PackedScene" uid="uid://bu4h7kjfast0b" path="res://scenes/menu/setting.tscn" id="7_ljdvc"]
@@ -30,19 +30,19 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BackgroundMenu" type="TextureRect" parent="BackGround"]
-custom_minimum_size = Vector2(200, 2000)
+custom_minimum_size = Vector2(-1000, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -4.0
+offset_left = 1.0
 offset_top = -528.0
-offset_right = -1550.0
-offset_bottom = 392.0
+offset_right = -1545.0
+offset_bottom = -1401.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5.1276, 7.76562)
-texture = ExtResource("2_yenv6")
+texture = ExtResource("2_053gp")
 expand_mode = 1
 stretch_mode = 4
 

@@ -8,9 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://c65a5nt45l57l" path="res://assets/sprites/enviroment/objects/flag/flag_05.png" id="6_v5d5o"]
 [ext_resource type="Texture2D" uid="uid://b1tbo5tpcavu0" path="res://assets/sprites/characters/foxy/flag/flag_0.png" id="7_h128v"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h128v"]
-size = Vector2(13, 23)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_ya2yr"]
 animations = [{
 "frames": [{
@@ -42,23 +39,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h128v"]
+size = Vector2(13, 23)
+
 [node name="Checkpoint" type="Area2D"]
 scale = Vector2(2.5, 2.5)
 collision_layer = 64
 collision_mask = 0
 script = ExtResource("1_fkvpt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_h128v")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.5, 0.500001)
 scale = Vector2(0.361111, 0.25)
 sprite_frames = SubResource("SpriteFrames_ya2yr")
-animation = &"checkpoint_1"
+animation = &"idle"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-5, 0.739507)
-scale = Vector2(-0.360744, 0.257408)
-texture = ExtResource("7_h128v")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_h128v")

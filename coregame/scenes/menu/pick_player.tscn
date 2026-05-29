@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c7b68c2t2m054" path="res://assets/sprites/characters/foxy/fox/fox_walk_4.png" id="1_e6dt7"]
 [ext_resource type="Script" uid="uid://dkkog6lsuhg2v" path="res://scenes/menu/pick_player.gd" id="1_fl16o"]
-[ext_resource type="Texture2D" uid="uid://x5sje5usbogq" path="res://assets/sprites/enviroment/background/background_layer_2.png" id="2_qo55u"]
+[ext_resource type="Texture2D" uid="uid://btwn2e0fyv3qh" path="res://assets/BackgroundPIck/5c3d5128-fd3c-47f2-8ef8-1e147d8d1484.png" id="2_jgx76"]
 [ext_resource type="Texture2D" uid="uid://j8leouk06ym8" path="res://assets/sprites/characters/foxy/fox/WaterFox/WaterFox_idle_1.png" id="4_jgx76"]
 [ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://data/Porky Bold.otf" id="4_n21fu"]
 [ext_resource type="Texture2D" uid="uid://cqncmvceh24sn" path="res://assets/ui/BNG_Information.png" id="5_n21fu"]
@@ -24,42 +24,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -960.0
-offset_top = -1074.0
-offset_right = -640.0
-offset_bottom = -683.0
+offset_left = -959.0
+offset_top = -540.0
+offset_right = -650.0
+offset_bottom = -343.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(6.21562, 5.48889)
-texture = ExtResource("2_qo55u")
-
-[node name="Sprite2D2" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1029.0
-offset_top = -1060.0
-offset_right = 1349.0
-offset_bottom = -672.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(6.21562, 5.48889)
-texture = ExtResource("2_qo55u")
-
-[node name="Sprite2D3" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2948.0
-offset_top = -1074.0
-offset_right = -2628.0
-offset_bottom = -683.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(6.21562, 5.48889)
-texture = ExtResource("2_qo55u")
+texture = ExtResource("2_jgx76")
+expand_mode = 1
 
 [node name="ResetHint" type="Label" parent="."]
 layout_mode = 0
