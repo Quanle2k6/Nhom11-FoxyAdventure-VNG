@@ -115,7 +115,7 @@ collision_layer = 2
 script = ExtResource("1_kekb6")
 bubble_attack_cooldown = 1.2
 movement_speed = 150.0
-attack_damage = 3
+attack_damage = 4
 max_health = 2
 metadata/_custom_type_script = "uid://dt2tsu385v1a5"
 

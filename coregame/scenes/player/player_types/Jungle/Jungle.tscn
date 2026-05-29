@@ -109,7 +109,7 @@ collision_layer = 2
 script = ExtResource("1_28lxp")
 movement_speed = 180.0
 attack_damage = 2
-max_health = 3
+max_health = 4
 metadata/_custom_type_script = "uid://dt2tsu385v1a5"
 
 [node name="Camera2D" type="Camera2D" parent="."]
