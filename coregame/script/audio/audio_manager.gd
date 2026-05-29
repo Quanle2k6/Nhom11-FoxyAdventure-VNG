@@ -41,7 +41,6 @@ func _ready() -> void:
 	if audio_database == null:
 		audio_database = load("res://data/audio/audio_database.tres") as AudioDatabase
 	
-	print("AudioManager initialized with ", max_sfx_players, " SFX players")
 
 
 ## Play sound by ID from database

@@ -32,7 +32,6 @@ func _set_states_parent_node(parent_node: Node) -> void:
 			print("adding state: ", state_node.name)
 		var normalized_name: String = state_node.name.to_lower()
 		states[normalized_name] = state_node
-		print("Setting fsm for: ", state_node.name, " | script: ", state_node.get_script())
 
 		state_node.fsm = self
 		state_node.obj = self.obj

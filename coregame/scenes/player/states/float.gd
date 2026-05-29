@@ -2,7 +2,7 @@ extends PlayerState
 
 
 func _enter()->void:
-	print('float')
+
 	obj.change_animation('run')
 
 	

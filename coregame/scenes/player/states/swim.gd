@@ -1,7 +1,6 @@
 extends PlayerState
 
 func _enter() -> void:
-	print('swim')
 	obj.change_animation("run")
 
 

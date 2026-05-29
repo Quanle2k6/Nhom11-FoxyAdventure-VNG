@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://bt60hfqeoqn8q"]
+[gd_scene load_steps=49 format=4 uid="uid://bt60hfqeoqn8q"]
 
 [ext_resource type="Script" uid="uid://cwe47jffdcxhk" path="res://scenes/map/boss_map/boss_map.gd" id="1_np36i"]
 [ext_resource type="TileSet" uid="uid://b8cj8642y4bv2" path="res://assets/sprites/enviroment/terrain/terrain_32x32.tres" id="2_f6hat"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://xo6ijrf42fge" path="res://assets/ui/boss_progress_fill.png" id="10_8i5ay"]
 [ext_resource type="PackedScene" uid="uid://bajt3x6i6s75f" path="res://script/audio/background_music.tscn" id="11_8i5ay"]
 [ext_resource type="TileSet" uid="uid://dmxd8ratoyxup" path="res://assets/sprites/enviroment/Water_tileset.tres" id="13_7eoqm"]
-[ext_resource type="PackedScene" uid="uid://bu4h7kjfast0b" path="res://scenes/menu/setting.tscn" id="15_iron3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qubsi"]
 size = Vector2(1001, 217)
@@ -290,7 +289,7 @@ position = Vector2(466.5, 429.5)
 shape = SubResource("RectangleShape2D_qubsi")
 
 [node name="KingCrab" parent="." instance=ExtResource("9_f6hat")]
-position = Vector2(506, 289)
+position = Vector2(506, 295)
 
 [node name="BossHealthUI" type="CanvasLayer" parent="."]
 

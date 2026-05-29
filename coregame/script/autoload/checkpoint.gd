@@ -34,7 +34,6 @@ func activate() -> void:
 	is_activated = true
 	GameManager.save_checkpoint(checkpoint_id)
 	checkpoint_activated.emit(checkpoint_id)
-	print("Checkpoint activated: ", checkpoint_id)
 	AudioManager.play_sound("key_collect")
 
 

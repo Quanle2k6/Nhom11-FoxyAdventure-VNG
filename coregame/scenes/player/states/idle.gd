@@ -3,7 +3,6 @@ extends PlayerState
 ## Idle state for player character
 func _enter() -> void:
 	obj.change_animation("idle")
-	print("idle")
 
 
 func _update(delta: float) -> void:

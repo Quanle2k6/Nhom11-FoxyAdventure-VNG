@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx8en4v8ie42g"
-path="res://.godot/imported/Pixel-Quote-Bubble-PNG.png-fd5a22dc7f51605956a44730e5162f76.ctex"
+uid="uid://dxd70kdjbch5a"
+path="res://.godot/imported/PickPlayer.png-d63f35fd3f04587181b41ed7e19f5a93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/Pixel-Quote-Bubble-PNG.png"
-dest_files=["res://.godot/imported/Pixel-Quote-Bubble-PNG.png-fd5a22dc7f51605956a44730e5162f76.ctex"]
+source_file="res://assets/BackgroundPIck/PickPlayer.png"
+dest_files=["res://.godot/imported/PickPlayer.png-d63f35fd3f04587181b41ed7e19f5a93.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://44jb4ljblpvo"]
+[gd_scene load_steps=37 format=3 uid="uid://44jb4ljblpvo"]
 
 [ext_resource type="Script" uid="uid://cew02ft03ggrt" path="res://scenes/player/player_types/jungle/jungle.gd" id="1_28lxp"]
 [ext_resource type="Texture2D" uid="uid://bdr27pudej2bt" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_defeat_1.png" id="2_2rfqd"]

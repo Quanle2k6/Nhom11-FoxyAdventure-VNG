@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v4niqbe73efi"
-path="res://.godot/imported/magic_desk-Photoroom.png-321323ad6f97ec2abaed04c1c9acad63.ctex"
+uid="uid://cna7xa84rurj"
+path="res://.godot/imported/up,left,right.png-db031679297c8ad6396f47944793b4be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/story/ending/magic_desk-Photoroom.png"
-dest_files=["res://.godot/imported/magic_desk-Photoroom.png-321323ad6f97ec2abaed04c1c9acad63.ctex"]
+source_file="res://assets/ui/up,left,right.png"
+dest_files=["res://.godot/imported/up,left,right.png-db031679297c8ad6396f47944793b4be.ctex"]
 
 [params]
 
