@@ -177,7 +177,7 @@ script = ExtResource("1_0mpjt")
 
 [node name="HitArea2D" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 16
+collision_mask = 272
 script = ExtResource("2_b2nt6")
 hit_cooldown = 0.2
 metadata/_custom_type_script = "uid://5bjaanlcsrbg"
