@@ -1,7 +1,7 @@
 extends PlayerState
 
 func _enter() -> void:
-	print('fall')
+
 	#Change animation to fall
 	obj.change_animation('fall')
 

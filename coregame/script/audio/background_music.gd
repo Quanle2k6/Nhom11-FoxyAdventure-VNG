@@ -10,4 +10,3 @@ func _ready() -> void:
 		push_error("AudioManager not found! Make sure it's in autoload.")
 		return
 	AudioManager.play_music(music_id, volume_db, fade_in)
-	print("Background music started ", music_id)

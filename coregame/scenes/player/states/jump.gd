@@ -1,7 +1,7 @@
 extends PlayerState
 
 func _enter() -> void:
-	print('jump')
+
 	#Change animation to jump
 	obj.change_animation('jump')
 	AudioManager.play_sound("player_jump")

@@ -1,15 +1,21 @@
-[gd_scene load_steps=31 format=3 uid="uid://44jb4ljblpvo"]
+[gd_scene load_steps=37 format=3 uid="uid://44jb4ljblpvo"]
 
-[ext_resource type="Script" uid="uid://cew02ft03ggrt" path="res://scenes/player/player_types/Jungle/jungle.gd" id="1_28lxp"]
-[ext_resource type="Texture2D" uid="uid://ctcp2srlsos4m" path="res://assets/sprites/characters/foxy/fox/fox_fall_1.png" id="2_2cy3g"]
+[ext_resource type="Script" uid="uid://cew02ft03ggrt" path="res://scenes/player/player_types/jungle/jungle.gd" id="1_28lxp"]
+[ext_resource type="Texture2D" uid="uid://bdr27pudej2bt" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_defeat_1.png" id="2_2rfqd"]
+[ext_resource type="Texture2D" uid="uid://bcn42v4jm84ti" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_defeat_2.png" id="3_2ke0o"]
 [ext_resource type="Texture2D" uid="uid://cwgjo8l0lmemi" path="res://assets/sprites/characters/foxy/fox/fox_idle_1.png" id="3_3q62l"]
+[ext_resource type="Texture2D" uid="uid://ccgv5w4mwweaw" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_defeat_3.png" id="4_8ndy1"]
 [ext_resource type="Texture2D" uid="uid://cdiupfoo5xr6u" path="res://assets/sprites/characters/foxy/fox/fox_idle_2.png" id="4_r4h0g"]
-[ext_resource type="Texture2D" uid="uid://bunb4hruykt3x" path="res://assets/sprites/characters/foxy/fox/fox_jump_1.png" id="5_4u6kq"]
-[ext_resource type="Texture2D" uid="uid://ddf11anrulx6e" path="res://assets/sprites/characters/foxy/fox/fox_walk_1.png" id="6_5e1an"]
-[ext_resource type="Texture2D" uid="uid://bsfb723jv8ohi" path="res://assets/sprites/characters/foxy/fox/fox_walk_2.png" id="7_00muh"]
-[ext_resource type="Texture2D" uid="uid://bj3ls24dmb1u0" path="res://assets/sprites/characters/foxy/fox/fox_walk_3.png" id="8_d42h7"]
-[ext_resource type="Texture2D" uid="uid://c7b68c2t2m054" path="res://assets/sprites/characters/foxy/fox/fox_walk_4.png" id="9_0kq4v"]
+[ext_resource type="Texture2D" uid="uid://bm2bnajlutcoo" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_fall_1.png" id="5_k46fq"]
+[ext_resource type="Texture2D" uid="uid://nrpt8hjvu3cn" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_jump_1.png" id="6_2ke0o"]
+[ext_resource type="Texture2D" uid="uid://cw3an3g65ojx7" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_idle_1.png" id="6_k46fq"]
+[ext_resource type="Texture2D" uid="uid://x4di86sdnn66" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_idle_2.png" id="7_5x0ex"]
+[ext_resource type="Texture2D" uid="uid://d2pnngqxglr0p" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_jump_2.png" id="7_8ndy1"]
+[ext_resource type="Texture2D" uid="uid://kqd3l1rvxmr3" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_walk_1.png" id="8_2ke0o"]
+[ext_resource type="Texture2D" uid="uid://cpx58lmpjjn6d" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_walk_2.png" id="9_8ndy1"]
 [ext_resource type="Script" uid="uid://vj34xpkodm6l" path="res://script/hurt_area_2d.gd" id="10_2u4hq"]
+[ext_resource type="Texture2D" uid="uid://t20ulrepwdl5" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_walk_3.png" id="10_k46fq"]
+[ext_resource type="Texture2D" uid="uid://cajxngducm30i" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_walk_4.png" id="11_5x0ex"]
 [ext_resource type="Script" uid="uid://5bjaanlcsrbg" path="res://script/hit_area_2d.gd" id="11_6crnl"]
 [ext_resource type="Texture2D" uid="uid://btupd7klu8li4" path="res://assets/ui/health_bar_empty.png" id="11_health_empty"]
 [ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/player/states/idle.gd" id="12_eyhng"]
@@ -26,14 +32,23 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0fw70"]
 animations = [{
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2rfqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2ke0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8ndy1")
+}],
+"loop": false,
 "name": &"dead",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_2cy3g")
+"texture": ExtResource("5_k46fq")
 }],
 "loop": true,
 "name": &"fall",
@@ -41,10 +56,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_3q62l")
+"texture": ExtResource("6_k46fq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_r4h0g")
+"texture": ExtResource("7_5x0ex")
 }],
 "loop": true,
 "name": &"idle",
@@ -52,7 +67,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_4u6kq")
+"texture": ExtResource("6_2ke0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8ndy1")
 }],
 "loop": true,
 "name": &"jump",
@@ -60,16 +78,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_5e1an")
+"texture": ExtResource("8_2ke0o")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_00muh")
+"texture": ExtResource("9_8ndy1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_d42h7")
+"texture": ExtResource("10_k46fq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_0kq4v")
+"texture": ExtResource("11_5x0ex")
 }],
 "loop": true,
 "name": &"run",
@@ -110,7 +128,7 @@ collision_layer = 2
 script = ExtResource("1_28lxp")
 movement_speed = 180.0
 attack_damage = 2
-max_health = 3
+max_health = 4
 metadata/_custom_type_script = "uid://dt2tsu385v1a5"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -125,7 +143,7 @@ wait_time = 0.1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 sprite_frames = SubResource("SpriteFrames_0fw70")
-animation = &"idle"
+animation = &"dead"
 
 [node name="HurtArea2D" type="Area2D" parent="Direction"]
 collision_layer = 4

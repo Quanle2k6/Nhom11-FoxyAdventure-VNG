@@ -3,7 +3,7 @@ extends PlayerState
 
 # Called when the node enters the scene tree for the first time.
 func _enter() -> void:
-	print('doublejumpd')
+
 	obj.change_animation('jump')
 	AudioManager.play_sound("player_jump")
 

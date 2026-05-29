@@ -1,7 +1,6 @@
 extends PlayerState
 
 func _enter() -> void:
-	print('run')
 	#Change animation to run
 	obj.change_animation('run')
 	AudioManager.play_sound("player_run")

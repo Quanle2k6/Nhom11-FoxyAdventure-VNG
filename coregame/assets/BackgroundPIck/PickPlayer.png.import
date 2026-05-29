@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cagnqcbv0rxvw"
-path="res://.godot/imported/bngFox.png-21c802044146e407c199e7b6391cbb7e.ctex"
+uid="uid://dxd70kdjbch5a"
+path="res://.godot/imported/PickPlayer.png-d63f35fd3f04587181b41ed7e19f5a93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enviroment/background/bngFox.png"
-dest_files=["res://.godot/imported/bngFox.png-21c802044146e407c199e7b6391cbb7e.ctex"]
+source_file="res://assets/BackgroundPIck/PickPlayer.png"
+dest_files=["res://.godot/imported/PickPlayer.png-d63f35fd3f04587181b41ed7e19f5a93.ctex"]
 
 [params]
 

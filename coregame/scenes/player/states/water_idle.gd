@@ -2,7 +2,7 @@ extends PlayerState
 
 
 func _enter() -> void:
-	print('wateridle')
+
 	obj.change_animation("idle")
 	timer = 0.5
 	AudioManager.play_sound("idle_swim")

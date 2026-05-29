@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://33jm8hsikosv"]
+[gd_scene load_steps=17 format=4 uid="uid://cbjer253kulgm"]
 
 [ext_resource type="Script" uid="uid://cwe47jffdcxhk" path="res://scenes/map/boss_map/boss_map.gd" id="1_26k8b"]
 [ext_resource type="TileSet" uid="uid://b8cj8642y4bv2" path="res://assets/sprites/enviroment/terrain/terrain_32x32.tres" id="2_fqso4"]

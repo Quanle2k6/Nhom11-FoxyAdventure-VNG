@@ -50,11 +50,9 @@ func _on_water_ditection_area_2d_area_exitted(area: Area2D):
 		is_in_water -= 1
 
 	if is_in_water == 0:
-		print('check')
 		exit_water()
 
 func enter_water(area: Area2D) -> void:
-	print("in water")
 	is_in_water += 1
 	water_area = area
 	if area.is_in_group("Water"):
