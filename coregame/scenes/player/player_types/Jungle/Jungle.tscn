@@ -1,6 +1,6 @@
 [gd_scene load_steps=37 format=3 uid="uid://44jb4ljblpvo"]
 
-[ext_resource type="Script" uid="uid://cew02ft03ggrt" path="res://scenes/player/player_types/jungle/jungle.gd" id="1_28lxp"]
+[ext_resource type="Script" uid="uid://cew02ft03ggrt" path="res://scenes/player/player_types/Jungle/jungle.gd" id="1_28lxp"]
 [ext_resource type="Texture2D" uid="uid://bdr27pudej2bt" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_defeat_1.png" id="2_2rfqd"]
 [ext_resource type="Texture2D" uid="uid://bcn42v4jm84ti" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_defeat_2.png" id="3_2ke0o"]
 [ext_resource type="Texture2D" uid="uid://cwgjo8l0lmemi" path="res://assets/sprites/characters/foxy/fox/fox_idle_1.png" id="3_3q62l"]
@@ -28,7 +28,7 @@
 [ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="18_ovxuk"]
 [ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="19_610n4"]
 [ext_resource type="Script" uid="uid://5oxoj5jfcrl" path="res://scenes/player/states/dead.gd" id="20_gmlqo"]
-[ext_resource type="Script" path="res://scenes/player/states/hurt.gd" id="21_hurt"]
+[ext_resource type="Script" uid="uid://b8hfcbm6lpekx" path="res://scenes/player/states/hurt.gd" id="21_hurt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0fw70"]
 animations = [{

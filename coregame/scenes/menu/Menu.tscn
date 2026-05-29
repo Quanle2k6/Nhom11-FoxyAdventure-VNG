@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ckoqgs0aj5023" path="res://assets/BackGround_menu.png" id="2_a7470"]
 [ext_resource type="Texture2D" uid="uid://bdorvbtxjrjko" path="res://assets/sprites/enviroment/textbox.png" id="5_a7470"]
 [ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://data/Porky Bold.otf" id="5_yenv6"]
-[ext_resource type="PackedScene" path="res://scenes/menu/setting.tscn" id="7_ljdvc"]
+[ext_resource type="PackedScene" uid="uid://bu4h7kjfast0b" path="res://scenes/menu/setting.tscn" id="7_ljdvc"]
 [ext_resource type="Theme" uid="uid://oop25hbafu5p" path="res://scenes/menu/game.tres" id="7_o0usu"]
 [ext_resource type="Texture2D" uid="uid://d1s2v2t53t83s" path="res://assets/ui/settings_button.png" id="8_o0usu"]
 [ext_resource type="Texture2D" uid="uid://dd3swi40a484w" path="res://assets/ui/result/foxy.png" id="9_053gp"]

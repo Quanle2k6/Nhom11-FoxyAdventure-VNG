@@ -1,6 +1,6 @@
 [gd_scene load_steps=41 format=3 uid="uid://87hmjxjef8gh"]
 
-[ext_resource type="Script" uid="uid://uxik123lmwgo" path="res://scenes/player/player_types/normal/normal.gd" id="1_ysnvi"]
+[ext_resource type="Script" uid="uid://uxik123lmwgo" path="res://scenes/player/player_types/Normal/normal.gd" id="1_ysnvi"]
 [ext_resource type="Texture2D" uid="uid://va8q73lb70ii" path="res://assets/sprites/characters/foxy/fox_blade/fox_atk_1.png" id="2_1wcxm"]
 [ext_resource type="Texture2D" uid="uid://674222iw5dre" path="res://assets/sprites/characters/foxy/fox_blade/fox_atk_2.png" id="3_s42rm"]
 [ext_resource type="Texture2D" uid="uid://dvismq6tm0wpx" path="res://assets/sprites/characters/foxy/fox_blade/fox_fall_1.png" id="4_o0ske"]
@@ -28,10 +28,10 @@
 [ext_resource type="Script" uid="uid://5t7pa1gjbdxg" path="res://scenes/player/states/swim.gd" id="16_15s8f"]
 [ext_resource type="Script" uid="uid://dn4454004ouyx" path="res://scenes/player/states/float.gd" id="17_7byfn"]
 [ext_resource type="Script" uid="uid://bsnqiyyetnj1w" path="res://scenes/player/states/water_idle.gd" id="18_wvx5a"]
-[ext_resource type="Script" uid="uid://b4rywurj6tivu" path="res://scenes/player/player_types/normal/attack_by_blade.gd" id="25_wwvf3"]
+[ext_resource type="Script" uid="uid://b4rywurj6tivu" path="res://scenes/player/player_types/Normal/attack_by_blade.gd" id="25_wwvf3"]
 [ext_resource type="Script" uid="uid://5oxoj5jfcrl" path="res://scenes/player/states/dead.gd" id="26_dead"]
 [ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://data/Porky Bold.otf" id="26_wwvf3"]
-[ext_resource type="Script" path="res://scenes/player/states/hurt.gd" id="27_hurt"]
+[ext_resource type="Script" uid="uid://b8hfcbm6lpekx" path="res://scenes/player/states/hurt.gd" id="27_hurt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4tlmi"]
 animations = [{
@@ -134,11 +134,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00u1h"]
 size = Vector2(20, 22)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm0yo"]
-size = Vector2(17, 5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2rff"]
 size = Vector2(14.6563, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm0yo"]
+size = Vector2(16, 5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bmi8o"]
 radius = 8.0
@@ -177,18 +177,24 @@ shape = SubResource("RectangleShape2D_00u1h")
 
 [node name="AttackArea2D" type="Area2D" parent="Direction"]
 collision_layer = 0
-collision_mask = 16
+collision_mask = 272
 script = ExtResource("10_4nrhj")
 metadata/_custom_type_script = "uid://5bjaanlcsrbg"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/AttackArea2D"]
-position = Vector2(0.5, 12.5)
-shape = SubResource("RectangleShape2D_hm0yo")
 
 [node name="HitBox2D" type="CollisionShape2D" parent="Direction/AttackArea2D"]
 position = Vector2(19, 1.5)
 shape = SubResource("RectangleShape2D_u2rff")
 disabled = true
+
+[node name="HitArea2D" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("10_4nrhj")
+metadata/_custom_type_script = "uid://5bjaanlcsrbg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
+position = Vector2(1, 12.5)
+shape = SubResource("RectangleShape2D_hm0yo")
 
 [node name="WaterDetectionArea2D" type="Area2D" parent="Direction"]
 collision_layer = 0
