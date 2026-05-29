@@ -5,6 +5,8 @@ const OPTIONS := [
 		"root_path": "Normal",
 		"button_path": "Normal/NormalFox",
 		"selection_path": "Normal/NormalSelection",
+		"BNG": "Normal/BNG_Information_Normal",
+		"Information": "Normal/Information_Normal",
 		"scene": preload("res://scenes/player/player_types/normal/normal.tscn"),
 		"key": GameManager.NORMAL_FOX,
 	},
@@ -12,6 +14,8 @@ const OPTIONS := [
 		"root_path": "Aqua",
 		"button_path": "Aqua/AquaFox",
 		"selection_path": "Aqua/AquaSelection",
+		"BNG": "Aqua/BNG_Information_Aqua",
+		"Information": "Aqua/Information_Aqua",
 		"scene": preload("res://scenes/player/player_types/aqua/aqua.tscn"),
 		"key": GameManager.AQUA_FOX,
 	},
@@ -19,6 +23,8 @@ const OPTIONS := [
 		"root_path": "Jungle",
 		"button_path": "Jungle/JungleFox",
 		"selection_path": "Jungle/JungleSelection",
+		"BNG": "Jungle/BNG_Information_Jungle",
+		"Information": "Jungle/Information_Jungle",
 		"scene": preload("res://scenes/player/player_types/jungle/jungle.tscn"),
 		"key": GameManager.JUNGLE_FOX,
 	},
@@ -30,9 +36,13 @@ const OPTIONS := [
 @export var background_scroll_speed: float = 25.0
 
 var selected_index: int = 0
-
+var bng_index: int =0
+var ifm_index: int =0
 func _ready() -> void:
+
 	selected_index = get_first_unlocked_index()
+	bng_index = get_first_unlocked_index()
+	ifm_index = get_first_unlocked_index()
 	AudioManager.stop_music()
 	update_selection()
 
@@ -56,6 +66,8 @@ func move_selection(step: int) -> void:
 		var next_index := wrapi(selected_index + step * offset, 0, OPTIONS.size())
 		if is_option_unlocked(next_index):
 			selected_index = next_index
+			bng_index = next_index
+			ifm_index = next_index
 			update_selection()
 			return
 
@@ -65,9 +77,13 @@ func update_selection() -> void:
 		var root := get_node(OPTIONS[index]["root_path"]) as CanvasItem
 		var button := get_node(OPTIONS[index]["button_path"]) as TextureButton
 		var selection := get_node(OPTIONS[index]["selection_path"]) as Label
+		var BNG := get_node(OPTIONS[index]["BNG"]) as TextureRect
+		var ifm := get_node(OPTIONS[index]["Information"]) as RichTextLabel
 		root.modulate = Color(1, 1, 1, 1) if is_unlocked else Color(1, 1, 1, 0.35)
 		button.disabled = not is_unlocked
 		selection.visible = is_unlocked and index == selected_index
+		BNG.visible = is_unlocked and index == bng_index
+		ifm.visible = is_unlocked and index == ifm_index
 	reset_hint.text = "R: Reset checkpoint"
 
 func get_first_unlocked_index() -> int:

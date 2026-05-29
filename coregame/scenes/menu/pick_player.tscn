@@ -1,10 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://dbylbjddg4q8n"]
+[gd_scene load_steps=22 format=3 uid="uid://dbylbjddg4q8n"]
 
 [ext_resource type="Texture2D" uid="uid://c7b68c2t2m054" path="res://assets/sprites/characters/foxy/fox/fox_walk_4.png" id="1_e6dt7"]
 [ext_resource type="Script" uid="uid://dkkog6lsuhg2v" path="res://scenes/menu/pick_player.gd" id="1_fl16o"]
-[ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://assets/Porky Bold.otf" id="4_n21fu"]
+[ext_resource type="Texture2D" uid="uid://j8leouk06ym8" path="res://assets/sprites/characters/foxy/fox/WaterFox/WaterFox_idle_1.png" id="4_jgx76"]
+[ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://data/Porky Bold.otf" id="4_n21fu"]
 [ext_resource type="Texture2D" uid="uid://x6swgis0gmm3" path="res://assets/Background layers/Layer_0011_0.png" id="5_kq75b"]
+[ext_resource type="Texture2D" uid="uid://cqncmvceh24sn" path="res://assets/ui/BNG_Information.png" id="5_n21fu"]
 [ext_resource type="Texture2D" uid="uid://cvryeg3ybnc26" path="res://assets/Background layers/Layer_0010_1.png" id="6_k68ue"]
+[ext_resource type="Texture2D" uid="uid://cw3an3g65ojx7" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_idle_1.png" id="6_wwug3"]
 [ext_resource type="Texture2D" uid="uid://d2rv12fa6k15m" path="res://assets/Background layers/Layer_0009_2.png" id="7_wcww0"]
 [ext_resource type="Texture2D" uid="uid://cqq503sinpnvj" path="res://assets/Background layers/Layer_0008_3.png" id="8_02srb"]
 [ext_resource type="Texture2D" uid="uid://bx2s1ie3ve5r2" path="res://assets/Background layers/Layer_0007_Lights.png" id="9_ewct4"]
@@ -15,8 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://bicvvkfdgxawe" path="res://assets/Background layers/Layer_0002_7.png" id="14_a0hlx"]
 [ext_resource type="Texture2D" uid="uid://cnxyu60ia74ah" path="res://assets/Background layers/Layer_0001_8.png" id="15_pwre4"]
 [ext_resource type="Texture2D" uid="uid://ddvyysm86w0db" path="res://assets/Background layers/Layer_0000_9.png" id="16_asv0c"]
-[ext_resource type="Texture2D" uid="uid://bo6mo5wud02ow" path="res://assets/sprites/Keyboard/Enter.png" id="16_k68ue"]
-[ext_resource type="Texture2D" uid="uid://qa8jfo30362r" path="res://assets/sprites/Keyboard/R.png" id="17_wcww0"]
+[ext_resource type="Texture2D" uid="uid://dywt7gf4ogmxq" path="res://assets/sprites/Keyboard/space.png" id="19_02srb"]
+[ext_resource type="Texture2D" uid="uid://cna7xa84rurj" path="res://assets/ui/up,left,right.png" id="20_ifw7v"]
+[ext_resource type="Texture2D" uid="uid://cb5kaeyj3sq6k" path="res://assets/ui/Keyboard Letters and Symbols.png" id="21_ifw7v"]
 
 [node name="Pick_Player" type="Control"]
 layout_mode = 3
@@ -30,123 +34,146 @@ grow_vertical = 2
 script = ExtResource("1_fl16o")
 
 [node name="ParallaxLayer" type="Node2D" parent="."]
-position = Vector2(-968, -884)
-scale = Vector2(1, 1.8)
 
-[node name="Layer1" type="Parallax2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer#Layer1" type="Parallax2D" parent="ParallaxLayer"]
 scroll_scale = Vector2(0, 0)
+scroll_offset = Vector2(-559, -336)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer1"]
+[node name="ParallaxLayer_Layer1#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-960, -540)
+scale = Vector2(2.06897, 1.36192)
 texture = ExtResource("5_kq75b")
 centered = false
 
-[node name="Layer2" type="Parallax2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer#Layer2" type="Parallax2D" parent="ParallaxLayer"]
 scroll_scale = Vector2(0.04, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer2"]
+[node name="ParallaxLayer_Layer2#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-960, -540)
+scale = Vector2(2.06897, 1.362)
 texture = ExtResource("6_k68ue")
 centered = false
 
-[node name="Layer3" type="Parallax2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer#Layer3" type="Parallax2D" parent="ParallaxLayer"]
 scroll_scale = Vector2(0.07, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer3"]
+[node name="ParallaxLayer_Layer3#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-960, -540)
+scale = Vector2(2.069, 1.362)
 texture = ExtResource("7_wcww0")
 centered = false
 
-[node name="Layer4" type="Parallax2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer#Layer4" type="Parallax2D" parent="ParallaxLayer"]
 scroll_scale = Vector2(0.1, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer4"]
+[node name="ParallaxLayer_Layer4#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-960, -540)
+scale = Vector2(2.069, 1.362)
 texture = ExtResource("8_02srb")
 centered = false
 
-[node name="Layer5" type="Parallax2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer#Layer5" type="Parallax2D" parent="ParallaxLayer"]
 scroll_scale = Vector2(0.12, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer5"]
+[node name="ParallaxLayer_Layer5#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-960, -540)
+scale = Vector2(2.069, 1.362)
 texture = ExtResource("9_ewct4")
 centered = false
 
-[node name="Layer6" type="Parallax2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer#Layer6" type="Parallax2D" parent="ParallaxLayer"]
 scroll_scale = Vector2(0.16, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer6"]
+[node name="ParallaxLayer_Layer6#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-960, -2036)
+scale = Vector2(2.069, 3.25851)
 texture = ExtResource("10_ifw7v")
 centered = false
 
-[node name="Layer7" type="Parallax2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer#Layer7" type="Parallax2D" parent="ParallaxLayer"]
 scroll_scale = Vector2(0.21, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer7"]
+[node name="ParallaxLayer_Layer7#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-960, -2012)
+scale = Vector2(2.069, 3.37957)
 texture = ExtResource("11_wyw2k")
 centered = false
 
-[node name="Layer8" type="Parallax2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer#Layer8" type="Parallax2D" parent="ParallaxLayer"]
 scroll_scale = Vector2(0.25, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer8"]
+[node name="ParallaxLayer_Layer8#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-960, -2012)
+scale = Vector2(2.069, 3.20807)
 texture = ExtResource("12_t34fj")
 centered = false
 
-[node name="Layer9" type="Parallax2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer#Layer9" type="Parallax2D" parent="ParallaxLayer"]
 scroll_scale = Vector2(0.33, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer9"]
+[node name="ParallaxLayer_Layer9#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-960, -1564)
+scale = Vector2(2.069, 2.79445)
 texture = ExtResource("13_tdj6y")
 centered = false
 
-[node name="Layer10" type="Parallax2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer#Layer10" type="Parallax2D" parent="ParallaxLayer"]
 scroll_scale = Vector2(0.45, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer10"]
+[node name="ParallaxLayer_Layer10#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-960, -908)
+scale = Vector2(2.069, 1.82598)
 texture = ExtResource("14_a0hlx")
 centered = false
 
-[node name="Layer11" type="Parallax2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer#Layer11" type="Parallax2D" parent="ParallaxLayer"]
 scroll_scale = Vector2(0.62, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer11"]
+[node name="ParallaxLayer_Layer11#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-960, -540)
+scale = Vector2(2.069, 1.34174)
 texture = ExtResource("15_pwre4")
 centered = false
 
-[node name="Layer12" type="Parallax2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer#Layer12" type="Parallax2D" parent="ParallaxLayer"]
 scroll_scale = Vector2(0.82, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer/Layer12"]
+[node name="ParallaxLayer_Layer12#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(-960, -540)
+scale = Vector2(2.069, 1.362)
 texture = ExtResource("16_asv0c")
 centered = false
 
 [node name="ResetHint" type="Label" parent="."]
 layout_mode = 0
-offset_left = -453.0
-offset_top = -276.0
-offset_right = 27.0
-offset_bottom = -196.0
+offset_left = 528.0
+offset_top = -516.0
+offset_right = 1008.0
+offset_bottom = -436.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 36
 text = "Reset checkpoint"
@@ -154,10 +181,10 @@ horizontal_alignment = 1
 
 [node name="Instruction" type="Label" parent="."]
 layout_mode = 0
-offset_left = -418.0
-offset_top = -394.0
-offset_right = 62.0
-offset_bottom = -314.0
+offset_left = -968.0
+offset_top = -516.0
+offset_right = -488.0
+offset_bottom = -436.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 36
 text = "Click Enter to accept"
@@ -179,10 +206,10 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Aqua"]
 layout_mode = 0
-offset_left = 878.0
-offset_top = 601.0
-offset_right = 1191.0
-offset_bottom = 742.0
+offset_left = 896.0
+offset_top = 431.0
+offset_right = 1209.0
+offset_bottom = 572.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 50
 text = "Aqua Fox
@@ -190,32 +217,56 @@ text = "Aqua Fox
 
 [node name="Sprite2D" type="TextureRect" parent="Aqua"]
 layout_mode = 0
-offset_left = 800.0
-offset_top = 240.0
-offset_right = 864.0
-offset_bottom = 304.0
+offset_left = 816.0
+offset_top = 87.0
+offset_right = 880.0
+offset_bottom = 151.0
 scale = Vector2(6.45313, 7.0625)
-texture = ExtResource("1_e6dt7")
+texture = ExtResource("4_jgx76")
 
 [node name="AquaFox" type="TextureButton" parent="Aqua"]
 layout_mode = 0
-offset_left = 905.0
-offset_top = 573.0
-offset_right = 1131.0
-offset_bottom = 747.0
+offset_left = 952.0
+offset_top = 415.0
+offset_right = 1178.0
+offset_bottom = 589.0
 rotation = -1.5708
 
 [node name="AquaSelection" type="Label" parent="Aqua"]
-visible = false
 layout_mode = 0
-offset_left = 823.0
-offset_top = 270.0
-offset_right = 1183.0
-offset_bottom = 350.0
+offset_left = 856.0
+offset_top = 87.0
+offset_right = 1216.0
+offset_bottom = 167.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 50
 text = "Select"
 horizontal_alignment = 1
+
+[node name="BNG_Information_Aqua" type="TextureRect" parent="Aqua"]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 511.0
+offset_right = 1272.0
+offset_bottom = 791.0
+texture = ExtResource("5_n21fu")
+
+[node name="Information_Aqua" type="RichTextLabel" parent="Aqua"]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 543.0
+offset_right = 1192.0
+offset_bottom = 775.0
+theme_override_fonts/normal_font = ExtResource("4_n21fu")
+theme_override_font_sizes/normal_font_size = 15
+text = "                    Aqua Fox 
+Attack: 100%
+
+Health:  50%
+
+Playstyle: He can control powerful water bubbles.
+
+Describe: He loves swimming. He can stood. He can't land for 5s."
 
 [node name="Normal" type="Control" parent="."]
 layout_mode = 1
@@ -238,20 +289,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1207.0
-offset_top = 1208.0
-offset_right = 1446.0
-offset_bottom = 1390.0
+offset_left = 1278.0
+offset_top = 1047.0
+offset_right = 1517.0
+offset_bottom = 1229.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 1.5708
 
 [node name="NormalSelection" type="Label" parent="Normal"]
 layout_mode = 0
-offset_left = 938.5
-offset_top = 1132.0
-offset_right = 1298.5
-offset_bottom = 1212.0
+offset_left = 995.0
+offset_top = 949.0
+offset_right = 1355.0
+offset_bottom = 1029.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 50
 text = "Select"
@@ -259,23 +310,63 @@ horizontal_alignment = 1
 
 [node name="Normal" type="Label" parent="Normal"]
 layout_mode = 0
-offset_left = 978.5
-offset_top = 1457.0
-offset_right = 1291.5
-offset_bottom = 1598.0
+offset_left = 1019.0
+offset_top = 1293.0
+offset_right = 1332.0
+offset_bottom = 1428.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 50
-text = "Normal Fox
+text = "Knight Fox
 "
 
 [node name="Sprite2D" type="TextureRect" parent="Normal"]
 layout_mode = 0
-offset_left = 913.5
-offset_top = 1112.0
-offset_right = 977.5
-offset_bottom = 1176.0
+offset_left = 980.0
+offset_top = 949.0
+offset_right = 1044.0
+offset_bottom = 1013.0
 scale = Vector2(6.45313, 7.0625)
 texture = ExtResource("1_e6dt7")
+
+[node name="BNG_Information_Normal" type="TextureRect" parent="Normal"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 955.0
+offset_top = 1365.0
+offset_right = 1403.0
+offset_bottom = 1653.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_n21fu")
+
+[node name="Information_Normal" type="RichTextLabel" parent="Normal"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1019.0
+offset_top = 1397.0
+offset_right = 1347.0
+offset_bottom = 1621.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/table_border = Color(0.962665, 0.623874, 0.76127, 1)
+theme_override_fonts/normal_font = ExtResource("4_n21fu")
+theme_override_font_sizes/normal_font_size = 15
+text = "                       Knight Fox 
+Attack: 75%
+
+Health:   100%
+
+Playstyle: He fights bravely using his sword.
+
+Describe: He is a brave knight , but he moves slowly. He can't swim underwater for 5s."
 
 [node name="Jungle" type="Control" parent="."]
 layout_mode = 1
@@ -293,10 +384,11 @@ grow_vertical = 2
 
 [node name="Jungle" type="Label" parent="Jungle"]
 layout_mode = 0
-offset_left = 2380.0
-offset_top = 1476.0
-offset_right = 2693.0
-offset_bottom = 1617.0
+offset_left = 2416.0
+offset_top = 1312.0
+offset_right = 2729.0
+offset_bottom = 1453.0
+scale = Vector2(0.98944, 1)
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 50
 text = "Jungle Fox
@@ -309,21 +401,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 2598.0
-offset_top = 1222.0
-offset_right = 2824.0
-offset_bottom = 1389.0
+offset_left = 2632.0
+offset_top = 1072.0
+offset_right = 2858.0
+offset_bottom = 1239.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 1.57079
 
 [node name="JungleSelection" type="Label" parent="Jungle"]
-visible = false
 layout_mode = 0
-offset_left = 2340.0
-offset_top = 1132.0
-offset_right = 2700.0
-offset_bottom = 1212.0
+offset_left = 2360.0
+offset_top = 968.0
+offset_right = 2720.0
+offset_bottom = 1048.0
 theme_override_fonts/font = ExtResource("4_n21fu")
 theme_override_font_sizes/font_size = 50
 text = "Select"
@@ -331,22 +422,126 @@ horizontal_alignment = 1
 
 [node name="Sprite2D" type="TextureRect" parent="Jungle"]
 layout_mode = 0
-offset_left = 2314.0
-offset_top = 1115.0
-offset_right = 2378.0
-offset_bottom = 1179.0
+offset_left = 2344.0
+offset_top = 968.0
+offset_right = 2408.0
+offset_bottom = 1032.0
 scale = Vector2(6.45313, 7.0625)
-texture = ExtResource("1_e6dt7")
+texture = ExtResource("6_wwug3")
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(-525, -362)
-scale = Vector2(7, 7)
-texture = ExtResource("16_k68ue")
+[node name="BNG_Information_Jungle" type="TextureRect" parent="Jungle"]
+layout_mode = 0
+offset_left = 2336.0
+offset_top = 1384.0
+offset_right = 2784.0
+offset_bottom = 1672.0
+texture = ExtResource("5_n21fu")
 
-[node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(-527, -244)
-scale = Vector2(7, 7)
-texture = ExtResource("17_wcww0")
+[node name="Information_Jungle" type="RichTextLabel" parent="Jungle"]
+layout_mode = 0
+offset_left = 2384.0
+offset_top = 1408.0
+offset_right = 2736.0
+offset_bottom = 1640.0
+theme_override_fonts/normal_font = ExtResource("4_n21fu")
+theme_override_font_sizes/normal_font_size = 15
+text = "                          Jungle Fox 
+Attack: 50%
+
+Health:  100%
+
+Playstyle: He uses powerful jumping stomps.
+
+Describe: He loves nature and always jumps high to admire everything around him. He can not touch water."
+
+[node name="Space" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -880.0
+offset_top = -428.0
+offset_right = -768.0
+offset_bottom = -348.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_02srb")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -752.0
+offset_top = -412.0
+offset_right = -396.0
+offset_bottom = -356.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_n21fu")
+theme_override_font_sizes/font_size = 30
+text = ": Press \"Space\" to jump."
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -888.0
+offset_top = -324.0
+offset_right = -744.0
+offset_bottom = -236.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_ifw7v")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -744.0
+offset_top = -300.0
+offset_right = -54.0
+offset_bottom = -258.0
+theme_override_fonts/font = ExtResource("4_n21fu")
+theme_override_font_sizes/font_size = 30
+text = ": Press \"down,left and right\" to move left, down, right."
+
+[node name="Aqua,Knight" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 184.0
+offset_top = -420.0
+offset_right = 248.0
+offset_bottom = -356.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_ifw7v")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 256.0
+offset_top = -412.0
+offset_right = 885.0
+offset_bottom = -370.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_n21fu")
+theme_override_font_sizes/font_size = 30
+text = ": For Knight and Aqua, press 'J' to attack."
 
 [connection signal="pressed" from="Aqua/AquaFox" to="." method="_on_aqua_fox_pressed"]
 [connection signal="pressed" from="Normal/NormalFox" to="." method="_on_normal_fox_pressed"]

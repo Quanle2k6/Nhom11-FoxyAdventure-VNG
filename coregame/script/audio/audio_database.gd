@@ -17,7 +17,7 @@ var _clip_map: Dictionary = {}
 func _init():
 	_rebuild_map()
 
-func _rebuild_map() -> void:
+func _rebuild_map() -> void:	
 	_clip_map.clear()
 	for clip in _clips:
 		if clip == null:

@@ -4,5 +4,3 @@
 
 [node name="IntroMusic" type="Node"]
 script = ExtResource("1_i3i0x")
-volume_db = 2.0
-fade_in = 1.0

@@ -12,6 +12,7 @@ var is_activated: bool = false
 
 
 func _ready() -> void:
+	$AnimatedSprite2D.play('play')
 	if checkpoint_id.is_empty():
 		checkpoint_id = str(get_path())
 	# Check if this checkpoint was already activated
@@ -27,22 +28,15 @@ func _on_body_entered(body: Node2D) -> void:
 
 #activate checkpoint
 func activate() -> void:
-	$AnimatedSprite2D.visible = true
-	$AnimatedSprite2D.play()
-	$Sprite2D.visible = false
+	$AnimatedSprite2D.play('checkpoint_1')
 	if is_activated:
 		return
 	is_activated = true
 	GameManager.save_checkpoint(checkpoint_id)
 	checkpoint_activated.emit(checkpoint_id)
-	print("Checkpoint activated: ", checkpoint_id)
 	AudioManager.play_sound("key_collect")
 
 
 #activate checkpoint visually without saving
 func activate_visual_only() -> void:
 	is_activated = true
-	# Need animation for already activated checkpoints
-	$AnimatedSprite2D.visible = true
-	$AnimatedSprite2D.play()
-	$Sprite2D.visible = false

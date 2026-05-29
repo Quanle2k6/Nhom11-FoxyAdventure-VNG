@@ -68,7 +68,7 @@ b = Vector2(5.43594e-05, 15)
 size = Vector2(45, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgm84"]
-size = Vector2(18, 29)
+size = Vector2(16, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_novun"]
 size = Vector2(54.3411, 50.4319)
@@ -122,7 +122,6 @@ script = ExtResource("8_ybsp4")
 metadata/_custom_type_script = "uid://5bjaanlcsrbg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
-position = Vector2(-0.499987, -1)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_tgm84")
 

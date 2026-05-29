@@ -25,12 +25,13 @@ func time_left_to_live():
 
 
 func _process(delta: float) -> void:
-	if is_on_floor() or fsm.current_state == fsm.states.float or fsm.current_state == fsm.states.dead:
-		label.visible = false
-		return
 	if not water_timer.is_stopped():
 		label.visible = true
 		label.text = "%02d" % time_left_to_live()
+	if is_on_floor() or fsm.current_state == fsm.states.float or fsm.current_state == fsm.states.dead or fsm.current_state == fsm.states.fall :
+		label.visible = false
+		return
+
 
 func _on_timer_timeout() -> void:
 	fsm.change_state(fsm.states.dead)
@@ -38,6 +39,3 @@ func _on_timer_timeout() -> void:
 
 func can_attack() -> bool:
 	return true
-
-func skill():
-	print("Normal Fox")

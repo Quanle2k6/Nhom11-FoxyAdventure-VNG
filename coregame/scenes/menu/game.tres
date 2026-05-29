@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://oop25hbafu5p"]
 
 [ext_resource type="Texture2D" uid="uid://b54307vngn23p" path="res://assets/ui/yellow_button.png" id="1_rgfq2"]
-[ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://assets/Porky Bold.otf" id="1_usfv7"]
+[ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://data/Porky Bold.otf" id="1_usfv7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_usfv7"]
 texture = ExtResource("1_rgfq2")

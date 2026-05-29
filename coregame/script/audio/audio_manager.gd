@@ -22,6 +22,7 @@ var current_sfx_bus_name: String = SFX_BUS
 var current_music_id: String = ""
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	# Initialize music player
 	music_player = AudioStreamPlayer.new()
 	music_player.name = "MusicPlayer"
@@ -40,7 +41,6 @@ func _ready() -> void:
 	if audio_database == null:
 		audio_database = load("res://data/audio/audio_database.tres") as AudioDatabase
 	
-	print("AudioManager initialized with ", max_sfx_players, " SFX players")
 
 
 ## Play sound by ID from database
