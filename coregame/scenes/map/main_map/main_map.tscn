@@ -616,3 +616,14 @@ scale = Vector2(1.09609, 2.74826)
 texture = SubResource("GradientTexture2D_nkqwp")
 
 [node name="Setting" parent="." instance=ExtResource("30_q02te")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.587751, 0.777707, 0.711401, 1)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(3265, 169)
+rotation = -0.785398
+energy = 0.2
+range_z_min = -10
+range_z_max = 10
+shadow_enabled = true
