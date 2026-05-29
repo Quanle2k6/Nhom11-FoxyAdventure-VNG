@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbylbjddg4q8n"]
+[gd_scene load_steps=8 format=3 uid="uid://dbylbjddg4q8n"]
 
 [ext_resource type="Texture2D" uid="uid://c7b68c2t2m054" path="res://assets/sprites/characters/foxy/fox/fox_walk_4.png" id="1_e6dt7"]
 [ext_resource type="Script" uid="uid://dkkog6lsuhg2v" path="res://scenes/menu/pick_player.gd" id="1_fl16o"]
 [ext_resource type="Texture2D" uid="uid://x5sje5usbogq" path="res://assets/sprites/enviroment/background/background_layer_2.png" id="2_qo55u"]
+[ext_resource type="Texture2D" uid="uid://j8leouk06ym8" path="res://assets/sprites/characters/foxy/fox/WaterFox/WaterFox_idle_1.png" id="4_jgx76"]
 [ext_resource type="FontFile" uid="uid://nua42o64j8iv" path="res://data/Porky Bold.otf" id="4_n21fu"]
 [ext_resource type="Texture2D" uid="uid://cqncmvceh24sn" path="res://assets/ui/BNG_Information.png" id="5_n21fu"]
+[ext_resource type="Texture2D" uid="uid://cw3an3g65ojx7" path="res://assets/sprites/characters/foxy/fox/JungleFox/JungleFox_idle_1.png" id="6_wwug3"]
 
 [node name="Pick_Player" type="Control"]
 layout_mode = 3
@@ -113,7 +115,7 @@ offset_top = 240.0
 offset_right = 864.0
 offset_bottom = 304.0
 scale = Vector2(6.45313, 7.0625)
-texture = ExtResource("1_e6dt7")
+texture = ExtResource("4_jgx76")
 
 [node name="AquaFox" type="TextureButton" parent="Aqua"]
 layout_mode = 0
@@ -321,7 +323,7 @@ offset_top = 1115.0
 offset_right = 2378.0
 offset_bottom = 1179.0
 scale = Vector2(6.45313, 7.0625)
-texture = ExtResource("1_e6dt7")
+texture = ExtResource("6_wwug3")
 
 [node name="BNG_Information_Jungle" type="TextureRect" parent="Jungle"]
 visible = false

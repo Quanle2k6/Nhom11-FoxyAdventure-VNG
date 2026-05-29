@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dkv1jgifrkt8q" path="res://assets/sprites/characters/foxy/fox/fox_defeat_1.png" id="1_75fk6"]
 [ext_resource type="Texture2D" uid="uid://dc2m3jf8uguyu" path="res://assets/sprites/characters/foxy/fox/fox_defeat_2.png" id="2_gjgms"]
 [ext_resource type="Texture2D" uid="uid://cm35jxqst3tye" path="res://assets/sprites/characters/foxy/fox/fox_defeat_3.png" id="3_je773"]
-[ext_resource type="Texture2D" uid="uid://biwl35p86jdwq" path="res://assets/sprites/characters/foxy/fox/fox_fall_1.png" id="4_xqul2"]
+[ext_resource type="Texture2D" uid="uid://ctcp2srlsos4m" path="res://assets/sprites/characters/foxy/fox/fox_fall_1.png" id="4_xqul2"]
 [ext_resource type="Texture2D" uid="uid://bcpoenc50cm6f" path="res://assets/sprites/characters/foxy/fox/fox_hit_1.png" id="5_cmeg1"]
 [ext_resource type="Texture2D" uid="uid://cpnrjocfgv50m" path="res://assets/sprites/characters/foxy/fox/fox_hit_2.png" id="6_cqvgj"]
 [ext_resource type="Texture2D" uid="uid://bij01i1v7nb15" path="res://assets/sprites/characters/foxy/fox/fox_hit_3.png" id="7_tenjw"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bsfb723jv8ohi" path="res://assets/sprites/characters/foxy/fox/fox_walk_2.png" id="13_g806c"]
 [ext_resource type="Texture2D" uid="uid://bj3ls24dmb1u0" path="res://assets/sprites/characters/foxy/fox/fox_walk_3.png" id="14_fb7hi"]
 [ext_resource type="Texture2D" uid="uid://c7b68c2t2m054" path="res://assets/sprites/characters/foxy/fox/fox_walk_4.png" id="15_vyylu"]
-[ext_resource type="Texture2D" uid="uid://c8yirdyo8mxlh" path="res://assets/sprites/characters/foxy/foxxy.png" id="16_gjgms"]
+[ext_resource type="Texture2D" uid="uid://dbue02jxefx8s" path="res://assets/sprites/characters/foxy/foxxy.png" id="16_gjgms"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_75fk6"]
 atlas = ExtResource("16_gjgms")
