@@ -157,7 +157,7 @@ shape = SubResource("RectangleShape2D_6hgl3")
 
 [node name="HitArea2D" type="Area2D" parent="Direction"]
 collision_layer = 0
-collision_mask = 16
+collision_mask = 272
 script = ExtResource("11_6crnl")
 metadata/_custom_type_script = "uid://5bjaanlcsrbg"
 

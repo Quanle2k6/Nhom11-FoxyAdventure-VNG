@@ -85,18 +85,11 @@ func control_jump_on_water() -> bool:
 		return true
 	return false
 
-func control_attack_by_blade() -> bool:
+func control_attack() -> bool:
+	if obj is JungleFox:
+		return false
 	if Input.is_action_just_pressed('attack'):
-		if obj.has_method("change_to_bubble_attack"):
-			obj.change_to_bubble_attack()
-		else:
-			change_state(fsm.states.attackbyblade)
-		return true
-	return false
-
-func control_bubble_attack() ->bool:
-	if Input.is_action_just_pressed('attack'):
-		if obj.has_method("change_to_bubble_attack"):
+		if obj is AquaFox:
 			obj.change_to_bubble_attack()
 		else:
 			change_state(fsm.states.attackbyblade)

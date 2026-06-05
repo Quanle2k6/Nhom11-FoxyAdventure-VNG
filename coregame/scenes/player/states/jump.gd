@@ -7,7 +7,7 @@ func _enter() -> void:
 	AudioManager.play_sound("player_jump")
 
 func _update(_delta: float):
-	control_attack_by_blade()
+	control_attack()
 	#Control swim
 	control_moving()
 	control_double_jump()

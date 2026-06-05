@@ -188,7 +188,7 @@ disabled = true
 
 [node name="HitArea2D" type="Area2D" parent="Direction"]
 collision_layer = 0
-collision_mask = 16
+collision_mask = 272
 script = ExtResource("10_4nrhj")
 metadata/_custom_type_script = "uid://5bjaanlcsrbg"
 

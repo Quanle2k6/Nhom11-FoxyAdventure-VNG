@@ -6,7 +6,7 @@ func _enter() -> void:
 	obj.change_animation('fall')
 
 func _update(_delta: float) -> void:
-	control_attack_by_blade()
+	control_attack()
 	control_water()
 	#Control moving
 	control_moving()

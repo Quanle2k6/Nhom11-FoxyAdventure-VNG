@@ -41,8 +41,8 @@ scroll_offset = Vector2(-559, -336)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="ParallaxLayer_Layer1#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(-960, -540)
+[node name="ParallaxLayer_Layer1#Sprite2D2" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer#Layer1"]
+position = Vector2(-401, -204)
 scale = Vector2(2.06897, 1.36192)
 texture = ExtResource("5_kq75b")
 centered = false
@@ -52,7 +52,7 @@ scroll_scale = Vector2(0.04, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="ParallaxLayer_Layer2#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer_Layer2#Sprite2D2" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer#Layer2"]
 position = Vector2(-960, -540)
 scale = Vector2(2.06897, 1.362)
 texture = ExtResource("6_k68ue")
@@ -63,7 +63,7 @@ scroll_scale = Vector2(0.07, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="ParallaxLayer_Layer3#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer_Layer3#Sprite2D2" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer#Layer3"]
 position = Vector2(-960, -540)
 scale = Vector2(2.069, 1.362)
 texture = ExtResource("7_wcww0")
@@ -74,7 +74,7 @@ scroll_scale = Vector2(0.1, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="ParallaxLayer_Layer4#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer_Layer4#Sprite2D2" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer#Layer4"]
 position = Vector2(-960, -540)
 scale = Vector2(2.069, 1.362)
 texture = ExtResource("8_02srb")
@@ -85,7 +85,7 @@ scroll_scale = Vector2(0.12, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="ParallaxLayer_Layer5#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer_Layer5#Sprite2D2" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer#Layer5"]
 position = Vector2(-960, -540)
 scale = Vector2(2.069, 1.362)
 texture = ExtResource("9_ewct4")
@@ -96,7 +96,7 @@ scroll_scale = Vector2(0.16, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="ParallaxLayer_Layer6#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer_Layer6#Sprite2D2" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer#Layer6"]
 position = Vector2(-960, -2036)
 scale = Vector2(2.069, 3.25851)
 texture = ExtResource("10_ifw7v")
@@ -107,7 +107,7 @@ scroll_scale = Vector2(0.21, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="ParallaxLayer_Layer7#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer_Layer7#Sprite2D2" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer#Layer7"]
 position = Vector2(-960, -2012)
 scale = Vector2(2.069, 3.37957)
 texture = ExtResource("11_wyw2k")
@@ -118,7 +118,7 @@ scroll_scale = Vector2(0.25, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="ParallaxLayer_Layer8#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer_Layer8#Sprite2D2" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer#Layer8"]
 position = Vector2(-960, -2012)
 scale = Vector2(2.069, 3.20807)
 texture = ExtResource("12_t34fj")
@@ -129,7 +129,7 @@ scroll_scale = Vector2(0.33, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="ParallaxLayer_Layer9#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer_Layer9#Sprite2D2" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer#Layer9"]
 position = Vector2(-960, -1564)
 scale = Vector2(2.069, 2.79445)
 texture = ExtResource("13_tdj6y")
@@ -140,7 +140,7 @@ scroll_scale = Vector2(0.45, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="ParallaxLayer_Layer10#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer_Layer10#Sprite2D2" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer#Layer10"]
 position = Vector2(-960, -908)
 scale = Vector2(2.069, 1.82598)
 texture = ExtResource("14_a0hlx")
@@ -151,7 +151,7 @@ scroll_scale = Vector2(0.62, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="ParallaxLayer_Layer11#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer_Layer11#Sprite2D2" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer#Layer11"]
 position = Vector2(-960, -540)
 scale = Vector2(2.069, 1.34174)
 texture = ExtResource("15_pwre4")
@@ -162,7 +162,7 @@ scroll_scale = Vector2(0.82, 0)
 repeat_size = Vector2(928, 0)
 repeat_times = 8
 
-[node name="ParallaxLayer_Layer12#Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+[node name="ParallaxLayer_Layer12#Sprite2D2" type="Sprite2D" parent="ParallaxLayer/ParallaxLayer#Layer12"]
 position = Vector2(-960, -540)
 scale = Vector2(2.069, 1.362)
 texture = ExtResource("16_asv0c")

@@ -6,7 +6,7 @@ func _enter() -> void:
 
 
 func _update(delta: float) -> void:
-	control_attack_by_blade()
+	control_attack()
 	#Control swim
 	control_water()
 	#Control jump
